@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi:schema targetNamespace="http://library.lanl.gov/2005-08/aDORe/XMLtapeBasics/" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:ba="http://library.lanl.gov/2005-08/aDORe/XMLtapeBasics/" xmlns:xsi="http://www.w3.org/2001/XMLSchema">
+	<xsi:annotation>
+		<xsi:documentation>
+This Schema defines essential administrative data-elements to be used with the XMLtape/ARCfile storage solution as used in the OAIResource and aDORe software.  Herbert Van de Sompel.  August 3rd 2005.
+This Schema is available at http://purl.lanl.gov/aDORe/schemas/2006-09/XMLtapeBasics.xsd .
+	</xsi:documentation>
+	</xsi:annotation>
+	<xsi:element name="XMLtapeBasics" type="ba:XMLtapeBasicsType"/>
+	<!-- The root element for XML documents that comply with this XML Schema is XMLtapeBasics.  This root element has 4 child elements:
+	(*) XMLtapeId: mandatory, not repeatable  
+	(*) ARCfileId: optional, repeatable
+	(*) processSoftware: optional, not repeatable
+	(*) processTime: optional, not repeatable
+The semantics and use of these elements is explained below.
+	-->
+	<xsi:complexType name="XMLtapeBasicsType">
+		<xsi:sequence>
+			<xsi:element ref="ba:XMLtapeId"/>
+			<!-- The content of the XMLtapeId element must be the globally unique identifier, expressed as a URI, for the XMLtape. Only one identifier can be provided. A sample value is info:lanl-repo/xmltape/tape_bb1ae77c-d9c0-11d9-b731-b0a8c271beda  -->
+			<xsi:element ref="ba:ARCfileId" minOccurs="0" maxOccurs="unbounded"/>
+			<!-- The content of the ARCfileId element must be the globally unique identifier, expressed as a URI, for an ARCfile associated with the XMLtape. ARC files are associated with an XMLtape if datastreams referenced in tape-records of the XMLtape are stored in an ARC file.  If no ARC files are associated with the XMLtapes, no ARCfileId is provided.  If ARC files are associated with the XMLtape, one identifier per such ARC file must be provided.  A sample value is info:lanl-repo/arc/arc_ax2ae77c-d9c0-11d9-b731-b0a8c271brol  -->
+			<xsi:element ref="ba:processSoftware" minOccurs="0"/>
+			<!-- The content of the processSoftware element is a string identifying the software that was used to write the XMLtape.  Provision of this information is not mandatory.  A sample value is gov.lanl.xmltape.SingleTapeWriter  -->
+			<xsi:element ref="ba:processTime" minOccurs="0"/>
+			<!-- The content of the processTime element is an ISO 8601 datetime specifying the date and time the XMLtape was created. Provision of this information is not mandatory.  A sample value is 2005-08-03T19:17:44Z -->
+		</xsi:sequence>
+	</xsi:complexType>
+	<xsi:element name="XMLtapeId" type="xsi:anyURI"/>
+	<xsi:element name="ARCfileId" type="xsi:anyURI"/>
+	<xsi:element name="processSoftware" type="xsi:string"/>
+	<xsi:element name="processTime" type="xsi:dateTime"/>
+<!-- 
+
+Sample XML document:		
+
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLtapeBasics xmlns="http://library.lanl.gov/2005-08/aDORe/XMLtapeBasics/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.lanl.gov/aDORe/schemas/2006-09/XMLtapeBasics.xsd">
+<XMLtapeId>info:lanl-repo/xmltape/tape_bb1ae77c-d9c0-11d9-b731-b0a8c271beda</XMLtapeId>
+<ARCfileId>info:lanl-repo/arc/arc_abcde77c-d9c0-11d9-b731-b0a8c271beda</ARCfileId>
+	<processSoftware>gov.lanl.xmltape.SingleTapeWriter</processSoftware>
+	<processTime>2005-08-03T19:17:44Z</processTime>
+</XMLtapeBasics>
+	
+-->
+</xsi:schema>

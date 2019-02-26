@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMPrequest xmlns="http://library.lanl.gov/2005-08/aDORe/PMPrequest/" xmlns:ns1="http://library.lanl.gov/2005-08/aDORe/PMPrequest/" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://library.lanl.gov/2005-08/aDORe/PMPrequest/ http://purl.lanl.gov/aDORe/schemas/2006-09/PMPrequest.xsd"><PutRecord xmlns="http://library.lanl.gov/2005-08/aDORe/PMPrequest/"><record xmlns="http://library.lanl.gov/2005-08/aDORe/PMPrequest/"><header xmlns="http://library.lanl.gov/2005-08/aDORe/PMPrequest/"><setSpec xmlns="http://library.lanl.gov/2005-08/aDORe/PMPrequest/">info:lanl-repo/objectdb/dc0f77fc-64dd-11d9-b731-b0a8c271beda</setSpec></header><metadata xmlns="http://library.lanl.gov/2005-08/aDORe/PMPrequest/"><didl:DIDL xmlns:didl="urn:mpeg:mpeg21:2002:02-DIDL-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DIDLDocumentId="info:lanl-repo/i/bd182c6c-64de-11d9-b731-b0a8c271beda"  diext:DIDLDocumentCreated="2007-06-27T19:31:09Z" xmlns:diext="http://library.lanl.gov/2005-08/aDORe/DIDLextension/" xsi:schemaLocation="http://library.lanl.gov/2005-08/aDORe/DIDLextension/ http://purl.lanl.gov/aDORe/schemas/2006-09/DIDLextension.xsd urn:mpeg:mpeg21:2002:02-DIDL-NS http://purl.lanl.gov/aDORe/schemas/2006-09/DIDL.xsd">
+<didl:Item id="uuid-77f0a1ff-acb7-4c91-b936-a0378a21557c">
+<didl:Descriptor>
+<didl:Statement mimeType="application/xml; charset=utf-8"><dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://purl.lanl.gov/aDORe/schemas/2006-09/DII.xsd">info:lanl-repo/biosis/PREV200500033355</dii:Identifier></didl:Statement>
+</didl:Descriptor>
+<didl:Descriptor>
+<didl:Statement mimeType="application/xml; charset=utf-8">
+<diadm:DIADM xmlns:diadm="http://library.lanl.gov/2005-08/aDORe/DIADM/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://library.lanl.gov/2005-08/aDORe/DIADM/ http://purl.lanl.gov/aDORe/schemas/2006-09/DIADM.xsd">
+<dc:format xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd">info:lanl-repo/pro/ai</dc:format>
+<dc:rights xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd">copyright BIOSIS</dc:rights>
+<dcterms:isPartOf xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/terms/ http://purl.lanl.gov/aDORe/schemas/2006-09/dcterms.xsd">info:sid/library.lanl.gov:biosis</dcterms:isPartOf>
+</diadm:DIADM>
+</didl:Statement>
+
+</didl:Descriptor>
+<didl:Component id="uuid-070658f4-d930-41b1-900e-ce18d392318d">
+<didl:Descriptor>
+<didl:Statement mimeType="application/xml; charset=utf-8"><dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://purl.lanl.gov/aDORe/schemas/2006-09/DII.xsd">info:lanl-repo/ds/3cb53712-f804-494b-a1ca-9a3e6f1eab8d</dii:Identifier></didl:Statement>
+</didl:Descriptor>
+<didl:Descriptor>
+<didl:Statement mimeType="application/xml; charset=utf-8"><dii:RelatedIdentifier relationshipType="info:lanl-repo/sem/6" xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://purl.lanl.gov/aDORe/schemas/2006-09/DII.xsd">urn:sha1:HVMLHFZER72VYLSAD6CLJKVBLOJBE5GK</dii:RelatedIdentifier></didl:Statement>
+</didl:Descriptor>
+<didl:Descriptor>
+<didl:Statement mimeType="application/xml; charset=utf-8">
+<diadm:DIADM xmlns:diadm="http://library.lanl.gov/2005-08/aDORe/DIADM/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://library.lanl.gov/2005-08/aDORe/DIADM/ http://purl.lanl.gov/aDORe/schemas/2006-09/DIADM.xsd">
+<dc:format xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd">info:lanl-repo/fmt/3</dc:format>
+<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd">info:lanl-repo/creator/LANL-RTF</dc:creator>
+
+<dc:type xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd">info:lanl-repo/sem/1</dc:type>
+<dcterms:created xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/terms/ http://purl.lanl.gov/aDORe/schemas/2006-09/dcterms.xsd">2005-01-12T21:12:59Z</dcterms:created>
+<dcterms:isFormatOf xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/terms/ http://purl.lanl.gov/aDORe/schemas/2006-09/dcterms.xsd">info:lanl-repo/ds/3c1d4cf0-d1f0-4e0d-85b6-c6e70e4a92dd</dcterms:isFormatOf>
+</diadm:DIADM>
+</didl:Statement>
+</didl:Descriptor>
+<didl:Resource mimeType="application/xml;charset=utf-8" ref="info:lanl-repo/ds/3cb53712-f804-494b-a1ca-9a3e6f1eab8d"></didl:Resource>
+<didl:Resource mimeType="application/xml;charset=utf-8"><record xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://purl.lanl.gov/aDORe/schemas/2006-09/MARC21slim.xsd">
+<leader>00000nab  2200000za 4500</leader>
+<controlfield tag="001">PREV200500033355</controlfield>
+<controlfield tag="005">2005-01-11</controlfield>
+
+<datafield tag="022" ind1=" " ind2=" ">
+   <subfield code="a">0006-8101</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+   <subfield code="a">PREV200500033355</subfield>
+</datafield>
+<datafield tag="040" ind1=" " ind2=" ">
+   <subfield code="a">BIOSIS</subfield>
+</datafield>
+<datafield tag="041" ind1="0" ind2="7">
+   <subfield code="a">eng</subfield>
+
+   <subfield code="2">ISO639-2</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">25215</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">25230</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">25785</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">25280</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+</datafield>
+
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">26145</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">25315</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+
+   <subfield code="a">25340</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">26375</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">26455</subfield>
+
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">11000</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">25395</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">25400</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">25445</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Biosystematic Codes</subfield>
+</datafield>
+
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">1308-31-2Q, 11104-59-9Q</subfield>
+   <subfield code="2">CAS Registry</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">7440-47-3</subfield>
+   <subfield code="2">CAS Registry</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+
+   <subfield code="a">07502</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Concept Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">07506</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Concept Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">07514</subfield>
+
+   <subfield code="2">BIOSIS Controlled Vocabulary: Concept Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">10069</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Concept Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">22501</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Concept Codes</subfield>
+
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">22506</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Concept Codes</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">37015</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Concept Codes</subfield>
+</datafield>
+
+<datafield tag="072" ind1=" " ind2="7">
+   <subfield code="a">54512</subfield>
+   <subfield code="2">BIOSIS Controlled Vocabulary: Concept Codes</subfield>
+</datafield>
+<datafield tag="245" ind1="1" ind2="0">
+   <subfield code="a">Chromium accumulation and toxicity in aquatic vascular plants</subfield>
+   <subfield code="h">print</subfield>
+</datafield>
+<datafield tag="260" ind1=" " ind2=" ">
+
+   <subfield code="c">2004</subfield>
+</datafield>
+<datafield tag="300" ind1=" " ind2=" ">
+   <subfield code="a">313-327</subfield>
+</datafield>
+<datafield tag="363" ind1=" " ind2=" ">
+   <subfield code="a">70</subfield>
+   <subfield code="b">3</subfield>
+   <subfield code="p">313-327</subfield>
+
+</datafield>
+<datafield tag="520" ind1="3" ind2=" ">
+   <subfield code="a">Chromium poisoning among leather tanners has long been known. The workers have been found to suffer from ulcers, allergic dermatitis, lung cancer, and liver necrosis due to prolonged contact with chromium salts. One of the highly catastrophic incidences of lung cancer as a result of inhaling dust containing Cr (VI) was reported in 1960 from the Kiryama factory of the Nippon-Denko concern on the island of Hokkaido, Japan. Pollution of water resources, both surface and underground, by indiscriminate discharge of spent wastes of chromium-based industries has become a serious global concern, for it has created an acute scarcity of safe drinking water in many countries. In August 1975 it was observed that underground drinking water in Tokyo near the chromium (VI))-containing spoil heaps contained more than 2000 times the permissible limit of chromium. In Ludhiana and Chennai, India, chromium levels in underground water have been recorded at more than 12 mg/L and 550-1500 ppm/L, respectively.</subfield>
+</datafield>
+<datafield tag="546" ind1=" " ind2=" ">
+   <subfield code="a">English</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Freshwater Ecology</subfield>
+   <subfield code="2">BIOSIS : MajorConcept : /Index/MajorConceptData[1]/MajorConceptList[1]/MajorConcept[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Ecology, Environmental Sciences</subfield>
+   <subfield code="2">BIOSIS : MajorConcept : /Index/MajorConceptData[1]/MajorConceptList[1]/MCBroaderTerms[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Groundwater Ecology</subfield>
+   <subfield code="2">BIOSIS : MajorConcept : /Index/MajorConceptData[1]/MajorConceptList[2]/MajorConcept[1]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Ecology, Environmental Sciences</subfield>
+   <subfield code="2">BIOSIS : MajorConcept : /Index/MajorConceptData[1]/MajorConceptList[2]/MCBroaderTerms[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Pollution Assessment Control and Management</subfield>
+   <subfield code="2">BIOSIS : MajorConcept : /Index/MajorConceptData[1]/MajorConceptList[3]/MajorConcept[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">Toxicology</subfield>
+   <subfield code="2">BIOSIS : MajorConcept : /Index/MajorConceptData[1]/MajorConceptList[4]/MajorConcept[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Monocotyledones</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[1]/SuperTaxa[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiospermae</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[1]/SuperTaxa[2]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Spermatophyta</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[1]/SuperTaxa[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Plantae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[1]/SuperTaxa[4]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiosperms, Monocots, Plants, Spermatophytes, Vascular Plants</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[1]/TaxaNotes[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Alismataceae [25215]</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[1]/OrgData[1]/OrgClassifier[1]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Sagittaria</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[1]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[1]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">Monocotyledones</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[2]/SuperTaxa[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiospermae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[2]/SuperTaxa[2]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Spermatophyta</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[2]/SuperTaxa[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Plantae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[2]/SuperTaxa[4]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiosperms, Monocots, Plants, Spermatophytes, Vascular Plants</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[2]/TaxaNotes[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Araceae [25230]</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[2]/OrgData[1]/OrgClassifier[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Limnophyllum</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[2]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[2]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Dicotyledones</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[3]/SuperTaxa[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">Angiospermae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[3]/SuperTaxa[2]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Spermatophyta</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[3]/SuperTaxa[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Plantae</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[3]/SuperTaxa[4]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiosperms, Dicots, Plants, Spermatophytes, Vascular Plants</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[3]/TaxaNotes[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Ceratophyllaceae [25785]</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[3]/OrgData[1]/OrgClassifier[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Ceratophyllum</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[3]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[3]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Monocotyledones</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[4]/SuperTaxa[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiospermae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[4]/SuperTaxa[2]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">Spermatophyta</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[4]/SuperTaxa[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Plantae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[4]/SuperTaxa[4]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiosperms, Monocots, Plants, Spermatophytes, Vascular Plants</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[4]/TaxaNotes[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Cyperaceae [25280]</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[4]/OrgData[1]/OrgClassifier[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Scirpus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[4]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[4]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Dicotyledones</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[5]/SuperTaxa[1]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiospermae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[5]/SuperTaxa[2]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Spermatophyta</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[5]/SuperTaxa[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">Plantae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[5]/SuperTaxa[4]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiosperms, Dicots, Plants, Spermatophytes, Vascular Plants</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[5]/TaxaNotes[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Haloragaceae [26145]</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[5]/OrgData[1]/OrgClassifier[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Myriophyllum</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[5]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[5]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Monocotyledones</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/SuperTaxa[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiospermae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/SuperTaxa[2]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Spermatophyta</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/SuperTaxa[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Plantae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/SuperTaxa[4]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">Angiosperms, Monocots, Plants, Spermatophytes, Vascular Plants</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/TaxaNotes[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Hydrocharitaceae [25315]</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/OrgData[1]/OrgClassifier[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Blyxa</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Elodea</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/OrgData[1]/OrganismList[2]/OrganismName[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/OrgData[1]/OrganismList[2]/TypeofName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Hydrilla</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/OrgData[1]/OrganismList[3]/OrganismName[1]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/OrgData[1]/OrganismList[3]/TypeofName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Vallisneria</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/OrgData[1]/OrganismList[4]/OrganismName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[6]/OrgData[1]/OrganismList[4]/TypeofName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Monocotyledones</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[7]/SuperTaxa[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiospermae</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[7]/SuperTaxa[2]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Spermatophyta</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[7]/SuperTaxa[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Plantae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[7]/SuperTaxa[4]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiosperms, Monocots, Plants, Spermatophytes, Vascular Plants</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[7]/TaxaNotes[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Lemnaceae [25340]</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[7]/OrgData[1]/OrgClassifier[1]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Lemna</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[7]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[7]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">Dicotyledones</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[8]/SuperTaxa[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiospermae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[8]/SuperTaxa[2]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Spermatophyta</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[8]/SuperTaxa[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Plantae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[8]/SuperTaxa[4]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiosperms, Dicots, Plants, Spermatophytes, Vascular Plants</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[8]/TaxaNotes[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Menyanthaceae [26375]</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[8]/OrgData[1]/OrgClassifier[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Nymphoides</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[8]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[8]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Dicotyledones</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[9]/SuperTaxa[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">Angiospermae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[9]/SuperTaxa[2]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Spermatophyta</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[9]/SuperTaxa[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Plantae</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[9]/SuperTaxa[4]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiosperms, Dicots, Plants, Spermatophytes, Vascular Plants</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[9]/TaxaNotes[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Nymphaeaceae [26455]</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[9]/OrgData[1]/OrgClassifier[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Nymphaea</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[9]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[9]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Plantae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[10]/SuperTaxa[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Plants</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[10]/TaxaNotes[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">Plantae [11000]</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[10]/OrgData[1]/OrgClassifier[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Eliocharis</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[10]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[10]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Limnophylla</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[10]/OrgData[1]/OrganismList[2]/OrganismName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[10]/OrgData[1]/OrganismList[2]/TypeofName[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Phragmitis</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[10]/OrgData[1]/OrganismList[3]/OrganismName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[10]/OrgData[1]/OrganismList[3]/TypeofName[1]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Monocotyledones</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[11]/SuperTaxa[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiospermae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[11]/SuperTaxa[2]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">Spermatophyta</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[11]/SuperTaxa[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Plantae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[11]/SuperTaxa[4]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiosperms, Monocots, Plants, Spermatophytes, Vascular Plants</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[11]/TaxaNotes[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Pontederiaceae [25395]</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[11]/OrgData[1]/OrgClassifier[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Pontederia</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[11]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[11]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Monocotyledones</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[12]/SuperTaxa[1]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiospermae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[12]/SuperTaxa[2]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Spermatophyta</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[12]/SuperTaxa[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">Plantae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[12]/SuperTaxa[4]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiosperms, Monocots, Plants, Spermatophytes, Vascular Plants</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[12]/TaxaNotes[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Potamogetonaceae [25400]</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[12]/OrgData[1]/OrgClassifier[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Potamogeton</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[12]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[12]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Monocotyledones</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[13]/SuperTaxa[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Angiospermae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[13]/SuperTaxa[2]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Spermatophyta</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[13]/SuperTaxa[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Plantae</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[13]/SuperTaxa[4]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">Angiosperms, Monocots, Plants, Spermatophytes, Vascular Plants</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[13]/TaxaNotes[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Typhaceae [25445]</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[13]/OrgData[1]/OrgClassifier[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">Typha</subfield>
+
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[13]/OrgData[1]/OrganismList[1]/OrganismName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">genus</subfield>
+   <subfield code="2">BIOSIS : Taxonomy : /Index/TaxonomicData[1]/TaxonomicList[13]/OrgData[1]/OrganismList[1]/TypeofName[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">chromite</subfield>
+   <subfield code="2">BIOSIS : Chemical : /Index/ChemicalData[1]/ChemicalList[1]/ChemicalName[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">1308-31-2Q, 11104-59-9Q</subfield>
+   <subfield code="2">BIOSIS : Chemical : /Index/ChemicalData[1]/ChemicalList[1]/CASRegistryNo[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">chromium</subfield>
+   <subfield code="2">BIOSIS : Chemical : /Index/ChemicalData[1]/ChemicalList[2]/ChemicalName[1]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">7440-47-3</subfield>
+   <subfield code="2">BIOSIS : Chemical : /Index/ChemicalData[1]/ChemicalList[2]/CASRegistryNo[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">pollutant, toxin, water pollutant</subfield>
+   <subfield code="2">BIOSIS : Chemical : /Index/ChemicalData[1]/ChemicalList[2]/ChemicalRole[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">accumulation</subfield>
+   <subfield code="2">BIOSIS : Chemical : /Index/ChemicalData[1]/ChemicalList[2]/ChemicalDetail[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">ground water pollution</subfield>
+   <subfield code="2">BIOSIS : MiscellaneousDescriptors : /Index/MiscellaneousDescriptors[1]/MiscDescriptorsList[1]/MiscDescriptor[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">leather tanning</subfield>
+
+   <subfield code="2">BIOSIS : MiscellaneousDescriptors : /Index/MiscellaneousDescriptors[1]/MiscDescriptorsList[2]/MiscDescriptor[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">safe drinking water</subfield>
+   <subfield code="2">BIOSIS : MiscellaneousDescriptors : /Index/MiscellaneousDescriptors[1]/MiscDescriptorsList[3]/MiscDescriptor[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">surface water pollution</subfield>
+   <subfield code="2">BIOSIS : MiscellaneousDescriptors : /Index/MiscellaneousDescriptors[1]/MiscDescriptorsList[4]/MiscDescriptor[1]</subfield>
+
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">07502, Ecology: environmental biology - General and methods</subfield>
+   <subfield code="2">BIOSIS : ConceptCode : /Index/ConceptCodeList[1]/ConceptCode[1]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">07506, Ecology: environmental biology - Plant</subfield>
+   <subfield code="2">BIOSIS : ConceptCode : /Index/ConceptCodeList[1]/ConceptCode[2]</subfield>
+</datafield>
+
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">07514, Ecology: environmental biology - Limnology</subfield>
+   <subfield code="2">BIOSIS : ConceptCode : /Index/ConceptCodeList[1]/ConceptCode[3]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">10069, Biochemistry studies - Minerals</subfield>
+   <subfield code="2">BIOSIS : ConceptCode : /Index/ConceptCodeList[1]/ConceptCode[4]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+
+   <subfield code="a">22501, Toxicology - General and methods </subfield>
+   <subfield code="2">BIOSIS : ConceptCode : /Index/ConceptCodeList[1]/ConceptCode[5]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">22506, Toxicology - Environment and industry</subfield>
+   <subfield code="2">BIOSIS : ConceptCode : /Index/ConceptCodeList[1]/ConceptCode[6]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">37015, Public health - Air, water and soil pollution</subfield>
+
+   <subfield code="2">BIOSIS : ConceptCode : /Index/ConceptCodeList[1]/ConceptCode[7]</subfield>
+</datafield>
+<datafield tag="650" ind1=" " ind2="7">
+   <subfield code="a">54512, Phytopathology - Nonparasitic diseases</subfield>
+   <subfield code="2">BIOSIS : ConceptCode : /Index/ConceptCodeList[1]/ConceptCode[8]</subfield>
+</datafield>
+<datafield tag="655" ind1=" " ind2="7">
+   <subfield code="a">Article</subfield>
+   <subfield code="2">BIOSIS : DocumentType : /DocumentTypeList/DocumentTypeText</subfield>
+
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+   <subfield code="a">Chandra, Prakash</subfield>
+   <subfield code="e">author</subfield>
+   <subfield code="4">Author, Reprint Author</subfield>
+   <subfield code="u">Aquat Bot Lab, Natl Bot Res Inst, Lucknow, Uttar Pradesh, 226001, India</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+   <subfield code="a">Kulshreshtha, Kamla</subfield>
+
+   <subfield code="e">author</subfield>
+   <subfield code="4">Author</subfield>
+</datafield>
+<datafield tag="773" ind1="0" ind2=" ">
+   <subfield code="g">vol. 70, iss. 3</subfield>
+   <subfield code="d">July 2004</subfield>
+   <subfield code="n">Journal</subfield>
+
+   <subfield code="q">70:3&lt;313</subfield>
+   <subfield code="t">Botanical Review</subfield>
+   <subfield code="x">0006-8101</subfield>
+</datafield>
+<datafield tag="856" ind1="7" ind2="2">
+   <subfield code="d">url_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Flibrary%2Elanl%2Egov%3Abiosis&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft_id=info%3Alanl%2Drepo%2Fbiosis%2FPREV200500033355&amp;rft.issn=0006%2D8101&amp;rft.aulast=Chandra&amp;rft.auinit1=P&amp;rft.date=2004&amp;rft.atitle=Chromium%20accumulation%20and%20toxicity%20in%20aquatic%20vascular%20plants&amp;rft.title=Botanical%20Review&amp;rft.volume=70&amp;rft.issue=3&amp;rft.spage=313&amp;rft.epage=327&amp;rft.pages=313%2D327&amp;rft.genre=article</subfield>
+
+   <subfield code="2">OpenURL</subfield>
+</datafield>
+</record>
+</didl:Resource>
+</didl:Component>
+<didl:Component id="uuid-09945d34-647e-493d-adc8-b566d92c656a">
+<didl:Descriptor>
+<didl:Statement mimeType="application/xml; charset=utf-8"><dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://purl.lanl.gov/aDORe/schemas/2006-09/DII.xsd">info:lanl-repo/ds/3c1d4cf0-d1f0-4e0d-85b6-c6e70e4a92dd</dii:Identifier></didl:Statement>
+</didl:Descriptor>
+<didl:Descriptor>
+<didl:Statement mimeType="application/xml; charset=utf-8"><dii:RelatedIdentifier relationshipType="info:lanl-repo/sem/6" xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://purl.lanl.gov/aDORe/schemas/2006-09/DII.xsd">urn:sha1:EDHWBNOSNIVRWJ7E3QBFRFDG7DZCPVVE</dii:RelatedIdentifier></didl:Statement>
+</didl:Descriptor>
+<didl:Descriptor>
+
+<didl:Statement mimeType="application/xml; charset=utf-8">
+<diadm:DIADM xmlns:diadm="http://library.lanl.gov/2005-08/aDORe/DIADM/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://library.lanl.gov/2005-08/aDORe/DIADM/ http://purl.lanl.gov/aDORe/schemas/2006-09/DIADM.xsd">
+<dc:format xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd">info:lanl-repo/fmt/9</dc:format>
+<dc:type xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd">info:lanl-repo/sem/1</dc:type>
+<dcterms:created xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/terms/ http://purl.lanl.gov/aDORe/schemas/2006-09/dcterms.xsd">2005-01-11</dcterms:created>
+</diadm:DIADM>
+</didl:Statement>
+</didl:Descriptor>
+<didl:Resource mimeType="application/xml" ref="info:lanl-repo/ds/3c1d4cf0-d1f0-4e0d-85b6-c6e70e4a92dd"></didl:Resource>
+</didl:Component>
+</didl:Item>
+</didl:DIDL></metadata></record></PutRecord></PMPrequest>

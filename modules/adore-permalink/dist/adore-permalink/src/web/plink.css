@@ -1,0 +1,148 @@
+a:link { color: black; }
+a:visited  {  color: #800080; text-decoration: none; }
+a:hover { color: #C26100; text-decoration: none; }
+
+HTML {
+	background-color: #eaeaea;
+}
+
+BODY{
+	background-color: #eaeaea;
+  color: black;
+	font-family: "Trebuchet MS", arial, helvetica, sans-serif;
+  margin: 0;
+}
+
+INPUT {
+  background-color: white;
+  color: black;
+  font-weight: normal;
+  font-size: 8pt;
+  width: 100%;
+}
+
+TEXTAREA {
+  background-color: white;
+  border-width: 1px 1px 2px 2px;
+  font-size: 8pt;
+  font-weight: normal;
+}
+
+#plink TABLE, #bib TABLE, #allsrv TABLE, #footer TABLE{
+  border: 0;
+  border-spacing: 2;
+  padding: 2;
+  width: 100%;
+}
+
+/* IE hack */
+*html #plink table, #bib table, #footer table{
+  width: 95%;
+}
+
+/* IE hack */
+*html #allsrv table{
+  width: 95%;
+}
+
+#plink td.label, #bib td.label, #allsrv td.label{
+  font-weight: bold;
+  vertical-align: top;
+  width: 120;
+}
+
+#allsrv table td.service{
+  vertical-align: top;
+  width: 225;
+} 
+
+#plink, #bib, #allsrv{
+  background-color: white;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin:0;
+  padding: 12px;
+  width: auto;
+}
+
+#allsrv{
+  border-bottom: 1px solid black;
+}
+
+.services{
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.contributor, .abstract, .source, .title, .cite {
+  font-size: 10pt;
+  font-weight: normal;
+}
+
+#header{
+  background-color: #eaeaea;
+  border: 1px solid black;
+  font-size: 24;
+  padding: 12;
+  font-weight: bold;
+  width: auto;
+}
+
+#header img{
+  border: none;
+}
+
+#definition{
+  /* background-color: white; */
+  /* background-color: #9EB800; */
+/*  background-color: #4686C5; */
+ /*  background-color: #E8B369; */
+background-color: #92B8DD;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  font-size: 18;
+  padding: 12;
+  width: auto;
+}
+
+#definition li{
+  font-size: 16;
+}
+
+/* NOTE: Eventually, we will use the standard LANL footer from the web team */
+#footer {
+	background-color: white;
+	border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  width: auto;
+}
+#footer a, #footer a:hover {
+	font-size: 10;
+	text-align: left;
+}
+
+#footer h1{
+  display: inline;
+	font-size: 12;
+	font-weight: bold;
+}
+
+#footer h2{
+  display: inline;
+	font-size: 11;
+	font-weight: normal;
+}
+
+#footer h3{
+	font-size: 10;
+	font-weight: normal;
+}
+
+#footer IMG{
+  border: none;
+	margin: 5;
+}
+
+

@@ -1,0 +1,108 @@
+<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+<leader>00000nab  2200000za 4500</leader>
+<controlfield tag="001">doi-10.1016/S1571-0661(05)80578-X</controlfield>
+<controlfield tag="005">2005-4-28-T23:30:02Z</controlfield>
+<datafield tag="022" ind1=" " ind2=" ">
+   <subfield code="a">1571-0661</subfield>
+</datafield>
+<datafield tag="024" ind1="7" ind2=" ">
+   <subfield code="a">S1571-0661(05)80578-X</subfield>
+   <subfield code="2">SRV : ID : article[1]/artid[1] type=pii</subfield>
+</datafield>
+<datafield tag="024" ind1="7" ind2=" ">
+   <subfield code="a">10.1016/S1571-0661(05)80578-X</subfield>
+   <subfield code="2">SRV : ID : article[1]/artid[2] type=doi</subfield>
+</datafield>
+<datafield tag="024" ind1="7" ind2=" ">
+   <subfield code="a">15710661</subfield>
+   <subfield code="2">SRV : ID : journal[1]/jid[1]/@id</subfield>
+</datafield>
+<datafield tag="030" ind1=" " ind2=" ">
+   <subfield code="a">SRENA4</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+   <subfield code="a">doi-10.1016/S1571-0661(05)80578-X</subfield>
+</datafield>
+<datafield tag="037" ind1=" " ind2=" ">
+   <subfield code="a">ohm11480</subfield>
+   <subfield code="b">sdos</subfield>
+</datafield>
+<datafield tag="040" ind1=" " ind2=" ">
+   <subfield code="a">SCISERVER</subfield>
+</datafield>
+<datafield tag="041" ind1="0" ind2="7">
+   <subfield code="a">eng</subfield>
+   <subfield code="2">ISO639-2</subfield>
+</datafield>
+<datafield tag="245" ind1="1" ind2="0">
+   <subfield code="a">Preface</subfield>
+   <subfield code="b">Volume 55, Issue 3</subfield>
+</datafield>
+<datafield tag="260" ind1=" " ind2=" ">
+   <subfield code="b">Elsevier Science</subfield>
+   <subfield code="c">October, 2001</subfield>
+</datafield>
+<datafield tag="300" ind1=" " ind2=" ">
+   <subfield code="a">394</subfield>
+</datafield>
+<datafield tag="363" ind1=" " ind2=" ">
+   <subfield code="a">55</subfield>
+   <subfield code="b">3</subfield>
+   <subfield code="p">394</subfield>
+</datafield>
+<datafield tag="520" ind1="3" ind2=" ">
+   <subfield code="a">
+&lt;p&gt;This issue contains the Proceedings of the Workshop on Software Model Checking, which was held in Paris, France, on 23 July 2001, as a satellite event of the 13th International Conference on Computer-Aided Verification (CAV 2001).&lt;/p&gt;
+&lt;p&gt;The growing importance of model checking in hardware verification and the difficulty of producing correct software are driving a growing interest in the application of model checking to software. This leads to many challenges of scientific and practical interest, both in core model checking technology and in supporting techniques, such as program analyses and transformations that help automate abstraction of the data state and reduction of the control state. The two main aims of the workshop were to introduce people to the field of software model checking, and to serve as a forum for the presentation and discussion of new research ideas in the field.&lt;/p&gt;
+&lt;p&gt;In order to achieve the first goal, two leaders in the field were invited to present their ongoing research. Sriram Rajamani (Microsoft Research) spoke on “Model Checking, Program Analysis and Theorem Proving: Kitchen Sink?” John Hatcliff (Kansas State University) discussed ”Using the Bandera Tool Set to Model-check Properties of Concurrent Java Software”.&lt;/p&gt;
+&lt;p&gt;The call for papers resulted in 25 submissions. Eight were selected by the Program Committee for presentation at the workshop, and seven appear here. The submissions were reviewed by the Program Committee and the following additional reviewers: Dennis Dams, Alex Groce, Frederic Lang, Radu Mateescu, SeungJoon Park, and Sriram Rajamani.&lt;/p&gt;
+&lt;b&gt;Program Committee&lt;/b&gt;
+&lt;p&gt;Tom Ball, Microsoft Research&lt;/p&gt;
+&lt;p&gt;David Dill, Stanford University&lt;/p&gt;
+&lt;p&gt;Hubert Garavel, INRIA Rhone-Alpes/VASY&lt;/p&gt;
+&lt;p&gt;Patrice Godefroid, Bell Laboratories, Lucent Technologies&lt;/p&gt;
+&lt;p&gt;Susanne Graf, Verimag&lt;/p&gt;
+&lt;p&gt;Gerard Holzmann Bell Laboratories, Lucent Technologies&lt;/p&gt;
+&lt;p&gt;Scott Stoller, State University of New York at Stony Brook&lt;/p&gt;
+&lt;p&gt;Willem Visser, RIACS, NASA Ames Research Center&lt;/p&gt;
+&lt;p&gt;We thank RIACS (Research Institute for Advanced Computer Science, California, USA) for generous financial support. We thank the CAV 2001 organizers for excellent logistic support.&lt;/p&gt;
+&lt;p&gt;August 2001&lt;/p&gt;
+&lt;p&gt;Scott D. Stoller&lt;/p&gt;
+&lt;p&gt;Willem Visser&lt;/p&gt;
+</subfield>
+   <subfield code="b">en</subfield>
+</datafield>
+<datafield tag="546" ind1=" " ind2=" ">
+   <subfield code="a">EN</subfield>
+</datafield>
+<datafield tag="655" ind1=" " ind2="7">
+   <subfield code="a">FLA</subfield>
+   <subfield code="2">SRV : DOCUMENTTYPE : article[1]/@artty</subfield>
+</datafield>
+<datafield tag="655" ind1=" " ind2="7">
+   <subfield code="a">journals</subfield>
+   <subfield code="2">SRV : LOAD : load[1]/data-info[1]/@data-type</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+   <subfield code="a">Stoller, Scott D.</subfield>
+   <subfield code="e">author</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+   <subfield code="a">Visser, Willem</subfield>
+   <subfield code="e">author</subfield>
+</datafield>
+<datafield tag="773" ind1="0" ind2=" ">
+   <subfield code="g">vol. 55, no. 3</subfield>
+   <subfield code="d">October, 2001</subfield>
+   <subfield code="n">Journal</subfield>
+   <subfield code="q">55:3&lt;394</subfield>
+   <subfield code="t">Electronic Notes in Theoretical Computer Science</subfield>
+   <subfield code="x">1571-0661</subfield>
+   <subfield code="y">SRENA4</subfield>
+</datafield>
+<datafield tag="856" ind1="7" ind2="2">
+   <subfield code="d">url_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Flibrary%2Elanl%2Egov%3Asciserver&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft_id=info%3Alanl%2Drepo%2Fssm%2Fdoi%2D10%2E1016%2FS1571%2D0661%2805%2980578%2DX&amp;rft_id=info%3Adoi%2F10%2E1016%2FS1571%2D0661%2805%2980578%2DX&amp;rft.issn=1571%2D0661&amp;rft.coden=SRENA4&amp;rft.aulast=Stoller&amp;rft.auinit1=S&amp;rft.date=2001&amp;rft.atitle=Preface&amp;rft.title=Electronic%20Notes%20in%20Theoretical%20Computer%20Science&amp;rft.volume=55&amp;rft.issue=3&amp;rft.pages=394&amp;rft.genre=article&amp;rft.spage=394&amp;rft.epage=394</subfield>
+   <subfield code="2">OpenURL</subfield>
+
+</datafield>
+</record>

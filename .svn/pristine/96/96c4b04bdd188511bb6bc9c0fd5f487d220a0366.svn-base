@@ -1,0 +1,8 @@
+xmlsig.keystore.dir=@xmlsig.keystore.dir@
+xmlsig.keystore.type=JKS
+xmlsig.keystore.file=@xmlsig.keystore.file@
+xmlsig.keystore.pass=@xmlsig.keystore.pass@
+xmlsig.privatekey.alias=@xmlsig.privatekey.alias@
+xmlsig.privatekey.pass=@xmlsig.privatekey.pass@
+xmlsig.cert.alias=@xmlsig.cert.alias@
+xmlsig.cert.url=@xmlsig.cert.url@

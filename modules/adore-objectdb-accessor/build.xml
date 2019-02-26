@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+
+<project name="adore-objectdb-accessor" default="build" basedir=".">
+
+    <import file="../build.xml"/>
+    <!-- ===================================================================
+      -  init - initialization common to the framework module
+      -  =================================================================== -->
+    <target name="module-init" depends="global-init">
+        <!-- Import Configuration File -->
+        <property name="module.name"     value="adore-objectdb-accessor"/>
+        <property file="${root.src.dir}/${module.name}/module.conf"/>
+        <property name="module.root.dir"  value="${root.src.dir}/${module.name}"/>
+        <!-- Extended module-specific properties -->
+        <property name="module.version"  value="${module.version}"/>
+        <property name="module.dist"  value="${module.root.dir}/dist"/>
+        <property name="module.build" value="${module.root.dir}/tmp"/>
+        <property name="module.doc" value="${module.root.dir}/doc"/>
+        <property name="module.local.lib" value="${module.root.dir}/lib"/>
+        <property name="module.lib" value="${module.root.dir}/${module.lib}"/>
+        <property name="module.src" value="${module.root.dir}/${module.src}"/>
+        <!-- Set global properties for this build -->
+        <property name="final.name" value="${module.name}-${module.version}"/>
+        <!-- Build - Classpath Information -->
+        <fileset id="module.jars" dir="${module.lib}">
+          <!-- Define includes here -->
+            <include name="*.jar"/>
+        </fileset>
+        <path id="module.classpath">
+            <pathelement location="${module.build}" />
+            <fileset refid="module.jars"/>
+        </path>
+        
+        <fileset id="local.jars" dir="${module.local.lib}">
+            <include name="*.jar"/>
+        </fileset>
+        <path id="local.classpath">
+            <pathelement location="${module.local.lib}" />
+            <fileset refid="local.jars"/>
+        </path>
+        
+    </target>
+
+    <!-- Overrides parent definition of init -->
+    <target name="init" depends="module-init"/>
+
+    <target name="checkDependency" depends="init">
+      <if>
+        <not>
+          <equals arg1="${module.depends.list}" arg2="" trim="true"/>
+        </not>
+      <then>
+        <echo message="Compiling Modules"/>
+        <foreach list="${module.depends.list}" delimiter=";" param="temp" target="compileDependency" inheritall="true"/>
+      </then>
+      </if>
+    </target>
+
+    <!-- Build Dependent Libraries - Called By build.xml -->
+    <target name="compileDependency">
+    <propertycopy name="target" from="${temp}" silent="true"/>
+    <property name="d.module" value="${target}"/>
+    <propertycopy name="target.version" from="${temp}.version" silent="true"/>
+    <property name="d.module.version" value="${target.version}"/>
+    <echo message="${d.module}"/>
+    <echo message="${d.module.version}"/>
+    <property name="d.module.dir" value="${root.src.dir}/${d.module}/dist"/>
+     <if>
+      <available file="${module.local.lib}/${d.module}-${d.module.version}.jar" type="file" property="local.file.present"/>
+      <then>
+       <echo message="${d.module} is available"/>
+      </then>
+      <else>
+        <if>
+          <available file="${d.module.dir}/${d.module}-${d.module.version}.jar" type="file" property="local.file.present"/>
+           <then>
+             <echo message="${d.module.dir}/${d.module}-${d.module.version}.jar is available"/>
+             <copy file="${d.module.dir}/${d.module}-${d.module.version}.jar" todir="${module.local.lib}"/>
+           </then>
+           <else>
+             <echo message="Building Depenent Module"/>
+             <ant dir="${root.src.dir}/${d.module}" target="build" inheritAll="false"/>
+             <copy file="${d.module.dir}/${d.module}-${d.module.version}.jar" todir="${module.local.lib}"/>
+           </else>
+        </if> 
+      </else>
+     </if> 
+    </target>
+
+    <!-- Compile This Module -->
+    <target name="compile" depends="checkDependency">
+      <mkdir dir="${module.build}"/>
+      <!-- Compilation Units -->  
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/identifier">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+         <include name="**/*.java"/>
+         <exclude name="**/*Test.java"/>
+      </javac>
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/objectdb">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+         <include name="*.java"/>
+         <include name="oaidb/*.java"/>
+         <exclude name="**/*Test.java"/>
+      </javac>
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/repo/oaidb/objectdb">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+         <include name="*.java"/>
+         <exclude name="**/*Test.java"/>
+      </javac>
+    </target>
+
+    <!-- Build This Project - Generate JAR / TAR / WAR Archives -->
+    <target name="build" depends="compile">
+      <mkdir dir="${module.dist}"/>
+      <jar jarfile="${module.dist}/${final.name}.jar" basedir="${module.build}"/>
+      <tar destfile="${module.dist}/${final.name}.tar.gz" compression="gzip">
+        <!-- Copy project components into archive -->
+        <tarfileset prefix="${module.name}" dir="${module.root.dir}">
+          <include name="README"/>
+          <include name="build.xml"/>
+          <include name="build-standalone.xml"/>
+          <include name="module.conf"/>
+          <include name="module-dist.conf"/>
+          <include name="etc/**"/>
+          <include name="bin/**"/>
+          <include name="lib/*.jar"/>
+          <include name="src/web/**"/>
+          <include name="src/sql/**"/>
+          <include name="src/schemas/**"/>
+        </tarfileset>
+        <!-- Copy Generated jar file into archive -->
+        <tarfileset prefix="${module.name}/lib" dir="${module.dist}" includes="${final.name}.jar"/>
+
+        <tarfileset prefix="${module.name}/lib" dir="${module.lib}">
+          <include name="ant-contrib.jar"/>
+          <include name="ANT-CONTRIB.LICENSE"/>
+          <include name="oaicat.jar"/>
+          <include name="OAICAT.LICENSE"/>
+          <include name="jdom.jar"/>
+          <include name="JDOM.LICENSE"/>
+          <include name="log4j-1.2.8.jar"/>
+          <include name="LOG4J.LICENSE"/>
+          <include name="commons-pool-1.1.jar"/>
+	      <include name="COMMONS-POOL.LICENSE"/>
+	      <include name="commons-collections.jar"/>
+	      <include name="COMMONS-COLLECTIONS.LICENSE"/>
+	      <include name="commons-dbcp.jar"/>   
+	      <include name="COMMONS-DBCP.LICENSE"/>
+	      <include name="jaxen-1.1.8.jar"/>
+          <include name="JAXEN.LICENSE"/>
+	      <include name="xercesImpl.jar"/>
+	      <include name="XERCESIMPL.LICENSE"/>
+	      <include name="mysql-connector-java-5.1.5-bin.jar"/>
+	      <include name="MYSQL-CONNECTOR.LICENSE"/>
+          <include name="saxpath-1.5.jar"/>
+          <include name="jaxen-jdom.jar"/>
+          <include name="jaxen-core.jar"/>
+          <include name="JAXEN.LICENSE"/>
+          <include name="oaiharvester-2.9.jar"/>
+          <include name="OAIHARVESTER.LICENSE"/>
+          <include name="dom4j-1.6.1.jar"/>
+          <include name="DOM4J.LICENSE"/>
+        </tarfileset>
+        <!-- Copy source files into archive -->
+        <tarfileset prefix="${module.name}/src/gov/lanl/identifier" dir="${module.src}/gov/lanl/identifier" excludes="CVS">
+          <include name="**/*.java"/>
+          <exclude name="*Test.java"/>
+        </tarfileset>
+        <tarfileset prefix="${module.name}/src/gov/lanl/objectdb" dir="${module.src}/gov/lanl/objectdb" excludes="CVS">
+          <include name="*.java"/>
+          <include name="*.sql"/>
+          <include name="oaidb/*.java"/>
+          <exclude name="*Test.java"/>
+        </tarfileset>
+        <tarfileset prefix="${module.name}/src/gov/lanl/repo/oaidb/objectdb" dir="${module.src}/gov/lanl/repo/oaidb/objectdb" excludes="CVS">
+          <include name="*.java"/>
+          <exclude name="*Test.java"/>
+        </tarfileset>
+      </tar>
+      
+      
+       
+      <!-- RegEx on Properties File -->
+      
+      <copy file="${module.root.dir}/src/web/WEB-INF/oaicat.properties" todir="${module.build}/web/WEB-INF"/>
+      <replace file="${module.build}/web/WEB-INF/oaicat.properties" propertyFile="${module.root.dir}/module.conf">
+        <replacefilter token="$MODULE.NSPACE" property="module.nspace"/>
+        <replacefilter token="$MODULE.SCHEMA" property="module.schema"/>
+	    <replacefilter token="$MODULE.BASEURL" property="module.baseurl"/>
+        <replacefilter token="$MODULE.PREFIX" property="module.prefix"/>
+        <replacefilter token="$MODULE.DB.JDBCDRIVER" property="module.db.jdbcdriver"/>
+        <replacefilter token="$MODULE.DB.JDBCURL" property="module.db.jdbcurl"/>
+        <replacefilter token="$MODULE.DB.LOGIN" property="module.db.login"/>
+        <replacefilter token="$MODULE.DB.PASSWD" property="module.db.passwd"/>
+        <replacefilter token="$MODULE.ADMIN.EMAIL" property="module.admin.email"/>
+        <replacefilter token="$MODULE.IDIDXPLUGIN" property="module.ididxplugin"/>
+      </replace>
+      
+      <copy file="${module.root.dir}/src/web/WEB-INF/web.xml" todir="${module.build}/web/WEB-INF"/>
+      <replace file="${module.build}/web/WEB-INF/web.xml">
+        <replacefilter token="$TOMCAT.WEBAPPS" value="${tomcat.webapp.dir}"/>
+        <replacefilter token="$MODULE_NAME" value="${module.name}"/>
+      </replace>
+      
+      <copy todir="${module.build}/web">
+        <fileset dir="${module.root.dir}/src/web"/>
+      </copy>
+      <replace dir="${module.build}/web">
+        <replacefilter token="$MODULE_NAME" value="${module.name}"/>
+      </replace>      
+
+      <war destfile="${module.dist}/${module.name}.war" webxml="${module.build}/web/WEB-INF/web.xml">
+        <fileset dir="${module.build}/web" excludes="WEB-INF/web.xml"/>
+        <!-- Define Required Modules -->
+        <lib dir="${module.dist}">
+          <include name="${final.name}.jar"/>
+        </lib>
+        <lib dir="${module.local.lib}">
+          <include name="*.jar"/>
+        </lib>
+        <!-- Define Required Libaries -->
+        <lib dir="${module.lib}">
+          <include name="oaicat.jar"/>
+          <include name="jdom.jar"/>
+          <include name="log4j-1.2.8.jar"/>
+	      <include name="commons-dbcp.jar"/>          
+	      <include name="commons-pool-1.1.jar"/>
+	      <include name="commons-collections.jar"/>
+	      <include name="jaxen-1.1.8.jar"/>
+	      <include name="xercesImpl.jar"/>
+	      <include name="mysql-connector-java-5.1.5-bin.jar"/>
+          <include name="saxpath-1.5.jar"/>
+          <include name="jaxen-jdom.jar"/>
+          <include name="jaxen-core.jar"/>
+          <include name="oaiharvester-2.9.jar"/>
+          <include name="dom4j-1.6.1.jar"/>
+          <include name="DOM4J.LICENSE"/>
+        </lib>
+      </war>
+    </target>
+
+
+    <target name="deploy" depends="init">
+      <copy file="${module.dist}/${module.name}.war" todir="${tomcat.webapp.dir}"/>
+    </target>
+
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <target name="clean" depends="checkRemoveDependentLib" description="Destroys all generated files and dirs." >
+        <delete dir="${module.build}"/>
+        <delete dir="${module.dist}"/>
+        <delete dir="${module.doc}"/>
+    </target>
+    
+    <!-- create javadoc -->
+    <target name="javadoc" depends="init">
+        <javadoc
+             destdir="${module.doc}"
+             author="true"
+             version="true"
+             use="true"
+             windowtitle="Object Database Accessor API">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <fileset dir="${module.src}/gov/lanl/identifier">
+          <include name="**/*.java"/>
+          <exclude name="*Test.java"/>
+        </fileset>
+        <fileset dir="${module.src}/gov/lanl/objectdb">
+          <include name="oaidb/*.java"/>
+          <include name="*.java"/>
+          <exclude name="*Test.java"/>
+        </fileset>
+        <fileset dir="${module.src}/gov/lanl/repo/oaidb/objectdb">
+          <include name="*.java"/>
+          <exclude name="*Test.java"/>
+        </fileset>
+       
+        <doctitle><![CDATA[<h1>Object Database Accessor</h1>]]></doctitle>
+        <bottom><![CDATA[<i>Copyright &#169; 2006 LANL All Rights Reserved.</i>]]></bottom>
+        <tag name="todo" scope="all" description="To do:"/>
+      </javadoc>
+    </target>
+    
+    <!-- Create Database -->
+    <target name="createdb" depends="init">
+      <unjar src="${adore-repo-oaidb.dir}/dist/${adore-repo-oaidb.mod}-1.1.jar" dest="${module.build}/sql">
+       <patternset>
+        <include name="**/repo_oaidb_mysql.sql"/>
+       </patternset>
+      </unjar>
+      <sql
+         driver="${module.db.jdbcdriver}"
+         url="${module.db.jdbcurl}"
+         userid="${module.db.login}"
+         password="${module.db.passwd}" 
+         classpath="${module.lib}/mysql-connector-java-5.1.5-bin.jar">
+         <transaction  src="${module.build}/sql/gov/lanl/repo/oaidb/repo_oaidb_mysql.sql"/>
+         <transaction  src="${module.src}/gov/lanl/objectdb/oaidb/objectDbIdentifiers.sql"/>
+         <transaction>
+         insert into metadata_format values('${module.prefix}','${module.nspace}','${module.schema}');
+         </transaction>
+      </sql>   
+    </target>
+
+    <!-- CleanDB Database -->
+    <target name="cleandb" depends="init">
+      <sql
+         driver="${module.db.jdbcdriver}"
+         url="${module.db.jdbcurl}"
+         userid="${module.db.login}"
+         password="${module.db.passwd}" 
+         classpath="${module.lib}/mysql-connector-java-5.1.5-bin.jar">
+         <transaction>
+         DROP TABLE IF EXISTS metadata_format;
+         DROP TABLE IF EXISTS metadata_record;
+         DROP TABLE IF EXISTS record_sets;
+         DROP TABLE IF EXISTS sets;
+         DROP TABLE IF EXISTS identifiers;
+         </transaction>
+      </sql>   
+    </target>
+    
+    <!-- Check to delete Dependent Libraries -->
+    <target name="checkRemoveDependentLib" depends="init">
+      <if>
+        <not>
+          <equals arg1="${module.depends.list}" arg2="" trim="true"/>
+        </not>
+      <then>
+        <foreach list="${module.depends.list}" delimiter=";" param="temp" target="removeDependentLib" inheritall="true"/>
+      </then>
+      </if>
+    </target>
+
+   <!-- Delete Dependent Libraries -->
+    <target name="removeDependentLib">
+    <propertycopy name="target" from="${temp}" silent="true"/>
+    <property name="d.module" value="${target}"/>
+    <propertycopy name="target.version" from="${temp}.version" silent="true"/>
+    <property name="d.module.version" value="${target.version}"/>
+    <echo message="${d.module}"/>
+    <echo message="${d.module.version}"/>
+     <if>
+      <available file="${module.local.lib}/${d.module}-${d.module.version}.jar" type="file" property="local.file.present"/>
+      <then>
+       <delete file="${module.local.lib}/${d.module}-${d.module.version}.jar"/>
+      </then>
+     </if> 
+    </target>
+
+</project>

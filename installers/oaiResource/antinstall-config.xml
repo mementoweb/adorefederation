@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE installer PUBLIC "-//tp23 //DTD Ant Installer Config//EN" "http://antinstaller.sf.net/dtd/antinstall-config-0.7.dtd">
+<installer ui="swing,text" verbose="false"
+    lookAndFeel="org.tp23.jgoodies.plaf.plastic.PlasticXPLookAndFeel" 
+    name="OAI Resource Harvester Installer" windowIcon="/resources/gkmain_inv.png"
+    defaultImageResource="/resources/greens.png" minJavaVersion="1.5" antialiased="true" debug="false">
+    
+    <!--  Welcome -->
+    <page type="input" name="intro" displayText="Welcome to the OAI Resource Harvester Installer" 
+        imageResource="/resources/greens.png">
+        <comment displayText="OAI Resource Harvester" title="true"/>
+        <comment displayText="- Components: OAIResource / OAIDereference / OAIHarvester / XMLSig" />
+        <comment displayText="- Standard-based approach to ensure the systematic and ongoing" />
+        <comment displayText="   transfer of published content."  />
+        <comment displayText="- See http://purl.lanl.gov/aDORe/projects/oai-resource/ for details." />
+    </page>
+    
+    <!--  License -->
+    <page type="license" name="license" displayText="License conditions"
+        resource="/resources/LGPL.txt" imageResource="/resources/rockstiles.png"> 
+    </page>
+    
+    <!--  Installation Directory-->
+    <page type="input" name="properties" displayText="Installation Location">
+        <directory property="installDir" defaultValue="/usr/local/oaiResource"
+            defaultValueWin="${env.ProgramFiles}\oaiResource" displayText="Select Installation Directory:" create="true"/>
+    </page>
+    
+    <!--  Component Selection -->
+    <page type="input" name="selector" displayText="Components to install">
+        <comment displayText="Select the components you wish to install:" bold="true"/>
+        <target displayText="Core Components:" target="install-core" defaultValue="true" />
+    </page>
+    
+    <!--  Service Properties -->
+    <page type="input" name="derefProps" displayText="Local Service Properties">
+        <text property="local.datastream.prefix" defaultValue="info:lanl-repo/ds/" displayText="Local Datastream Prefix:"/>
+        <text property="local.openurl-referrer.id" defaultValue="info:sid/library.lanl.gov" displayText="Local Service ID:"/>
+    </page>
+
+    <!--  XMLSig Properties -->
+    <page type="input" name="xmlSigProps" displayText="XML Signature Properties">
+        <text property="xmlsig.keystore.pass" defaultValue="secret" displayText="Keystore Password:"/>
+        <text property="xmlsig.keystore.alias" defaultValue="oaiResource" displayText="Keystore Alias:"/>
+        <text property="xmlsig.domain" defaultValue="library.lanl.gov" displayText="Domain:"/>
+        <text property="xmlsig.department" defaultValue="Proto Team" displayText="Department:"/>
+        <text property="xmlsig.organization" defaultValue="LANL Research Library" displayText="Organization:"/>
+        <text property="xmlsig.city" defaultValue="Los Alamos" displayText="City:"/>
+        <text property="xmlsig.state" defaultValue="NM" displayText="State:"/>
+        <text property="xmlsig.country" defaultValue="US" displayText="Country:"/>
+    </page>
+    
+    <!--  Progress-->
+    <page type="progress" name="progress" displayText="Installation progress" target="cleanuptarget"> 
+    </page>
+</installer>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE installer PUBLIC "-//tp23 //DTD Ant Installer Config//EN" "http://antinstaller.sf.net/dtd/antinstall-config-0.7.dtd">
+<installer ui="swing,text" verbose="false"
+    lookAndFeel="org.tp23.jgoodies.plaf.plastic.PlasticXPLookAndFeel" 
+    name="aDORe Archive Solution Installer" windowIcon="/resources/gkmain_inv.png"
+    defaultImageResource="/resources/greens.png" minJavaVersion="1.5" antialiased="true" debug="false">
+    
+    <!--  Welcome -->
+    <page type="input" name="intro" displayText="Welcome to the aDORe Archive Solution Installer" 
+        imageResource="/resources/greens.png">
+        <comment displayText="aDORe Archive Upgrades" title="true"/>
+        <comment displayText=""/>
+        <comment displayText="Upgrade the XMLtape index implementations to BDB."/>
+    </page>
+    
+    <!--  License -->
+    <page type="license" name="license" displayText="License conditions"
+        resource="/resources/LGPL.txt" imageResource="/resources/rockstiles.png"> 
+    </page>
+    
+    <!--  Installation Directory-->
+    <page type="input" name="properties" displayText="Installation Location">
+        <directory property="installDir" defaultValue="/usr/local/adore"
+            defaultValueWin="C:/Applications/adore" displayText="Select aDORe Installation Directory:" create="true"/>
+    </page>
+    
+    <!--  Component Selection -->
+    <page type="input" name="selector" displayText="Components to install">
+        <comment displayText="Select the components you wish to install:" bold="true"/>
+        <target displayText="BDB Upgrade:" target="install-upgrade" defaultValue="true" />
+    </page>
+
+    <!--  Progress-->
+    <page type="progress" name="progress" displayText="Installation progress" target="cleanuptarget"> 
+    </page>
+</installer>

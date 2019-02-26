@@ -1,0 +1,6 @@
+#this is config file for aps ingest process
+plugin=gov.lanl.ingest.oaitape.aps.DidlSigProcessor
+xmltapesdir=/Volumes/UserData/rchute/dev/adore_release/build/src/adore-harvester-oai/dist/adore-harvester-oai-1.0.1/etc/projects/aps/data
+projectname=aps
+org=info:sid/library.lanl.gov
+log4j=/Volumes/UserData/rchute/dev/adore_release/build/src/adore-preingest-deref/etc/projects/aps/log4j.properties

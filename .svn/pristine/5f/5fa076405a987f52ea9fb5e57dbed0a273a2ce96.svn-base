@@ -1,0 +1,32 @@
+/**
+*Adore Archive Berkeley DB Upgrade
+*/
+
+----------------------
+Requirements
+----------------------
+- aDORe Archive 1.1+
+- Java 1.5+
+
+----------------------
+Pre-Installation
+----------------------
+Install adoreFederationInstaller
+
+----------------------
+Installation
+----------------------
+To launch the installer, run the following:
+
+For Linux / Mac OS-X:
+Console Install:
+sh install.sh text
+
+GUI Installer:
+sh install.sh
+
+For Windows:
+- Double-click install.cmd to launch installer
+
+IMPORTANT: Windows File Path References should use forward slashes (/) instead of back slashes (\) i.e. c:/apps/adoreArchive.
+

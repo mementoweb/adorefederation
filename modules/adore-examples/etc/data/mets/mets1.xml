@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mets:mets OBJID="info:arxiv/0502028" LABEL="arXiv Item" xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mods="http://www.loc.gov/mods/v3" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+ <mets:metsHdr CREATEDATE="2006-03-06T15:31:08">
+  <mets:agent ROLE="CUSTODIAN" TYPE="ORGANIZATION">
+   <mets:name>arXiv</mets:name>
+  </mets:agent>
+ </mets:metsHdr>
+ <mets:dmdSec ID="uuid-a2813df0-ff39-11dc-95ff-0800200c9a66">
+  <mets:mdWrap MDTYPE="MODS">
+   <mets:xmlData>
+     <mods:name><mods:namePart>Van de Sompel, Herbert</mods:namePart></mods:name>
+     <mods:name><mods:namePart>Bekaert, Jeroen</mods:namePart></mods:name>
+     <mods:name><mods:namePart>Liu, Xiaoming</mods:namePart></mods:name>
+     <mods:name><mods:namePart>Balakireva, Lyudmila</mods:namePart></mods:name>
+     <mods:name><mods:namePart>Schwander, Thorsten</mods:namePart></mods:name>
+     <mods:extension><mods:dateAccessioned encoding="iso8601">2005-02-03T03:38:52Z</mods:dateAccessioned></mods:extension>
+     <mods:extension><mods:dateAvailable encoding="iso8601">2005-02-04T03:38:52Z</mods:dateAvailable></mods:extension>
+     <mods:originInfo><mods:dateIssued encoding="iso8601">2005</mods:dateIssued></mods:originInfo>
+     <mods:identifier type="uri">http://arxiv.org/abs/cs.DL/0502028</mods:identifier>
+     <mods:physicalDescription><mods:extent>29 leaves</mods:extent></mods:physicalDescription>
+     <mods:physicalDescription><mods:internetMediaType>application/pdf</mods:internetMediaType></mods:physicalDescription>
+     <mods:language><mods:languageTerm authority="rfc3066">eng</mods:languageTerm></mods:language>
+     <mods:originInfo><mods:publisher>arXiv</mods:publisher></mods:originInfo>
+     <mods:titleInfo>aDORe: a modular, standards-based Digital Object Repository</mods:titleInfo>
+   </mets:xmlData>
+  </mets:mdWrap>
+ </mets:dmdSec>
+ <mets:fileSec>
+  <mets:fileGrp USE="ORIGINAL">
+   <mets:file ID="uuid-ac7e4f50-ff39-11dc-95ff-0800200c9a66"  OWNERID="info:lanl-repo/ds/b756f3a0-ff39-11dc-95ff-0800200c9a66" MIMETYPE="application/pdf">
+    <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="http://public.lanl.gov/herbertv/papers/aDORe_20050128_submission.pdf"/>
+   </mets:file>
+  </mets:fileGrp>
+ </mets:fileSec>
+</mets:mets>

@@ -1,0 +1,32 @@
+select ((select count(*) from resolver_0) +
+(select count(*) from resolver_1) +
+(select count(*) from resolver_2) +
+(select count(*) from resolver_3) +
+(select count(*) from resolver_4) +
+(select count(*) from resolver_5) +
+(select count(*) from resolver_6) +
+(select count(*) from resolver_7) +
+(select count(*) from resolver_8) +
+(select count(*) from resolver_9) +
+(select count(*) from resolver_10) +
+(select count(*) from resolver_11) +
+(select count(*) from resolver_12) +
+(select count(*) from resolver_13) +
+(select count(*) from resolver_14) +
+(select count(*) from resolver_15) +
+(select count(*) from resolver_16) +
+(select count(*) from resolver_17) +
+(select count(*) from resolver_18) +
+(select count(*) from resolver_19) +
+(select count(*) from resolver_20) +
+(select count(*) from resolver_21) +
+(select count(*) from resolver_22) +
+(select count(*) from resolver_23) +
+(select count(*) from resolver_24) +
+(select count(*) from resolver_25) +
+(select count(*) from resolver_26) +
+(select count(*) from resolver_27) +
+(select count(*) from resolver_28) +
+(select count(*) from resolver_29) +
+(select count(*) from resolver_30) +
+(select count(*) from resolver_31)) as totalCount;

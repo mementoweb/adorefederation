@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<peerconfig>
+  <peer>
+    <identifier>OSURoot:84</identifier>
+    <name>LANL</name>
+    <description>Los Alamos National Laboratory</description>
+    <contact>Xiaoming Liu</contact>
+    <contactNumber></contactNumber>
+    <contactEmail>liu_x@lanl.gov</contactEmail>
+    <logo></logo>
+    <isLoggedIn>false</isLoggedIn>
+    <loginClient>0</loginClient>
+    <lastupdate>1152726474299</lastupdate>
+    <networkKey>9YdMIREVRb72G5OnORiYeetmpLFTBGrwm99RS1ykwWbNfx24vYdYs1c4n41SFTME8xwxUmhO77WawLQkJm0TZATIfZdQeOR5ZkKwPSDdEh5qNA6vC2MBfa3oBFLTPazJ</networkKey>
+    <isRoot>false</isRoot>
+    <parent>OSURoot:2</parent>
+    <signerId>OSURoot:2</signerId>
+    <signature>Dn_xksq7deL2fmO1Gk1TYfNuKMgm6VicPJlZM5YQKlHDkt4_HIQ8KvSBndfhmXYWIk6MZUEDoCONCoCw8HHAQw</signature>
+  </peer>
+  <peergroupname>Ockham Registry</peergroupname>
+  <peergroupid>none</peergroupid>
+  <rootbootstrap>http://registry.library.oregonstate.edu/Registry/RootList</rootbootstrap>
+  <rdvseedlist>none</rdvseedlist>
+</peerconfig>

@@ -1,0 +1,10 @@
+# Tape Create Processing Profile
+profile.name=didl
+profile.plugin=gov.lanl.xmltape.create.RegExTapeCreateImpl
+
+# Tape Create
+profile.record.location=(<didl:DIDL.*?</didl:DIDL>)
+profile.record.identifier.location=DIDLDocumentId="([^"]+)
+profile.record.datestamp.location=diext:DIDLDocumentCreated="([^"]+)
+profile.record.metadata.location=
+profile.local.prefix=info:lanl-repo/

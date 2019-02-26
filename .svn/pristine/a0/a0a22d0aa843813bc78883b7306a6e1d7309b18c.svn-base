@@ -1,0 +1,27 @@
+# Configuration File For Module
+
+# Module Build Environment
+module.name=adore-disseminator
+module.version=1.1
+module.lib=/lanl/java/lib
+module.src=/lanl/java/src
+
+# Dependent Projects - Use Semi-colon (;) as delimiter
+module.depends.list=
+module.depends.1=
+module.depends.1.version=
+
+# Module Specific Properties
+module.admin.email=rchute@lanl.gov
+module.debug=true
+
+# System Properties
+adore-id-locator.ResolverURL=http://audrey2.lanl.gov:8080/adore-id-locator/resolver
+adore-service-registry.OAIURL=http://audrey2.lanl.gov:8080/adore-service-registry/OAIHandler
+adore-disseminator.BaseURL=http://audrey2.lanl.gov:8080/adore-disseminator
+adore-disseminator.ServiceResolverURL=http://audrey2.lanl.gov:8080/adore-disseminator/service
+
+# System Properties
+tomcat.home=/lanl/adore/apps/catalina_base
+
+

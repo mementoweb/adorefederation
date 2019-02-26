@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://library.lanl.gov/2005-08/aDORe/SemanticRegistry/" 
+            elementFormDefault="qualified" attributeFormDefault="unqualified" 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:sem="http://library.lanl.gov/2005-08/aDORe/SemanticRegistry/" 
+            xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<xsd:annotation>
+		<xsd:documentation>2007-01-22: XML Schema for semantic registry</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd"/>
+	<xsd:element name="semantic">
+
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="identifier" type="xsd:anyURI"/>
+				<xsd:element ref="dc:identifier" maxOccurs="unbounded"/>
+				<xsd:element ref="dc:title"/>
+				<xsd:element ref="dc:description" minOccurs="0"/>
+				<xsd:element name="DIDentity" type="xsd:anyURI" minOccurs="0"/>
+			</xsd:sequence>
+
+		</xsd:complexType>
+	</xsd:element>
+	<!-- 
+    Sample XML document: 
+    <sem:semantic xmlns:sem="http://library.lanl.gov/2005-08/aDORe/SemanticRegistry/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://library.lanl.gov/2005-08/aDORe/SemanticRegistry/ http://purl.lanl.gov/aDORe/schemas/2006-09/SemanticRegistry.xsd">
+      <sem:identifier>info:lanl-repo/sem/1</pr:identifier>
+      <dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd>info:lanl-repo/sem/1</dc:identifier>
+      <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd">Bibliographic</dc:title>
+      <sem:DIDentity>urn:mpeg:mpeg21:2002:02-DIDL-NS#Component</sem:DIDentity>
+    </sem:semantic>
+	-->
+</xsd:schema>

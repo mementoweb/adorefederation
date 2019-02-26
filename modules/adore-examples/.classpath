@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/ant-contrib.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="lib/mets.jar"/>
+	<classpathentry kind="lib" path="lib/adore-arcfile-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/DIDAPI-impl-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/DIDAPI-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/adore-xmltape-1.1.jar" sourcepath="/java/src"/>
+	<classpathentry kind="lib" path="lib/adore-archive-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/jaxen-1.1.8.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

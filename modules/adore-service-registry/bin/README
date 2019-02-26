@@ -1,0 +1,32 @@
+#$Id#
+
+adore service registry command line tool
+
+
+INTRODUCITON
+
+ This toolset allows modificaiton and inspect of adore service
+ registry from command line, another goal is to avoid error-prone xml
+ processing. 
+
+These tools talk to service registry OAI-PMH or RegistryHandler web service.
+
+
+CONFIGURATION
+
+Configuration should be done in env.sh, it includes major environment variable setup.
+
+USAGE
+
+add.sh: add a new collection to service registry 
+	add.sh <collection> <identifier> <created time> 
+
+delete.sh: delete a collection or service
+	 delete.sh <identifier>
+
+list.sh: list all collections or services
+	list.sh <collection|service>
+
+get.sh: get a record 
+	 get.sh <identifier>
+	

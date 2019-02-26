@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ta:tape xmlns:ta="http://library.lanl.gov/2005-08/aDORe/XMLtape/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://library.lanl.gov/2005-08/aDORe/XMLtape/ http://purl.lanl.gov/aDORe/schemas/2006-09/XMLtape.xsd">
+	<ta:tapeAdmin xmlns:ta="http://library.lanl.gov/2005-08/aDORe/XMLtape/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://library.lanl.gov/2005-08/aDORe/XMLtape/ http://purl.lanl.gov/aDORe/schemas/2006-09/XMLtape.xsd">
+		<tb:XMLtapeBasics xmlns:tb="http://library.lanl.gov/2005-08/aDORe/XMLtapeBasics/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.lanl.gov/aDORe/schemas/2006-09/XMLtapeBasics.xsd">
+			<tb:XMLtapeId>info:lanl-repo/xmltape/demoTape</tb:XMLtapeId>
+			<tb:ARCfileId>info:lanl-repo/arc/472de88d-5670-45df-9200-fb135189f00e</tb:ARCfileId>
+			<tb:processSoftware>gov.lanl.xmltape.SingleTapeWriter</tb:processSoftware>
+			<tb:processTime>2005-09-09T21:00:04Z</tb:processTime>
+		</tb:XMLtapeBasics>
+	</ta:tapeAdmin>
+	<ta:tapeRecord>
+		<ta:tapeRecordAdmin>
+			<ta:identifier>oai:lcoa1.loc.gov:loc.pnp/cph.3a40804</ta:identifier>
+			<ta:date>2005-09-09T21:00:04Z</ta:date>
+		</ta:tapeRecordAdmin>
+		<ta:record>
+			<didl:DIDL DIDLDocumentId="oai:lcoa1.loc.gov:loc.pnp/cph.3a40804" diext:DIDLDocumentCreated="2005-09-09T21:00:04Z" xmlns:didl="urn:mpeg:mpeg21:2002:02-DIDL-NS" xmlns:diext="http://library.lanl.gov/2005-08/aDORe/DIDLextension/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:02-DIDL-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/did/didl.xsd http://library.lanl.gov/2005-08/aDORe/DIDLextension/ http://purl.lanl.gov/aDORe/schemas/2006-09/DIDLextension.xsd">
+				<didl:Item id="uuid-ce78b146-12d6-4ce7-9849-7b1ba588f28b">
+					<didl:Descriptor>
+						<didl:Statement mimeType="application/xml; charset=utf-8">
+							<dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:doi/10.1016/j.dyepig.2004.06.022</dii:Identifier>
+						</didl:Statement>
+					</didl:Descriptor>
+					<didl:Descriptor>
+						<didl:Statement mimeType="application/xml; charset=utf-8">
+							<diadm:Admin xmlns:diadm="http://library.lanl.gov/2004-01/STB-RL/DIADM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://library.lanl.gov/2004-01/STB-RL/DIADM http://purl.lanl.gov/STB-RL/schemas/2004-01/DIADM.xsd">
+								<dcterms:isPartOf xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd">info:sid/library.lanl.gov:demo</dcterms:isPartOf>
+								<dc:format xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd">info:lanl-repo/pro/publication</dc:format>
+								<dc:rights xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd">Copyright Library of Congress</dc:rights>
+							</diadm:Admin>
+						</didl:Statement>
+					</didl:Descriptor>
+					<didl:Item id="uuid-69745c19-7a34-476a-929b-b60d9af56774">
+						<didl:Descriptor>
+							<didl:Statement mimeType="application/xml; charset=utf-8">
+								<dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:lanl-repo/ssm/doi-10.1016/j.dyepig.2004.06.022</dii:Identifier>
+							</didl:Statement>
+						</didl:Descriptor>
+						<didl:Descriptor>
+							<didl:Statement mimeType="application/xml; charset=utf-8">
+								<diadm:Admin xmlns:diadm="http://library.lanl.gov/2004-01/STB-RL/DIADM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://library.lanl.gov/2004-01/STB-RL/DIADM http://purl.lanl.gov/STB-RL/schemas/2004-01/DIADM.xsd">
+									<dc:type xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd">http://purl.org/dc/terms/bibliographicCitation</dc:type>
+									<dc:format xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd">info:lanl-repo/pro/metadata</dc:format>
+								</diadm:Admin>
+							</didl:Statement>
+						</didl:Descriptor>
+						<didl:Component id="uuid-397ebfca-19f1-4c69-ad24-077e7d9f9fd7">
+							<didl:Descriptor>
+								<didl:Statement mimeType="application/xml; charset=utf-8">
+									<dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:lanl-repo/ds/dcf1b5ce-e9fc-489b-bd9a-f68d762e867d</dii:Identifier>
+								</didl:Statement>
+							</didl:Descriptor>
+							<didl:Descriptor>
+								<didl:Statement mimeType="application/xml; charset=utf-8">
+									<pre:object xmlns:pre="http://www.loc.gov/standards/premis" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/standards/premis http://www.loc.gov/standards/premis/Object-v1-0.xsd">
+										<pre:objectIdentifier>
+											<pre:objectIdentifierType>URI</pre:objectIdentifierType>
+											<pre:objectIdentifierValue>info:lanl-repo/ds/dcf1b5ce-e9fc-489b-bd9a-f68d762e867d</pre:objectIdentifierValue>
+										</pre:objectIdentifier>
+										<pre:objectCategory>File</pre:objectCategory>
+										<pre:objectCharacteristics>
+											<pre:compositionLevel>0</pre:compositionLevel>
+											<pre:format>
+												<pre:formatRegistry>
+													<pre:formatRegistryName>http://purl.lanl.gov/aDORe/demo/adore-format-registry/OAIHandler</pre:formatRegistryName>
+													<pre:formatRegistryKey>info:lanl-repo/fmt/3</pre:formatRegistryKey>
+												</pre:formatRegistry>
+											</pre:format>
+										</pre:objectCharacteristics>
+										<pre:creatingApplication>
+											<pre:dateCreatedByApplication>2005-05-06T03:34:50Z</pre:dateCreatedByApplication>
+										</pre:creatingApplication>
+										<pre:storage>
+											<pre:storageMedium>Hard disk</pre:storageMedium>
+										</pre:storage>
+									</pre:object>
+								</didl:Statement>
+							</didl:Descriptor>
+							<didl:Resource mimeType="application/xml; charset=utf-8">
+								<marc:record type="Bibliographic" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim    http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+									<marc:leader>01184ckm  22003253a 4500</marc:leader>
+									<marc:controlfield tag="001">2001705789</marc:controlfield>
+									<marc:controlfield tag="003">DLC</marc:controlfield>
+									<marc:controlfield tag="005">20021111154623.0</marc:controlfield>
+									<marc:controlfield tag="007">kh||||</marc:controlfield>
+									<marc:controlfield tag="007">cr||||</marc:controlfield>
+									<marc:controlfield tag="008">011217s1900    xxunnn            kneng</marc:controlfield>
+									<marc:datafield ind1="" ind2="" tag="035">
+										<marc:subfield code="a">(DLC)12622905</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="" ind2="" tag="035">
+										<marc:subfield code="a">(DLC)  2001705789</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="" ind2="" tag="035">
+										<marc:subfield code="a">(DLC)12622905</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="" ind2="" tag="010">
+										<marc:subfield code="a">2001705789</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="" ind2="" tag="037">
+										<marc:subfield code="a">LC-USZ62-40466</marc:subfield>
+										<marc:subfield code="b">DLC</marc:subfield>
+										<marc:subfield code="c">(b&amp;w film copy neg.)</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="" ind2="" tag="040">
+										<marc:subfield code="a">DLC</marc:subfield>
+										<marc:subfield code="c">DLC</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="0" ind2="0" tag="050">
+										<marc:subfield code="a">LOT 11294</marc:subfield>
+										<marc:subfield code="b">[item]</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="0" ind2="0" tag="245">
+										<marc:subfield code="a">Howard Univ., Washington, D.C., ca. 1900 - main building, exterior</marc:subfield>
+										<marc:subfield code="h">[graphic].</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="" ind2="" tag="260">
+										<marc:subfield code="c">[ca. 1900]</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="" ind2="" tag="300">
+										<marc:subfield code="a">1 photographic print.</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="" ind2="" tag="500">
+										<marc:subfield code="a">Title and other information transcribed from caption card.</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="" ind2="" tag="500">
+										<marc:subfield code="a">Reportedly displayed as part of the American Negro exhibit at the Paris Exposition of 1900.</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="" ind2="" tag="540">
+										<marc:subfield code="a">No known restrictions on publication.</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="" ind2="7" tag="655">
+										<marc:subfield code="a">Photographic prints</marc:subfield>
+										<marc:subfield code="y">1900.</marc:subfield>
+										<marc:subfield code="2">gmgpc</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="" ind2="" tag="852">
+										<marc:subfield code="a">Library of Congress</marc:subfield>
+										<marc:subfield code="b">Prints and Photographs Division</marc:subfield>
+										<marc:subfield code="e">Washington, D.C. 20540 USA</marc:subfield>
+										<marc:subfield code="n">dcu</marc:subfield>
+									</marc:datafield>
+									<marc:datafield ind1="4" ind2="1" tag="856">
+										<marc:subfield code="3">b&amp;w film copy neg.</marc:subfield>
+										<marc:subfield code="d">cph</marc:subfield>
+										<marc:subfield code="f">3a40804</marc:subfield>
+										<marc:subfield code="u">http://hdl.loc.gov/loc.pnp/cph.3a40804</marc:subfield>
+									</marc:datafield>
+								</marc:record>
+							</didl:Resource>
+						</didl:Component>
+					</didl:Item>
+					<didl:Component id="uuid-819dcfa1-7434-4d6d-a534-d2fdf869bc02">
+						<didl:Descriptor>
+							<didl:Statement mimeType="application/xml; charset=utf-8">
+								<dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:lanl-repo/ds/a9866bc2-306b-4698-abaf-a0f43c1ea611</dii:Identifier>
+							</didl:Statement>
+						</didl:Descriptor>
+						<didl:Descriptor>
+							<didl:Statement mimeType="application/xml; charset=utf-8">
+								<pre:object xmlns:pre="http://www.loc.gov/standards/premis" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/standards/premis http://www.loc.gov/standards/premis/Object-v1-0.xsd">
+									<pre:objectIdentifier>
+										<pre:objectIdentifierType>URI</pre:objectIdentifierType>
+										<pre:objectIdentifierValue>info:lanl-repo/ds/a9866bc2-306b-4698-abaf-a0f43c1ea611</pre:objectIdentifierValue>
+									</pre:objectIdentifier>
+									<pre:objectCategory>File</pre:objectCategory>
+									<pre:objectCharacteristics>
+										<pre:compositionLevel>0</pre:compositionLevel>
+										<pre:size>1804058</pre:size>
+										<pre:format>
+											<pre:formatRegistry>
+												<pre:formatRegistryName>http://purl.lanl.gov/aDORe/demo/adore-format-registry/OAIHandler</pre:formatRegistryName>
+												<pre:formatRegistryKey>info:lanl-repo/fmt/500</pre:formatRegistryKey>
+											</pre:formatRegistry>
+										</pre:format>
+									</pre:objectCharacteristics>
+									<pre:storage>
+										<pre:storageMedium>Hard disk</pre:storageMedium>
+									</pre:storage>
+								</pre:object>
+							</didl:Statement>
+						</didl:Descriptor>
+						<didl:Resource mimeType="image/tiff" ref="http://localhost:8080/adore-arcfile-resolver/resolver?res_id=info:lanl-repo/arc/472de88d-5670-45df-9200-fb135189f00e&amp;rfr_id=info:sid/library.lanl.gov&amp;url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/a9866bc2-306b-4698-abaf-a0f43c1ea611"/>
+					</didl:Component>
+				</didl:Item>
+			</didl:DIDL>
+		</ta:record>
+	</ta:tapeRecord>
+</ta:tape>

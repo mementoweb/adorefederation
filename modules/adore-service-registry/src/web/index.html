@@ -1,0 +1,458 @@
+<html>
+ <head><title>aDORe Service Registry</title></head>
+<style>
+  H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} 
+  H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} 
+  H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} 
+  BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} 
+  B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} 
+  P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:9px;}
+  A {color : black;}
+  A.name {color : black;}
+  HR {color : #525D76;}  
+  table {width: 100%;}
+  td.page-title {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: white;
+    color: black;
+  }
+  td.title {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-style:italic;
+    font-weight: bold;
+    background: #D2A41C;
+  }
+  td.title-sub-openurl {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #6699FF;
+  }
+  td.title-sub-sru {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #00FF00;
+  }
+  td.title-sub-oai {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FF0000;
+  }
+  td.header-left {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  td.header-center {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  td.row-left {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-left-middle {
+    text-align: left;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-center {
+    text-align: center;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-right {
+    text-align: right;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  TH {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  div.inside_div {
+    text-align: left;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  a.h3:link {color: #FFFFFF}
+  a.h3:visited {color: #FFFFFF}
+</style>
+ <body>
+ <script type="text/javascript">
+    
+    function $() {
+      var elements = new Array();
+
+      for (var i = 0; i < arguments.length; i++) {
+          var element = arguments[i];
+   
+          if (typeof element == 'string')
+              element = document.getElementById(element);
+
+          if (arguments.length == 1)
+              return element;
+
+          elements.push(element);
+      }
+
+      return elements;
+    }
+    
+    function stripUri(uri) {
+        return uri.substring(uri.lastIndexOf('/') + 1);
+    }
+
+    function getOpenURLServiceId(profile) {
+      var adore1 = "info:lanl-repo/svc/getdIDL";
+      var adore2 = "info:lanl-repo/svc/locate.sru";
+      var adore3 = "info:lanl-repo/svc/identifiers.list";
+      var adore4 = "info:lanl-repo/svc/getdatastream";
+      var adore5 = "info:lanl-repo/svc/toc";
+      var adore6 = "info:lanl-repo/svc/ockham";
+      if (profile == "info:lanl-repo/int/openurl-aDORe1")
+         return adore1;
+      if (profile == "info:lanl-repo/int/openurl-aDORe2")
+         return adore2;
+      if (profile == "info:lanl-repo/int/openurl-aDORe3")
+         return adore3;
+      if (profile == "info:lanl-repo/int/openurl-aDORe4")
+         return adore4;
+      if (profile == "info:lanl-repo/int/openurl-aDORe5")
+         return adore5;
+      if (profile == "info:lanl-repo/int/openurl-aDORe6")
+         return adore6;
+    }
+
+    function getrftId(repoUri, profile, rft_id) {
+      if (profile == "info:lanl-repo/int/openurl-aDORe3" || profile == "info:lanl-repo/int/openurl-aDORe7")
+           return repoUri;
+      else
+           return rft_id;
+    }
+
+    function makeOpenURLArgs(rft_id, svc_id, rft_version, svc_args) {
+      var args = "url_ver=Z39.88-2004";
+      if (!rft_id) {
+          alert('Referent Identifier Missing');
+          return false;
+      } else if (!svc_id) {
+          alert('Referent Identifier Missing');
+          return false;
+      } else {
+          args += "&rft_id=" + encode(rft_id);
+          args += "&svc_id=" + svc_id;
+          if (rft_version) {
+             args += "&rft_val_fmt=info:ofi/fmt:kev:mtx:adore";
+             args += "&rft.version=" + rft_version;
+          }
+          if (svc_args) {
+             args += "&svc_val_fmt=info:ofi/fmt:kev:mtx:adore";
+             args += "&svc_args=" + svc_args;
+          }
+      }
+      return args;
+    }
+
+    function makeOAIArgs(verb, format, id, set) {
+            var args = "";
+            if (verb == 'GetRecord' && !id) {
+                alert('Identifier Missing');
+                return false;
+            } else if(verb == 'ListIdentifiers') {
+                args = "verb=ListIdentifiers&metadataPrefix=" + format;
+                if (set)
+                   args += "&set=" + set;
+            } else if(verb == 'ListRecords') {
+                args = "verb=ListRecords&metadataPrefix=" + format;
+                if (set)
+                   args += "&set=" + set;
+            } else if(verb == 'GetRecord' && id){
+                args = "verb=GetRecord&metadataPrefix=" + format + "&identifier=" + encode(id);
+            } else if(verb) {
+                args = "verb=" + verb;
+                if (id && verb == 'ListMetadataFormats')
+                   args += "&identifier=" + id;
+            }
+           //alert(args);
+           return args;
+    }
+
+    function encode( uri ) {
+        if (encodeURIComponent) {
+            return encodeURIComponent(uri);
+        }
+        if (escape) {
+            return escape(uri);
+        }
+    }
+    
+    function hideDiv( element ) {
+      var e = $(element);
+
+      if (e) {
+          e.style.display = 'none';
+      }
+    }
+    
+    function launch(baseUrl, args) {
+      url = baseUrl + '?' + args;
+      xml = window.open(url, 'xml', 'left=20,top=20,width=800,height=500,toolbar=0,resizable=1,location=1,scrollbars=1');
+      if (window.focus) {xml.focus()}
+    }
+    
+// Service Registry ////////////////////////////////////////////////////////////////////////////
+
+var svcRegistryOAIUrl ="$ADORE_SERVICE_REGISTRY_OAIURL";
+var svcRegistryOpenUrl = "$TOMCAT_URL/adore-service-registry/resolver";
+var svcRegistrySvcId = "info:lanl-repo/svc/ockham";
+var svcRegistrySvcValFmt = "info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc";
+var svcRegistryOAIVerb;
+
+// OpenURL Accessor
+function getServiceRegistryOpenUrlXMLText(rft_id) {
+    launch(svcRegistryOpenUrl,makeOpenURLArgs(rft_id, svcRegistrySvcId, null, null));
+}
+
+// OpenURL Request Div
+function getServiceRegistryOpenUrlRequest(rft_id) {
+    var div = "";
+    var args = '?' + makeOpenURLArgs(rft_id, svcRegistrySvcId, null, null);
+
+    if (args == '?false')
+        return false;
+    
+    div += "<table width=600>";
+    div += "<tr><td class=\"row-right\"><a href=\"#\" onclick=\"hideDiv('svcRegOpenUrl_div');return false;\"><small>[hide]</small></a></td></tr>";
+    div += "<tr><td  class=\"row-left\"><small>Service Registry OpenUrl Request URL:</small></td></tr>";
+    div += "<tr><td  class=\"row-left\"><a href=\"" + svcRegistryOpenUrl + args + "\" target=\"xml\"><small>" + svcRegistryOpenUrl + args + "</small></a></td></tr>";
+    div += "</table>";
+    var svcRegOpenUrl_div = document.getElementById("svcRegOpenUrl_div");
+
+    if (svcRegOpenUrl_div) {
+      svcRegOpenUrl_div.innerHTML = div;
+      svcRegOpenUrl_div.style.display = 'block';
+    }
+}
+
+// OAI Request Div
+function getServiceRegistryOAIRequest(id, verb, prefix, set) {
+    var div = "";
+    var args = '?' + makeOAIArgs(verb, prefix, id, set);
+    
+    if (args == '?false')
+        return false;
+    
+    div += "<table width=600>";
+    div += "<tr><td class=\"row-right\"><a href=\"#\" onclick=\"hideDiv('svcRegOAI_div');return false;\"><small>[hide]</small></a></td></tr>";
+    div += "<tr><td  class=\"row-left\"><small>Service Registry OAI-PMH Request URL:</small></td></tr>";
+    div += "<tr><td  class=\"row-left\"><a href=\"" + svcRegistryOAIUrl + args + "\" target=\"xml\"><small>" + svcRegistryOAIUrl + args + "</small></a></td></tr>";
+    div += "</table>";
+    var svcRegOAI_div = document.getElementById("svcRegOAI_div");
+
+    if (svcRegOAI_div) {
+      svcRegOAI_div.innerHTML = div;
+      svcRegOAI_div.style.display = 'block';
+    }
+}
+
+// Simple Version
+function getServiceRegistryOAIXMLText(id, verb, prefix, set) {
+    launch(svcRegistryOAIUrl,makeOAIArgs(verb, prefix, id, set));
+}
+
+function clearServiceRegistryOAIXML() {
+    alert("Please enter a Service identifier...");
+}
+
+function errorServiceRegistryOAIXML() {
+    alert("Get Options only available for 'Get Record'");
+}
+  </script>
+<center>
+<p>
+<table border="1">
+<tr>
+ <td colspan="3" class="title-sub-oai">Service Registry (OAI-PHM)<a name="svcRegOAI">&nbsp;</a></td>
+</tr>
+<tr>
+ <td colspan="3">
+            <table>
+                 <div class = "inside_div" id = "div_svcRegOAI">
+                 <tr>
+                     <td width="200" class="row-left-middle"><small>Select a Verb:</small></td>
+
+                     <td class="row-left-middle" width="425">
+                         <select id="val_svcRegOAI_verb" onChange="javascript:if(this.options[this.selectedIndex].value != 'GetRecord') {disableField('val_svcRegOAI_id')} else {enableField('val_svcRegOAI_id')};">
+                           <option value="GetRecord">OAI-PMH Get Record</option>
+                           <option value="ListRecords">OAI-PMH List Records</option>
+                           <option value="ListIdentifiers">OAI-PMH List Identifiers</option>
+                           <option value="Identify">OAI-PMH Identify</option>
+                           <option value="ListMetadataFormats">OAI-PMH List Metadata Formats</option>
+
+                           <option value="ListSets">OAI-PMH List Sets</option>
+                         </select>
+                         </td>
+                         <td class="row-left-middle">
+                         <a href="#" onclick="getServiceRegistryOAIXMLText(document.getElementById('val_svcRegOAI_id').value, document.getElementById('val_svcRegOAI_verb').value, document.getElementById('val_svcRegOAI_prefix').value, document.getElementById('val_svcRegOAI_set').value);return false;"><small>Get Response</small></a>
+                         &nbsp;
+                         <a href="#" onclick="getServiceRegistryOAIRequest(document.getElementById('val_svcRegOAI_id').value, document.getElementById('val_svcRegOAI_verb').value, document.getElementById('val_svcRegOAI_prefix').value, document.getElementById('val_svcRegOAI_set').value);return false;"><small>View Request</small></a>
+                      </td>
+                 </tr>
+                 <tr>
+
+                     <td width="200" class="row-left-middle"><small>Select a Metadata Prefix:</small></td>
+                     <td class="row-left-middle" colspan="2">
+                         <select id="val_svcRegOAI_prefix">
+                           <option value="oai_iesr">oai_iesr</option>
+                         </select>
+                    </td>
+                 </tr>
+                 <tr>
+
+                    <td width="200" class="row-left-middle"><small>Enter an Identifier:</small></td>
+                    <td class="row-left-middle" colspan="2"><input id = "val_svcRegOAI_id" type = "text" name = "svcRegOAI_id" size = 50 maxlength = 150></td>
+                 </tr>
+                 <tr>
+                     <td width="200" class="row-left-middle"><small>Define a Set (optional):</small></td>
+                     <td class="row-left-middle" colspan="2">
+                         <select id="val_svcRegOAI_set">
+                           <option value=""> </option>
+
+                           <option value="collections">collections</option>
+                           <option value="services">services</option>
+                         </select>
+                    </td>
+                 </tr>
+                     <div style = "display:none;position:absolute;WIDTH:700px;overflow:auto;border-style:solid;background-color:white;padding:5px;" id = "svcRegOAI_div"></div>
+                 </div>
+            </table>
+
+ </td>
+</tr>
+</table>
+<br/>
+<table border="1">
+<tr>
+ <td colspan="3" class="title-sub-openurl">Service Registry (OpenURL)<a name="svcRegOpenUrl">&nbsp;</a></td>
+</tr>
+<tr>
+ <td colspan="3">
+        <table>
+                 <div class = "inside_div" id = "div_svcRegOpenUrl">
+
+                 <tr>
+                    <td width="200" class="row-left-middle"><small>Enter Referent Identifier:</small></td>
+                    <td class="row-left-middle" width="425"><input id = "val_svcRegOpenUrl_rft_id" type = "text" name = "svcRegOpenUrl_rft_id" size = 50 maxlength = 150></td>
+                    <td class="row-left-middle">
+                         <a href="#" onclick="getServiceRegistryOpenUrlXMLText(document.getElementById('val_svcRegOpenUrl_rft_id').value);return false;"><small>Get Response</small></a>
+                         &nbsp;
+                         <a href="#" onclick="getServiceRegistryOpenUrlRequest(document.getElementById('val_svcRegOpenUrl_rft_id').value);return false;"><small>View Request</small></a>
+
+                    </td>
+                 </tr>
+                 <tr>
+                     <td width="200" class="row-left-middle"><small>Select a Service Profile:</small></td>
+                     <td class="row-left-middle" colspan="2">
+
+                         <select id="val_svcReg_svc_id">
+                         <option value="info:lanl-repo/svc/ockham">info:lanl-repo/int/openurl-aDORe6</option>
+                         </select>
+                    </td>
+                 </tr>
+                    <div style = "display:none;position:absolute;WIDTH:700px;overflow:auto;border-style:solid;background-color:white;padding:5px;" id = "svcRegOpenUrl_div"></div>
+                 </div>
+        </table>
+
+ </td>
+</tr>
+</table>
+<br/>
+<!-- <table border="1">
+<tr>
+ <td colspan="3" class="title-sub-sru">Service Registry (SRU/W)<a name="svcRegOpenUrl">&nbsp;</a></td>
+</tr>
+<tr>
+ <td colspan="3">
+<form name="Registry_Search_Form" method="post" action="$TOMCAT_URL/Registry/Search/Simple/Process.do">
+<table>
+<tr>
+<td>
+<table border="0">
+  <tr>
+    <td width="200" class="label" nowrap><small>All Fields</small></td>
+    <td colspan="1"><input type="text" name="anywhere" maxlength="50" size="50" value=""> &nbsp; <input type="submit" name="submitAction" value="Search"></td>
+    <td class="row-right"><small><a target="_new" href="$TOMCAT_URL/Registry/Metadata-Editor/Reindex.do">[reindex]</a></small></td>
+  </tr>
+  <tr>
+    <td width="200" class="label" nowrap><small>Title</small></td>
+    <td colspan="2"><input type="text" name="title" maxlength="100" size="50" value=""></td>
+  </tr>
+  <tr>
+
+    <td width="200" class="label" nowrap><small>Subject</small></td>
+    <td colspan="2"><input type="text" name="subject" maxlength="100" size="50" value=""></td>
+  </tr>
+  <tr>
+    <td width="200" class="label" nowrap><small>Description</small></td>
+    <td colspan="2"><input type="text" name="description" maxlength="100" size="50" value=""></td>
+  </tr>
+  <tr>
+
+    <td class="label" nowrap><small>Type</small></td>
+    <td colspan="2">
+        <select name="serviceType">
+            <option value="">Any</option>
+            <option value="oai-pmh">OAI-PMH</option>
+            <option value="openurl">OpenURL</option>
+        </select>
+
+    </td>
+  </tr>
+  <tr>
+    <td width="200" class="label" nowrap><small>&nbsp;</small></td>
+    <td colspan="2">
+        <small>Combine fields using <input type="radio" name="combineType" value="AND">'AND' <input type="radio" name="combineType" value="OR">'OR'</small>
+    </td>
+
+  </tr>
+</table>
+</td>
+</tr>
+
+</table>--></form>
+ </td>
+</tr>
+</table>
+</center>
+<table>
+<tr>
+<td align="left"><small>Contact: $ADMIN_EMAIL</small></td> 
+<td align="right"><small>$MODULE_NAME: $MODULE_VERSION</small></td>
+</tr> 
+ </body>
+</html>

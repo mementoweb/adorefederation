@@ -1,0 +1,279 @@
+<html>
+ <head><title>Archive Accessor</title></head>
+<style>
+  H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} 
+  H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} 
+  H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} 
+  BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} 
+  B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} 
+  P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:9px;}
+  A {color : black;}
+  A.name {color : black;}
+  HR {color : #525D76;}  
+  table {width: 100%;}
+  td.page-title {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: white;
+    color: black;
+  }
+  td.title {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-style:italic;
+    font-weight: bold;
+    background: #D2A41C;
+  }
+  td.title-sub-openurl {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #6699FF;
+  }
+  td.title-sub-oai {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FF0000;
+  }
+  td.header-left {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  td.header-center {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  td.row-left {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-left-middle {
+    text-align: left;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-center {
+    text-align: center;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-right {
+    text-align: right;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  TH {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  div.inside_div {
+    text-align: left;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  a.h3:link {color: #FFFFFF}
+  a.h3:visited {color: #FFFFFF}
+</style>
+ <body>
+ <script type="text/javascript">
+    
+    function $() {
+      var elements = new Array();
+
+      for (var i = 0; i < arguments.length; i++) {
+          var element = arguments[i];
+   
+          if (typeof element == 'string')
+              element = document.getElementById(element);
+
+          if (arguments.length == 1)
+              return element;
+
+          elements.push(element);
+      }
+
+      return elements;
+    }
+    
+    function stripUri(uri) {
+        return uri.substring(uri.lastIndexOf('/') + 1);
+    }
+
+    function makeOAIArgs(verb, format, id, set) {
+            var args = "";
+            if (verb == 'GetRecord' && !id) {
+                alert('Identifier Missing');
+                return false;
+            } else if(verb == 'ListIdentifiers') {
+                args = "verb=ListIdentifiers&metadataPrefix=" + format;
+                if (set)
+                   args += "&set=" + set;
+            } else if(verb == 'ListRecords') {
+                args = "verb=ListRecords&metadataPrefix=" + format;
+                if (set)
+                   args += "&set=" + set;
+            } else if(verb == 'GetRecord' && id){
+                args = "verb=GetRecord&metadataPrefix=" + format + "&identifier=" + encode(id);
+            } else if(verb) {
+                args = "verb=" + verb;
+                if (id && verb == 'ListMetadataFormats')
+                   args += "&identifier=" + id;
+            }
+           //alert(args);
+           return args;
+    }
+
+    function encode( uri ) {
+        if (encodeURIComponent) {
+            return encodeURIComponent(uri);
+        }
+        if (escape) {
+            return escape(uri);
+        }
+    }
+    
+    function hideDiv( element ) {
+      var e = $(element);
+
+      if (e) {
+          e.style.display = 'none';
+      }
+    }
+    
+    function launch(baseUrl, args) {
+      url = baseUrl + '?' + args;
+      xml = window.open(url, 'xml', 'left=20,top=20,width=800,height=500,toolbar=0,resizable=1,location=1,scrollbars=1');
+      if (window.focus) {xml.focus()}
+    }
+    
+    // Archive Accessor ////////////////////////////////////////////////////////////////////////////
+
+    var accessorUrl = "$MODULE.BASEURL";
+    var accessorServlet = "Handler";
+
+    // OAI Request Div
+    function getArchiveAccessorOAIRequest(repoUri, id, verb, prefix) {
+        var div = "";
+        var url = accessorUrl + '/' + stripUri(repoUri) + '/' + accessorServlet;
+        var args = '?' + makeOAIArgs(verb, prefix, id, null);
+
+        if (args == '?false')
+            return false;
+    
+        div += "<table width=600>";
+        div += "<tr><td class=\"row-right\"><a href=\"#\" onclick=\"hideDiv('archiveAccessor_div');return false;\"><small>[hide]</small></a></td></tr>";
+        div += "<tr><td  class=\"row-left\"><small>Archive Accessor OAI-PMH Request URL:</small></td></tr>";
+        div += "<tr><td  class=\"row-left\"><a href=\"" + url + args + "\" target=\"xml\"><small>" + url + args + "</small></a></td></tr>";
+        div += "</table>";
+        var archiveAccessor_div = document.getElementById("archiveAccessor_div");
+
+        if (archiveAccessor_div) {
+          archiveAccessor_div.innerHTML = div;
+          archiveAccessor_div.style.display = 'block';
+        }
+    }
+
+    // Simple Version
+    function getArchiveAccessorOAIXMLText(repoUri, id, verb, prefix) {
+        if (!repoUri) {
+           clearArchiveAccessorOAIXML();
+           return false;
+        }
+        var url = accessorUrl + '/' + stripUri(repoUri) + '/' + accessorServlet;
+        var args = makeOAIArgs(verb, prefix, id, null);
+
+        if (!args)
+            return false;
+        
+        launch(url,args);
+    }
+
+    function clearArchiveAccessorOAIXML() {
+        alert("Please enter a XMLtape identifier...");
+    }
+  </script>
+<center>
+<p>
+  <table border="1">
+   <div class = "inside_div" id = "div_archiveAccessorOAI">
+   <tr>
+      <td colspan="3" class="title-sub-oai">Archive Accessor (OAI-PHM)<a name="archiveAccessorOAI">&nbsp;</a></td>
+   </tr>
+    <tr><td colspan="3" class="row-center">            
+            <div class = "inside_div" id = "div_archiveAccessor">
+                 <table>
+                 <tr>
+
+                     <td width="200" class="row-left-middle"><small>Select a Verb:</small></td>
+                     <td class="row-left-middle" width="425"><select id="val_archiveAccessor_verb" onChange="javascript:if(this.options[this.selectedIndex].value != 'GetRecord') {disableField('val_archiveAccessor_id')} else {enableField('val_archiveAccessor_id')};">
+                           <option value="GetRecord">OAI-PMH Get Record</option>
+                           <option value="ListRecords">OAI-PMH List Records</option>
+                           <option value="ListIdentifiers">OAI-PMH List Identifiers</option>
+                           <option value="Identify">OAI-PMH Identify</option>
+
+                           <option value="ListMetadataFormats">OAI-PMH List Metadata Formats</option>
+                           <option value="ListSets">OAI-PMH List Sets</option>
+                         </select>
+                    </td>
+                    <td class="row-left-middle">
+                     <a href="#" onclick="getArchiveAccessorOAIXMLText(document.getElementById('val_archiveAccessorUri').value, document.getElementById('val_archiveAccessor_id').value, document.getElementById('val_archiveAccessor_verb').value, document.getElementById('val_archiveAccessorOAI_prefix').value);return false;"><small>Get Response</small></a>
+                     &nbsp;
+
+                    <a href="#" onclick="getArchiveAccessorOAIRequest(document.getElementById('val_archiveAccessorUri').value, document.getElementById('val_archiveAccessor_id').value, document.getElementById('val_archiveAccessor_verb').value, document.getElementById('val_archiveAccessorOAI_prefix').value);return false;"><small>View Request</small></a>
+                    </td>
+                 </tr>
+                  <tr>
+                     <td width="200" class="row-left-middle"><small>Select a Metadata Prefix:</small></td>
+
+                     <td class="row-left-middle" colspan="2">
+                         <select id="val_archiveAccessorOAI_prefix">
+                           <option value="didl">didl</option>
+                           <option value="native">native</option>
+                         </select>
+                    </td>
+                 </tr>
+                 <tr>
+
+                    <td width="200" class="row-left-middle"><small>Enter an XMLtape identifier:</small></td>
+                    <td class="row-left-middle"><input id = "val_archiveAccessorUri" type = "text" name = "archiveAccessorUri" size = 50 maxlength = 250></td>
+                 </tr>
+                 <tr>
+                     <td width="200" class="row-left-middle"><small>Enter a DIDL Identifier:</small></td>
+                     <td class="row-left-middle"><input id = "val_archiveAccessor_id" type = "text" name = "archiveAccessor_id" size = 50 maxlength = 150></td>
+                 </tr>
+                 </table>
+
+                 <div style = "display:none;position:absolute;WIDTH:700px;overflow:auto;border-style:solid;background-color:white;padding:5px;" id = "archiveAccessor_div"></div>
+            </div>
+         </td>
+      </tr>
+  </table>
+</center>
+<table>
+<tr>
+<td align="left"><small>Contact: $ADMIN_EMAIL</small></td> 
+<td align="right"><small>$MODULE_NAME: $MODULE_VERSION</small></td>
+</tr> 
+ </body>
+</html>

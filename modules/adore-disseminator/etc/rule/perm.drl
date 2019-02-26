@@ -1,0 +1,117 @@
+package gov.lanl.disseminator.matchmaker
+import java.util.ArrayList
+import java.util.Collections
+import java.util.List
+import java.util.HashMap
+import java.util.Date
+import  gov.lanl.util.DateUtil
+import  gov.lanl.disseminator.service.RecommendationService
+import  gov.lanl.disseminator.service.SecurityProfile
+import  gov.lanl.disseminator.service.Recommendation
+global RecommendationService recommendationService
+
+ rule "Library"
+        when
+        exists(SecurityProfile(name=="LIBRARY"))
+        then
+        recommendationService.createRecommendation(new Recommendation("INTERNAL"));
+        end
+
+ rule "SNL"
+        when
+        exists(SecurityProfile(name=="SNL", collection =="INSPEC" || =="PRO"))   
+        then 
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+ rule "SNL_SCI"
+        when
+        exists(SecurityProfile(name=="SNL",collection=="ISI", subset contains "D" || contains "K"))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+ rule "NMT"
+        when
+        exists(SecurityProfile(name=="NMT", collection =="ISI", subset contains "D" || contains "K", pubyear>=1975))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+ rule "LANL_ALL"
+        when
+        exists(s:SecurityProfile(name=="LANL", collection == "BIOSIS" || =="PRO" || =="ECD" ||=="INSPEC" || =="EIX" ))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+ rule "LANL_SOC"
+        when
+        exists(SecurityProfile(name=="LANL",collection=="ISI", subset contains "J" || contains "SS", pubyear>=1973))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+ rule "LANL_SCI"
+        when
+        exists(SecurityProfile(name=="LANL",collection=="ISI", subset contains "D" || contains "K"))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+rule "NMSU"
+        when
+        exists(SecurityProfile(name=="NMSU", collection =="ISI", subset contains "D" || contains "K" || contains "J" || contains "SS" , pubyear>=1985 ))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+rule "Stanford"
+        when
+        exists(SecurityProfile(name=="STANFORD", collection =="EIX" || =="INSPEC" || =="BIOSIS" ))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+rule "Stanford_SCI"
+        when
+        exists(SecurityProfile(name=="STANFORD",collection=="ISI", subset contains "D" || contains "K"))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+rule "Stanford_ART"
+        when
+        exists(SecurityProfile(name=="STANFORD",collection=="ISI", subset contains "H"))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+rule "Stanford_SOC"
+        when
+        exists(SecurityProfile(name=="STANFORD",collection=="ISI", subset contains "J" || contains "SS", pubyear>=1973))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+rule "UNM_SOC"
+        when
+	exists(SecurityProfile(name=="UNM",collection=="ISI", subset contains "J" || contains "SS", pubyear>=1970))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+rule "UNM"
+        when
+	exists(SecurityProfile(name=="UNM",collection=="ISI", subset contains "D" || contains "K", pubyear>=1977))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+
+rule "TecReport"
+        when
+        exists(SecurityProfile(collection=="LA-SAFE1"))
+        then
+        recommendationService.createRecommendation(new Recommendation("PUBLIC"));
+        end
+

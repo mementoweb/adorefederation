@@ -1,0 +1,6 @@
+#this is config file for aps ingest process
+plugin=gov.lanl.ingest.oaitape.simple.SimplePdfProcessor
+xmltapesdir=@deref.xmltape.data@
+projectname=NASA
+org=@local.service.id@
+log4j=@deref.xmltape.log4j@

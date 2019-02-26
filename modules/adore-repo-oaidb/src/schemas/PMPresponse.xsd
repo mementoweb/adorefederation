@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://library.lanl.gov/2005-08/aDORe/PMPresponse/" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pa="http://library.lanl.gov/2005-08/aDORe/PMPresponse/" xmlns:oai="http://www.openarchives.org/OAI/2.0/">
+<xs:import namespace="http://www.openarchives.org/OAI/2.0/" schemaLocation="http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"/>
+<xs:element name="PMPresponse" type="pa:PMPresponseType"/>
+<xs:complexType name="PMPresponseType">
+    <xs:sequence>
+      <xs:element name="responseDate" type="xs:dateTime"/>
+      <xs:element name="request" type="pa:requestType"/>
+      <xs:element name="error" type="pa:PMPerrorType" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:sequence>
+</xs:complexType>
+
+  <xs:complexType name="requestType">
+    <xs:annotation>
+      <xs:documentation>Define requestType, indicating the PMPrequest that 
+      led to the response. Element content is baseURL of the repository, attributes indicate the type of PMPrequest and the identifier involved in the request.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:anyURI">
+        <xs:attribute name="verb" type="pa:verbType" use="required"/>
+        <xs:attribute name="identifier" type="oai:identifierType" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="verbType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PutRecord"/>
+      <xs:enumeration value="DeleteRecord"/>
+      <xs:enumeration value="UpdateRecord"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+ <xs:complexType name="PMPerrorType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="code" type="pa:PMPerrorcodeType" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="PMPerrorcodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="cannotPutFormat"/>
+      <xs:enumeration value="idExists"/>
+      <xs:enumeration value="idDoesNotExist"/>
+      <xs:enumeration value="badVerb"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>

@@ -1,0 +1,6 @@
+# OAIResource Env Configurations
+oairesource.tapePrefix=tape
+oairesource.maxsize=100000000
+
+local.datastream.prefix=info:lanl-repo/ds/
+local.openurl-referrer.id=info:sid/library.lanl.gov

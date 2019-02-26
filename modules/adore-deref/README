@@ -1,0 +1,36 @@
+/**
+*Adore Dereferencing
+*The LANL PreIngester parses XMLTape and writes constituent datastreams to ARC files
+*/
+
+----------------------
+Requirements
+----------------------
+- Java 1.5
+
+----------------------
+Installation
+----------------------
+1. Copy adore-deref to a location of your choosing
+
+2. Configure the following in module.conf:
+
+* module.lib - Define path to lib directory containing project jars (i.e. lib)
+* module.src - Define path to src directory containing project source files (i.e. src)
+
+3. Run "ant -f build-standalone.xml build" to build project
+
+----------------------
+Deference XMLTape
+----------------------
+run run.sh <path to project dir>
+
+A sample preingest project is available at /etc/projects/aps
+
+ingest.conf - configuration for deref ingest project
+<project>_lastingest.conf - information with last harvested date - directory in harvester project 
+log4jlog.properties - logging of project
+
+during ingestions the directories will be created relative to <deref root system dir>
+data - date < xmltape < arcfiles,ok.cvs,bad.cvs
+log  - date < xmltape < log4j.log 

@@ -1,0 +1,17 @@
+# RecordAccessor.xmltapeFile - Defines absolute path to xml file
+RecordAccessor.xmltapeFile=/usr/local/adoreArchive/data/sample.xml
+
+# RecordAccessor.indexPlugin - Defines qualified path the implementing XMLTape Index
+RecordAccessor.indexPlugin=gov.lanl.xmltape.index.berkeleydbImpl.BDBIndex
+
+# RecordAccessor.indexDBDir - Defines absolute path to Identifier Index Directory
+RecordAccessor.indexDBDir=/Users/rchute/tmp/adoreArchive/adore-archive/data/tape/
+
+# RecordAccessor.databasename - Name of Identifier Index Directory
+RecordAccessor.databasename=biosis_1979_all_db9ee070-c3c8-11d8-98c3-fc9cf83fdfcf.idi
+
+# RecordAccessor.recordPlugin
+# DidlRecordDOM - Uses dom4j SAX Reader - Fastest -> gov.lanl.xmltape.identifier.index.record.didl.DidlRecordDOM
+# DidlRecordXPath - Uses XPath to index identifiers -> gov.lanl.xmltape.identifier.index.record.didl.DidlRecordXPath
+# DidlRecordDIDAPI - Uses DID-API to parse DIDL Records
+RecordAccessor.recordPlugin=gov.lanl.xmltape.identifier.index.record.didl.DidlRecordDOM

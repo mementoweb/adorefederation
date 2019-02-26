@@ -1,0 +1,74 @@
+# aDORe Archive Configuration File
+
+# General configuration
+adoreArchive.Organization=info:sid/library.lanl.gov
+adoreArchive.tmpDir=/tmp
+adoreArchive.threads=1
+
+# Archive Arcfile Configurations
+adore-arcfile.ResolverURL=http://hedgehog.lanl.gov:8080/adore-arcfile-resolver/resolver
+adore-arcfile.StoreDirectory=/lanl/adore/modules/adore-archive/dist/adore-archive/data/arc
+adore-arcfile.IndexDirectory=/lanl/adore/modules/adore-archive/dist/adore-archive/data/arc
+adore-arcfile.Compression=false
+adore-arcfile.PrefixURL=info:lanl-repo/arc/
+adore-arcfile.DataStreamPrefix=info:lanl-repo/ds/
+
+# Archive Arcfile Registry Configurations
+adore-arcfile-registry.OAIURL=http://hedgehog.lanl.gov:8080/adore-arcfile-registry/OAIHandler
+adore-arcfile-registry.PutRecordURL=http://hedgehog.lanl.gov:8080/adore-arcfile-registry/PutRecordHandler
+
+# Archive XMLtape Configurations
+adore-xmltape.PrefixURL=info:lanl-repo/xmltape/
+adore-xmltape.AccessorURL=http://hedgehog.lanl.gov:8080/adore-archive-accessor/Handler/
+adore-xmltape.StoreDirectory=/lanl/adore/modules/adore-archive/dist/adore-archive/data/tape
+adore-xmltape.IndexDirectory=/lanl/adore/modules/adore-archive/dist/adore-archive/data/tape
+adore-xmltape-index.Plugin=gov.lanl.xmltape.index.BasicTapeIndex
+#adore-xmltape-index.Plugin=gov.lanl.xmltape.index.berkeleydbImpl.BDBIndex
+adore-xmltape-index.IdIdxPlugin=gov.lanl.xmltape.identifier.index.jdbImpl.IdentifierIndex
+#adore-xmltape-index.IdIdxPlugin=gov.lanl.xmltape.identifier.index.bdbImpl.BDBIndex
+
+# Archive XMLtape Registry Configurations
+adore-xmltape-registry.OAIURL=http://hedgehog.lanl.gov:8080/adore-xmltape-registry/OAIHandler
+adore-xmltape-registry.PutRecordURL=http://hedgehog.lanl.gov:8080/adore-xmltape-registry/PutRecordHandler
+
+# Archive XMLTape Resolver Configuration
+adore-xmltape.ResolverURL=http://hedgehog.lanl.gov:8080/adore-xmltape-resolver/resolver
+
+# Default Collection Profiles
+default.FullName=info:sid/library.lanl.gov/default
+default.pmh-defaultproperty=/lanl/adore/modules/adore-archive/dist/adore-archive/etc/moai/default.properties
+default.identifierIdxRecordPlugin=gov.lanl.xmltape.identifier.index.record.didl.DidlRecordDOM
+
+# Archive Collection Profiles
+test.FullName=info:sid/library.lanl.gov:test
+test.pmh-defaultproperty=/lanl/adore/modules/adore-archive/dist/adore-archive/etc/moai/default.properties
+test.ProcessorClass=gov.lanl.archive.impl.StandardProcessor
+test.IndexSetSpecProps=/lanl/adore/modules/adore-archive/etc/xpath.properties
+test.identifierIdxRecordPlugin=gov.lanl.xmltape.identifier.index.record.didl.DidlRecordDOM
+test.ServiceRegPropertyDir=/Users/rchute/tmp/adore/adore-federation/etc/metadata
+
+# SCI DIDL Conversion
+sci.FullName=info:sid/library.lanl.gov:sci
+sci.pmh-defaultproperty=/lanl/adore/modules/adore-archive/dist/adore-archive/etc/moai/sci.properties
+sci.ProcessorClass=gov.lanl.archive.impl.DIDLProcessor
+sci.ConverterClass=gov.lanl.archive.trans.didl.sci.ScienceServerDidl
+sci.ServiceRegPropertyDir=/Users/rchute/tmp/adore/adore-federation/etc/metadata
+
+# METS Processing Profile
+mets.FullName=info:sid/library.lanl.gov:metsCollection
+mets.ProcessorClass=gov.lanl.adore.demo.TutorialProcessor
+mets.ConverterClass=gov.lanl.adore.demo.mets.MetsProcessor
+mets.IndexSetSpecProps=/Users/rchute/tmp/adoreArchive/adore-archive/etc/tutorial/conf/IndexSetSpecProps/mets_xpath.properties
+mets.ServiceRegPropertyDir=/Users/rchute/tmp/adore/adore-federation/etc/metadata
+
+# Biosis Profile
+biosis.FullName=info:sid/library.lanl.gov/biosis
+biosis.pmh-defaultproperty=/Users/rchute/tmp/adoreArchive/adore-archive/etc/moai/default.properties
+biosis.ProcessorClass=gov.lanl.archive.impl.DIDLProcessor
+biosis.ConverterClass=gov.lanl.archive.trans.didl.biosis.BiosisDidl
+biosis.IndexSetSpecProps=/Users/rchute/tmp/adoreArchive/adore-archive/etc/demo/xpath.properties
+biosis.identifierIdxRecordPlugin=gov.lanl.xmltape.identifier.index.record.DidlRecordDOM
+biosis.ServiceRegPropertyDir=/Users/rchute/tmp/adore/adore-federation/etc/metadata
+
+# XMLSig Properties
+xmlsig.prop.File=/lanl/adore/modules/adore-env/etc/sig.properties

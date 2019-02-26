@@ -1,0 +1,144 @@
+/**
+* Adore Archive
+* http://arxiv.org/pdf/cs.DL/0503016
+*/
+
+----------------------
+Requirements
+----------------------
+- Java 1.5 
+
+----------------------
+Installation
+----------------------
+1. Copy adoreArchive to a location of your choosing
+
+2. Configure the archive.properties file. 
+
+The following configurations are available:
+* adoreArchive.Organization
+- (i.e. adoreArchive.Organization=info:sid/library.lanl.gov)
+- Define a local OpenURL SID
+* adoreArchive.tmpDir
+- (i.e. adoreArchive.tmpDir=tmp)
+- Define the path to the tmp processing directory
+* adore-arcfile.ResolverURL
+- (i.e. adore-arcfile.ResolverURL=http://library.lanl.gov:8080/adore-arcfile-resolver/resolver)
+- Define the BaseURL path to the ARCfile Resolver
+* adore-arcfile.StoreDirectory
+- (i.e. adore-arcfile.StoreDirectory=/lanl/adore/modules/adore-archive/dist/adore-archive/data/arc)
+- Define the ARCfile Storage Directory Path 
+* adore-arcfile.IndexDirectory
+- (i.e. adore-arcfile.IndexDirectory=/lanl/adore/modules/adore-archive/dist/adore-archive/data/arc)
+- Define the ARCfile Index Directory Path 
+* adore-arcfile.Compression
+- (i.e. adore-arcfile.Compression=false)
+- Define whether or not compression should be applied to arc files
+* adore-arcfile.PrefixURL
+- (i.e. dore-arcfile.PrefixURL=info:lanl-repo/arc/)
+- Define the Local ARCfile Prefix
+* adore-arcfile-registry.OAIURL
+- (i.e. adore-arcfile-registry.OAIURL=http://library.lanl.gov:8080/adore-arcfile-registry/OAIHandler)
+- Define the BaseURL path to the OAI-PMH ARCfile Registry
+* adore-arcfile-registry.PutRecordURL
+- (i.e. adore-arcfile-registry.PutRecordURL=http://library.lanl.gov:8080/adore-arcfile-registry/PutRecordHandler)
+- Define the BaseURL path to the OAI-PMH Arc Registry
+* adore-xmltape.ResolverURL
+- (i.e. adore-xmltape.ResolverURL=http://library.lanl.gov:8080/adore-archive-accessor/Handler/)
+- Define the BaseURL path to the XMLtape Resolver
+* adore-xmltape.StoreDirectory
+- (i.e. adore-xmltape.StoreDirectory=/lanl/adore/modules/adore-archive/dist/adore-archive/data/tape)
+- Define the XMLtape Storage Directory Path 
+* adore-xmltape.IndexDirectory
+- (i.e. adore-xmltape.IndexDirectory=/lanl/adore/modules/adore-archive/dist/adore-archive/data/tape)
+- Define the XMLtape Index Directory Path 
+* adore-xmltape-index.Plugin
+- (i.e. adore-xmltape-index.Plugin=gov.lanl.xmltape.index.BasicTapeIndex)
+- Define the Adore Archive XMLtape Indexing Plug-in class name
+* adore-xmltape-registry.OAIURL
+- (i.e. adore-xmltape-registry.OAIURL=http://library.lanl.gov:8080/adore-xmltape-registry/OAIHandler)
+- Define the BaseURL path to the OAI-PMH XMLtape Registry
+* adore-xmltape-registry.PutRecordURL
+- (i.e. adore-xmltape-registry.PutRecordURL=http://library.lanl.gov:8080/adore-xmltape-registry/PutRecordHandler)
+- Define the BaseURL path to the XMLtape Registry PutRecord servlet
+* adore-xmltape.ResolverURL
+- (i.e. adore-xmltape.ResolverURL=http://library.lanl.gov:8080/adore-xmltape-resolver/resolver)
+- Define the OpenURL BaseURL path to the XMLtape Resolver
+
+3. For each pre-processing profile, create a new profile in the archive.properties file.
+The following configurations are available:
+* <profilePrefix>.FullName
+- Define the full name of Collection Profile
+- (i.e. test.FullName=info:sid/library.lanl.gov:test)
+* <profilePrefix>.pmh-defaultproperty
+- Define the Collection PMH Default Properties filepath
+- (i.e. test.pmh-defaultproperty=/lanl/adore/modules/adore-archive/etc/moai/test.properties)
+* <profilePrefix>.IndexSetSpecProps
+- Define the Collection SetSpec XPath Properties filepath
+- (i.e. test.IndexSetSpecProps=/lanl/adore/modules/adore-archive/etc/XPath.properties)
+
+----------------------
+Plug-ins: Processing Profiles
+----------------------
+With this release, the following plug-in implementations are provided:
+
+Package: gov.lanl.archive.impl
+* StandardProcessor
+In this example, source XMLtape/ARCfiles are copied to their respective archive storage directories.
+
+----------------------
+Usage
+----------------------
+1. From the bin directory, run the following command:
+
+Syntax:
+sh ./adoreArchive.sh --config <archiveProp> --profile <collectionPrefix> --xmltape <xmlTapePath> --arcfile <arcFilePath>
+
+Example:
+sh ./adoreArchive.sh --config /sourceData/archive.properties --profile sci --xmltape /sourceData/tape/test.xml --arcfile /sourceData/arc/test.arc
+
+
+----------------------
+Directory Structure 
+----------------------
+bin 
+ |- env.sh - System environment set-up, called by main script
+ |- log4j.properties - Defines debug level for application
+ |- adoreArchive.sh - Main Adore Archive Application (Linux/Unix)
+ |- adoreArchive.bat - Main Adore Archive Application (Windows)
+ |- demo.sh - Demonstration Script (Linux/Unix)
+ |- demo.bat - Demonstration Script (Windows)
+data
+ |- arc - Default ARCfile Storage Directory
+ |- tape - Default XMLtape Storage Directory
+etc
+ |- moai - Contains adore-archive-accessor tape properties 
+ |- demo - Contains sample XMLtapes for demonstration purposes
+ |- archive.properties - Main Adore Archive Properties File
+ |- XPath.properties - Sample SetSpec XPath Properties File
+lib - Necessary libraries for application
+
+
+---------------------
+Demonstration
+---------------------
+
+Before running the demonstration script, ensure your Tomcat and MySQL services are running.
+To verify your Tomcat instance is running, open http://localhost:8080/.
+To verify your MySQL instance is running, log in using the arc_registry user using the following command: mysql -u arc_registry -p <password>.
+
+1) Run the following command:
+sh ./demo.sh <install_dir>
+(i.e. ./demo.sh /opt/adoreArchive/adore-archive)
+
+2) Verify XMLTape Registry:
+http://localhost:8080/adore-xmltape-registry/OAIHandler?verb=ListRecords&metadataPrefix=tape&from=2005-01-01&until=9999-01-01
+
+3) Verify ARCFile Registry:
+http://localhost:8080/adore-arcfile-registry/OAIHandler?verb=ListRecords&metadataPrefix=arc&from=2005-01-01&until=9999-01-01
+
+4) Verify Archive Accessor:
+http://localhost:8080/adore-archive-accessor/Handler/demoTape?verb=ListRecords&metadataPrefix=native&from=2005-01-01&until=9999-01-01
+
+5) Verify ARCFile Resolver:
+http://localhost:8080/adore-arcfile-resolver/resolver?res_id=info:lanl-repo/arc/472de88d-5670-45df-9200-fb135189f00e&rfr_id=info:sid/library.lanl.gov&url_ver=Z39.88-2004&rft_id=info:lanl-repo/ds/a9866bc2-306b-4698-abaf-a0f43c1ea611

@@ -1,0 +1,14 @@
+# common section
+tables=32
+master=ds1
+tmpdir=
+rfr_id=info:sid/library.lanl.gov
+# servers
+dbid1=ds1
+ds1.url=jdbc:mysql://127.0.0.1:3306/id_locator?cachePrepStmts=true&amp;useServerPrepStmts=false
+ds1.driver=com.mysql.jdbc.Driver
+ds1.login=id_locator
+ds1.pwd=ymca213
+ds1.sdir=ds1
+ 
+

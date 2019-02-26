@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://iesr.ac.uk/terms/#"
+  elementFormDefault="qualified" attributeFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:rslpcd="http://purl.org/rslp/terms#"
+  xmlns:iesr="http://iesr.ac.uk/terms/#"
+  xmlns="http://iesr.ac.uk/terms/#">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      IESR Vocabularies
+      Part of: IESR Terms XML Schema, Version 2007-02-19. 
+      XML schema definition of vocabularies within the iesr namespace for the JISC Information Environment Service Registry (IESR).
+      These terms are described at http://iesr.ac.uk/terms/. 
+      Note that DCMI schemas are held locally and differ from the DCMI versions to avoid schema validation problems with some software.
+      This XML schema is available at http://iesr.ac.uk/schemas/2007/02/19/iesrvocabs.xsd .
+    </xs:documentation>
+<!--
+    <xs:appinfo>
+      <dc:title>IESR Vocabularies</dc:title>
+      <dc:creator>Ann Apps (ann.apps@manchester.ac.uk)</dc:creator>
+      <dc:contributor>Pete Johnston</dc:creator>
+      <dc:description>
+        This schema defines vocabularies within the iesr namespace for the JISC Information Environment Service Registry (IESR).
+      </dc:description>
+      <dc:identifier>http://iesr.ac.uk/terms/#</dc:identifier>
+      <dc:relation>http://iesr.ac.uk/terms/</dc:relation>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-sa/2.0/uk/</dc:rights>
+      <dcterms:created>2005-02-08</dcterms:created>
+      <dcterms:modified>2005-09-06</dcterms:modified>
+      <dcterms:modified>2007-02-19</dcterms:modified>
+    </xs:appinfo>
+-->
+  </xs:annotation>
+
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
+
+  <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="dc.xsd"/>
+
+  <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd"/>
+
+<!-- Encoding schemes -->
+<!-- Eventually some should be enumerations - not included yet until stable -->
+
+  <xs:complexType name="AccMthdList">
+    <xs:annotation>
+      <xs:documentation>
+        List of possible interface methods by which a service may be accessed. Encoding scheme for service access method (dc:type)
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AthensInst">
+    <xs:annotation>
+      <xs:documentation>
+        Athens institution identifer. Encoding scheme for agent dc:identifier
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AthensResource">
+    <xs:annotation>
+      <xs:documentation>
+        Athens resource name for service. Encoding scheme for service dc:identifier
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AuthList">
+    <xs:annotation>
+      <xs:documentation>
+        List of authentication types that could be used for access control on a service. Encoding scheme for service dcterms:accessRights
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="CollTypeList">
+    <xs:annotation>
+      <xs:documentation>
+        List of collection types. Encoding scheme for collection dc:type
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="CtrldVocabsList">
+    <xs:annotation>
+      <xs:documentation>
+        List of classification schemes or thesauri used in metadata records within a collection. Encoding scheme for collection iesr:usesControlledList 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="DNSDomain">
+    <xs:annotation>
+      <xs:documentation>
+        A value according to this scheme is a DNS domain. Encodng scheme for service dcterms:accessRights [Should restrict by pattern]
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="HASSET">
+    <xs:annotation>
+      <xs:documentation>
+        Humanities And Social Sciences Electronic Thesaurus (version 3.0), defined by http://www.data-archive.ac.uk/search/hassetSearch.asp. Encoding scheme for collection dc:subject and dcterms:spatial
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="ItemTypeList">
+    <xs:annotation>
+      <xs:documentation>
+        List of collection item types. Encoding scheme for collection iesr:itemType
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="JACS">
+    <xs:annotation>
+      <xs:documentation>
+        Joint Academic Coding System, defined by http://www.hesa.ac.uk/jacs/completeclassification.htm. Encoding scheme for collection dc:subject
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="ShibFed">
+    <xs:annotation>
+      <xs:documentation>
+        Shibboleth Federation. Encoding scheme for iesr:mediator
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dcterms:URI">
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="StatusList">
+    <xs:annotation>
+      <xs:documentation>
+        List of possible values to indicate the currency of a record. Encoding scheme for iesr:status
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="StdsList">
+    <xs:annotation>
+      <xs:documentation>
+        List of standards and profiles to which a service may be compliant. Encoding scheme for iesr:supportsStandard
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="SvcHelp">
+    <xs:annotation>
+      <xs:documentation>
+        Service seeAlso is the URI of a help page. Encoding scheme for service rslpcd:seeAlso
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dcterms:URI">
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="SvcShib">
+    <xs:annotation>
+      <xs:documentation>
+        Service Shibboleth Information. Encoding scheme for service rslpcd:seeAlso
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dcterms:URI">
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="SvcSLA">
+    <xs:annotation>
+      <xs:documentation>
+        Service seeAlso is the URI of a Service Level Agreement definition. Encoding scheme for service rslpcd:seeAlso
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dcterms:URI">
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="SvcTypeList">
+    <xs:annotation>
+      <xs:documentation>
+        List of service types. Encoding scheme for service dc:type
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="UKEL">
+    <xs:annotation>
+      <xs:documentation>
+        UK Educational Level, defined by http://www.ukoln.ac.uk/metadata/education/ukel/. Encoding scheme for collection dcterms:educationalLevel. [Should really be in a meg namespace]
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="UNESCO">
+    <xs:annotation>
+      <xs:documentation>
+        UNESCO Thesaurusdefined by http://www.ulcc.ac.uk/unesco/. Encoding scheme for collection dc:subject, dc:type, dcterms:spatial
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="dc:elementType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+        <xs:attribute ref="xml:lang" use="prohibited" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+</xs:schema>
+

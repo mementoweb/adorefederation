@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <!-- General description of your web application -->
+    <display-name>Registry</display-name>
+
+
+    <servlet>
+        <description>Servlet allows downloading of a peers configuration file</description>
+        <servlet-name>IdentityDownloadServlet</servlet-name>
+        <servlet-class>org.osuosl.ockham.registry.network.IdentityDownloadServlet</servlet-class>
+        <init-param>
+            <param-name>mapping-file</param-name>
+            <param-value>/org/osuosl/peermanager/service/network/IdentityMapping.xml</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet>
+        <description>Initializes an indexer for use in indexing documents</description>
+        <display-name>IndexerInitializer</display-name>
+        <servlet-name>IndexerInitializer</servlet-name>
+        <servlet-class>org.osuosl.lucene.IndexerInitializerServlet</servlet-class>
+        <init-param>
+            <param-name>class</param-name>
+            <param-value>org.osuosl.oai.lucene.RecordIndexer</param-value>
+        </init-param>
+        <load-on-startup>6</load-on-startup>
+    </servlet>
+
+    <description>
+        This is the OCKHAM Registry network application.
+        It consists of OAICat and a JXTA implementation
+        of PeerManager running OCKHAM registry services.
+    </description>
+
+    <!-- params -->
+    <context-param>
+        <description>
+            The location of the oaicat.properties file containing
+            datapairs used to initialize the OAI repository software.
+        </description>
+        <param-name>properties</param-name>
+        <param-value>/resources/oaicat.properties</param-value>
+    </context-param>
+
+    <!-- logging initializer -->
+    <servlet>
+        <description>
+            This initializes log4j with the configured properties file
+        </description>
+        <servlet-name>Log4JInitializer</servlet-name>
+        <servlet-class>org.osuosl.servlet.Log4JInitializerServlet</servlet-class>
+        <init-param>
+            <param-name>log4j-init-file</param-name>
+            <param-value>/log4j.properties</param-value>
+        </init-param>
+        <load-on-startup>5</load-on-startup>
+    </servlet>
+
+    <!--servlets -->
+    <servlet>
+        <description>
+            This servlet processes OAI verbs.
+
+            The initialization parameter names for this servlet are the
+            "servlet path" that will be received by this servlet (after the
+            filename extension is removed). The corresponding value is the
+            name of the action class that will be used to process this request.
+        </description>
+        <servlet-name>OAIHandler</servlet-name>
+        <servlet-class>org.oclc.oai.server.OAIHandler</servlet-class>
+        <!-- Load this servlet at server startup time -->
+        <load-on-startup>8</load-on-startup>
+    </servlet>
+
+    <!-- Standard Action Servlet Configuration (with debugging) -->
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/src/resources/struts/struts-config.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <init-param>
+            <param-name>detail</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
+    <servlet>
+    <servlet-name>SRWServlet</servlet-name>
+    <servlet-class>
+        ORG.oclc.os.SRW.SRWServlet
+    </servlet-class>
+    <init-param>
+      <param-name>PropertiesFile</param-name>
+      <param-value>/resources/srw/SRWServer.properties</param-value>
+    </init-param>
+    <!--load-on-startup>100</load-on-startup-->
+  </servlet>
+
+    <!-- servlet to URL mappings -->
+    <servlet-mapping>
+        <servlet-name>OAIHandler</servlet-name>
+        <url-pattern>/OAIHandler</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>OAIHandler</servlet-name>
+        <url-pattern>/servlet/OAIHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OAIHandler</servlet-name>
+        <url-pattern>/oaicat/OAIHandler</url-pattern>
+    </servlet-mapping>
+
+    <!-- Standard Action Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>IdentityDownloadServlet</servlet-name>
+        <url-pattern>/editor/network/secured/peerFile</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SRWServlet</servlet-name>
+        <url-pattern>/search/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- currently the W3C havent settled on a media type for WSDL;
+    http://www.w3.org/TR/2003/WD-wsdl12-20030303/#ietf-draft
+    for now we go with the basic 'it's XML' response -->
+    <mime-mapping>
+        <extension>wsdl</extension>
+        <mime-type>text/xml</mime-type>
+    </mime-mapping>
+
+    <!-- The Usual Welcome File List -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <error-page>
+        <error-code>403</error-code>
+        <location>/editor/errors/403.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/editor/errors/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/editor/errors/500.jsp</location>
+    </error-page>
+
+    <jsp-config>
+
+        <!-- ======================================== -->
+        <!-- =====  Tag Libraries      ============== -->
+        <!-- ======================================== -->
+
+        <!-- OSL tag libraries -->
+
+        <taglib>
+            <taglib-uri>/tags/osl</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/taglibs/osl.tld</taglib-location>
+        </taglib>
+
+        <taglib>
+            <taglib-uri>/tags/osl/ojb</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/taglibs/osl-ojb.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/tags/osl/security</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/taglibs/osl-security.tld</taglib-location>
+        </taglib>
+
+        <!-- OCKHAM tag libraries -->
+        <taglib>
+            <taglib-uri>/tags/ockham</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/taglibs/ockham.tld</taglib-location>
+        </taglib>
+
+        <!-- JSTL tag libraries -->
+        <taglib>
+            <taglib-uri>/tags/jstl/core</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/taglibs/jstl/c-rt.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/tags/jstl/functions</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/taglibs/jstl/fn.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/tags/jstl/sql</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/taglibs/jstl/sql.tld</taglib-location>
+        </taglib>
+
+        <!-- Struts Tag Library Descriptors -->
+
+        <taglib>
+            <taglib-uri>/tags/struts/bean</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/struts/taglibs/struts-bean.tld</taglib-location>
+        </taglib>
+
+        <taglib>
+            <taglib-uri>/tags/struts/html</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/struts/taglibs/struts-html.tld</taglib-location>
+        </taglib>
+
+        <taglib>
+            <taglib-uri>/tags/struts/logic</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/struts/taglibs/struts-logic.tld</taglib-location>
+        </taglib>
+
+        <taglib>
+            <taglib-uri>/tags/struts/nested</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/struts/taglibs/struts-nested.tld</taglib-location>
+        </taglib>
+
+        <taglib>
+            <taglib-uri>/tags/struts/tiles</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/struts/taglibs/struts-tiles.tld</taglib-location>
+        </taglib>
+
+        <taglib>
+            <taglib-uri>/tags/struts/html-el</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/struts/taglibs/struts-html-el.tld</taglib-location>
+        </taglib>
+
+        <taglib>
+            <taglib-uri>/tags/jakarta/application</taglib-uri>
+            <taglib-location>/WEB-INF/src/resources/taglibs/taglibs-application.tld</taglib-location>
+        </taglib>
+
+    </jsp-config>
+
+
+    <!-- ======================================== -->
+    <!-- =====  Security           ============== -->
+    <!-- ======================================== -->
+
+    <security-constraint>
+        <display-name>Login Constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>Active Login Redirect</web-resource-name>
+            <url-pattern>/loginCMS/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Metadata Editor</role-name>
+        </auth-constraint>
+        <auth-constraint>
+            <role-name>Network Admin</role-name>
+        </auth-constraint>
+        <auth-constraint>
+            <role-name>User Admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <display-name>Change Password Constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>Ockham Registry Security</web-resource-name>
+            <url-pattern>/Security/Password/*</url-pattern>
+            <url-pattern>/editor/security/userPassword.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Metadata Editor</role-name>
+        </auth-constraint>
+        <auth-constraint>
+            <role-name>Network Admin</role-name>
+        </auth-constraint>
+        <auth-constraint>
+            <role-name>User Admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <display-name>Security Privileges Constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>Ockham Registry Security</web-resource-name>
+            <url-pattern>/Security/*</url-pattern>
+            <url-pattern>/editor/security/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>User Admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <display-name>Configuration Constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>Ockham Registry Security</web-resource-name>
+            <url-pattern>/Configuration/*</url-pattern>
+            <url-pattern>/editor/configuration/*</url-pattern>
+            <url-pattern>/Metadata-Editor/Reindex.do</url-pattern>
+            <url-pattern>/editor/setup/*</url-pattern>
+            <url-pattern>/Setup/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <display-name>Network Editing Constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>Ockham Registry Network</web-resource-name>
+            <url-pattern>/Network/Identity/Edit.do</url-pattern>
+            <url-pattern>/Network/Identity/Save.do</url-pattern>
+            <url-pattern>/Network/NetworkDiagram/*</url-pattern>
+            <url-pattern>/Network/Peers/*</url-pattern>
+            <url-pattern>/editor/network/secured/*</url-pattern>
+            <url-pattern>/Network/Root/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Network Admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <display-name>Metadata Editing Constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>Ockham Registry Metadata</web-resource-name>
+            <url-pattern>/Metadata-Editor/Services/Edit.do</url-pattern>
+            <url-pattern>/Metadata-Editor/Agents/Edit.do</url-pattern>
+            <url-pattern>/Metadata-Editor/Collections/Edit.do</url-pattern>
+            <url-pattern>/Metadata-Editor/Services/Save.do</url-pattern>
+            <url-pattern>/Metadata-Editor/Agents/Save.do</url-pattern>
+            <url-pattern>/Metadata-Editor/Collections/Save.do</url-pattern>
+            <url-pattern>/editor/metadata/edit/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Metadata Editor</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <!-- Default login configuration uses form-based authentication -->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>Ockham Registry</realm-name>
+        <form-login-config>
+            <form-login-page>/login/Forward.do</form-login-page>
+            <form-error-page>/loginError/Forward.do</form-error-page>
+        </form-login-config>
+    </login-config>
+
+    <!-- Security roles referenced by this web application -->
+    <security-role>
+        <role-name>User Admin</role-name>
+    </security-role>
+    <security-role>
+        <role-name>Network Admin</role-name>
+    </security-role>
+    <security-role>
+        <role-name>Metadata Editor</role-name>
+    </security-role>
+    <security-role>
+        <role-name>Admin</role-name>
+    </security-role>
+    <security-role>
+        <role-name></role-name>
+    </security-role>
+</web-app>

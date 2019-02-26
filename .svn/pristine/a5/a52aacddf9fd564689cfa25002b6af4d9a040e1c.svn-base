@@ -1,0 +1,158 @@
+<html>
+	<head>
+		<title>aDORe OpenURL Resolver Demo</title>
+<script type="text/javascript">
+
+/* Create a new XMLHttpRequest object to talk to the Web server */
+var xmlHttp = false;
+
+try {
+  xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+} catch (e) {
+  try {
+    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+  } catch (e2) {
+    xmlHttp = false;
+  }
+}
+
+
+if (!xmlHttp && typeof XMLHttpRequest != 'undefined') {
+  xmlHttp = new XMLHttpRequest();
+}
+
+function callServer() {
+  // Get the city and state from the web form
+  var id = document.getElementById("rft_id").value;
+  if ((id == null) ) return;
+
+//var url="http://penguin.lanl.gov:8090/adore-disseminator
+var url="./service?url_ver=Z39.88-2004&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Aadore&rft_id="+escape(id) + "&rft.version=&svc_id=info%3Alanl-repo%2Fsvc%2Ftoc.atom.srvlist";
+
+// Open a connection to the server
+  xmlHttp.open("GET", url, true);
+
+  // Setup a function for the server to run when it's done
+  xmlHttp.onreadystatechange = updatePage;
+
+  // Send the request
+  xmlHttp.send(null);
+}
+
+function updatePage() {
+  if (xmlHttp.readyState == 4) {
+    var response = xmlHttp.responseText;
+   // get srv element and set it to 1
+    var par = document.forms["frmSelect"];
+    var parelmts = par.elements;
+    var srvel = parelmts["svc_id"];
+        srvel.length=0;
+     var srvvar = response.split("|");
+     srvel.length = srvvar.length;
+   for (o=0; o < srvvar.length; o++)
+   { srvel[o].text = srvvar[o];
+   }
+  }
+}
+
+
+function launch() {
+var id = document.getElementById("rft_id").value;
+//alert(id);
+var par = document.getElementById("svc_id");
+    //var par = document.forms["frmSelect"].elements["svc_id"];
+    var value = par.options[par.selectedIndex].value;
+    //alert(value);    
+    var svargs = document.getElementById("svc.args").value;
+    var rft_val_fmt = document.getElementById("rft_val_fmt").value;
+    var svc_val_fmt = document.getElementById("svc_val_fmt").value;
+    var version = document.getElementById("rft.version").value;
+    var myurl="./service?rft_id="+escape(id)+ "&url_ver=Z39.88-2004&rft_val_fmt="+escape(rft_val_fmt);
+    var myurl = myurl + "&svc_val_fmt=" + escape(svc_val_fmt) + "&svc_id="+ escape(value);
+    if (!version==""){
+     myurl =myurl+"&rft.version="+escape(version);
+    }
+    if(!svargs=="")
+    { myurl = myurl+"&"+svargs;}
+    //alert(myurl);
+
+    xml = window.open(myurl, 'xml','left=20,top=20,width=800,height=500,toolbar=0,resizable=1,location=1,scrollbars=1');
+   // xml=window.open(myurl, 'xml','replace');
+    if (window.focus) {xml.focus();}
+
+}
+
+</script>
+	</head>
+	<body>
+		<h1>aDORe OpenURL Resolver Demo</h1>
+		<p>This webapp demonstrates aDORe OpenURL Resolver implementation.</p>
+		<form name="frmSelect"  action="service" method="get"  >
+			<table>
+				<tr>
+					<th>url_ver</th>
+					<td><input name="url_ver" readonly="true" size="30" value="Z39.88-2004" /></td>
+				</tr>
+				
+				
+					<tr>
+					<th>svc_val_fmt</th><td><input id="svc_val_fmt" name="svc_val_fmt" size="60"   value="http://purl.lanl.gov/aDORe/schemas/2007-01/chunklist.xhtml"/></td>
+				</tr>
+				<tr>
+					<th>rft_val_fmt</th><td><input id="rft_val_fmt" name="rft_val_fmt" size="60"    value="http://purl.lanl.gov/aDORe/schemas/2007-01/version.xhtml"/></td>
+				</tr>
+				<tr>
+					<th>rft_id</th><td><input id="rft_id" name="rft_id" size="60" value="info:lanl-repo/biosis/PREV200600423738" onChange="callServer();" /></td>
+				</tr>
+					<tr>
+					<th>rft.version</th><td><input id="rft.version" value="" name="rft.version" size="60" /></td>
+				</tr>
+				<!--
+					 <tr>
+                                        <th></th><td><input name="req_id"  type="hidden" value="human" /></td>
+                                </tr>
+				-->
+				<tr>
+					<th>svc_id</th>
+					<td>
+						<select name="svc_id" id="svc_id">
+							  <option>info:lanl-repo/svc/toc.atom</option>
+							<option>info:lanl-repo/svc/getDIDL</option>
+							<option>info:lanl-repo/svc/getDatastream</option>
+							<option>info:lanl-repo/svc/locate.sru</option>
+						</select>
+					</td>
+				</tr>
+					<tr>
+					<th>svc.args</th><td><input id="svc.args" value=""  name="svc.args" size="60"  /></td>
+				</tr>
+				
+			</table>
+			<input type="button" value="Submit Query" onClick="launch()"   />
+						
+		</form>
+		 <!--
+		<h4>Examples</h4>
+		<table>
+		<tr><td>
+		<a href="service?url_ver=Z39.88-2004&rft_id=info:lanl-repo/i/d78d9758-bddf-11d9-9de5-c11b6cd85594&svc_id=info:lanl-repo/svc/getDIDL">Request a DIDL</a>
+		</td></tr>
+		<tr>
+		<td>
+		<a href="service?url_ver=Z39.88-2004&rft_id=info:lanl-repo/ds/1e8501ac-ed18-424d-bf22-9b566a94e847&svc_id=info:lanl-repo/svc/getDatastream">Request a datastream</a>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<a href="service?url_ver=Z39.88-2004&rft_id=info:doi/10.1016/j.ejor.2004.02.028&svc_id=info:lanl-repo/svc/getBibliographic">Request MARCXML of a DIDL</a>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<a href="service?url_ver=Z39.88-2004&rft_id=info:doi/10.1016/j.ejor.2004.02.028&rft_version=info:lanl-repo/i/d78d9758-bddf-11d9-9de5-c11b6cd85594&svc_id=info:lanl-repo/svc/getBibliographic">Request with rft.version</a>
+		</td>
+		</tr>
+		</table>
+ -->
+	</body>
+</html>

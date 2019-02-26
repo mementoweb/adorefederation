@@ -1,0 +1,31 @@
+# Configuration File For Module
+
+# Module Build Environment
+module.name=adore-federator
+module.version=1.1
+module.lib=/lanl/java/lib
+module.src=/lanl/java/src
+
+# Dependent Projects - Use Semi-colon (;) as delimiter
+module.depends.list=module.depends.1;module.depends.2;module.depends.3
+module.depends.1=adore-service-registry
+module.depends.1.version=1.1
+module.depends.2=adore-format-registry
+module.depends.2.version=1.1
+module.depends.3=adore-id-locator
+module.depends.3.version=1.1
+
+# Module Specific Properties
+module.admin.email=rchute@lanl.gov
+
+# Environment Properties
+adore-federator.ConfigDirectory=/opt/tomcat/webapps/adore-federator/WEB-INF/etc/
+adore-federator.RecordPrefix=didl
+adore-format-registry.OAIURL=http://leopard.lanl.gov:8080/adore-format-registry/OAIHandler
+adore-service-registry.OAIURL=http://leopard.lanl.gov:8080/Registry/oaicat/OAIHandler
+adore-id-locator.ResolverURL=http://leopard.lanl.gov:8080/adore-id-locator/resolver
+
+# System Properties
+tomcat.home=/opt/tomcat/
+
+

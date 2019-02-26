@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Template for MARCXML to Topic Treatment codes for Inspec dataset-->
+<!-- ih 20060705 created key list based on Inspec dataset vendor documentation code and textual equivalent values-->
+
+<DB xmlns:fo="http://www.w3.org/1999/XSL/Format">
+	<Treatment db="INSPEC">
+		<Treat code="A">Application</Treat>
+		<Treat code="B">Bibliography</Treat>
+		<Treat code="E">Economic</Treat>
+		<Treat code="G">General or Review</Treat>
+		<Treat code="N">New Development</Treat>
+		<Treat code="P">Practical</Treat>
+		<Treat code="R">Product Review (1985- )</Treat>
+		<Treat code="T">Theoretical or Mathematical</Treat>
+		<Treat code="X">Experimental</Treat>
+	</Treatment>
+		<Treatment db="EIX">
+		<Treat code="A">Application</Treat>
+		<Treat code="B">Bibliographical</Treat>
+		<Treat code="E">Economic/Cost Data/Market Survey</Treat>
+		<Treat code="G">General Review</Treat>
+		<Treat code="H">Historical</Treat>
+		<Treat code="L">Literature Review/Bibliography</Treat>
+		<Treat code="M">Management Aspects</Treat>
+		<Treat code="N">Numerical/Statistical</Treat>
+		<Treat code="T">Theoretical</Treat>
+		<Treat code="X">Experimental</Treat>
+	</Treatment>
+</DB>

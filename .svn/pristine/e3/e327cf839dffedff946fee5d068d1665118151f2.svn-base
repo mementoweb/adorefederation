@@ -1,0 +1,7 @@
+# OAIResource Env Configurations
+oairesource.tapePrefix=tape
+oairesource.gzip=false
+oairesource.maxsize=100000000
+
+local.datastream.prefix=@local.datastream.prefix@
+local.openurl-referrer.id=@local.openurl-referrer.id@

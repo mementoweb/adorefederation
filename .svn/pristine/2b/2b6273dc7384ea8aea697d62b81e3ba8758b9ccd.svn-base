@@ -1,0 +1,29 @@
+body { 
+ font-family: arial, helvetica, verdana;
+ background-color: #ffffff; 
+}
+
+td {
+ font-family: arial, helvetica, verdana;
+ color: #009900;
+}
+
+.func {
+ font-family: arial, helvetica, verdana;
+ color: #006600;
+}
+
+.oai_link {
+ font-family: arial, helvetica, verdana;
+ color: #006600;
+}
+
+.index {
+ font-family: arial, helvetica, verdana;
+ font-weight: bold;
+ color: #006600
+}
+
+td.link {
+  width: 500px;
+}

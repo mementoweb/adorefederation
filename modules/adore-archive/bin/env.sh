@@ -1,0 +1,28 @@
+#!/bin/sh
+# setup environment variables for shell script
+
+if [ `uname` = "Darwin" ] ; then
+  export PATH=/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home/bin:$PATH
+  java -version
+fi
+
+# Define ARCHIVE_HOME dynamically
+LAUNCHDIR=$PWD
+cd ..
+ARCHIVE_HOME=`pwd`
+cd $LAUNCHDIR
+libpath=$ARCHIVE_HOME/lib
+for line in `ls -1 $libpath | grep '.jar'`
+  do
+  classpath="$classpath:$libpath/$line"
+done
+
+extpath=$libpath/ext
+for line in `ls -1 $extpath | grep '.jar'`
+  do
+  classpath="$classpath:$extpath/$line"
+done
+classpath=.:$classpath
+
+CLASSPATH=$classpath
+JAVA_OPTS=-Xmx1500M 

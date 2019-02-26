@@ -1,0 +1,48 @@
+aDORe Service Registry README
+
+INTRODUCTION
+
+aDORe Service Registry is an extension of Ockham software package, with
+additional OpenURL resolver and Put frontend. This application shares
+same MySQL database with Ockham software, besides that, it does not
+directly use Ockham API or call Ockham services.
+
+INSTALLATION
+
+SERVER =====
+
+(1) Download and install Ockham package from http://www.ockham.org/, use
+the etc/ockhamNode.xml as the configuration file, which is obtained from
+Ockham in advance by email. Also write MySQL username/password.
+
+(2) Replace the web.xml located in Ockham 'Registry/WEB-INF' with the one located in the etc dir of the adore-service-registry installation.  This will disable the peer-2-peer functionality in the Ockham software.  Note: You'll also need to update the SRW.Home property located in Registry/WEB-INF/classes/resources/srw/SRWServer.properties to your local path.
+
+(3) Compile this package with ant (i.e. ant -f build-standalone.xml
+build)
+
+(4) Deploy adore-service-registry.war to your web apps directory
+
+(5) Config adore-service-registry webapp modify
+WEB-INF/classes/ockham.properties according to parameters written in (1).
+This should point to your mysql configuration, the same information used 
+by Ockham software.
+
+(6) Restart Tomcat, open your browser to
+http://localhost:8080/adore-service-registry/, there are demonstrations 
+of various usage of this component.
+
+
+CLIENT =====
+
+The major client libraries are in gov.lanl.ockham.client package.
+RegistryTest.java has some examples of how to use the package.
+gov.lanl.ockham.client.adore includes special processing for adore
+environment.
+
+Under bin directory there are several script which faciliate
+command-line usage in LANL. These scripts use system environment setup,
+see env.sh
+
+
+
+

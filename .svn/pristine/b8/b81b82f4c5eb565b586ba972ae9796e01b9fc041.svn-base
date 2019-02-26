@@ -1,0 +1,7 @@
+# Profile to be added to aDORe Archive Configuration File
+
+# DIDL Processing Profile
+didl.FullName=info:sid/library.lanl.gov:didlCollection
+didl.ProcessorClass=gov.lanl.adore.demo.TutorialProcessor
+didl.ConverterClass=gov.lanl.adore.demo.didl.DidlProcessor
+didl.identifierIdxRecordPlugin=gov.lanl.xmltape.identifier.index.record.didl.DidlRecordDOM

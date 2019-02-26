@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+
+<rule-set name="formats"
+    xmlns="http://drools.org/rules"
+    xmlns:java="http://drools.org/semantics/java"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:schemaLocation="http://drools.org/rules rules.xsd
+		       http://drools.org/semantics/java java.xsd">
+  
+    <import>gov.lanl.disseminator.model.Entity</import>
+    <import>gov.lanl.disseminator.DmtConstants</import>
+    
+     <rule name="didl">
+      <parameter identifier="entity">
+	<class>Entity</class>
+      </parameter>
+      
+      <java:condition>entity.getProperty("format").equals(DmtConstants.DIDL)</java:condition>
+      <java:consequence>
+	entity.addService(DmtConstants.didl2display);
+	entity.addService(DmtConstants.tochtml);
+	entity.addService(DmtConstants.tocxml);
+<!--	entity.addService(DmtConstants.didl2identifiers);-->
+      </java:consequence>
+    </rule>
+  
+    <rule name="pdf">
+      <parameter identifier="entity">
+	<class>Entity</class>
+      </parameter>
+      <java:condition>entity.getProperty("format").equals(DmtConstants.PDF)</java:condition>
+      <java:consequence>
+	entity.addService(DmtConstants.brandpdf);
+      </java:consequence>
+      
+    </rule>
+
+ 
+    <rule name="marc">
+      <parameter identifier="entity">
+	<class>Entity</class>
+      </parameter>
+      <java:condition>entity.getProperty("format").equals(DmtConstants.MARC)</java:condition>
+      <java:consequence>
+	entity.addService(DmtConstants.marc2mods);
+	entity.addService(DmtConstants.marc2dc);
+      </java:consequence>
+      
+    </rule>
+   
+      <rule name="publication">
+      <parameter identifier="entity">
+	<class>Entity</class>
+      </parameter>
+      <java:condition>entity.getProperty("format").equals(DmtConstants.PUBLICATION)</java:condition>
+      <java:consequence>
+	entity.addService(DmtConstants.getbibliographic);
+      </java:consequence>
+      
+    </rule>
+    <rule name="getdatastream">
+      <parameter identifier="entity">
+	<class>Entity</class>
+      </parameter>
+      <java:condition>entity.isDataStream() </java:condition>
+      <java:consequence>
+	entity.addService(DmtConstants.getdatastream);
+      </java:consequence>
+    </rule>
+    
+      <rule name="commonservice">
+      <parameter identifier="entity">
+	<class>Entity</class>
+      </parameter>
+      <java:consequence>
+	entity.addService(DmtConstants.getdidl);
+	entity.addService(DmtConstants.getlocations);
+      </java:consequence>
+    </rule>
+    
+    
+       <rule name="getpwc">
+      <parameter identifier="entity">
+	<class>Entity</class>
+      </parameter>
+      <java:condition>entity.getProperty("format").indexOf("info:lanl-repo/pro")!=-1</java:condition>
+      <java:consequence>
+	entity.addService(DmtConstants.didl2pwc);
+      </java:consequence>
+    </rule>
+</rule-set>

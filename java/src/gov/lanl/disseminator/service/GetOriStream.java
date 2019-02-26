@@ -1,0 +1,86 @@
+/*
+ * Copyright (c) 2008  Los Alamos National Security, LLC.
+ *
+ * Los Alamos National Laboratory
+ * Research Library
+ * Digital Library Research & Prototyping Team
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+ * 
+ */
+
+package gov.lanl.disseminator.service;
+
+import gov.lanl.adore.helper.ResourceManager;
+import gov.lanl.disseminator.matchmaker.MatchMakerCo;
+import gov.lanl.disseminator.model.ContextObjectContainer;
+import gov.lanl.disseminator.model.Entity;
+import gov.lanl.util.resource.Resource;
+import info.openurl.oom.config.ClassConfig;
+import info.openurl.oom.config.OpenURLConfig;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.transform.TransformerException;
+
+public class GetOriStream extends AbstractService {
+	private String type = null;
+
+	public GetOriStream(OpenURLConfig openURLConfig, ClassConfig classConfig)
+			throws TransformerException {
+		super(openURLConfig, classConfig);
+		this.type = (classConfig.getArg("type"));
+	}
+
+	@Override
+	public Resource serve(ContextObjectContainer co) throws Exception {
+		// AdoreObtain o = new AdoreObtain();
+		setEntity(co);
+		ResourceManager rm = getResourceManager();
+		// Resource r = new Resource();
+		List l = new ArrayList();
+
+		MatchMakerCo maker = new MatchMakerCo();
+		maker.defList(l);
+		// co.getServiceType().setProperty("type", type);
+		// maker.match(co);
+
+		Entity e;
+		if (type.equals("meta")) {
+			e = getMarcXML();
+		} else {
+			co.getServiceType().setProperty("type", type);
+			maker.match(co);
+			l = maker.getResource();
+			e = (Entity) l.get(0);
+		}
+
+		// l = maker.getResource();
+		// Entity e =(Entity) l.get(0);
+
+		String arcid = e.getProperty("isFormatOf");
+		Resource ori = rm.getResource(arcid, "arc");
+		return ori;
+	}
+
+	public URI getServiceID() throws URISyntaxException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

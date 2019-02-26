@@ -1,0 +1,14 @@
+# XQuery Processing Profile
+profile.id=info:lanl-repo/svc/subjects
+profile.format.1.suffix=list
+profile.format.1.class=gov.lanl.xmltape.resolver.xquery.OpenURLaDORe7ListService
+profile.format.2.suffix=sru
+profile.format.2.class=gov.lanl.xmltape.resolver.xquery.OpenURLaDORe7SRUService
+
+# Namespace Definitions
+profile.namespace.1=http://www.loc.gov/MARC21/slim
+profile.namespace.prefix.1=marc
+
+# XQuery Definitions
+profile.xquery=./*:DIDL/*:Item/*:Component/*:Resource/*:record/*:datafield[@tag='650']/*:subfield[@code=\"a\"]/text()
+profile.filter.path=/ta:tape/ta:tapeRecord/ta:record

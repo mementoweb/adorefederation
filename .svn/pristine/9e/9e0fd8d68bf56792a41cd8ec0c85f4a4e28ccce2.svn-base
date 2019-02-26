@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FederatorTable>
+  <item>
+    <metadataPrefix>identifiers</metadataPrefix>
+    <schema>http://greatwhiteshark.lanl.gov/schemas-didl/identifiers.xsd</schema>
+    <metadataNamespace>http://library.lanl.gov/2003-11/lww/listOfIdentifiers</metadataNamespace>
+    <service>identifiers.xsl</service>
+  </item>
+  <item>
+    <metadataPrefix>didl</metadataPrefix>
+    <schema>http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/did/didl.xsd</schema>
+    <metadataNamespace>urn:mpeg:mpeg21:2002:02-DIDL-NS</metadataNamespace>
+  </item>
+  <item>
+    <metadataPrefix>mets</metadataPrefix>
+    <schema>http://www.loc.gov/standards/mets/mets.xsd</schema>
+    <metadataNamespace>http://www.loc.gov/METS/</metadataNamespace>
+    <service>DIDL_TO_METS.xslt</service>
+  </item> 
+  <item>
+    <metadataPrefix>rdf</metadataPrefix>
+    <schema>http://www.openarchives.org/OAI/2.0/rdf.xsd</schema>
+    <metadataNamespace>http://www.w3.org/1999/02/22-rdf-syntax-ns#</metadataNamespace>
+    <service>didl2rdf.xsl</service>
+  </item> 
+  <item>
+    <metadataPrefix>pwc.rdf</metadataPrefix>
+    <schema>hhttp://www.openarchives.org/OAI/2.0/rdf.xsd</schema>
+    <metadataNamespace>http://www.w3.org/1999/02/22-rdf-syntax-ns#</metadataNamespace>
+    <service>didl2pwc_full.xsl</service>
+  </item>
+</FederatorTable>

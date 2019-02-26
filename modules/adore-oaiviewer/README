@@ -1,0 +1,33 @@
+#$Id$
+
+oaiviewer is a tomcat application which helps to explore OAI repository in aDORe.
+
+
+INTALL
+======
+copy adore-oaiviewer.war to a ${TOMCAT_HOME}/webapps, and restart tomcat.
+
+dependency
+=============
+oaiviewer uses services defined by repo-index and oai pepository. Please make sure these components work correctly before testing federator.
+
+Configuration
+=============
+
+web.xml
+-------
+make sure   <param-name>resolverprops</param-name> points to correct errolresolver.properties, which defines all parameters related to oaiviewer.
+
+errolresolver.propertis
+----------------
+Many parameters are simply copied from Jeff Young's oaiviewer, these parameters should be left intact unless specified otherwise.
+ 
+AbstractService.localERRoLURL, the URL of this web application 
+registry.localERRoLURL, the URL of this web application 
+ERRoLResolver.repoList, the oai-pmh baseurl of repoindex
+
+
+logging
+------
+log4j logging mechanism is used, please check how to config log4j in tomcat.
+

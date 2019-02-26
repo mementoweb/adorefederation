@@ -1,0 +1,29 @@
+# Configuration File For Module
+
+# Module Build Environment
+module.name=adore-xmltape-registry
+module.version=1.1
+module.lib=/lanl/java/lib
+module.src=/lanl/java/src
+
+# Dependent Projects - Use Semi-colon (;) as delimiter
+module.depends.list=module.depends.1;module.depends.2
+module.depends.1=adore-xmltape
+module.depends.1.version=1.1
+module.depends.2=adore-repo-oaidb
+module.depends.2.version=1.1
+
+
+# Module Specific Properties
+module.nspace=http://library.lanl.gov/2005-08/aDORe/XMLtapeRegistry/
+module.schema=http://purl.lanl.gov/aDORe/schemas/2006-09/XMLtapeRegistry.xsd
+module.baseurl=http://purl.lanl.gov/aDORe/demo/adore-xmltape-registry/OAIHandler
+module.db.jdbcdriver=com.mysql.jdbc.Driver
+module.db.jdbcurl=jdbc:mysql://127.0.0.1:3306/tape_registry?autoReconnect=true
+module.db.login=tape_registry
+module.db.passwd=ymca213
+module.admin.email=mailto:rchute@lanl.gov
+module.prefix=tape
+
+# System Properties
+tomcat.home=/opt/tomcat/

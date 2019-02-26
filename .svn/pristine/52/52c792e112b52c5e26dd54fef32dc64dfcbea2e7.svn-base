@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<!--
+$Id: build.xml,v 1.2 2006/10/13 06:18:20 liu_x Exp $
+-->
+<project name="DIDAdore" default="usage" basedir=".">
+  
+  <!-- set global properties for this build -->
+  <property name="name" value="DIDAdore"/>
+  <property name="src"  value="src"/>
+  <property name="lib" value="lib"/>
+  <property name="dist"  value="dist"/>
+  <property name="build" value="build"/>
+  <property name="ex" value="ex"/>
+  <property name="version" value="2.0"/>
+  <property name="final.name" value="${name}-${version}"/>
+  <property name="javadoc.link" value="http://java.sun.com/j2se/1.5.0/docs/api/"/>
+  <property name="junit.output.dir" location="${build}/test"/>
+  <property name="junit.temp.dir" location="${build}/test/tmp"/>
+  <property name="junit.reports" location="${build}/test/reports"/>
+
+  <path id="classpath">
+    <pathelement location="${build}/classes/java" /> 
+    <pathelement location="${build}/classes/test" />
+    <fileset dir="${lib}">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+
+  <path id="junit.classpath">
+    <pathelement location="${build}/classes/test"/> 
+    <path refid="classpath"/>
+  </path>
+  
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp>
+      <format property="current.year" pattern="yyyy"/>
+      <format property="DSTAMP" pattern="yyyy-MM-dd"/>
+      <format property="TSTAMP" pattern="HH:mm:ss"/>
+    </tstamp>
+    
+    <available
+	property="junit.present"
+	classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask"
+	/>
+
+    <available
+	property="didapi.present"
+	classname="info.repo.didl.DIDLBaseType"
+	classpathref ="classpath"
+	/>
+    <available
+	property="didapi-impl.present"
+	classname="info.repo.didl.impl.DIDL"
+	classpathref ="classpath"
+	/>
+  </target>
+  
+  <!-- =================================================================== -->
+  <!-- Help on usage                                                       -->
+  <!-- =================================================================== -->
+  <target name="usage">
+    <echo message=""/>
+    <echo message=""/>
+    <echo message="${final.name} Build instructions"/>
+    <echo message="-------------------------------------------------------------"/>
+    <echo message=""/>
+    <echo message=" available targets are:"/>
+    <echo message=""/>
+    
+    <echo message=" jar      --> generates jar file"/>  
+    <echo message=" javadocs --> generates the API docs (needs Java 1.5 or higher)"/>
+    <echo message=" compile  --> compiles the source code"/>
+    <echo message=" compile-java  --> compiles DIDL aDORe code"/>
+    <echo message=" compile-test  --> compiles junit test"/> 
+
+    <echo message=" test  --> compiles Junit test"/>
+    <echo message=" dist   --> generates the binary and source distributions (tar.gz)"/>
+
+    <echo message=" clean    --> cleans up all generated files and directories"/>
+    <echo message=" usage    --> provides help on using the build tool (default)"/> 
+    <echo message=""/>
+    <echo message=" See comments inside the build.xml file for more details."/>
+    <echo message="-------------------------------------------------------------"/>
+    <echo message=""/>
+    <echo message=""/>
+  </target>
+    
+  <!-- ================================================================== -->
+  <!-- C O M P I L E                                                              -->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+
+  <target name="compile" depends="compile-java, compile-test"/>
+
+  <target name="compile-java" depends="init">
+    <mkdir dir="${build}/classes/java"/>	
+    <fail unless="didapi.present">
+      ##################################################################
+      DIDAPI not found.
+      Please make sure DIDAPI-xxx.jar is in lib, or made available
+      using other mechanisms like -lib or CLASSPATH.
+      ##################################################################
+    </fail>    
+    <fail unless="didapi-impl.present">
+      ##################################################################
+      DIDAPI-impl not found.
+      Please make sure DIDAPI-implxxx.jar is in lib, or made available
+      using other mechanisms like -lib or CLASSPATH.
+      ##################################################################
+    </fail> 
+    <javac srcdir="${src}/java" includes="**/*.java" debug="true" destdir="${build}/classes/java">
+      <classpath refid="classpath"/>
+    </javac>
+  </target>
+
+  <target name="compile-test" depends="compile-java">
+    <mkdir dir="${build}/classes/test"/>	  
+    <javac srcdir="${src}/test" includes="**/*.java" destdir="${build}/classes/test">
+      <classpath refid="classpath"/>
+    </javac>
+  </target>
+
+  
+  <!-- ================================================================== -->
+  <!-- J A R                                                     -->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+
+  <target name="jar" depends="compile">
+    <jar jarfile="${build}/${final.name}.jar" basedir="${build}/classes/java">
+      <manifest>
+	<attribute name="Created-By" value="LANL and Ghent Univ"/>
+	<section name="org/adore">
+	  <attribute name="Specification-Title" value="${name}"/>
+	  <attribute name="Specification-Version" value="${version}"/>
+	  <attribute name="Specification-Vendor" value=""/>
+	  <attribute name="Implementation-Title" value="${name}"/>
+	  <attribute name="Implementation-Version" value="build ${DSTAMP} ${TSTAMP}"/>    
+	</section>
+      </manifest>
+    </jar>
+  </target>
+
+  
+
+
+  <!-- ================================================================== -->
+  <!-- R U N  T E S T S                                                   -->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+  <target name="test" depends="compile-test" description="Runs unit tests">
+    <fail unless="junit.present">
+      ##################################################################
+      JUnit not found.
+      Please make sure junit.jar is in ANT_HOME/lib, or made available
+      to Ant using other mechanisms like -lib or CLASSPATH.
+      ##################################################################
+    </fail> 
+    <mkdir dir="${junit.output.dir}"/>
+    <mkdir dir="${junit.temp.dir}"/>
+    <junit printsummary="off" haltonfailure="no"
+	   errorProperty="tests.failed" failureProperty="tests.failed">
+      <sysproperty key="Test.Temp" value="${junit.temp.dir}"/>
+      <classpath refid="junit.classpath"/>    
+      <formatter type="xml"/>
+      <formatter type="brief" usefile="false"/>
+      <batchtest fork="yes" todir="${junit.output.dir}" >
+	<fileset dir="${src}/test" includes="**/*Test.java"/>
+      </batchtest>
+    </junit>
+
+<fail if="tests.failed">Tests failed!</fail>
+  </target>
+
+
+  <!-- ================================================================== -->
+  <!-- J A V A D O C                                                      -->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+
+  <target name="javadocs" depends="init">
+    <mkdir dir="${build}/docs/api"/>
+    <javadoc
+      sourcepath="${src}/java"    
+      packagenames="org.adore.*"
+      destdir="${build}/docs/api"
+      author="false"
+      version="true"
+      use="true"
+      link="${javadoc.link}"
+      windowtitle="${name} ${version} API"
+      doctitle="${name} ${version} API"
+      >
+      <classpath refid="classpath" />
+    </javadoc>
+  </target>
+  
+  <!-- ================================================================== -->
+  <!-- D I S T                                                             -->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+
+  <target name="dist" depends="jar,javadocs">
+    <mkdir dir="${dist}"/>
+    <tar destfile="${dist}/${final.name}.tar.gz" compression="gzip">
+      <tarfileset prefix="${final.name}" dir="." includes="AUTHORS, LICENSE, README,CHANGES,build.xml,INSTALL"/>
+      <tarfileset prefix="${final.name}" dir="${build}" includes="${final.name}.jar"/>
+      <tarfileset prefix="${final.name}/src/" dir="${src}" includes="**/*.java"/>   
+      <tarfileset prefix="${final.name}/docs/" dir="${build}/docs" includes="**/*"/>
+      <tarfileset prefix="${final.name}/lib/" dir="${lib}" includes="**/*.jar"/> 
+      <tarfileset prefix="${final.name}/ex/" dir="${ex}" includes="**/*.js"/>
+    </tar>
+  </target>
+
+  <!-- ================================================================== -->
+  <!-- C L E A N                                                          -->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+  <target name="clean">
+    <!-- Delete the ${build} and ${dist} directory trees -->
+	<delete dir="${build}"/>
+	<delete dir="${dist}"/>
+  </target>
+
+
+</project>
+

@@ -1,0 +1,13 @@
+// Sample Usage
+                    // Compose SRU Response
+                    SRUSearchRetrieveResponse srr = new SRUSearchRetrieveResponse();
+                    srr.setSearchRequest(profile.getProfileId() + '.' + "sru", id);
+                    for (String k : xqp.getResults().keySet()) {
+                        SRUXQuery xq = new SRUXQuery();
+                        xq.addKey(SRUXQuery.Key.IDENTIFIER.getField(), k);
+                        xq.addKey(SRUXQuery.Key.EXTENT.getField(), xqp.getResults().get(k).toString());
+                        srr.addRecord(xq);
+                    }
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    SRUSearchRetrieveResponse.write(baos, srr);
+                    bytes = baos.toByteArray();

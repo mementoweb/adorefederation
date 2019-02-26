@@ -1,0 +1,22 @@
+# Configuration File For Module
+
+# Module Build Environment
+module.name=adore-resource-resolver
+module.version=1.1
+module.lib=@module.lib@
+module.src=@module.src@
+
+# Dependent Projects - Use Semi-colon (;) as delimiter
+module.depends.list=
+module.depends.1=
+module.depends.1.version=
+
+# Module Props
+module.store.dir=@module.store.dir@
+module.idx.impl=gov.lanl.resource.filesystem.index.FilesystemBasedIndex
+
+# Optional Props
+module.tomcat.url=@module.tomcat.url@
+module.local.rfr.id=@module.local.rfr.id@
+module.admin.email=@module.admin.email@
+tomcat.home=@tomcat.home@

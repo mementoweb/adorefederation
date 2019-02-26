@@ -1,0 +1,92 @@
+package gov.lanl.disseminator.matchmaker
+import gov.lanl.disseminator.DmtConstants
+import gov.lanl.disseminator.model.ContextObjContainer
+expander co.java.dsl     
+
+rule "didl"
+      when
+         ContextObject
+         referent has "format"
+         referent "format" "DmtConstants.DIDL"    
+      then         
+         add service "DmtConstants.didl2display"
+         add service "DmtConstants.tochtml"
+         add service "DmtConstants.tocxml"      
+end  
+
+rule "pdf"
+      when
+         ContextObject
+         referent has "format"
+         referent "format" "DmtConstants.PDF"
+      then
+         add service "DmtConstants.brandpdf"
+end
+      
+rule "marc1"
+      when
+         ContextObject
+         referent has "format"
+         referent "format" "DmtConstants.MARC"
+      then
+         add service "DmtConstants.marc2mods"
+end
+
+rule "marc2"
+      when
+         ContextObject
+         referent has "format"
+         referent "format" "DmtConstants.MARC"
+         requester has "req_id"
+         requester "req_id" "Luda"
+      then
+         add service "DmtConstants.marc2dc"
+end
+
+rule "publication"
+      when
+         ContextObject
+         referent has "format"
+         referent "format" "DmtConstants.PUBLICATION"
+      then
+         add service "DmtConstants.getbibliographic"
+end
+
+rule "publicationtest"
+      when
+         ContextObject
+         srvtypes "svc_id" "DmtConstants.getbibliographic"
+         requester has "req_id"
+         requester "req_id" "Luda"
+      then
+         add param "tohtml" to service "DmtConstants.getbibliographic"
+end
+      
+rule "getdatastream"
+      when
+         ContextObject
+         referent has "isDataStream"	
+         referent isDataStream "true"
+      then
+         add service "DmtConstants.getdatastream"
+end
+   
+rule "commonservice"
+      when
+         ContextObject
+      then
+         add service "DmtConstants.getdidl"
+         add service "DmtConstants.getlocations"
+end
+    
+rule "getpwc"
+      when
+         ContextObject
+         referent has "format"
+         referent "format" startwith  "info:lanl-repo/pro"
+      then
+         add service "DmtConstants.didl2pwc"
+end    
+    
+       
+    

@@ -1,0 +1,21 @@
+/**
+* Adore XMLTape
+* 
+*/
+
+----------------------
+Requirements
+----------------------
+- Java 1.5
+
+----------------------
+Installation
+----------------------
+1. Copy adore-xmltape to a location of your choosing
+
+2. Configure the following in module.conf:
+
+* module.lib - Define path to lib directory containing project jars (i.e. lib)
+* module.src - Define path to src directory containing project source files (i.e. src)
+
+3. Run "ant -f build-standalone.xml build" to build project

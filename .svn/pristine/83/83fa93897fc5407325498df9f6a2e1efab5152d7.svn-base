@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<project name="Installation Build"  default=""  basedir="${basedir}">
+
+	    <!-- this is required to pick up the properties generated during the install pages -->
+	    <property file="${basedir}/ant.install.properties"/>
+        <property file="${basedir}/modules.properties"/>
+
+        <target name="upgrade-adore-archive" depends="">
+          <copy file="${installDir}/${adore.xmltape.indexbdb}/lib/je.jar" tofile="${installDir}/${adore.archive}/lib/je.jar" overwrite="true"/>
+          <copy file="${installDir}/${adore.xmltape.indexbdb}/lib/je.jar" tofile="${installDir}/${adore.archive.accessor}/lib/je.jar" overwrite="true"/>
+          <copy file="${installDir}/${adore.xmltape.indexbdb}/lib/je.jar" tofile="${installDir}/${adore.federation}/lib/je.jar" overwrite="true"/>
+          <copy file="${installDir}/${adore.xmltape.indexbdb}/lib/je.jar" tofile="${installDir}/${adore.xmltape}/lib/je.jar" overwrite="true"/>
+          <copy file="${installDir}/${adore.xmltape.indexbdb}/lib/je.jar" tofile="${installDir}/${adore.xmltape.resolver}/lib/je.jar" overwrite="true"/>
+          <copy file="${installDir}/${adore.xmltape.indexbdb}/dist/adore-xmltape-indexbdb-1.1.jar" tofile="${installDir}/${adore.archive}/lib/adore-xmltape-indexbdb-1.1.jar" overwrite="true"/>
+          <copy file="${installDir}/${adore.xmltape.indexbdb}/dist/adore-xmltape-indexbdb-1.1.jar" tofile="${installDir}/${adore.archive.accessor}/lib/adore-xmltape-indexbdb-1.1.jar" overwrite="true"/>
+          <copy file="${installDir}/${adore.xmltape.indexbdb}/dist/adore-xmltape-indexbdb-1.1.jar" tofile="${installDir}/${adore.federation}/lib/adore-xmltape-indexbdb-1.1.jar" overwrite="true"/>
+          <copy file="${installDir}/${adore.xmltape.indexbdb}/dist/adore-xmltape-indexbdb-1.1.jar" tofile="${installDir}/${adore.xmltape}/lib/adore-xmltape-indexbdb-1.1.jar" overwrite="true"/>
+          <copy file="${installDir}/${adore.xmltape.indexbdb}/dist/adore-xmltape-indexbdb-1.1.jar" tofile="${installDir}/${adore.xmltape.resolver}/lib/adore-xmltape-indexbdb-1.1.jar" overwrite="true"/>
+          
+          <replace file="${installDir}/${adore.archive}/etc/archive.properties">
+            <replacefilter token="${tapeIndex.std}" value="${tapeIndex.bdb}"/>
+            <replacefilter token="${tapeIdIndex.std}" value="${tapeIdIndex.bdb}"/>
+	      </replace>
+	      
+	      <replace file="${installDir}/${adore.archive.accessor}/module.conf">
+            <replacefilter token="${tapeIndex.std}" value="${tapeIndex.bdb}"/>
+	      </replace>
+	      	      
+	      <replace file="${installDir}/${adore.federation}/etc/adore.properties">
+            <replacefilter token="${tapeIndex.std}" value="${tapeIndex.bdb}"/>
+            <replacefilter token="${tapeIdIndex.std}" value="${tapeIdIndex.bdb}"/>
+	      </replace>
+	      
+	      <replace file="${installDir}/${adore.xmltape.resolver}/module.conf">
+            <replacefilter token="${tapeIndex.std}" value="${tapeIndex.bdb}"/>
+            <replacefilter token="${tapeIdIndex.std}" value="${tapeIdIndex.bdb}"/>
+	      </replace>
+	      
+	      <ant antfile="${installDir}/${adore.archive.accessor}/build-standalone.xml" dir="${installDir}/${adore.archive.accessor}" target="clean"/>
+          <ant antfile="${installDir}/${adore.archive.accessor}/build-standalone.xml" dir="${installDir}/${adore.archive.accessor}" target="build"/>
+          <ant antfile="${installDir}/${adore.archive.accessor}/build-standalone.xml" dir="${installDir}/${adore.archive.accessor}" target="deploy"/>
+          <ant antfile="${installDir}/${adore.xmltape.resolver}/build-standalone.xml" dir="${installDir}/${adore.xmltape.resolver}" target="clean"/>
+          <ant antfile="${installDir}/${adore.xmltape.resolver}/build-standalone.xml" dir="${installDir}/${adore.xmltape.resolver}" target="build"/>
+          <ant antfile="${installDir}/${adore.xmltape.resolver}/build-standalone.xml" dir="${installDir}/${adore.xmltape.resolver}" target="deploy"/>
+        </target>
+
+        <target name="install-xmltape-indexbdb" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-xmltape-indexbdb*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.xmltape.indexbdb}/module-dist.conf" 
+                tofile="${installDir}/${adore.xmltape.indexbdb}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.xmltape.indexbdb}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.xmltape.indexbdb}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.xmltape.indexbdb}/src"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.xmltape.indexbdb}/build-standalone.xml" dir="${installDir}/${adore.xmltape.indexbdb}" target="build"/>
+        </target>
+
+        <target name="install-upgrade" depends="">
+          <ant target="install-xmltape-indexbdb"/>
+          <ant target="upgrade-adore-archive"/>
+        </target>
+
+	<target name="cleanuptarget" depends="">
+		<delete dir="${basedir}/temp">
+		</delete>
+	</target>
+</project>

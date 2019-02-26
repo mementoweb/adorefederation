@@ -1,0 +1,75 @@
+# aDORe Service Registry
+adore-service-registry.jdbcDriverName=$MODULE.DB.JDBCDRIVER
+adore-service-registry.jdbcURL=$MODULE.DB.JDBCURL
+adore-service-registry.jdbcLogin=$MODULE.DB.LOGIN
+adore-service-registry.jdbcPasswd=$MODULE.DB.PASSWD
+adore-service-registry.isPersistentConnection=true
+
+# OAICat Configuration
+# This paramter is optional. Comment it out if you want the code to get the baseURL
+# from the request instead. Setting it here is only necessary if your firewall messes
+# with the request in a way that alters the baseURL from your expectations.
+OAIHandler.baseURL=$MODULE.BASEURL
+AbstractCatalog.secondsToLive=3600
+
+# Choose one (The "Limited" version understands JDBC's Limited SQL processing)
+AbstractCatalog.oaiCatalogClassName=gov.lanl.repo.oaidb.RepoOAICatalog
+AbstractCatalog.recordFactoryClassName=gov.lanl.repo.oaidb.ResolverRecordFactory
+
+# Choose one of the following two
+#AbstractCatalog.granularity=YYYY-MM-DD
+AbstractCatalog.granularity=YYYY-MM-DDThh:mm:ssZ
+
+# Put Record Section
+Logger.Level=INFO
+OAIPMHidclass=gov.lanl.repo.oaidb.svcreg.IESRIdentifier
+OAIPMHsetsclass=gov.lanl.repo.oaidb.svcreg.IESRSet
+metadatanamespace=$MODULE.NSPACE
+schema=$MODULE.SCHEMA
+validation=on
+prefix=$MODULE.PREFIX
+
+# Here are the settings for JDBCLimitedOAICatalog
+JDBCLimitedOAICatalog.maxListSize=50
+JDBCLimitedOAICatalog.jdbcDriverName=$MODULE.DB.JDBCDRIVER
+JDBCLimitedOAICatalog.jdbcURL=$MODULE.DB.JDBCURL
+JDBCLimitedOAICatalog.jdbcLogin=$MODULE.DB.LOGIN
+JDBCLimitedOAICatalog.jdbcPasswd=$MODULE.DB.PASSWD
+JDBCLimitedOAICatalog.isPersistentConnection=true
+JDBCLimitedOAICatalog.tables=1
+JDBCLimitedOAICatalog.ns=$MODULE.NSPACE
+JDBCLimitedOAICatalog.location=$MODULE.SCHEMA
+LoggerLevel=SEVERE
+
+# SQL query tokens: \\f = from, \\u = until, \\s = set, \\i = localIdentifier, \\o = oaiIdentifier
+# \\a = row cursor, \\b = maxListSize, \\t=suffix, \\d and digest_id < 'digest'
+ 
+JDBCLimitedOAICatalog.identifierQuery=SELECT identifier as oai_id, timestamp as oai_date, metadata as data FROM OAI_RECORDS WHERE identifier = '\\o'
+JDBCLimitedOAICatalog.rangeQuery=SELECT identifier as oai_id, timestamp as oai_date, metadata as data, digest_id FROM OAI_RECORDS WHERE  (timestamp >= '\\f' AND timestamp <= '\\u') and digest_id > '\\d' ORDER BY digest_id LIMIT \\a,\\b
+JDBCLimitedOAICatalog.rangeSetQuery=SELECT identifier as oai_id, timestamp as oai_date, metadata as data, digest_id FROM OAI_RECORDS a, OAI_RECORD_SET_MAP b WHERE a.identifier = b.record_id AND (a.timestamp >= '\\f' AND a.timestamp <= '\\u') AND digest_id > '\\d' AND b.set_spec='\\s' ORDER BY digest_id LIMIT \\a,\\b
+JDBCLimitedOAICatalog.setQuery=SELECT *  FROM OAI_SETS WHERE set_spec not like '%PEER%'
+JDBCLimitedOAICatalog.setSpecQuery=select set_spec from OAI_RECORD_SET_MAP WHERE record_id = '\\o' AND set_spec not like '%PEER%'
+JDBCLimitedOAICatalog.aboutQuery=SELECT "" as about_value FROM OAI_RECORDS limit 1,1
+JDBCLimitedOAICatalog.formatQuery=select namespace_url as namespace, schema_url as schema_location from OAI_SCHEMAS WHERE name = 'iesr'
+JDBCLimitedOAICatalog.formatIdentifierQuery=SELECT count(*) FROM OAI_RECORDS WHERE identifier = '\\o' 
+
+# JDBCLimitedOAICatalog (Set) table map
+JDBCLimitedOAICatalog.setSpecItemLabel=set_spec
+JDBCLimitedOAICatalog.aboutValueLabel=about_value
+JDBCLimitedOAICatalog.setSpecListLabel=set_spec
+JDBCLimitedOAICatalog.setNameLabel=set_name
+JDBCLimitedOAICatalog.setDescriptionLabel=set_desc
+
+# ResolverRecordFactory settings
+RecordFactory.identifierLabel=oai_id
+RecordFactory.datestampLabel=oai_date
+
+# om Identify response values
+Identify.repositoryName=Service Registry 
+Identify.adminEmail=$MODULE.ADMIN.EMAIL
+Identify.earliestDatestamp=2000-01-01T00:00:00Z
+Identify.deletedRecord=no
+
+# Crosswalks for JDBC
+Crosswalks.$MODULE.PREFIX=gov.lanl.repo.oaidb.Text2Metadata
+Crosswalks.native=gov.lanl.repo.oaidb.Text2Metadata

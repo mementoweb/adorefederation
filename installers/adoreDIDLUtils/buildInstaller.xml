@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<project name="Installer Build"  default="installer"  basedir=".">
+
+
+	<target name="installer" depends="">
+		<tar destfile="adoreDIDLUtils-1.1.tar.gz" compression="gzip">
+			<tarfileset prefix="adoreDIDLUtils" dir=".">
+                <include name="installclasspath/**/*"/>
+                <include name="installlib/*"/>
+				<include name="packages/*"/>
+				<include name="antinstall-config.xml"/>
+				<include name="build.xml"/>
+				<include name="install.sh"/>
+				<include name="install.cmd"/>
+				<include name="README"/>
+				<include name="modules.properties"/>
+			</tarfileset>
+		</tar>
+	</target>
+
+</project>

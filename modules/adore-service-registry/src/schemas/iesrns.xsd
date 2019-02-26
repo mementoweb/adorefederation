@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://iesr.ac.uk/terms/#"
+  elementFormDefault="qualified" attributeFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:rslpcd="http://purl.org/rslp/terms#"
+  xmlns:iesr="http://iesr.ac.uk/terms/#"
+  xmlns="http://iesr.ac.uk/terms/#">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      IESR Terms XML Schema, Version 2007-02-19. 
+      XML schema definition of terms within the iesr namespace for the JISC Information Environment Service Registry (IESR).
+      These terms are described at http://iesr.ac.uk/terms/. 
+      This XML schema is available at http://iesr.ac.uk/schemas/2007/02/19/iesrns.xsd .
+      Note that DCMI schemas are held locally and differ from the DCMI versions to avoid schema validation problems with some software.
+    </xs:documentation>
+<!--
+    <xs:appinfo>
+      <dc:title>IESR Terms XML Schema</dc:title>
+      <dc:creator>Ann Apps (ann.apps@manchester.ac.uk)</dc:creator>
+      <dc:contributor>Pete Johnston</dc:creator>
+      <dc:description>
+        This schema defines terms within the iesr namespace for the JISC Information Environment Service Registry (IESR).
+      </dc:description>
+      <dc:identifier>http://iesr.ac.uk/terms/#</dc:identifier>
+      <dc:relation>http://iesr.ac.uk/terms/</dc:relation>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-sa/2.0/uk/</dc:rights>
+      <dcterms:created>2005-02-08</dcterms:created>
+      <dcterms:modified>2005-09-06</dcterms:modified>
+      <dcterms:modified>2007-02-19</dcterms:modified>
+    </xs:appinfo>
+-->
+  </xs:annotation>
+
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
+
+  <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="dc.xsd"/>
+
+  <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd"/>
+
+  <xs:import namespace="http://purl.org/rslp/terms#" schemaLocation="rslpcd.xsd"/>
+
+  <xs:include schemaLocation="iesrterms.xsd"/>
+
+  <xs:include schemaLocation="iesrvocabs.xsd"/>
+
+  <xs:include schemaLocation="iesrAgent.xsd"/>
+
+  <xs:include schemaLocation="iesrCollection.xsd"/>
+
+  <xs:include schemaLocation="iesrService.xsd"/>
+
+  <xs:include schemaLocation="iesrAdmeta.xsd"/>
+
+</xs:schema>
+

@@ -1,0 +1,16 @@
+# XQuery Processing Profile
+profile.id=info:lanl-repo/svc/semantics
+profile.format.1.suffix=list
+profile.format.1.class=gov.lanl.xmltape.resolver.xquery.OpenURLaDORe7ListService
+profile.format.2.suffix=sru
+profile.format.2.class=gov.lanl.xmltape.resolver.xquery.OpenURLaDORe7SRUService
+
+# Namespace Definitions
+profile.namespace.1=http://library.lanl.gov/2005-08/aDORe/DIADM/
+profile.namespace.prefix.1=diadm
+profile.namespace.2=http://purl.org/dc/elements/1.1/
+profile.namespace.prefix.2=dc
+
+# XQuery Definitions
+profile.xquery=./*:DIDL/*:Item/*:Component/*:Descriptor/*:Statement/*:DIADM/*:type/text()
+profile.filter.path=/ta:tape/ta:tapeRecord/ta:record

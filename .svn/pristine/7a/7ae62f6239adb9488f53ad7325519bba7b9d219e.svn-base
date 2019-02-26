@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+
+<!--
+  - OAI Resource Build Environment 
+  - 
+  -->
+
+<project default="oai-resource-modules" basedir=".">
+
+    <!-- Import Additional Ant Tasks -->
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+     <classpath>
+      <pathelement location="/lanl/java/lib/ant-contrib.jar"/>
+     </classpath>
+    </taskdef>
+    
+    <!-- ===================================================================
+      -  init - initialization common to all modules and submodules
+      -  =================================================================== -->
+    <target name="global-init">
+        
+        <!-- Static property definitions.  These will remain the same for any module or
+             submodule. -->
+        <property name="root.name" value="adore"/>
+
+        <property name="root.base.dir" value="/lanl/${root.name}"/>
+        <property name="root.lib.dir" value="${root.base.dir}/lib"/>
+        <property name="root.src.dir" value="${root.base.dir}/modules"/>
+        <property name="root.dist.dir" value="${root.base.dir}/dist"/>
+        
+        <!-- compile flags, can be overridden on the command line using the -D flag -->
+        <property name="compile.debug" value="true"/>
+        <property name="compile.deprecation" value="false"/>
+        <property name="compile.optimize" value="true"/>
+        
+        <!-- ===============================================================
+          -  Module filesets and paths required for compiling or during runtime.
+          -  (referenced later when creating classpaths)
+          -  =============================================================== -->
+        
+        <!-- adore-arcfile -->
+        <property name="adore-arcfile.mod" value="adore-arcfile"/>
+        <property name="adore-arcfile.dir" value="${root.src.dir}/${adore-arcfile.mod}"/>
+        <fileset id="adore-arcfile.libs" dir="${root.src.dir}/${adore-arcfile.mod}/dist">
+            <include name="${adore-arcfile.mod}-*.jar"/>
+        </fileset>
+        <path id="adore-arcfile.path">
+            <fileset refid="adore-arcfile.libs"/>
+        </path>
+     
+        <!-- adore-harvester-oai -->
+        <property name="adore-harvester-oai.mod" value="adore-harvester-oai"/>          
+        <property name="adore-harvester-oai.dir" value="${root.src.dir}/${adore-harvester-oai.mod}"/>
+        <fileset id="adore-harvester-oai.libs" dir="${root.src.dir}/${adore-harvester-oai.mod}/dist">
+            <include name="${adore-harvester-oai.mod}*.jar"/>
+        </fileset>
+        <path id="adore-harvester-oai.path">
+            <fileset refid="adore-harvester-oai.libs"/>
+        </path>
+
+        <!-- adore-deref -->
+        <property name="adore-deref.mod" value="adore-deref"/>          
+        <property name="adore-deref.dir" value="${root.src.dir}/${adore-deref.mod}"/>
+        <fileset id="adore-deref.libs" dir="${root.src.dir}/${adore-deref.mod}/dist">
+            <include name="${adore-deref.mod}*.jar"/>
+        </fileset>
+        <path id="adore-deref.path">
+            <fileset refid="adore-deref.libs"/>
+        </path>
+
+        <!-- adore-xmltape -->
+        <property name="adore-xmltape.mod" value="adore-xmltape"/>          
+        <property name="adore-xmltape.dir" value="${root.src.dir}/${adore-xmltape.mod}"/>
+        <fileset id="adore-xmltape.libs" dir="${root.src.dir}/${adore-xmltape.mod}/dist">
+            <include name="${adore-xmltape.mod}*.jar"/>
+        </fileset>
+        <path id="adore-xmltape.path">
+            <fileset refid="adore-xmltape.libs"/>
+        </path>
+        
+        <!-- oai-resource -->
+        <property name="oai-resource.mod" value="oai-resource"/>          
+        <property name="oai-resource.dir" value="${root.src.dir}/${oai-resource.mod}"/>
+        <fileset id="oai-resource.libs" dir="${root.src.dir}/${oai-resource.mod}/dist">
+            <include name="${oai-resource.mod}*.jar"/>
+        </fileset>
+        <path id="oai-resource.path">
+            <fileset refid="oai-resource.libs"/>
+        </path>
+    </target>
+
+    <target name="init" depends="global-init">
+      <!-- Create the time stamp -->
+      <tstamp/>
+    </target>
+
+    <target name="build" depends="init">
+      <echo message="Build OAI Resource Components"/>
+      <ant target="adore-arcfile"/>
+      <ant target="adore-xmltape"/>
+      <ant target="adore-harvester-oai"/>
+      <ant target="adore-deref"/>
+      <ant target="oai-resource"/>
+    </target>
+
+    <target name="clean" depends="init">
+      <echo message="Clean OAI Resource Components"/>
+      <ant antfile="${adore-arcfile.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-xmltape.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-harvester-oai.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-deref.dir}/build.xml" target="clean"/>
+      <ant antfile="${oai-resource.dir}/build.xml" target="clean"/>
+    </target>
+
+    <target name="adore-arcfile" depends="init">
+      <echo message="Building adore-arcfile"/>
+      <ant antfile="${adore-arcfile.dir}/build.xml" target="build" dir="${adore-arcfile.dir}"/>
+    </target>
+    
+    <target name="adore-xmltape" depends="init">
+      <echo message="Building adore-xmltape"/>
+      <ant antfile="${adore-xmltape.dir}/build.xml" target="build" dir="${adore-xmltape.dir}"/>
+    </target>
+
+    <target name="adore-harvester-oai" depends="init">
+      <echo message="Building adore-harvester-oai"/>
+      <ant antfile="${adore-harvester-oai.dir}/build.xml" target="build" dir="${adore-harvester-oai.dir}"/>
+    </target>
+
+    <target name="adore-deref" depends="init">
+      <echo message="Building adore-deref"/>
+      <ant antfile="${adore-deref.dir}/build.xml" target="build" dir="${adore-deref.dir}"/>
+    </target>
+    
+    <target name="oai-resource" depends="init">
+      <echo message="Building oai-resource"/>
+      <ant antfile="${oai-resource.dir}/build.xml" target="build" dir="${oai-resource.dir}"/>
+    </target>
+
+</project>
+

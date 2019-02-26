@@ -1,0 +1,38 @@
+/**
+*Adore ID Locator
+*/
+
+----------------------
+Requirements
+----------------------
+- Java 1.5
+- Tomcat 5.5+
+- MySQL 4.1+
+
+----------------------
+Installation
+----------------------
+1. Copy adore-id-locator to a location of your choosing
+
+2. Create a new db in MySQL (i.e. CREATE DATABASE id_locator;)
+
+3. Create a new db user with permissions to new db. (i.e.  GRANT ALL PRIVILEGES ON *.* TO id_locator@localhost IDENTIFIED BY 'pass123' WITH GRANT OPTION;)
+
+4. Configure the following in module.conf:
+
+* module.lib - Define path to lib directory containing project jars (i.e. lib)
+* module.src - Define path to src directory containing project source files (i.e. src)
+* module.db.jdbcurl- Define JDBC URL to arc reg db instance (i.e. jdbc:mysql://127.0.0.1:3306/id_locator?autoReconnect=true&amp;cachePrepStmts=true&amp;useServerPrepStmts=false)
+* module.db.login - Define db user name (i.e. arc_registry)
+* module.db.passwd - Define db user password (i.e. pass123)
+* module.tomcat.url - Define the base url of the resolver Tomcat instance (i.e. http://library.lanl.gov:8080)
+* module.local.rfr.id - Define your local OpenURL Referrer (i.e. id info:sid/library.lanl.gov)
+* module.admin.email - Define admin e-mail contact (i.e. mailto:rchute@lanl.gov)
+* tomcat.home - Define path to tomcat home directory (i.e. /opt/jakarta-tomcat-5.5.9)
+
+5. Run "ant -f build-standalone.xml createdb" to create necessary db tables
+
+6. Run "ant -f build-standalone.xml build" to build project
+
+7. Run "ant -f build-standalone.xml deploy" to copy war to Tomcat WEB-APPS directory.
+

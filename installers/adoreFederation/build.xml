@@ -1,0 +1,538 @@
+<?xml version="1.0"?>
+
+<project name="Installation Build"  default=""  basedir="${basedir}">
+
+	<!-- this is required to pick up the properties generated during the install pages -->
+	<property file="${basedir}/ant.install.properties"/>
+        <property file="${basedir}/modules.properties"/>
+
+        <target name="install-arcfile" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-arcfile*.gz"/>
+              <exclude name="**/adore-arcfile-resolver*.gz"/>
+              <exclude name="**/adore-arcfile-registry*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.arcfile}/module-dist.conf" 
+                tofile="${installDir}/${adore.arcfile}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.arcfile}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.arcfile}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.arcfile}/src"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.arcfile}/build-standalone.xml" dir="${installDir}/${adore.arcfile}" target="build"/>
+          <ant antfile="${installDir}/${adore.arcfile}/build-standalone.xml" dir="${installDir}/${adore.arcfile}" target="javadoc"/>
+          <chmod dir="${installDir}/${adore.arcfile}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+
+        <target name="install-xmltape" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-xmltape*.gz"/>
+              <exclude name="**/adore-xmltape-registry*.gz"/>
+              <exclude name="**/adore-xmltape-resolver*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.xmltape}/module-dist.conf" 
+                tofile="${installDir}/${adore.xmltape}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.xmltape}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.xmltape}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.xmltape}/src"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.xmltape}/build-standalone.xml" dir="${installDir}/${adore.xmltape}" target="build"/>
+          <ant antfile="${installDir}/${adore.xmltape}/build-standalone.xml" dir="${installDir}/${adore.xmltape}" target="javadoc"/>
+          <chmod dir="${installDir}/${adore.xmltape}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+ 
+        <target name="install-arcfile-resolver" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-arcfile-resolver*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.arcfile.resolver}/module-dist.conf" 
+                tofile="${installDir}/${adore.arcfile.resolver}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.arcfile.resolver}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.arcfile.resolver}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.arcfile.resolver}/src"/>
+            <replacefilter token="@module.OAIRegistry@" value="${tomcat.baseurl}/${adore.arcfile.registry}/OAIHandler"/>
+            <replacefilter token="@module.tomcat.url@" value="${tomcat.baseurl}"/>
+            <replacefilter token="@module.local.rfr.id@" value="${archive.module.org.infoUri}"/>
+            <replacefilter token="@module.admin.email@" value="${module.admin.email}"/>
+            <replacefilter token="@tomcat.home@" value="${tomcat.home}"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.arcfile.resolver}/build-standalone.xml" dir="${installDir}/${adore.arcfile.resolver}" target="build"/>
+          <ant antfile="${installDir}/${adore.arcfile.resolver}/build-standalone.xml" dir="${installDir}/${adore.arcfile.resolver}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.arcfile.resolver}/build-standalone.xml" dir="${installDir}/${adore.arcfile.resolver}" target="deploy"/>
+        </target>
+
+        <target name="install-arcfile-registry" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-arcfile-registry*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.arcfile.registry}/module-dist.conf" 
+                tofile="${installDir}/${adore.arcfile.registry}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.arcfile.registry}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.arcfile.registry}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.arcfile.registry}/src"/>
+            <replacefilter token="@module.baseurl@" value="${tomcat.baseurl}/${adore.arcfile.registry}/OAIHandler"/>
+            <replacefilter token="@module.db.jdbcurl@" value="jdbc:mysql://${arcfile.module.db.host}:${arcfile.module.db.port}/arc_registry?autoReconnect=true"/>
+            <replacefilter token="@module.db.login@" value="${arcfile.module.db.login}"/>
+            <replacefilter token="@module.db.passwd@" value="${arcfile.module.db.passwd}"/>
+            <replacefilter token="@module.admin.email@" value="${module.admin.email}"/>
+            <replacefilter token="@tomcat.home@" value="${tomcat.home}"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.arcfile.registry}/build-standalone.xml" dir="${installDir}/${adore.arcfile.registry}" target="build"/>
+          <ant antfile="${installDir}/${adore.arcfile.registry}/build-standalone.xml" dir="${installDir}/${adore.arcfile.registry}" target="cleandb"/>
+          <ant antfile="${installDir}/${adore.arcfile.registry}/build-standalone.xml" dir="${installDir}/${adore.arcfile.registry}" target="createdb"/>
+          <ant antfile="${installDir}/${adore.arcfile.registry}/build-standalone.xml" dir="${installDir}/${adore.arcfile.registry}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.arcfile.registry}/build-standalone.xml" dir="${installDir}/${adore.arcfile.registry}" target="deploy"/>
+          <chmod dir="${installDir}/${adore.arcfile.registry}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+
+        <target name="install-xmltape-registry" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-xmltape-registry*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.xmltape.registry}/module-dist.conf" 
+                tofile="${installDir}/${adore.xmltape.registry}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.xmltape.registry}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.xmltape.registry}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.xmltape.registry}/src"/>
+            <replacefilter token="@module.baseurl@" value="${tomcat.baseurl}/${adore.xmltape.registry}/OAIHandler"/>
+            <replacefilter token="@module.db.jdbcurl@" value="jdbc:mysql://${xmltape.module.db.host}:${xmltape.module.db.port}/tape_registry?autoReconnect=true"/>
+            <replacefilter token="@module.db.login@" value="${xmltape.module.db.login}"/>
+            <replacefilter token="@module.db.passwd@" value="${xmltape.module.db.passwd}"/>
+            <replacefilter token="@module.admin.email@" value="${module.admin.email}"/>
+            <replacefilter token="@tomcat.home@" value="${tomcat.home}"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.xmltape.registry}/build-standalone.xml" dir="${installDir}/${adore.xmltape.registry}" target="build"/>
+          <ant antfile="${installDir}/${adore.xmltape.registry}/build-standalone.xml" dir="${installDir}/${adore.xmltape.registry}" target="cleandb"/>
+          <ant antfile="${installDir}/${adore.xmltape.registry}/build-standalone.xml" dir="${installDir}/${adore.xmltape.registry}" target="createdb"/>
+          <ant antfile="${installDir}/${adore.xmltape.registry}/build-standalone.xml" dir="${installDir}/${adore.xmltape.registry}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.xmltape.registry}/build-standalone.xml" dir="${installDir}/${adore.xmltape.registry}" target="deploy"/>
+          <chmod dir="${installDir}/${adore.xmltape.registry}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+
+        <target name="install-repo-oaidb" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-repo-oaidb*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.repo.oaidb}/module-dist.conf" 
+                tofile="${installDir}/${adore.repo.oaidb}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.repo.oaidb}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.repo.oaidb}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.repo.oaidb}/src"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.repo.oaidb}/build-standalone.xml" dir="${installDir}/${adore.repo.oaidb}" target="build"/>
+          <ant antfile="${installDir}/${adore.repo.oaidb}/build-standalone.xml" dir="${installDir}/${adore.repo.oaidb}" target="javadoc"/>
+          <chmod dir="${installDir}/${adore.repo.oaidb}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+
+        <target name="install-adore-archive-accessor" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-archive-accessor*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.archive.accessor}/module-dist.conf" 
+                tofile="${installDir}/${adore.archive.accessor}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.archive.accessor}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.archive.accessor}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.archive.accessor}/src"/>
+            <replacefilter token="@module.baseurl@" value="${tomcat.baseurl}/${adore.archive.accessor}/OAIHandler"/>
+            <replacefilter token="@module.directory.registry@" value="${installDir}/etc/conf/"/>
+            <replacefilter token="@module.moai.OAIRegistry@" value="${tomcat.baseurl}/${adore.xmltape.registry}/OAIHandler"/>
+            <replacefilter token="@module.admin.email@" value="${module.admin.email}"/>
+            <replacefilter token="@tomcat.home@" value="${tomcat.home}"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.archive.accessor}/build-standalone.xml" dir="${installDir}/${adore.archive.accessor}" target="build"/>
+          <ant antfile="${installDir}/${adore.archive.accessor}/build-standalone.xml" dir="${installDir}/${adore.archive.accessor}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.archive.accessor}/build-standalone.xml" dir="${installDir}/${adore.archive.accessor}" target="deploy"/>
+        </target>
+
+        <target name="install-archive" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-archive*.gz"/>
+              <exclude name="**/adore-archive-accessor*.tar.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.archive}/module-dist.conf" 
+                tofile="${installDir}/${adore.archive}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.archive}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.archive}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.archive}/src"/>
+            <replacefilter token="@module.home@" value="${installDir}/${adore.archive}"/>
+	      </replace>
+          
+          <copy file="${installDir}/${adore.archive}/etc/archive-dist.properties" 
+                tofile="${installDir}/${adore.archive}/etc/archive.properties" overwrite="true"/>
+          <replace file="${installDir}/${adore.archive}/etc/archive.properties">
+            <replacefilter token="@adoreArchive.Organization@" value="${archive.module.org.infoUri}"/>
+            <replacefilter token="@adore-arcfile.ResolverURL@" value="${tomcat.baseurl}/${adore.arcfile.resolver}/resolver"/>
+            <replacefilter token="@adore-arcfile.StoreDirectory@" value="${installDir}/${adore.archive}/data/arc"/>
+            <replacefilter token="@adore-arcfile.IndexDirectory@" value="${installDir}/${adore.archive}/data/arc"/>
+            <replacefilter token="@adore-arcfile.DataStreamPrefix@" value="${archive.module.ds.prefix}"/>
+            <replacefilter token="@adore-arcfile.PrefixURL@" value="${archive.module.arc.prefix}"/>
+            <replacefilter token="@adore-arcfile-registry.OAIURL@" value="${tomcat.baseurl}/${adore.arcfile.registry}/OAIHandler"/>
+            <replacefilter token="@adore-arcfile-registry.PutRecordURL@" value="${tomcat.baseurl}/${adore.arcfile.registry}/PutRecordHandler"/>
+            <replacefilter token="@adore-xmltape.PrefixURL@" value="${archive.module.tape.prefix}"/>
+            <replacefilter token="@adore-xmltape.AccessorURL@" value="${tomcat.baseurl}/${adore.archive.accessor}/Handler/"/>
+            <replacefilter token="@adore-xmltape.StoreDirectory@" value="${installDir}/${adore.archive}/data/tape"/>
+            <replacefilter token="@adore-xmltape.IndexDirectory@" value="${installDir}/${adore.archive}/data/tape"/>
+            <replacefilter token="@adore-xmltape-registry.OAIURL@" value="${tomcat.baseurl}/${adore.xmltape.registry}/OAIHandler"/>
+            <replacefilter token="@adore-xmltape-registry.PutRecordURL@" value="${tomcat.baseurl}/${adore.xmltape.registry}/PutRecordHandler"/>
+            <replacefilter token="@default.Fullname@" value="${archive.module.org.infoUri}/default"/>
+            <replacefilter token="@default.pmh-defaultproperty@" value="${installDir}/${adore.archive}/etc/moai/default.properties"/>
+            <replacefilter token="@test.Fullname@" value="${archive.module.org.infoUri}/sample"/>
+            <replacefilter token="@test.pmh-defaultproperty@" value="${installDir}/${adore.archive}/etc/moai/default.properties"/>
+            <replacefilter token="@test.IndexSetSpecProps@" value="${installDir}/${adore.archive}/etc/demo/xpath.properties"/>
+            <!-- 2006-09-14 rchute: Added new properties in version 1.0.3 -->
+            <replacefilter token="@adore-xmltape.ResolverURL@" value="${tomcat.baseurl}/${adore.xmltape.resolver}/resolver"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.archive}/build-standalone.xml" dir="${installDir}/${adore.archive}" target="build"/>
+          <ant antfile="${installDir}/${adore.archive}/build-standalone.xml" dir="${installDir}/${adore.archive}" target="javadoc"/>
+          <chmod dir="${installDir}/${adore.archive}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+        
+        <!-- 2006-04-11 rchute: Added adore-harvester-oai to package in version 1.0.2 -->
+        <target name="install-harvester-oai" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-harvester-oai*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.harvester.oai}/module-dist.conf" 
+                tofile="${installDir}/${adore.harvester.oai}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.harvester.oai}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.harvester.oai}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.harvester.oai}/src"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.harvester.oai}/build-standalone.xml" dir="${installDir}/${adore.harvester.oai}" target="build"/>
+          <ant antfile="${installDir}/${adore.harvester.oai}/build-standalone.xml" dir="${installDir}/${adore.harvester.oai}" target="javadoc"/>
+          <chmod dir="${installDir}/${adore.harvester.oai}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+
+         <!-- 2006-08-20 rchute: Added adore-xmltape-resolver to package in version 1.0.3 -->
+        <target name="install-xmltape-resolver" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-xmltape-resolver*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.xmltape.resolver}/module-dist.conf" 
+                tofile="${installDir}/${adore.xmltape.resolver}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.xmltape.resolver}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.xmltape.resolver}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.xmltape.resolver}/src"/>
+            <replacefilter token="@module.OAIRegistry@" value="${tomcat.baseurl}/${adore.xmltape.registry}/OAIHandler"/>
+            <replacefilter token="@module.tomcat.url@" value="${tomcat.baseurl}"/>
+            <replacefilter token="@module.local.rfr.id@" value="${archive.module.org.infoUri}"/>
+            <replacefilter token="@module.admin.email@" value="${module.admin.email}"/>
+            <replacefilter token="@tomcat.home@" value="${tomcat.home}"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.xmltape.resolver}/build-standalone.xml" dir="${installDir}/${adore.xmltape.resolver}" target="build"/>
+          <ant antfile="${installDir}/${adore.xmltape.resolver}/build-standalone.xml" dir="${installDir}/${adore.xmltape.resolver}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.xmltape.resolver}/build-standalone.xml" dir="${installDir}/${adore.xmltape.resolver}" target="deploy"/>
+        </target>
+        
+        <!-- 2006-09-14 rchute: Added adore-service-registry to package in version 1.0.3 -->
+        <target name="install-service-registry" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-service-registry*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          
+          <copy file="${installDir}/${adore.service.registry}/module-dist.conf" 
+                tofile="${installDir}/${adore.service.registry}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.service.registry}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.service.registry}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.service.registry}/src"/>
+            <replacefilter token="@module.db.jdbcurl@" value="jdbc:mysql://${service.module.db.host}:${service.module.db.port}/service_registry?autoReconnect=true"/>
+            <replacefilter token="@module.db.login@" value="${service.module.db.login}"/>
+            <replacefilter token="@module.db.passwd@" value="${service.module.db.passwd}"/>
+            <replacefilter token="@module.tomcat.url@" value="${tomcat.baseurl}"/>
+            <replacefilter token="@module.local.rfr.id@" value="${archive.module.org.infoUri}"/>
+            <replacefilter token="@module.admin.email@" value="${module.admin.email}"/>
+            <replacefilter token="@tomcat.home@" value="${tomcat.home}"/>
+            <!-- env.sh set-up -->
+            <replacefilter token="@adore-xmltape.ResolverURL@" value="${tomcat.baseurl}/${adore.xmltape.resolver}/resolver"/>
+            <replacefilter token="@adore-xmltape.AccessorURL@" value="${tomcat.baseurl}/${adore.archive.accessor}/Handler/"/>
+            <replacefilter token="@adore-arcfile.ResolverURL@" value="${tomcat.baseurl}/${adore.arcfile.resolver}/resolver"/>
+            <replacefilter token="@adore-xmltape-xquery.ResolverURL@" value="${tomcat.baseurl}/${adore.xmltape.xquery}"/>
+            <replacefilter token="@adore-service-registry.RegistryRecordHandlerURL@" value="${tomcat.baseurl}/${adore.service.registry}/RegistryRecordHandler"/>
+            <replacefilter token="@adore-service-registry.OAIURL@" value="${tomcat.baseurl}/${adore.service.registry}/OAIHandler"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.service.registry}/build-standalone.xml" dir="${installDir}/${adore.service.registry}" target="build"/>
+          <ant antfile="${installDir}/${adore.service.registry}/build-standalone.xml" dir="${installDir}/${adore.service.registry}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.service.registry}/build-standalone.xml" dir="${installDir}/${adore.service.registry}" target="deploy"/>
+          <chmod dir="${installDir}/${adore.service.registry}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+
+        <!-- 2006-09-14 rchute: Added adore-id-locator to package in version 1.0.3 -->
+        <target name="install-id-locator" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-id-locator*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.id.locator}/etc/idlocator-dist.properties" tofile="${installDir}/${adore.id.locator}/etc/idlocator.properties" overwrite="true"/>
+          <replace file="${installDir}/${adore.id.locator}/etc/idlocator.properties">
+            <replacefilter token="$MODULE.DB.JDBCDRIVER" value="com.mysql.jdbc.Driver"/>
+            <replacefilter token="$MODULE.DB.JDBCURL" value="jdbc:mysql://${idLocator.module.db.host}:${idLocator.module.db.port}/id_locator?cachePrepStmts=true&amp;useServerPrepStmts=false"/>
+            <replacefilter token="$MODULE.DB.LOGIN" value="${idLocator.module.db.login}"/>
+            <replacefilter token="$MODULE.DB.PASSWD" value="${idLocator.module.db.passwd}"/>
+            <replacefilter token="$MODULE.LOCAL.RFR.ID" value="${archive.module.org.infoUri}"/>
+          </replace>
+          <copy file="${installDir}/${adore.id.locator}/module-dist.conf" 
+                tofile="${installDir}/${adore.id.locator}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.id.locator}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.id.locator}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.id.locator}/src"/>
+            <replacefilter token="@module.db.jdbcurl@" value="jdbc:mysql://${idLocator.module.db.host}:${idLocator.module.db.port}/id_locator?cachePrepStmts=true&amp;useServerPrepStmts=false"/>
+            <replacefilter token="@module.db.login@" value="${idLocator.module.db.login}"/>
+            <replacefilter token="@module.db.passwd@" value="${idLocator.module.db.passwd}"/>
+            <replacefilter token="@module.tomcat.url@" value="${tomcat.baseurl}"/>
+            <replacefilter token="@module.local.rfr.id@" value="${archive.module.org.infoUri}"/>
+            <replacefilter token="@module.admin.email@" value="${module.admin.email}"/>
+            <replacefilter token="@tomcat.home@" value="${tomcat.home}"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.id.locator}/build-standalone.xml" dir="${installDir}/${adore.id.locator}" target="build"/>
+          <ant antfile="${installDir}/${adore.id.locator}/build-standalone.xml" dir="${installDir}/${adore.id.locator}" target="createdb"/>
+          <ant antfile="${installDir}/${adore.id.locator}/build-standalone.xml" dir="${installDir}/${adore.id.locator}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.id.locator}/build-standalone.xml" dir="${installDir}/${adore.id.locator}" target="deploy"/>
+          <chmod dir="${installDir}/${adore.id.locator}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+        
+        <!-- 2006-09-14 rchute: Added adore-format-registry to package in version 1.0.3 -->
+        <target name="install-format-registry" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-format-registry*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.format.registry}/module-dist.conf" 
+                tofile="${installDir}/${adore.format.registry}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.format.registry}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.format.registry}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.format.registry}/src"/>
+            <replacefilter token="@module.db.jdbcurl@" value="jdbc:mysql://${format.module.db.host}:${format.module.db.port}/format_registry?autoReconnect=true"/>
+            <replacefilter token="@module.db.login@" value="${format.module.db.login}"/>
+            <replacefilter token="@module.db.passwd@" value="${format.module.db.passwd}"/>
+            <replacefilter token="@module.tomcat.url@" value="${tomcat.baseurl}"/>
+            <replacefilter token="@module.baseurl@" value="${tomcat.baseurl}/${adore.format.registry}/OAIHandler"/>
+            <replacefilter token="@module.local.rfr.id@" value="${archive.module.org.infoUri}"/>
+            <replacefilter token="@module.admin.email@" value="${module.admin.email}"/>
+            <replacefilter token="@tomcat.home@" value="${tomcat.home}"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.format.registry}/build-standalone.xml" dir="${installDir}/${adore.format.registry}" target="build"/>
+          <ant antfile="${installDir}/${adore.format.registry}/build-standalone.xml" dir="${installDir}/${adore.format.registry}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.format.registry}/build-standalone.xml" dir="${installDir}/${adore.format.registry}" target="deploy"/>
+          <chmod dir="${installDir}/${adore.format.registry}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+
+        <!-- 2006-09-18 rchute: Added adore-federator to package in version 1.0.3 -->
+        <target name="install-federator" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-federator*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.federator}/module-dist.conf" 
+                tofile="${installDir}/${adore.federator}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.federator}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.federator}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.federator}/src"/>
+            <replacefilter token="@module.tomcat.url@" value="${tomcat.baseurl}"/>
+            <replacefilter token="@module.admin.email@" value="${module.admin.email}"/>
+            <replacefilter token="@tomcat.home@" value="${tomcat.home}"/>
+            <replacefilter token="@adore-federator.ConfigDirectory@" value="${tomcat.home}/webapps/${adore.federator}/WEB-INF/etc"/>
+            <replacefilter token="@adore-format-registry.OAIURL@" value="${tomcat.baseurl}/${adore.format.registry}/OAIHandler"/>
+            <replacefilter token="@adore-service-registry.OAIURL@" value="${tomcat.baseurl}/${adore.service.registry}/OAIHandler"/>
+            <replacefilter token="@adore-id-locator.ResolverURL@" value="${tomcat.baseurl}/${adore.id.locator}/resolver"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.federator}/build-standalone.xml" dir="${installDir}/${adore.federator}" target="build"/>
+          <ant antfile="${installDir}/${adore.federator}/build-standalone.xml" dir="${installDir}/${adore.federator}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.federator}/build-standalone.xml" dir="${installDir}/${adore.federator}" target="deploy"/>
+          <chmod dir="${installDir}/${adore.federator}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+
+        <!-- 2006-09-29 rchute: Added adore-repository to package in version 1.0.3 -->
+        <target name="install-federation" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-federation*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.federation}/module-dist.conf" 
+                tofile="${installDir}/${adore.federation}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.federation}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.federation}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.federation}/src"/>
+            <replacefilter token="@module.home@" value="${installDir}/${adore.federation}"/>
+	      </replace>
+          
+          <copy file="${installDir}/${adore.federation}/etc/adore-dist.properties" 
+                tofile="${installDir}/${adore.federation}/etc/adore.properties" overwrite="true"/>
+          <replace file="${installDir}/${adore.federation}/etc/adore.properties">
+            <replacefilter token="@adoreArchive.Organization@" value="${archive.module.org.infoUri}"/>
+            <replacefilter token="@adoreArchive.tmpDir@" value="${archive.module.tmp}"/>
+            <replacefilter token="@adore-arcfile.ResolverURL@" value="${tomcat.baseurl}/${adore.arcfile.resolver}"/>
+            <replacefilter token="@adore-arcfile.StoreDirectory@" value="${installDir}/${adore.archive}/data/arc"/>
+            <replacefilter token="@adore-arcfile.IndexDirectory@" value="${installDir}/${adore.archive}/data/arc"/>
+            <replacefilter token="@adore-arcfile.PrefixURL@" value="${archive.module.arc.prefix}"/>
+            <replacefilter token="@adore-arcfile.DataStreamPrefix@" value="${archive.module.ds.prefix}"/>
+            <replacefilter token="@adore-arcfile-registry.OAIURL@" value="${tomcat.baseurl}/${adore.arcfile.registry}/OAIHandler"/>
+            <replacefilter token="@adore-arcfile-registry.PutRecordURL@" value="${tomcat.baseurl}/${adore.arcfile.registry}/PutRecordHandler"/>
+            <replacefilter token="@adore-xmltape.PrefixURL@" value="${archive.module.tape.prefix}"/>
+            <replacefilter token="@adore-xmltape.AccessorURL@" value="${tomcat.baseurl}/${adore.archive.accessor}/Handler"/>
+            <replacefilter token="@adore-xmltape.StoreDirectory@" value="${installDir}/${adore.archive}/data/tape"/>
+            <replacefilter token="@adore-xmltape.IndexDirectory@" value="${installDir}/${adore.archive}/data/tape"/>
+            <replacefilter token="@adore-xmltape-registry.OAIURL@" value="${tomcat.baseurl}/${adore.xmltape.registry}/OAIHandler"/>
+            <replacefilter token="@adore-xmltape-registry.PutRecordURL@" value="${tomcat.baseurl}/${adore.xmltape.registry}/PutRecordHandler"/>
+            <replacefilter token="@default.Fullname@" value="${archive.module.org.infoUri}/default"/>
+            <replacefilter token="@default.pmh-defaultproperty@" value="${installDir}/${adore.archive}/etc/moai/default.properties"/>
+            <replacefilter token="@test.Fullname@" value="${archive.module.org.infoUri}/sample"/>
+            <replacefilter token="@test.pmh-defaultproperty@" value="${installDir}/${adore.archive}/etc/moai/default.properties"/>
+            <replacefilter token="@test.IndexSetSpecProps@" value="${installDir}/${adore.archive}/etc/demo/xpath.properties"/>
+            <!-- 2006-09-14 rchute: Added new properties in version 1.0.3 -->
+            <replacefilter token="@adore-xmltape.ResolverURL@" value="${tomcat.baseurl}/${adore.xmltape.resolver}"/>
+            <replacefilter token="@adore-id-locator.ResolverURL@" value="${tomcat.baseurl}/${adore.id.locator}/resolver"/>
+            <replacefilter token="@adore-id-locator.DBProps@" value="${installDir}/${adore.id.locator}/etc/idlocator.properties"/>
+            <replacefilter token="@adore-service-registry.RegistryRecordHandlerURL@" value="${tomcat.baseurl}/${adore.service.registry}/RegistryRecordHandler"/>
+            <replacefilter token="@adore-service-registry.ResolverURL@" value="${tomcat.baseurl}/${adore.service.registry}/resolver"/>
+            <replacefilter token="@adore-service-registry.OAIURL@" value="${tomcat.baseurl}/${adore.service.registry}/OAIHandler"/>
+            <!-- 2007-02-06 rchute: Added new properties for adore-xmltape-xquery -->
+            <replacefilter token="@adore-xmltape-xquery.ResolverURL@" value="${tomcat.baseurl}/${adore.xmltape.xquery}"/>
+            <replacefilter token="@archive.module.ds.prefix@" value="${archive.module.ds.prefix}"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.federation}/build-standalone.xml" dir="${installDir}/${adore.federation}" target="build"/>
+          <ant antfile="${installDir}/${adore.federation}/build-standalone.xml" dir="${installDir}/${adore.federation}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.federation}/build-standalone.xml" dir="${installDir}/${adore.federation}" target="addSvcRegEntries"/>
+          <chmod dir="${installDir}/${adore.federation}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+
+        <!-- 2007-01-25 rchute: Added adore-disseminator to package in version 1.1 -->
+        <target name="install-disseminator" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-disseminator*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.disseminator}/module-dist.conf" 
+                tofile="${installDir}/${adore.disseminator}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.disseminator}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.disseminator}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.disseminator}/src"/>
+            <replacefilter token="@adore-id-locator.ResolverURL@" value="${tomcat.baseurl}/${adore.id.locator}/resolver"/>
+            <replacefilter token="@adore-service-registry.OAIURL@" value="${tomcat.baseurl}/${adore.service.registry}/OAIHandler"/>
+            <replacefilter token="@adore-disseminator.BaseURL@" value="${tomcat.baseurl}/${adore.disseminator}"/>
+            <replacefilter token="@adore-disseminator.ServiceResolverURL@" value="${tomcat.baseurl}/${adore.disseminator}/myservice"/>
+            <replacefilter token="@module.admin.email@" value="${module.admin.email}"/>
+            <replacefilter token="@tomcat.home@" value="${tomcat.home}"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.disseminator}/build-standalone.xml" dir="${installDir}/${adore.disseminator}" target="build"/>
+          <ant antfile="${installDir}/${adore.disseminator}/build-standalone.xml" dir="${installDir}/${adore.disseminator}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.disseminator}/build-standalone.xml" dir="${installDir}/${adore.disseminator}" target="deploy"/>
+        </target>
+
+        <!-- 2007-01-25 rchute: Added adore-semantic-registry to package in version 1.0.3 -->
+        <target name="install-semantic-registry" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-semantic-registry*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.semantic.registry}/module-dist.conf" 
+                tofile="${installDir}/${adore.semantic.registry}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.semantic.registry}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.semantic.registry}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.semantic.registry}/src"/>
+            <replacefilter token="@module.db.jdbcurl@" value="jdbc:mysql://${semantic.module.db.host}:${semantic.module.db.port}/semantic_registry?autoReconnect=true"/>
+            <replacefilter token="@module.db.login@" value="${semantic.module.db.login}"/>       
+            <replacefilter token="@module.db.passwd@" value="${semantic.module.db.passwd}"/>
+            <replacefilter token="@module.tomcat.url@" value="${tomcat.baseurl}"/>
+            <replacefilter token="@module.baseurl@" value="${tomcat.baseurl}/${adore.semantic.registry}/OAIHandler"/>
+            <replacefilter token="@module.local.rfr.id@" value="${archive.module.org.infoUri}"/>
+            <replacefilter token="@module.admin.email@" value="${module.admin.email}"/>
+            <replacefilter token="@tomcat.home@" value="${tomcat.home}"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.semantic.registry}/build-standalone.xml" dir="${installDir}/${adore.semantic.registry}" target="build"/>
+          <ant antfile="${installDir}/${adore.semantic.registry}/build-standalone.xml" dir="${installDir}/${adore.semantic.registry}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.semantic.registry}/build-standalone.xml" dir="${installDir}/${adore.semantic.registry}" target="deploy"/>
+          <chmod dir="${installDir}/${adore.semantic.registry}/bin" perm="ugo+rx" includes="**/*.sh"/>
+        </target>
+
+        <!-- 2007-02-06 rchute: Added adore-xmltape-xquery to package in version 1.0.3 -->
+        <target name="install-xmltape-xquery" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-xmltape-xquery*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.xmltape.xquery}/module-dist.conf" 
+                tofile="${installDir}/${adore.xmltape.xquery}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.xmltape.xquery}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.xmltape.xquery}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.xmltape.xquery}/src"/>
+            <replacefilter token="@module.OAIRegistry@" value="${tomcat.baseurl}/${adore.xmltape.registry}/OAIHandler"/>
+            <replacefilter token="@module.svcDir@" value="${tomcat.home}/webapps/${adore.xmltape.xquery}/WEB-INF/classes"/>
+            <replacefilter token="@module.tomcat.url@" value="${tomcat.baseurl}"/>
+            <replacefilter token="@module.local.rfr.id@" value="${archive.module.org.infoUri}"/>
+            <replacefilter token="@module.admin.email@" value="${module.admin.email}"/>
+            <replacefilter token="@tomcat.home@" value="${tomcat.home}"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.xmltape.xquery}/build-standalone.xml" dir="${installDir}/${adore.xmltape.xquery}" target="build"/>
+          <ant antfile="${installDir}/${adore.xmltape.xquery}/build-standalone.xml" dir="${installDir}/${adore.xmltape.xquery}" target="javadoc"/>
+          <ant antfile="${installDir}/${adore.xmltape.xquery}/build-standalone.xml" dir="${installDir}/${adore.xmltape.xquery}" target="deploy"/>
+        </target>
+
+        <target name="install-core" depends="">
+          <ant target="install-arcfile"/>
+          <ant target="install-arcfile-registry"/>
+          <ant target="install-arcfile-resolver"/>
+          <ant target="install-xmltape"/>
+          <ant target="install-xmltape-registry"/>
+          <ant target="install-xmltape-resolver"/>
+          <ant target="install-xmltape-xquery"/>
+          <ant target="install-harvester-oai"/>
+          <ant target="install-repo-oaidb"/>
+          <ant target="install-service-registry"/>
+          <ant target="install-id-locator"/>
+          <ant target="install-format-registry"/>
+          <ant target="install-semantic-registry"/>
+          <ant target="install-federator"/>
+          <ant target="install-adore-archive-accessor"/>
+          <ant target="install-archive"/>
+          <ant target="install-federation"/>
+          <ant target="install-disseminator"/>
+        </target>
+
+	<target name="cleanuptarget" depends="">
+		<delete dir="${basedir}/temp">
+		</delete>
+	</target>
+</project>

@@ -1,0 +1,3 @@
+#Last Harvest Timestamp
+#Fri Jul 29 14:28:37 MDT 2005
+oairesource.lastHarvest=2005-10-15

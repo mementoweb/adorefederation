@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi:schema targetNamespace="http://library.lanl.gov/2005-08/aDORe/XMLtape/" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:ta="http://library.lanl.gov/2005-08/aDORe/XMLtape/">
+	<xsi:annotation>
+		<xsi:documentation>
+	This Schema defines the structure of the XMLtape storage solution to contain multiple records in a single valid XML file. Herbert Van de Sompel. August 3rd 2005. Based on work by Patrick Hochstenbach, Xiaoming Liu and Herbert Van de Sompel.  
+	This Schema is available at http://purl.lanl.gov/aDORe/schemas/2006-09/XMLtape.xsd .
+</xsi:documentation>
+	</xsi:annotation>
+	<xsi:element name="tape" type="ta:tapeType"/>
+	<xsi:complexType name="tapeType">
+		<xsi:sequence>
+			<xsi:element ref="ta:tapeAdmin" minOccurs="0" maxOccurs="unbounded"/>
+			<xsi:element ref="ta:tapeRecord" maxOccurs="unbounded"/>
+		</xsi:sequence>
+	</xsi:complexType>
+	<xsi:element name="tapeAdmin">
+		<xsi:complexType>
+			<xsi:sequence>
+				<xsi:any namespace="##other" processContents="lax" maxOccurs="unbounded"/>
+			</xsi:sequence>
+		</xsi:complexType>
+	</xsi:element>
+	<xsi:element name="tapeRecord">
+		<xsi:complexType>
+			<xsi:sequence>
+				<xsi:element ref="ta:tapeRecordAdmin"/>
+				<xsi:element ref="ta:record"/>
+			</xsi:sequence>
+		</xsi:complexType>
+	</xsi:element>
+	<xsi:element name="tapeRecordAdmin">
+		<xsi:complexType>
+			<xsi:sequence>
+				<xsi:element name="identifier" type="xsi:anyURI"/>
+				<xsi:element name="date" type="ta:UTCdatetimeType"/>
+				<xsi:element name="recordAdmin" minOccurs="0" maxOccurs="unbounded">
+					<xsi:complexType>
+						<xsi:sequence>
+							<xsi:any namespace="##other" processContents="lax"/>
+						</xsi:sequence>
+					</xsi:complexType>
+				</xsi:element>
+			</xsi:sequence>
+		</xsi:complexType>
+	</xsi:element>
+	<xsi:element name="record">
+		<xsi:complexType>
+			<xsi:sequence>
+				<xsi:any namespace="##any" processContents="strict"/>
+			</xsi:sequence>
+		</xsi:complexType>
+	</xsi:element>
+	<xsi:simpleType name="UTCdatetimeType">
+		<xsi:union memberTypes="xsi:date xsi:dateTime"/>
+	</xsi:simpleType>
+</xsi:schema>

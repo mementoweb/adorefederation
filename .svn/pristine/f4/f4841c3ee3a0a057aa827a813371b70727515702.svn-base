@@ -1,0 +1,40 @@
+/**
+*Adore OAI Harvester
+*Writes harvested OAI Records to XMLTapes
+*/
+
+----------------------
+Requirements
+----------------------
+- Java 1.5
+
+----------------------
+Installation
+----------------------
+1. Copy adore-deref to a location of your choosing
+
+2. Configure the following in module.conf:
+
+* module.lib - Define path to lib directory containing project jars (i.e. lib)
+* module.src - Define path to src directory containing project source files (i.e. src)
+
+3. Run "ant -f build-standalone.xml build" to build project
+
+----------------------
+Harvest
+----------------------
+run simple.sh to test a simple harvest
+run write2tape.sh to test incremental harvesting with project configuration.
+
+Configure a harvest project
+===========================
+A sample harvest project is available at /etc/harvest/sample, which includes:
+
+harvester.conf - Configuration file for harvester
+disk1/ - Directory for all harvested tapes
+data/ - Harvested tapes organized by harvesting time
+log/ - Harvesting log file
+
+
+
+		

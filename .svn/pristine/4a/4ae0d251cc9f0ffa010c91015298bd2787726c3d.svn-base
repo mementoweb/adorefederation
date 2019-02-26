@@ -1,0 +1,367 @@
+package gov.lanl.disseminator.matchmaker
+import gov.lanl.disseminator.DmtConstants
+import gov.lanl.disseminator.model.ContextObjectContainer
+import gov.lanl.disseminator.model.Entity
+import gov.lanl.disseminator.model.EntityIterator
+import java.util.ArrayList
+import java.util.Collections
+import java.util.List
+import java.util.HashMap
+import java.util.Date
+import  gov.lanl.util.DateUtil
+import org.apache.commons.collections.MultiMap
+import gov.lanl.disseminator.DisseminatorException
+global java.util.List l
+global org.apache.commons.collections.MultiMap mhm
+
+	
+
+
+//rules about datastream match for varios services
+        rule "meta_fragment_match"
+        salience  0
+        when
+          obj:ContextObjectContainer()
+          eval(obj.getServiceType().hasProperty("meta"))
+          eval(obj.getServiceType().getProperty("meta").equals("true"))
+          eval(obj.getReferent().hasProperty("semantic"))
+          eval((obj.getReferent().getProperty("semantic")).equals(DmtConstants.BIB))
+          eval(obj.getReferent().hasProperty("format"))
+          eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+        then
+          l.add(0,(Entity)obj.getReferent());
+        end
+
+         rule "cite(marcxml)_match"
+        salience  0
+        when
+          obj:ContextObjectContainer()
+          eval(obj.getServiceType().getProperty("svc_id").startsWith(DmtConstants.getcitation))
+          eval(obj.getReferent().hasProperty("semantic"))
+          eval((obj.getReferent().getProperty("semantic")).equals(DmtConstants.CITATION))
+          eval(obj.getReferent().hasProperty("format"))
+          eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+        then
+            l.add(0,(Entity)obj.getReferent());
+        end
+
+        rule "atom_service"
+        salience  100
+        when
+          obj:ContextObjectContainer()
+          eval(obj.getServiceType().getProperty("svc_id").startsWith(DmtConstants.tocatom))
+          eval(obj.getReferent().hasProperty("semantic"))
+          eval((obj.getReferent().getProperty("semantic")).equals(DmtConstants.BIB))
+          eval(obj.getReferent().hasProperty("format"))
+          eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+        then
+          l.add(0,(Entity) obj.getReferent());
+        end
+
+  
+    rule "rem_service_marc_match"
+        salience  100
+        when
+          obj:ContextObjectContainer()
+          eval(obj.getServiceType().getProperty("svc_id").startsWith("info:lanl-repo/svc/rem"))
+          eval(obj.getReferent().hasProperty("semantic"))
+          eval((obj.getReferent().getProperty("semantic")).equals(DmtConstants.BIB))
+          eval(obj.getReferent().hasProperty("format"))
+          eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+        then
+          l.add(0,(Entity) obj.getReferent());
+        end
+
+     rule "rem_service_item_match_to_get_item_identifiers"
+        salience  99         
+        when
+          obj:ContextObjectContainer()
+          eval(obj.getServiceType().hasProperty("rem"))
+          eval(obj.getReferent().hasProperty("item"))
+          eval((obj.getReferent().getProperty("item")).equals("true"))
+        then
+         mhm.put("item",obj.getReferent());
+        end
+
+
+           rule "permalink"
+        salience  100
+        when
+          obj:ContextObjectContainer()
+          eval(obj.getServiceType().hasProperty("rem"))
+          eval(obj.getReferent().hasProperty("semantic"))
+          eval((obj.getReferent().getProperty("semantic")).equals(DmtConstants.BIB))
+          eval(obj.getReferent().hasProperty("format"))
+          eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+        then
+          l.add(0,(Entity) obj.getReferent());
+        end
+
+         rule "ref_service"
+        salience 100
+        when
+          obj:ContextObjectContainer()
+          eval(obj.getServiceType().getProperty("svc_id").startsWith(DmtConstants.ref))
+          eval(obj.getReferent().hasProperty("semantic"))
+          eval((obj.getReferent().getProperty("semantic")).equals(DmtConstants.BIB))
+          eval(obj.getReferent().hasProperty("format"))
+          eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+        then
+          l.add(0,(Entity) obj.getReferent());
+        end
+
+     rule "matching_technical_report_stream_for_TR_service"
+        salience  100
+        when
+            obj:ContextObjectContainer()
+           eval(obj.getServiceType().getProperty("svc_id").startsWith("info:lanl-repo/svc/getTR"))
+           eval(obj.getReferent().hasProperty("semantic"))
+         eval((obj.getReferent().getProperty("semantic")).equals("info:lanl-repo/sem/4"))
+           eval(obj.getReferent().hasProperty("format"))
+         eval((obj.getReferent().getProperty("format")).equals("info:lanl-repo/fmt/5"))
+          then
+          l.add(0,(Entity) obj.getReferent());
+        end
+
+	 rule "ore_service"
+        salience  100
+        when
+          obj:ContextObjectContainer()
+          eval(obj.getServiceType().getProperty("svc_id").startsWith(DmtConstants.oreatom))
+          eval(obj.getReferent().hasProperty("semantic"))
+          eval((obj.getReferent().getProperty("semantic")).equals(DmtConstants.BIB))
+          eval(obj.getReferent().hasProperty("format"))
+          eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+        then
+          l.add(0,(Entity) obj.getReferent());
+        end
+
+      rule "default_services_for_toc"
+      when
+       obj:ContextObjectContainer()
+    eval(!(obj.getServiceType()).hasProperty("rem"))
+	then
+         (obj.getReferent()).addService(DmtConstants.tocatom);
+	  (obj.getReferent()).addParamToService(DmtConstants.tocatom,"title","ATOM");
+          (obj.getReferent()).addParamToService(DmtConstants.tocatom,"mimetype","application/xml");
+           (obj.getReferent()).addParamToService(DmtConstants.tocatom,"format",obj.getReferent().getProperty("format"));
+               (obj.getReferent()).addParamToService(DmtConstants.tocatom,"semantic",obj.getReferent().getProperty("semantic"));
+          (obj.getReferent()).addParamToService(DmtConstants.tocatom,"dateCreated","2007-03-26T00:00:00Z");
+
+            (obj.getReferent()).addService(DmtConstants.oreatom);
+          (obj.getReferent()).addParamToService(DmtConstants.oreatom,"title","ORE ATOM");
+          (obj.getReferent()).addParamToService(DmtConstants.oreatom,"mimetype","application/xml");
+           (obj.getReferent()).addParamToService(DmtConstants.oreatom,"format",obj.getReferent().getProperty("format"));
+               (obj.getReferent()).addParamToService(DmtConstants.oreatom,"semantic",obj.getReferent().getProperty("semantic"));
+		 (obj.getReferent()).addParamToService(DmtConstants.oreatom,"dateCreated","2007-03-26T00:00:00Z");
+
+         (obj.getReferent()).addService(DmtConstants.getdidl);
+         (obj.getReferent()).addParamToService(DmtConstants.getdidl,"title","Digital Item Declaration - Display");
+         (obj.getReferent()).addParamToService(DmtConstants.getdidl,"present","html");
+         (obj.getReferent()).addParamToService(DmtConstants.getdidl,"mimetype","text/html");
+         (obj.getReferent()).addParamToService(DmtConstants.getdidl,"format",obj.getReferent().getProperty("format"));
+         (obj.getReferent()).addParamToService(DmtConstants.getdidl,"semantic",obj.getReferent().getProperty("semantic"));
+         (obj.getReferent()).addParamToService(DmtConstants.getdidl,"dateCreated","2007-03-26T00:00:00Z");
+
+         (obj.getReferent()).addService(DmtConstants.getdidlxml);
+         (obj.getReferent()).addParamToService(DmtConstants.getdidlxml,"title","Digital Item Declaration - XML");
+         (obj.getReferent()).addParamToService(DmtConstants.getdidlxml,"mimetype","application/xml");
+         (obj.getReferent()).addParamToService(DmtConstants.getdidlxml,"format",obj.getReferent().getProperty("format"));
+         (obj.getReferent()).addParamToService(DmtConstants.getdidlxml,"semantic",obj.getReferent().getProperty("semantic"));
+         (obj.getReferent()).addParamToService(DmtConstants.getdidlxml,"dateCreated","2007-03-26T00:00:00Z");
+
+       end
+
+      
+   rule "default_services_for_rem"
+      when
+       obj:ContextObjectContainer()
+       eval( (obj.getServiceType()).hasProperty("rem"))
+       then
+         
+          String didlv ="info:lanl-repo/svc/co.didl.view";
+
+         (obj.getReferent()).addService(didlv);
+         (obj.getReferent()).addParamToService(didlv,"title","Digital Item Declaration - Display");
+         (obj.getReferent()).addParamToService(didlv,"present","html");
+         (obj.getReferent()).addParamToService(didlv,"mimetype","text/html");
+         (obj.getReferent()).addParamToService(didlv,"format",obj.getReferent().getProperty("format"));
+         (obj.getReferent()).addParamToService(didlv,"semantic",obj.getReferent().getProperty("semantic"));
+         (obj.getReferent()).addParamToService(didlv,"dateCreated","2007-03-26T00:00:00Z");
+
+         String didl ="info:lanl-repo/svc/co.didl";
+         (obj.getReferent()).addService(didl);
+         (obj.getReferent()).addParamToService(didl,"title","Digital Item Declaration - XML");
+         (obj.getReferent()).addParamToService(didl,"mimetype","application/xml");
+         (obj.getReferent()).addParamToService(didl,"format",obj.getReferent().getProperty("format"));
+         (obj.getReferent()).addParamToService(didl,"semantic",obj.getReferent().getProperty("semantic"));
+         (obj.getReferent()).addParamToService(didl,"dateCreated","2007-03-26T00:00:00Z");
+
+       end
+
+
+  
+ rule "add_service_if_marc_present_to_toc"
+       when
+          obj:ContextObjectContainer()
+          eval((obj.getReferentMeanIt().getParams(obj.getServiceType().getProperty("svc_id"))).containsKey("toc"))
+          eval(obj.getReferent().hasProperty("format"))
+          eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+          
+       then
+	  (obj.getReferent()).addService(DmtConstants.marc2mods);
+          (obj.getReferent()).addParamToService(DmtConstants.marc2mods,"title","MODS");
+           (obj.getReferent()).addParamToService(DmtConstants.marc2mods,"mimetype","application/xml");
+              (obj.getReferent()).addParamToService(DmtConstants.marc2mods,"format",obj.getReferent().getProperty("format"));       
+               (obj.getReferent()).addParamToService(DmtConstants.marc2mods,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+                 (obj.getReferent()).addParamToService(DmtConstants.marc2mods,"dateCreated","2007-03-26T00:00:00Z");
+
+           (obj.getReferent()).addService(DmtConstants.marc2dc);
+           (obj.getReferent()).addParamToService(DmtConstants.marc2dc,"title","Dublin Core");
+	    (obj.getReferent()).addParamToService(DmtConstants.marc2dc,"mimetype","application/xml");
+              (obj.getReferent()).addParamToService(DmtConstants.marc2dc,"format",obj.getReferent().getProperty("format"));
+               (obj.getReferent()).addParamToService(DmtConstants.marc2dc,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+                (obj.getReferent()).addParamToService(DmtConstants.marc2dc,"dateCreated","2007-03-26T00:00:00Z");          
+
+           (obj.getReferent()).addService(DmtConstants.getbibliographic);
+           (obj.getReferent()).addParamToService(DmtConstants.getbibliographic,"title","MARC 21");
+           (obj.getReferent()).addParamToService(DmtConstants.getbibliographic,"mimetype","application/xml");
+           (obj.getReferent()).addParamToService(DmtConstants.getbibliographic,"format",obj.getReferent().getProperty("format"));
+           (obj.getReferent()).addParamToService(DmtConstants.getbibliographic,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+           (obj.getReferent()).addParamToService(DmtConstants.getbibliographic,"dateCreated","2007-03-26T00:00:00Z");            
+
+            (obj.getReferent()).addService(DmtConstants.ori);
+            (obj.getReferent()).addParamToService(DmtConstants.ori,"title","Original Bibliographic Record Provided by the Publisher");
+            (obj.getReferent()).addParamToService(DmtConstants.ori,"dateCreated","2007-03-26T00:00:00Z");
+          
+      end    
+       
+
+  rule "bib_marc_rem"
+         salience  10
+       when
+         obj:ContextObjectContainer()
+         eval((obj.getServiceType()).hasProperty("rem"))     
+         eval(obj.getReferent().hasProperty("semantic"))
+         eval((obj.getReferent().getProperty("semantic")).equals(DmtConstants.BIB))
+         eval(obj.getReferent().hasProperty("format"))
+         eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+        
+       then
+          String marc2mods ="info:lanl-repo/svc/meta.mods"; 
+          (obj.getReferent()).addService(marc2mods);
+          (obj.getReferent()).addParamToService(marc2mods,"title","Bibliographic record - MODS");
+          (obj.getReferent()).addParamToService(marc2mods,"mimetype","application/xml");
+          (obj.getReferent()).addParamToService(marc2mods,"format",obj.getReferent().getProperty("format"));
+          (obj.getReferent()).addParamToService(marc2mods,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+          (obj.getReferent()).addParamToService(marc2mods,"dateCreated","2007-03-26T00:00:00Z");
+
+
+	  String marc2dc ="info:lanl-repo/svc/meta.dc";
+          (obj.getReferent()).addService(marc2dc);
+          (obj.getReferent()).addParamToService(marc2dc,"title","Bibliographic record - Dublin Core");
+          (obj.getReferent()).addParamToService(marc2dc,"mimetype","application/xml");
+           (obj.getReferent()).addParamToService(marc2dc,"format",obj.getReferent().getProperty("format"));
+           (obj.getReferent()).addParamToService(marc2dc,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+           (obj.getReferent()).addParamToService(marc2dc,"dateCreated","2007-03-26T00:00:00Z");
+
+           String marc ="info:lanl-repo/svc/meta.marcxml";
+          (obj.getReferent()).addService(marc);
+          (obj.getReferent()).addParamToService(marc,"title","Bibliographic record - MARC21");
+           (obj.getReferent()).addParamToService(marc,"format",obj.getReferent().getProperty("format"));
+               (obj.getReferent()).addParamToService(marc,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+               (obj.getReferent()).addParamToService(marc,"dateCreated","2007-03-26T00:00:00Z");
+
+          String ori ="info:lanl-repo/svc/meta.ori";
+          (obj.getReferent()).addService(ori);
+          (obj.getReferent()).addParamToService(ori,"title","Bibliographic Record - Publisher");
+          (obj.getReferent()).addParamToService(ori,"dateCreated","2007-03-26T00:00:00Z");
+
+      end
+
+
+    rule "citation_marc"
+    salience  10
+       when
+        obj:ContextObjectContainer()
+           eval(obj.getReferent().hasProperty("semantic"))
+         eval((obj.getReferent().getProperty("semantic")).equals(DmtConstants.CITATION))
+           eval(obj.getReferent().hasProperty("format"))
+         eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+       then
+          (obj.getReferent()).addService(DmtConstants.getcitation);
+               (obj.getReferent()).addParamToService(DmtConstants.getcitation,"title","Citations in MARC 21");
+	    (obj.getReferent()).addParamToService(DmtConstants.getcitation,"mimetype","application/xml");
+              (obj.getReferent()).addParamToService(DmtConstants.getcitation,"format",obj.getReferent().getProperty("format"));
+               (obj.getReferent()).addParamToService(DmtConstants.getcitation,"semantic",obj.getReferent().getProperty("semantic"));
+               (obj.getReferent()).addParamToService(DmtConstants.getcitation,"dateCreated","2007-03-26T00:00:00Z");
+
+           (obj.getReferent()).addService(DmtConstants.citmarc2mods);
+                (obj.getReferent()).addParamToService(DmtConstants.citmarc2mods,"title","Citations in MODS");
+           (obj.getReferent()).addParamToService(DmtConstants.citmarc2mods,"mimetype","application/xml");
+            (obj.getReferent()).addParamToService(DmtConstants.citmarc2mods,"format",obj.getReferent().getProperty("format"));
+               (obj.getReferent()).addParamToService(DmtConstants.citmarc2mods,"semantic",obj.getReferent().getProperty("semantic"));
+               (obj.getReferent()).addParamToService(DmtConstants.citmarc2mods,"dateCreated","2007-03-26T00:00:00Z");               
+
+
+          (obj.getReferent()).addService(DmtConstants.citmarc2dc);
+                  (obj.getReferent()).addParamToService(DmtConstants.citmarc2dc,"title","Citations in Dublin Core");
+              (obj.getReferent()).addParamToService(DmtConstants.citmarc2dc,"mimetype","application/xml");
+               (obj.getReferent()).addParamToService(DmtConstants.citmarc2dc,"format",obj.getReferent().getProperty("format"));
+               (obj.getReferent()).addParamToService(DmtConstants.citmarc2dc,"semantic",obj.getReferent().getProperty("semantic"));
+                 (obj.getReferent()).addParamToService(DmtConstants.citmarc2dc,"dateCreated","2007-03-26T00:00:00Z");          
+      end
+
+         rule "rem_citation_marc"
+         salience  10
+         when
+         obj:ContextObjectContainer()
+         eval((obj.getReferentMeanIt().getParams(obj.getServiceType().getProperty("svc_id"))).containsKey("rem"))
+         eval(obj.getReferent().hasProperty("semantic"))
+         eval((obj.getReferent().getProperty("semantic")).equals(DmtConstants.CITATION))
+         eval(obj.getReferent().hasProperty("format"))
+         eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+       then
+            String marcxml ="info:lanl-repo/svc/cite.marcxml";       
+             (obj.getReferent()).addService(marcxml);
+               (obj.getReferent()).addParamToService(marcxml,"title","Citations in MARC 21");
+            (obj.getReferent()).addParamToService(marcxml,"mimetype","application/xml");
+              (obj.getReferent()).addParamToService(marcxml,"format",obj.getReferent().getProperty("format"));
+               (obj.getReferent()).addParamToService(marcxml,"semantic",obj.getReferent().getProperty("semantic"));
+               (obj.getReferent()).addParamToService(marcxml,"dateCreated","2007-03-26T00:00:00Z");
+
+          String mods ="info:lanl-repo/svc/cite.mods";
+           (obj.getReferent()).addService(mods);
+                (obj.getReferent()).addParamToService(mods,"title","Citations in MODS");
+           (obj.getReferent()).addParamToService(mods,"mimetype","application/xml");
+            (obj.getReferent()).addParamToService(mods,"format",obj.getReferent().getProperty("format"));
+               (obj.getReferent()).addParamToService(mods,"semantic",obj.getReferent().getProperty("semantic"));
+               (obj.getReferent()).addParamToService(mods,"dateCreated","2007-03-26T00:00:00Z");
+
+          String dc ="info:lanl-repo/svc/cite.dc";
+          (obj.getReferent()).addService(dc);
+                  (obj.getReferent()).addParamToService(dc,"title","Citations in Dublin Core");
+              (obj.getReferent()).addParamToService(dc,"mimetype","application/xml");
+               (obj.getReferent()).addParamToService(dc,"format",obj.getReferent().getProperty("format"));
+               (obj.getReferent()).addParamToService(dc,"semantic",obj.getReferent().getProperty("semantic"));
+                 (obj.getReferent()).addParamToService(dc,"dateCreated","2007-03-26T00:00:00Z");
+      end
+
+
+	 rule "toc_service_add_techreport"
+      when
+         obj:ContextObjectContainer()
+           eval(obj.getReferent().hasProperty("semantic"))
+         eval((obj.getReferent().getProperty("semantic")).equals("info:lanl-repo/sem/4"))
+           eval(obj.getReferent().hasProperty("format"))
+         eval((obj.getReferent().getProperty("format")).equals("info:lanl-repo/fmt/5")) 
+      then
+       String tr = "info:lanl-repo/svc/getTR";
+       (obj.getReferent()).addService(tr);
+         (obj.getReferent()).addParamToService(tr,"title","LANL Technical Report");
+              (obj.getReferent()).addParamToService(tr,"mimetype","application/pdf");
+               (obj.getReferent()).addParamToService(tr,"format",obj.getReferent().getProperty("format"));
+               (obj.getReferent()).addParamToService(tr,"semantic",obj.getReferent().getProperty("semantic"));
+                 (obj.getReferent()).addParamToService(tr,"dateCreated","2007-09-26T00:00:00Z");
+      end
+

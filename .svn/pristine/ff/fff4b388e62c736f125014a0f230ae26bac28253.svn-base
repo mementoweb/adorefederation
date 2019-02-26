@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin" path="src"/>
+	<classpathentry kind="lib" path="lib/ant-contrib.jar"/>
+	<classpathentry kind="lib" path="lib/antlr.jar"/>
+	<classpathentry kind="lib" path="lib/axis.jar"/>
+	<classpathentry kind="lib" path="lib/commons-cli-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-api.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/commons-pool-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/DIDAdore-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/DIDAPI-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/DIDAPI-demo-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/DIDAPI-impl-2.0.jar" sourcepath="/DIDAPI"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/errol.jar"/>
+	<classpathentry kind="lib" path="lib/exist.jar"/>
+	<classpathentry kind="lib" path="lib/harvester2.jar"/>
+	<classpathentry kind="lib" path="lib/heritrix-1.4.0.jar" sourcepath="/Users/rchute/Desktop/heritrix-1.4.0"/>
+	<classpathentry kind="lib" path="lib/itext-1.4.5.jar"/>
+	<classpathentry kind="lib" path="lib/jakarta-oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="lib/jakarta-regexp-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/jaxen-1.1.8.jar"/>
+	<classpathentry kind="lib" path="lib/jdom.jar"/>
+	<classpathentry kind="lib" path="lib/je.jar" sourcepath="/je-3.2.44"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="lib/mg4j-0.9.1.jar"/>
+	<classpathentry kind="lib" path="lib/netrics3.3.8.jar"/>
+	<classpathentry kind="lib" path="lib/nux.jar"/>
+	<classpathentry kind="lib" path="lib/oaicat.jar"/>
+	<classpathentry kind="lib" path="lib/oaicatsrw.jar"/>
+	<classpathentry kind="lib" path="lib/oaiharvester-2.9.jar"/>
+	<classpathentry kind="lib" path="lib/oom.jar"/>
+	<classpathentry kind="lib" path="lib/oomRef.jar" sourcepath="/Users/rchute/Desktop/2008-06-02/oomRef-1.0.0/oomRefsrc.jar"/>
+	<classpathentry kind="lib" path="lib/openurl.jar"/>
+	<classpathentry kind="lib" path="lib/ostermillerutils_1_04_03.jar"/>
+	<classpathentry kind="lib" path="lib/PREMIS.jar"/>
+	<classpathentry kind="lib" path="lib/saaj.jar"/>
+	<classpathentry kind="lib" path="lib/saxon8.jar"/>
+	<classpathentry kind="lib" path="lib/saxpath-1.5.jar"/>
+	<classpathentry kind="lib" path="lib/saxpath.jar"/>
+	<classpathentry kind="lib" path="lib/servlet.jar"/>
+	<classpathentry kind="lib" path="lib/xalan.jar"/>
+	<classpathentry kind="lib" path="lib/xbean.jar"/>
+	<classpathentry kind="lib" path="lib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="lib/xml-commons-resolver-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/xmldb.jar"/>
+	<classpathentry kind="lib" path="lib/xmlParserAPIs.jar"/>
+	<classpathentry kind="lib" path="lib/xmlpull_1_1_3_4b.jar"/>
+	<classpathentry kind="lib" path="lib/xmlrpc-1.2-patched.jar"/>
+	<classpathentry kind="lib" path="lib/xmlsec-gov.jar" sourcepath="/xml-security-1_4_1/src"/>
+	<classpathentry kind="lib" path="lib/xmlsecSamples-1.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/xom.jar"/>
+	<classpathentry kind="lib" path="lib/xpp3-1.1.3.4.C.jar"/>
+	<classpathentry kind="lib" path="lib/xxsaxon.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/apache-solr-1.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-dbcp-1.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.5-bin.jar"/>
+	<classpathentry kind="lib" path="lib/c3p0-0.9.1.2.jar"/>
+	<classpathentry kind="lib" path="/lanl/adore/adore-disseminator/lib/drools-core-4.0.7.jar"/>
+	<classpathentry kind="lib" path="/lanl/adore/adore-disseminator/lib/drools-compiler-4.0.7.jar"/>
+	<classpathentry kind="src" path="/djtaoka"/>
+	<classpathentry kind="lib" path="/CitationGraph/lib/marc4j.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

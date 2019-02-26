@@ -1,0 +1,10 @@
+# OAIResource Configurations
+oairesource.projectName=APS
+oairesource.baseurl=http://oai.test.ridge.aps.org/oai
+oairesource.from=
+oairesource.until=
+oairesource.sets=
+oairesource.metadataPrefix=didl
+
+oairesource.ingestPlugin=gov.lanl.ingest.oaitape.aps.DidlSigProcessor
+oairesource.projectDir=/home/rchute/lanl/adore/modules/oai-resource/dist/oai-resource/etc/examples/aps/

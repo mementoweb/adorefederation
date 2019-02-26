@@ -1,0 +1,8 @@
+#adore oai harvester configuration file
+#Mon Dec 15 16:45:28 MST 2003
+#harvester configuration
+projectname=arXiv
+baseURL=http://arXiv.org/oai2
+metadataprefix=oai_dc
+verb=ListRecords
+

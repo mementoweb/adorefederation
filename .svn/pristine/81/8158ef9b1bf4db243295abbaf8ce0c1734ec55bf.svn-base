@@ -1,0 +1,37 @@
+#$Id$
+
+federator is a tomcat application which expose all XMLTapes as a single OAI repository in aDORe.
+
+
+INTALL
+======
+copy adore-federator.war to a ${TOMCAT_HOME}/webapps, and restart tomcat.
+
+dependency
+=============
+federator uses services defined by repo-index, id-resolver, and format registry. Please make sure these components work correctly before testing federator.
+
+Configuration
+=============
+
+web.xml
+-------
+make sure   <param-name>properties</param-name> points to correct oaicat.properites, which defines all parameters related to federator
+
+oaicat.propertis
+----------------
+The first part of this file is concistent with OAICAT definition. however, the last section of this file is local extensions of federator, including:
+ 
+DIDL.Config.Dir=${etc}, this defines where to locate federator.xml and all stylesheets. By default, this directory is located in ${federator}/WEB-INF/etc
+
+Number.Threads, an optimization of speeding up xslt processing in multiple-processor machines, usually use the value 2.
+
+RepositoryIndex.URL, OAI-PMH baseURL of repoindex
+FormatIndex.URL, OAI-PMH baseURL of Format Index
+Resolver.URL, OAI-PMH baseURL of resolver
+
+
+logging
+------
+log4j logging mechanism is used, please check how to config log4j in tomcat.
+

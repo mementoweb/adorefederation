@@ -1,0 +1,10 @@
+# OAIResource Configurations
+oairesource.projectName=EPRINT
+oairesource.baseurl=http://libeprints.open.ac.uk/perl/oai2
+oairesource.from=
+oairesource.until=
+oairesource.sets=
+oairesource.metadataPrefix=oai_dc
+
+oairesource.ingestPlugin=gov.lanl.ingest.oaitape.simple.DCFormatProcessor
+oairesource.projectDir=@oairesource.projectDir@

@@ -1,0 +1,37 @@
+/**
+*Adore Object Database Accessor
+*/
+
+----------------------
+Requirements
+----------------------
+- Java 1.5
+- Tomcat 5.5+
+- MySQL 4.1+
+
+----------------------
+Installation
+----------------------
+1. Copy adore-objectdb-accessor to a location of your choosing
+
+2. Create a new db in MySQL (e.g. CREATE DATABASE objectDb;)
+
+3. Create a new db user with permissions to new db. (e.g.  GRANT ALL PRIVILEGES ON *.* TO objectDb@localhost IDENTIFIED BY 'pass123' WITH GRANT OPTION;)
+
+4. Configure the following in module.conf:
+
+* module.lib - Define path to lib directory containing project jars (e.g. lib)
+* module.src - Define path to src directory containing project source files (e.g. src)
+* module.baseurl - Define base url for arcfile registry webapp (e.g. http://library.lanl.gov/aDORe/demo/adore-objectdb-accessor/OAIHandler)
+* module.db.jdbcurl- Define JDBC URL to objectDb instance (e.g. jdbc:mysql://127.0.0.1:3306/objectDb)
+* module.db.login - Define db user name (e.g. objectDb)
+* module.db.passwd - Define db user password (e.g. pass123)
+* module.admin.email - Define admin e-mail contact (e.g. mailto:rchute@lanl.gov)
+* tomcat.home - Define path to tomcat home directory (e.g. /opt/jakarta-tomcat-5.5.9)
+* module.ididxplugin - Define identifier index impl used during PMP Requests (e.g. gov.lanl.identifier.record.didl.DidlRecordDOM)
+
+5. Run "ant -f build-standalone.xml createdb" to create necessary db tables
+
+6. Run "ant -f build-standalone.xml build" to build project
+
+7. Run "ant -f build-standalone.xml deploy" to copy war to Tomcat WEB-APPS directory.

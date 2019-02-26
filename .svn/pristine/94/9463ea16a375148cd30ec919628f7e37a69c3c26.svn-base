@@ -1,0 +1,50 @@
+/**
+*Adore Archive Solution Installer
+*/
+
+----------------------
+Requirements
+----------------------
+- Java 1.5
+- MySQL 4.1+
+- Apache Tomcat 5.5+
+- Apache Ant 1.6.5
+- Ant-Contrib 0.3
+
+----------------------
+Pre-Installation
+----------------------
+1. Change DB Passwords Defined in createdb.sql
+- Open the createdb.sql file located in the installation directory
+- Replace each instance of 'ymca213' with a password of your preference.
+- Save file.
+
+2. Log-in to mysql command line utility
+- Use command 'mysql -u root -p' to log-in as root
+- Enter root password when prompted
+
+3. Run source command to create arc_registry & tape_registry databases and associated database users.
+- Use command 'source <absolute_path_to_createdb.sql>
+
+----------------------
+Installation
+----------------------
+To launch the installer, run the following:
+
+For Linux / Mac OS-X:
+Console Install:
+sh install.sh text
+
+GUI Installer:
+sh install.sh
+
+For Windows:
+- Double-click install.cmd to launch installer
+
+IMPORTANT: Windows File Path References should use forward slashes (/) instead of back slashes (\) i.e. c:/apps/adoreArchive.
+
+---------------------
+NOTE
+---------------------
+
+Warning: "tar: A lone zero block" message when extracting aDORe InstallerWhen extracting the adoreArchiveInstaller-X.X.tar.gz file on some Linux / Unix distributions, the message "tar: A lone zero block at <number>" may appear. This message is caused by a defect in Ant, which was used to tar the installer. It is informational only, all aDORe files extracted properly, and can be used without error.

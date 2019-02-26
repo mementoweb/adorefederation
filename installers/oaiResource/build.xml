@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+
+<project name="Installation Build"  default=""  basedir="${basedir}">
+
+	<!-- this is required to pick up the properties generated during the install pages -->
+	<property file="${basedir}/ant.install.properties"/>
+        <property file="${basedir}/modules.properties"/>
+
+        <target name="install-oai-resource" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/oai-resource*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${oai.resource}/module-dist.conf" 
+                tofile="${installDir}/${oai.resource}/module.conf"
+                overwrite="true"/>
+          <replace file="${installDir}/${oai.resource}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${oai.resource}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${oai.resource}/src"/>
+            <replacefilter token="@module.home@" value="${installDir}/${oai.resource}"/>
+	  </replace>
+          <copy file="${installDir}/${oai.resource}/etc/examples/env-dist.properties" 
+                tofile="${installDir}/${oai.resource}/etc/examples/env.properties"
+                overwrite="true"/>
+          <replace file="${installDir}/${oai.resource}/etc/examples/env.properties">
+            <replacefilter token="@local.datastream.prefix@" value="${local.datastream.prefix}"/>
+            <replacefilter token="@local.openurl-referrer.id@" value="${local.openurl-referrer.id}"/>
+	  </replace>
+          <copy file="${installDir}/${oai.resource}/etc/examples/eprint/eprint-dist.properties" 
+                tofile="${installDir}/${oai.resource}/etc/examples/eprint/eprint.properties"
+                overwrite="true"/>
+          <replace file="${installDir}/${oai.resource}/etc/examples/eprint/eprint.properties">
+            <replacefilter token="@oairesource.projectDir@" value="${installDir}/${oai.resource}/etc/examples/eprint/"/>
+	  </replace>
+          <ant antfile="${installDir}/${oai.resource}/build-standalone.xml" dir="${installDir}/${oai.resource}" target="build"/>
+          <ant antfile="${installDir}/${oai.resource}/build-standalone.xml" dir="${installDir}/${oai.resource}" target="javadoc"/>
+        </target>
+
+        <target name="install-harvester-oai" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-harvester-oai*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.harvester.oai}/module-dist.conf" 
+                tofile="${installDir}/${adore.harvester.oai}/module.conf"
+                overwrite="true"/>
+          <replace file="${installDir}/${adore.harvester.oai}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.harvester.oai}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.harvester.oai}/src"/>
+	  </replace>
+          <ant antfile="${installDir}/${adore.harvester.oai}/build-standalone.xml" dir="${installDir}/${adore.harvester.oai}" target="build"/>
+          <ant antfile="${installDir}/${adore.harvester.oai}/build-standalone.xml" dir="${installDir}/${adore.harvester.oai}" target="javadoc"/>
+        </target>
+ 
+        <target name="install-deref" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-deref*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.deref}/module-dist.conf" 
+                tofile="${installDir}/${adore.deref}/module.conf"
+                overwrite="true"/>
+          <replace file="${installDir}/${adore.deref}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.deref}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.deref}/src"/>
+	  </replace>
+          <copy file="${installDir}/${adore.deref}/etc/projects/sample/ingest-dist.conf" 
+                tofile="${installDir}/${adore.deref}/etc/projects/sample/ingest.conf"
+                overwrite="true"/>
+          <replace file="${installDir}/${adore.deref}/etc/projects/sample/ingest.conf">
+            <replacefilter token="@deref.xmltape.data@" value="${installDir}/${adore.deref}/etc/projects/sample"/>
+            <replacefilter token="@local.service.id@" value="${local.service.id}"/>
+            <replacefilter token="@deref.xmltape.log4j@" value="${installDir}/${adore.deref}/etc/projects/sample/log4j.properties"/>
+	  </replace>
+          <ant antfile="${installDir}/${adore.deref}/build-standalone.xml" dir="${installDir}/${adore.deref}" target="build"/>
+          <ant antfile="${installDir}/${adore.deref}/build-standalone.xml" dir="${installDir}/${adore.deref}" target="javadoc"/>
+        </target>
+
+        <target name="install-xmlsig" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-xmlsig*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.xmlsig}/module-dist.conf" 
+                tofile="${installDir}/${adore.xmlsig}/module.conf"
+                overwrite="true"/>
+          <replace file="${installDir}/${adore.xmlsig}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.xmlsig}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.xmlsig}/src"/>
+	  </replace>
+          <property name="xmlsigKeystoreDir" value="${installDir}/${adore.xmlsig}/etc/local"/>
+          <mkdir dir="${xmlsigKeystoreDir}"/>
+          <copy file="${installDir}/${adore.xmlsig}/etc/sig-dist.properties" 
+                tofile="${xmlsigKeystoreDir}/sig.properties"
+                overwrite="true"/>
+          <replace file="${xmlsigKeystoreDir}/sig.properties">
+            <replacefilter token="@xmlsig.keystore.dir@" value="${xmlsigKeystoreDir}"/>
+            <replacefilter token="@xmlsig.keystore.file@" value="${xmlsigKeystoreDir}/keystore.jks"/>
+            <replacefilter token="@xmlsig.keystore.pass@" value="${xmlsig.keystore.pass}"/>
+            <replacefilter token="@xmlsig.privatekey.alias@" value="${xmlsig.keystore.alias}"/>
+            <replacefilter token="@xmlsig.privatekey.pass@" value="${xmlsig.keystore.pass}"/>
+            <replacefilter token="@xmlsig.cert.alias@" value="${xmlsig.keystore.alias}"/>
+            <replacefilter token="@xmlsig.cert.url@" value="${xmlsigKeystoreDir}/oaiResource.crt"/>
+          </replace>
+          <exec command="keytool -genkey -alias ${xmlsig.keystore.alias} -dname 'CN=${xmlsig.domain},OU=${xmlsig.department},O=${xmlsig.organization},L=${xmlsig.city},S=${xmlsig.state},C=${xmlsig.country}' -keyalg RSA -keystore ${xmlsigKeystoreDir}/keystore.jks -storepass ${xmlsig.keystore.pass}"/>
+          <exec command="keytool -export -rfc -keystore ${xmlsigKeystoreDir}/keystore.jks -alias ${xmlsig.keystore.alias} -file ${xmlsigKeystoreDir}/oaiResource.crt"/>
+          <ant antfile="${installDir}/${adore.xmlsig}/build-standalone.xml" dir="${installDir}/${adore.xmlsig}" target="build"/>
+          <ant antfile="${installDir}/${adore.xmlsig}/build-standalone.xml" dir="${installDir}/${adore.xmlsig}" target="javadoc"/>
+        </target>
+
+        <target name="install-core" depends="">
+          <ant target="install-oai-resource"/>
+          <ant target="install-harvester-oai"/>
+          <ant target="install-deref"/>
+          <ant target="install-xmlsig"/>
+        </target>
+
+	<target name="cleanuptarget" depends="">
+		<delete dir="${basedir}/temp">
+		</delete>
+	</target>
+</project>

@@ -1,0 +1,14 @@
+a:link, a:visited { background-color: transparent; }
+a:link { color: #C95000; }
+a:hover { color: #02008D; }
+a:visited { color: #02008D; } 
+a:visited:hover { color: #02008D; }
+
+html { font: 11px Verdana, Arial, Helvetica, sans-serif; text-align: left; }
+body { background: #FFF; color: #000; }
+form { margin: 0; padding: 0; }
+img { border: 0; margin: 0; padding: 0 }
+td, tr { font: 11px Verdana, Arial, Helvetica, sans-serif; text-align: left; vertical-align: top; }
+
+.block { display: block; }
+.small { font: 10px Verdana, Arial, Helvetica, sans-serif; text-align: left; vertical-align: top; }

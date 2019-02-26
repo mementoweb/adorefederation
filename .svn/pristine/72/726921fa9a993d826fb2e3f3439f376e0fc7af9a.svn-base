@@ -1,0 +1,470 @@
+<?xml version="1.0"?>
+
+<project name="adore-disseminator" default="build" basedir=".">
+
+    <import file="../build.xml"/>
+    <!-- ===================================================================
+      -  init - initialization common to the framework module
+      -  =================================================================== -->
+    <target name="module-init" depends="global-init">
+        <!-- Import Configuration File -->
+        <property name="module.name"     value="adore-disseminator"/>
+        <property file="${root.src.dir}/${module.name}/module.conf"/>
+        <property name="module.root.dir"  value="${root.src.dir}/${module.name}"/>
+        <!-- Extended module-specific properties -->
+        <property name="module.version"  value="${module.version}"/>
+        <property name="module.dist"  value="${module.root.dir}/dist"/>
+        <property name="module.build" value="${module.root.dir}/tmp"/>
+        <property name="module.doc" value="${module.root.dir}/doc"/>
+        <property name="module.local.lib" value="${module.root.dir}/lib"/>
+        <property name="module.lib" value="${module.root.dir}/${module.lib}"/>
+        <property name="module.src" value="${module.root.dir}/${module.src}"/>
+        <property name="junit.output.dir" value="${module.dist}/junit"/>
+        <!-- Set global properties for this build -->
+        <property name="final.name" value="${module.name}-${module.version}"/>
+        <!-- Build - Classpath Information -->
+        <fileset id="module.jars" dir="${module.lib}">
+            <include name="*.jar"/>
+        </fileset>
+        <path id="module.classpath">
+            <pathelement location="${module.build}" />
+            <fileset refid="module.jars"/>
+        </path>
+        
+        <fileset id="local.jars" dir="${module.local.lib}">
+            <include name="*.jar"/>
+        </fileset>
+        <path id="local.classpath">
+            <pathelement location="${module.local.lib}" />
+            <fileset refid="local.jars"/>
+        </path>
+        
+    </target>
+
+    <!-- Overrides parent definition of init -->
+    <target name="init" depends="module-init"/>
+
+    <target name="checkDependency" depends="init">
+      <if>
+        <not>
+          <equals arg1="${module.depends.list}" arg2="" trim="true"/>
+        </not>
+      <then>
+        <echo message="Compiling Modules"/>
+        <foreach list="${module.depends.list}" delimiter=";" param="temp" target="compileDependency" inheritall="true"/>
+      </then>
+      </if>
+    </target>
+
+    <!-- Build Dependent Libraries - Called By build.xml -->
+    <target name="compileDependency">
+    <propertycopy name="target" from="${temp}" silent="true"/>
+    <property name="d.module" value="${target}"/>
+    <propertycopy name="target.version" from="${temp}.version" silent="true"/>
+    <property name="d.module.version" value="${target.version}"/>
+    <echo message="${d.module}"/>
+    <echo message="${d.module.version}"/>
+    <property name="d.module.dir" value="${root.src.dir}/${d.module}/dist"/>
+     <if>
+      <available file="${module.local.lib}/${d.module}-${d.module.version}.jar" type="file" property="local.file.present"/>
+      <then>
+       <echo message="${d.module} is available"/>
+      </then>
+      <else>
+        <if>
+          <available file="${d.module.dir}/${d.module}-${d.module.version}.jar" type="file" property="local.file.present"/>
+           <then>
+             <echo message="${d.module.dir}/${d.module}-${d.module.version}.jar is available"/>
+             <copy file="${d.module.dir}/${d.module}-${d.module.version}.jar" todir="${module.local.lib}"/>
+           </then>
+           <else>
+             <echo message="Building Depenent Module"/>
+             <ant dir="${root.src.dir}/${d.module}" target="build" inheritAll="false"/>
+             <copy file="${d.module.dir}/${d.module}-${d.module.version}.jar" todir="${module.local.lib}"/>
+           </else>
+        </if> 
+      </else>
+     </if> 
+    </target>
+
+    <!-- Compile This Module -->
+    <target name="compile" depends="checkDependency">
+      <mkdir dir="${module.build}"/>
+      <!-- Compilation Units -->
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/util">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <include name="xml/*.java"/>    
+        <include name="xslt/*.java"/>
+        <include name="xpath/*.java"/>
+        <include name="xpath/marcxml/*.java"/>  
+        <include name="properties/*.java"/>
+        <include name="resource/*.java"/>
+        <include name="*.java"/>
+      </javac>
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/registryclient">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <include name="**/*.java"/>
+      </javac>
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/identifier">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <include name="sru/*.java"/>
+      </javac>
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/locator">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <include name="IdLocation.java"/>    
+        <include name="IdLocatorProxy.java"/>
+        <include name="IdLocatorException.java"/>  
+        <include name="IdNotFoundException.java"/>  
+      </javac>
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/ockham">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <include name="**/*.java"/>
+      </javac>
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/adore">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <include name="helper/*.java"/>
+      </javac>
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/disseminator">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <include name="**/*.java"/> 
+      </javac>
+    </target>
+    
+    <!-- Build This Project - Generate JAR / TAR / WAR Archives -->
+    <target name="build" depends="compile">
+      <mkdir dir="${module.dist}"/>
+      <jar jarfile="${module.dist}/${final.name}.jar" basedir="${module.build}"/>      
+      <tar destfile="${module.dist}/${final.name}.tar.gz" compression="gzip">
+        <!-- Copy project components into archive -->
+        <tarfileset prefix="${module.name}" dir="${module.root.dir}">
+          <include name="README"/>
+          <include name="build.xml"/>
+          <include name="build-standalone.xml"/>
+          <include name="module.conf"/>
+          <include name="module-dist.conf"/>
+          <include name="etc/**"/>
+          <include name="ex/**"/>
+          <include name="${module.dist}/**"/>
+          <include name="bin/**"/>
+          <include name="lib/*.jar"/>
+          <include name="src/web/**"/>
+        </tarfileset>
+        <!-- Copy Generated jar file into archive -->
+        <tarfileset prefix="${module.name}/lib" dir="${module.dist}" includes="${final.name}.jar"/>
+        <!-- Copy required library files into archive -->
+        <tarfileset prefix="${module.name}/lib" dir="${module.lib}">
+        <!-- Define includes here -->
+          <include name="ant-contrib.jar"/>
+          <include name="ANT-CONTRIB.LICENSE"/>        
+          <include name="junit.jar"/>
+          <include name="JUNIT.LICENSE"/>
+          <include name="oaiharvester-2.9.jar"/>
+          <include name="OAIHARVESTER.LICENSE"/>
+	      <include name="commons-pool-1.1.jar"/>
+	      <include name="COMMONS-POOL.LICENSE"/>
+	      <include name="commons-logging.jar"/>
+	      <include name="COMMONS-LOGGING.LICENSE"/>
+	      <include name="commons-collections.jar"/>
+	      <include name="COMMONS-COLLECTIONS.LICENSE"/>
+	      <include name="commons-lang-2.2.jar"/>
+	      <include name="COMMONS-LANG.LICENSE"/>
+	      <include name="xercesImpl.jar"/>
+	      <include name="XERCESIMPL.LICENSE"/>
+          <include name="log4j-1.2.8.jar"/>
+          <include name="LOG4J.LICENSE"/>
+          <include name="xalan.jar"/>
+          <include name="xml-apis.jar"/>
+          <include name="XALAN.LICENSE"/>
+          <include name="xbean.jar"/>
+          <include name="XBEAN.LICENSE"/>
+          <include name="DIDAdore-2.0.jar"/>
+          <include name="DIDAPI-2.0.jar"/>
+          <include name="DIDAPI-impl-2.0.jar"/>
+          <include name="saxon8.jar"/>
+          <include name="SAXON.LICENSE"/>
+          <!-- Added 2008-03-27: rchute -->
+          <include name="dom4j-1.6.1.jar"/>
+          <include name="DOM4J.LICENSE"/>
+          <include name="drools-compiler-3.0.4.jar"/>
+          <include name="drools-core-3.0.4.jar"/>
+          <include name="drools-decisiontables-3.0.4.jar"/>
+          <include name="lowagire.jar"/>
+          <include name="oomRef.jar"/>
+          <include name="oom.jar"/>
+          <include name="jaxen-1.1.8.jar"/>
+          <include name="JAXEN.LICENSE"/>
+          <include name="servlet-api.jar"/>
+        </tarfileset>       
+        <!-- Copy source files into archive -->
+        <tarfileset prefix="${module.name}/src/gov/lanl/util" dir="${module.src}/gov/lanl/util" excludes="CVS">
+          <include name="xml/*.java"/>    
+          <include name="xslt/*.java"/>
+          <include name="xpath/*.java"/>
+          <include name="xpath/marcxml/*.java"/>  
+          <include name="properties/*.java"/>
+          <include name="resource/*.java"/>
+          <include name="*.java"/>
+        </tarfileset>
+        <tarfileset prefix="${module.name}/src/gov/lanl/registryclient" dir="${module.src}/gov/lanl/registryclient" excludes="CVS">
+          <include name="**/*.java"/>
+        </tarfileset>
+        <tarfileset prefix="${module.name}/src/gov/lanl/identifier" dir="${module.src}/gov/lanl/identifier" excludes="CVS">
+          <include name="sru/*.java"/>
+        </tarfileset>
+        <tarfileset prefix="${module.name}/src/gov/lanl/locator" dir="${module.src}/gov/lanl/locator" excludes="CVS">
+          <include name="IdLocation.java"/>    
+          <include name="IdLocatorProxy.java"/>   
+          <include name="IdLocatorException.java"/>  
+        </tarfileset>
+        <tarfileset prefix="${module.name}/src/gov/lanl/ockham" dir="${module.src}/gov/lanl/ockham" excludes="CVS">
+          <include name="**/*.java"/>
+        </tarfileset>
+        <tarfileset prefix="${module.name}/src/gov/lanl/adore" dir="${module.src}/gov/lanl/adore" excludes="CVS">
+          <include name="helper/*.java"/>
+        </tarfileset>
+        <tarfileset prefix="${module.name}/src/gov/lanl/disseminator" dir="${module.src}/gov/lanl/disseminator" excludes="CVS">
+          <include name="**/*.java"/>
+        </tarfileset>
+      </tar>
+      
+      
+      <!-- RegEx on Properties File -->
+      <copy file="${module.root.dir}/etc/adore-dist.properties" tofile="${module.build}/etc/adore.properties" overwrite="true"/>
+      <replace file="${module.build}/etc/adore.properties" propertyFile="${module.root.dir}/module.conf">
+        <replacefilter token="$ADORE-ID-LOCATOR.RESOLVERURL" property="adore-id-locator.ResolverURL"/>
+        <replacefilter token="$ADORE-SERVICE-REGISTRY.OAIURL" property="adore-service-registry.OAIURL"/>
+        <replacefilter token="$ADORE-DISSEMINATOR.SERVICERESOLVERURL" property="adore-disseminator.ServiceResolverURL"/>
+      </replace>
+      <copy file="${module.build}/etc/adore.properties" tofile="${module.root.dir}/etc/adore.properties" overwrite="true"/>
+      <copy todir="${module.build}/web">
+        <fileset dir="${module.root.dir}/src/web"/>
+      </copy>
+      <replace dir="${module.build}/web">
+        <replacefilter token="$MODULE_NAME" value="${module.name}"/>
+        <replacefilter token="$MODULE_VERSION" value="${module.version}"/>
+        <replacefilter token="$ADMIN_EMAIL" value="${admin.email}"/>
+        <replacefilter token="$ADORE_DISSEMINATOR_BASE_URL" value="${adore-disseminator.BaseURL}"/>
+      </replace>      
+
+      <war destfile="${module.dist}/${module.name}.war" webxml="${module.build}/web/WEB-INF/web.xml">
+        <fileset dir="${module.build}/web" excludes="WEB-INF/web.xml"/>
+        <!-- Define Classpath Elements -->
+        <classes dir="${module.root.dir}" includes="etc/**" excludes="**/oom"/>
+        <classes dir="${module.root.dir}/etc/oom" includes="oomRef.xml"/>
+        <classes dir="${module.root.dir}/etc/" includes="log4j.properties"/>
+        <classes dir="${module.root.dir}/ex/" includes="sampledidl.xml"/>
+        <!-- Define Required Modules -->
+        <lib dir="${module.dist}">
+          <include name="${final.name}.jar"/>
+        </lib>
+        <lib dir="${module.local.lib}">
+          <include name="*.jar"/>
+          <exclude name="servlet.jar"/>
+          <exclude name="servlet-api.jar"/>
+        </lib>
+        <!-- Define Required Libaries -->
+        <lib dir="${module.lib}">
+          <include name="ant-contrib.jar"/>
+          <include name="ANT-CONTRIB.LICENSE"/>        
+          <include name="junit.jar"/>
+          <include name="JUNIT.LICENSE"/>
+          <include name="oaiharvester-2.9.jar"/>
+          <include name="OAIHARVESTER.LICENSE"/>
+	      <include name="commons-pool-1.1.jar"/>
+	      <include name="COMMONS-POOL.LICENSE"/>
+	      <include name="commons-logging.jar"/>
+	      <include name="COMMONS-LOGGING.LICENSE"/>
+	      <include name="commons-collections.jar"/>
+	      <include name="COMMONS-COLLECTIONS.LICENSE"/>
+	      <include name="commons-lang-2.2.jar"/>
+	      <include name="COMMONS-LANG.LICENSE"/>
+	      <include name="xercesImpl.jar"/>
+	      <include name="XERCESIMPL.LICENSE"/>
+          <include name="log4j-1.2.8.jar"/>
+          <include name="LOG4J.LICENSE"/>
+          <include name="xalan.jar"/>
+          <include name="XALAN.LICENSE"/>
+          <include name="xbean.jar"/>
+          <include name="XBEAN.LICENSE"/>
+          <include name="DIDAdore-2.0.jar"/>
+          <include name="DIDAPI-2.0.jar"/>
+          <include name="DIDAPI-impl-2.0.jar"/>
+          <include name="saxon8.jar"/>
+          <include name="SAXON.LICENSE"/>
+          <!-- Added 2008-03-27: rchute -->
+          <include name="dom4j-1.6.1.jar"/>
+          <include name="DOM4J.LICENSE"/>
+          <include name="drools-*.jar"/>
+          <include name="lowagire.jar"/>
+          <include name="oomRef.jar"/>
+          <include name="oom.jar"/>
+          <include name="jaxen-1.1.8.jar"/>
+          <include name="JAXEN.LICENSE"/>
+        </lib>
+      </war>
+      
+    </target>
+
+    <target name="deploy" depends="init">
+      <copy file="${module.dist}/${module.name}.war" todir="${tomcat.webapp.dir}" overwrite="true"/>
+    </target>
+
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <target name="clean" depends="checkRemoveDependentLib" description="Destroys all generated files and dirs." >
+        <delete dir="${module.build}"/>
+        <delete dir="${module.dist}"/>
+        <delete dir="${module.doc}"/>
+    </target>
+    
+    <!-- create javadoc -->
+    <target name="javadoc" depends="init">
+        <javadoc
+             destdir="${module.doc}"
+             author="true"
+             version="true"
+             use="true"
+             windowtitle="Adore Disseminator API">
+        
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <fileset dir="${module.src}/gov/lanl/util">
+          <include name="xml/*.java"/>    
+          <include name="xslt/*.java"/>
+          <include name="xpath/*.java"/>
+          <include name="xpath/marcxml/*.java"/>  
+          <include name="properties/*.java"/>
+          <include name="resource/*.java"/>
+          <include name="*.java"/>
+        </fileset>
+        <fileset dir="${module.src}/gov/lanl/registryclient">
+          <include name="**/*.java"/>
+        </fileset>
+        <fileset dir="${module.src}/gov/lanl/identifier">
+          <include name="sru/*.java"/>
+        </fileset>       
+        <fileset dir="${module.src}/gov/lanl/locator">
+          <include name="IdLocation.java"/>    
+          <include name="IdLocatorProxy.java"/>   
+          <include name="IdLocatorException.java"/>
+        </fileset>
+        <fileset dir="${module.src}/gov/lanl/ockham">
+          <include name="**/*.java"/>
+        </fileset>           
+        <fileset dir="${module.src}/gov/lanl/adore">
+          <include name="helper/*.java"/>
+        </fileset> 
+        <fileset dir="${module.src}/gov/lanl/disseminator">
+          <include name="**/*.java"/>
+        </fileset>
+        
+        <doctitle><![CDATA[<h1>Adore Disseminator API</h1>]]></doctitle>
+        <bottom><![CDATA[<i>Copyright &#169; 2006 LANL All Rights Reserved.</i>]]></bottom>
+      </javadoc>
+    </target>
+    
+    <!-- run Junit test -->
+    <target name="junit" depends="compile" description="Runs unit tests">
+      <mkdir dir="${junit.output.dir}" />
+      <copy todir="${build}/etc">
+        <fileset dir="etc"/>
+      </copy>
+      <junit printsummary="off" haltonfailure="no" errorProperty="tests.failed" failureProperty="tests.failed">
+	    <sysproperty key="HOMEDIR" value="."/>
+	    <classpath refid="module.classpath" />
+	    <formatter type="xml" />
+	    <formatter type="brief" usefile="false" />
+	    <batchtest fork="yes" todir="${junit.output.dir}">
+	      <fileset dir="${src}/java" includes="gov/lanl/disseminator/**/*Test.java" excludes="**/*LiveTest.java" />
+	    </batchtest>
+      </junit>
+      <fail if="tests.failed">Tests failed!</fail>
+    </target>
+    
+  <!-- ================================================================== -->
+  <!-- R U N  LIVE T E S T S                                                   -->
+  <!-- these tests require a running environment-->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+  <target name="livejunit" depends="compile" description="Runs unit tests">
+    <mkdir dir="${junit.output.dir}" />
+    <copy todir="${build}/etc">
+      <fileset dir="etc"/>
+    </copy>
+    <junit printsummary="off" haltonfailure="no" errorProperty="tests.failed" failureProperty="tests.failed">
+      <sysproperty key="HOMEDIR" value="."/>
+      <classpath refid="junit.classpath" />
+      <formatter type="xml" />
+      <formatter type="brief" usefile="false" />
+      <batchtest fork="yes" todir="${junit.output.dir}">
+	<fileset dir="${src}/java" includes="gov/lanl/disseminator/**/*LiveTest.java" />
+      </batchtest>
+    </junit>
+    
+    <fail if="tests.failed">Tests failed!</fail>
+  </target>
+
+    <!-- Check to delete Dependent Libraries -->
+    <target name="checkRemoveDependentLib" depends="init">
+      <if>
+        <not>
+          <equals arg1="${module.depends.list}" arg2="" trim="true"/>
+        </not>
+      <then>
+        <foreach list="${module.depends.list}" delimiter=";" param="temp" target="removeDependentLib" inheritall="true"/>
+      </then>
+      </if>
+    </target>
+
+   <!-- Delete Dependent Libraries -->
+    <target name="removeDependentLib">
+    <propertycopy name="target" from="${temp}" silent="true"/>
+    <property name="d.module" value="${target}"/>
+    <propertycopy name="target.version" from="${temp}.version" silent="true"/>
+    <property name="d.module.version" value="${target.version}"/>
+    <echo message="${d.module}"/>
+    <echo message="${d.module.version}"/>
+     <if>
+      <available file="${module.local.lib}/${d.module}-${d.module.version}.jar" type="file" property="local.file.present"/>
+      <then>
+       <delete file="${module.local.lib}/${d.module}-${d.module.version}.jar"/>
+      </then>
+     </if> 
+    </target>
+
+</project>

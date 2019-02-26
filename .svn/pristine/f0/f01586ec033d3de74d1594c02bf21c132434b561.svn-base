@@ -1,0 +1,1 @@
+keytool -genkey -alias test -keyalg DSA -dname "CN=Unknown, OU= Unknown, O= Unknown, C= Unknown" -keypass xmlsecurity -storepass xmlsecurity -keystore keystore.jks

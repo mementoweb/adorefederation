@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mets:mets OBJID="info:arxiv/0503016" LABEL="arXiv Item" xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mods="http://www.loc.gov/mods/v3" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+ <mets:metsHdr CREATEDATE="2006-03-06T03:38:52Z">
+  <mets:agent ROLE="CUSTODIAN" TYPE="ORGANIZATION">
+   <mets:name>arXiv</mets:name>
+  </mets:agent>
+ </mets:metsHdr>
+ <mets:dmdSec ID="uuid-64d25670-ff38-11dc-95ff-0800200c9a66">
+  <mets:mdWrap MDTYPE="MODS">
+   <mets:xmlData>
+     <mods:name><mods:namePart>Liu, Xiaoming</mods:namePart></mods:name>
+     <mods:name><mods:namePart>Balakireva, Lyudmila</mods:namePart></mods:name>
+     <mods:name><mods:namePart>Hochstenbach, Patrick</mods:namePart></mods:name>
+     <mods:name><mods:namePart>Van de Sompel, Herbert</mods:namePart></mods:name>
+     <mods:extension><mods:dateAccessioned encoding="iso8601">2005-03-07T03:38:52Z</mods:dateAccessioned></mods:extension>
+     <mods:extension><mods:dateAvailable encoding="iso8601">2005-06-03T03:38:52Z</mods:dateAvailable></mods:extension>
+     <mods:originInfo><mods:dateIssued encoding="iso8601">2005</mods:dateIssued></mods:originInfo>
+     <mods:identifier type="uri">http://arxiv.org/abs/cs.DL/0503016</mods:identifier>
+     <mods:physicalDescription><mods:extent>12 leaves</mods:extent></mods:physicalDescription>
+     <mods:physicalDescription><mods:internetMediaType>application/pdf</mods:internetMediaType></mods:physicalDescription>
+     <mods:language><mods:languageTerm authority="rfc3066">eng</mods:languageTerm></mods:language>
+     <mods:originInfo><mods:publisher>arXiv</mods:publisher></mods:originInfo>
+     <mods:titleInfo>File-based storage of Digital Objects and constituent datastreams: XMLtapes and Internet Archive ARC files</mods:titleInfo>
+    </mets:xmlData>
+  </mets:mdWrap>
+ </mets:dmdSec>
+ <mets:fileSec>
+  <mets:fileGrp USE="ORIGINAL">
+   <mets:file ID="uuid-6e57c6d0-ff38-11dc-95ff-0800200c9a66" OWNERID="info:lanl-repo/ds/83811ac0-ff38-11dc-95ff-0800200c9a66" MIMETYPE="application/pdf">
+    <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="http://african.lanl.gov/aDORe/projects/adoreArchive/docs/0503016.pdf"/>
+   </mets:file>
+  </mets:fileGrp>
+ </mets:fileSec>
+</mets:mets>

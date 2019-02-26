@@ -1,0 +1,4 @@
+adore-id-locator.ResolverURL=$ADORE-ID-LOCATOR.RESOLVERURL
+adore-service-registry.OAIURL=$ADORE-SERVICE-REGISTRY.OAIURL
+adore-disseminator.ServiceResolverURL=$ADORE-DISSEMINATOR.SERVICERESOLVERURL
+

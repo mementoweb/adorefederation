@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://library.lanl.gov/2005-08/aDORe/FormatRegistry/" 
+            elementFormDefault="qualified" attributeFormDefault="unqualified" 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns="http://library.lanl.gov/2005-08/aDORe/FormatRegistry/" 
+            xmlns:dc="http://purl.org/dc/elements/1.1/" >
+	<xsd:annotation>
+		<xsd:documentation>2007-01-22: XML Schema for format registry</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd"/>
+	
+	<!-- The root element for XML documents that comply with this XML Schema is format.  This root element has 8 child elements:
+	(*) identifier: mandatory, not repeatable  
+	(*) dc:identifier: mandatory, repeatable
+	(*) mimetype: optional, not repeatable
+	(*) ontology: optional, repeatable
+ 	(*) DIDentity: optional, not repeatable
+    (*) dc:format: optional, not repeatable
+    (*) dc:source: optional, not repeatable
+    (*) dc:description: optional, not repeatable
+    The semantics and use of these elements are explained below.
+    -->
+
+	<xsd:element name="format">
+	
+		<xsd:complexType>
+			<xsd:sequence>
+				<!-- The content of the identifier element must be the globally unique identifier, expressed as a URI, for the format. Only one identifier can be provided. A sample value is info:lanl-repo/fmt/9.  -->
+				<xsd:element name="identifier" type="xsd:anyURI"/>
+		        <!-- The content of the dc:identifier element are semantically equivalent format identifiers, expressed as a URI, for a format. A sample value is info:lanl-repo/fmt/9.  -->
+				<xsd:element ref="dc:identifier" maxOccurs="unbounded"/>
+				<!-- The content of the mimetype element is the MIME content type for a format. A sample value is application/xml.  -->
+				<xsd:element name="mimetype" minOccurs="0"/>
+				<!-- The content of the ontology element is the entity which created the identification scheme (e.g. info:lanl-repo/...), expressed as a URI, for a format.  -->
+				<xsd:element name="ontology" type="xsd:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+				<!-- The content of the DIDentity element is the DIDL element the format would be assocaited with, expressed as a URI. (e.g. urn:mpeg:mpeg21:2002:02-DIDL-NS#Component) -->
+				<xsd:element name="DIDentity" type="xsd:anyURI" minOccurs="0"/>
+				<!-- The content of the dc:format element is a resolvable schemaLocation / format description for the format. (e.g. http://purl.lanl.gov/vendors/schemas/Biosis/2006-02/BIOSISPreviews.dtd) -->
+				<xsd:element ref="dc:format" minOccurs="0"/>
+				<!-- The content of the dc:source element is the format naming authority. (e.g. info:lanl-repo/creator/LANL-RTF or http://www.iana.org/assignments/media-types/) -->
+				<xsd:element ref="dc:source" minOccurs="0"/>
+				<!-- The content of the dc:description element is a verbose format description. -->
+				<xsd:element ref="dc:description" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	
+	</xsd:element>
+	<!--
+	Sample XML document: 
+	<fmt:format xmlns:fmt="http://library.lanl.gov/2005-08/aDORe/FormatRegistry/" 
+	            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+	            xsi:schemaLocation="http://library.lanl.gov/2005-08/aDORe/FormatRegistry/ http://purl.lanl.gov/aDORe/schemas/2006-09/FormatRegistry.xsd">
+	   <fmt:identifier>info:lanl-repo/fmt/9</fmt:identifier>
+	   <dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd">info:lanl-repo/fmt/9</dc:identifier>
+	   <fmt:mimetype>application/xml</fmt:mimetype>
+	   <fmt:DIDentity>urn:mpeg:mpeg21:2002:02-DIDL-NS#Component</fmt:DIDentity>
+	   <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd">http://library.lanl.gov/rtf/vendor_schemas/Biosis/2006-02/BIOSISPreviews.dtd</dc:identifier>
+	   <dc:source xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd">info:lanl-repo/creator/LANL-RTF</dc:identifier>
+	   <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://purl.lanl.gov/aDORe/schemas/2006-09/dc.xsd">Defines BIOSIS Entities and BIOSOS XML Syntax</dc:identifier>
+	 </fmt:format>
+	-->
+</xsd:schema>

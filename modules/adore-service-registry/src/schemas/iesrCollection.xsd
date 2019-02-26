@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://iesr.ac.uk/terms/#"
+  elementFormDefault="qualified" attributeFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:rslpcd="http://purl.org/rslp/terms#"
+  xmlns:iesr="http://iesr.ac.uk/terms/#"
+  xmlns="http://iesr.ac.uk/terms/#">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      IESR Collection Composition XML Schema
+      Part of: IESR Terms XML Schema, Version 2007-02-19. 
+      XML schema definition of Collection term components within the iesr namespace for the JISC Information Environment Service Registry (IESR).
+      These terms are described at http://iesr.ac.uk/terms/. 
+      This part of the XML schema is available at http://iesr.ac.uk/schemas/2007/02/19/iesrCollection.xsd .
+      Note that DCMI schemas are held locally and differ from the DCMI versions to avoid schema validation problems with some software.
+    </xs:documentation>
+<!--
+    <xs:appinfo>
+      <dc:title>IESR Collection Composition XML Schema</dc:title>
+      <dc:creator>Ann Apps (ann.apps@manchester.ac.uk)</dc:creator>
+      <dc:contributor>Pete Johnston</dc:creator>
+      <dc:description>
+        This schema defines Collection term components within the iesr namespace for the JISC Information Environment Service Registry (IESR).
+      </dc:description>
+      <dc:identifier>http://iesr.ac.uk/terms/#</dc:identifier>
+      <dc:relation>http://iesr.ac.uk/terms/</dc:relation>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-sa/2.0/uk/</dc:rights>
+      <dcterms:created>2005-02-08</dcterms:created>
+      <dcterms:modified>2005-09-06</dcterms:modified>
+    </xs:appinfo>
+-->
+  </xs:annotation>
+
+  <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="dc.xsd"/>
+
+  <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd"/>
+
+  <xs:import namespace="http://purl.org/rslp/terms#" schemaLocation="rslpcd.xsd"/>
+
+  <xs:group name="collectionGroup">
+    <xs:annotation>
+      <xs:documentation>
+          This is the Collection group. Allows sub-elements in any order and repeatable
+      </xs:documentation>
+    </xs:annotation>
+
+    <xs:sequence>
+
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+
+	<xs:element ref="dc:title">
+          <xs:annotation>
+            <xs:documentation>
+              The main title of the collection. An attribute 'xml:lang' may be supplied
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+<!-- alternative included in dc:title above -->
+
+<!--	<xs:element ref="dcterms:alternative">
+          <xs:annotation>
+            <xs:documentation>
+              An alternative or sub title of the collection. An attribute 'xml:lang' may be supplied
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element> -->
+
+	<xs:element ref="dc:identifier">
+          <xs:annotation>
+            <xs:documentation>
+              A formal global identifier for Collection. This identifier may be assigned by the IESR on registration. An attribute 'xsi:type="dcterms:URI"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dcterms:abstract">
+          <xs:annotation>
+            <xs:documentation>
+              A free text summary description of the collection. An attribute 'xml:lang' may be supplied
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dc:type">
+          <xs:annotation>
+            <xs:documentation>
+              The type of the collection. An attribute 'xsi:type="iesr:CollTypeList"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="iesr:itemType">
+          <xs:annotation>
+            <xs:documentation>
+              The nature or genre of the content of an item in the Collection. An attribute 'xsi:type="dcterms:DCMIType"' or 'xsi:type="iesr:ItemTypeList"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dcterms:extent">
+          <xs:annotation>
+            <xs:documentation>
+              The size of the collection. An attribute 'xml:lang' may be supplied
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="iesr:itemFormat">
+          <xs:annotation>
+            <xs:documentation>
+              The physical or digital characteristics of an item in the collection. An attribute 'xsi:type="dcterms:IMT"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dc:language">
+          <xs:annotation>
+            <xs:documentation>
+              The language of items in the the collection. An attribute 'xsi:type="dcterms:RFC3066"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dc:rights">
+          <xs:annotation>
+            <xs:documentation>
+              Information about rights held in and over the collection. An attribute 'xml:lang' may be supplied
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element> 
+
+	<xs:element ref="iesr:useRights">
+          <xs:annotation>
+            <xs:documentation>
+              A statement about allowed usage of data from the collection, for example terms and conditions. An attribute 'xsi:type="dcterms:URI"' is expected if the value is a URI. An attribute 'xml:lang' may be supplied if the value is free text 
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+<!-- accessRights included in dc:rights above -->
+
+<!--	<xs:element ref="dcterms:accessRights">
+          <xs:annotation>
+            <xs:documentation>
+              Information about who can access the collection. An attribute 'xml:lang' may be supplied
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>-->
+
+	<xs:element ref="iesr:hasService">
+          <xs:annotation>
+            <xs:documentation>
+              A service that makes the collection available. 
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="iesr:logo">
+          <xs:annotation>
+            <xs:documentation>
+              A logo for the collection. 
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dc:subject">
+          <xs:annotation>
+            <xs:documentation>
+              A single concept (keyword or subject descriptor) that is the subject of the collection, or of the items in the collection. An attribute 'xsi:type' indicating the encoding scheme is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dcterms:spatial">
+          <xs:annotation>
+            <xs:documentation>
+              The spatial coverage of the items in the collection. An attribute 'xsi:type' indicating the encoding scheme is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dcterms:temporal">
+          <xs:annotation>
+            <xs:documentation>
+              The temporal coverage of the intellectual content of the items in the collection. An attribute 'xsi:type="dcterms:W3CDTF"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="rslpcd:contentsDateRange">
+          <xs:annotation>
+            <xs:documentation>
+              The range of dates of creation of the individual items in the collection
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="iesr:usesControlledList">
+          <xs:annotation>
+            <xs:documentation>
+              A classification scheme or thesaurus used by the collection
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dcterms:educationLevel">
+          <xs:annotation>
+            <xs:documentation>
+              Education level of group for whom the collection is intended or useful. An attribute 'xsi:type' indicating the encoding scheme is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="rslpcd:owner">
+          <xs:annotation>
+            <xs:documentation>
+              An agent that legally owns or has possesion of the collection
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dcterms:isPartOf">
+          <xs:annotation>
+            <xs:documentation>
+              Another collection that contains this collection. An attribute 'xsi:type="dcterms:URI"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="rslpcd:hasAssociation">
+          <xs:annotation>
+            <xs:documentation>
+              Another collection that has association by provenance with this collection
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dcterms:isReferencedBy">
+          <xs:annotation>
+            <xs:documentation>
+              A publication that provides more information about the collection, such as a general information webpage; a help guide for using the collection; a report based on the use, study, or analysis of the collection. An attribute 'xsi:type="dcterms:URI"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="rslpcd:seeAlso">
+          <xs:annotation>
+            <xs:documentation>
+              More information about the collection. The value should be a URI.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+      </xs:choice>
+
+    </xs:sequence>
+
+  </xs:group>	
+
+
+  <xs:complexType name="collectionContainer">
+    <xs:annotation>
+      <xs:documentation>
+        This collectionContainer type is a container for the collectionGroup. Allows all sub-elements to be optional, repeatable and in any order
+      </xs:documentation>
+    </xs:annotation>
+
+    <xs:choice>
+
+      <xs:group ref="collectionGroup"/>
+
+    </xs:choice>
+
+    <xs:attribute name="id" type="xs:ID"/>
+
+  </xs:complexType>
+
+  <xs:element name="Collection" type="collectionContainer">
+    <xs:annotation>
+      <xs:documentation>
+        A set of metadata that describes a Collection entity
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+</xs:schema>

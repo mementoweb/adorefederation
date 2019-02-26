@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://iesr.ac.uk/terms/#"
+  elementFormDefault="qualified" attributeFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:rslpcd="http://purl.org/rslp/terms#"
+  xmlns:iesr="http://iesr.ac.uk/terms/#"
+  xmlns="http://iesr.ac.uk/terms/#">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      IESR Basic Terms
+      Part of: IESR Terms XML Schema, Version 2007-02-06. 
+      XML schema definition of simple terms within the iesr namespace for the JISC Information Environment Service Registry (IESR).
+      These terms are described at http://iesr.ac.uk/terms/. 
+      This XML schema is available at http://iesr.ac.uk/schemas/2007/02/19/iesrterms.xsd .
+      Note that DCMI schemas are held locally and differ from the DCMI versions to avoid schema validation problems with some software.
+    </xs:documentation>
+<!--
+    <xs:appinfo>
+      <dc:title>IESR Basic Terms</dc:title>
+      <dc:creator>Ann Apps (ann.apps@manchester.ac.uk)</dc:creator>
+      <dc:contributor>Pete Johnston</dc:creator>
+      <dc:description>
+        This schema defines simple terms within the iesr namespace for the JISC Information Environment Service Registry (IESR).
+      </dc:description>
+      <dc:identifier>http://iesr.ac.uk/terms/#</dc:identifier>
+      <dc:relation>http://iesr.ac.uk/terms/</dc:relation>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-sa/2.0/uk/</dc:rights>
+      <dcterms:created>2004-11-02</dcterms:created>
+      <dcterms:modified>2005-09-06</dcterms:modified>
+      <dcterms:modified>2007-02-19</dcterms:modified>
+    </xs:appinfo>
+-->
+  </xs:annotation>
+
+  <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="dc.xsd"/>
+
+  <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd"/>
+
+<!-- Attributes -->
+
+<!--  <xs:attribute name="id" type="xs:ID"/>-->
+
+<!--  <xs:attribute name="about" type="xs:IDREF"/>-->
+
+<!-- Elements in iesr namespace -->
+
+  <xs:element name="address" type="dc:elementType">
+    <xs:annotation>
+      <xs:documentation>
+        A postal address
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="administers" type="dcterms:URI">
+    <xs:annotation>
+      <xs:documentation>
+        A service that makes a collection available from the electronic environment for which the agent is responsible. An attribute 'xsi:type="dcterms:URI"' is expected 
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="country" type="dcterms:ISO3166">
+    <xs:annotation>
+      <xs:documentation>
+        A country code. An attribute 'xsi:type="dcterms:ISO3166"' is expected
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="email" type="dc:elementType">
+    <xs:annotation>
+      <xs:documentation>
+        An email address
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="hasService" type="dcterms:URI">
+    <xs:annotation>
+      <xs:documentation>
+        A service that makes the collection available. An attribute 'xsi:type="dcterms:URI"' is expected 
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="interface" type="dcterms:URI">
+    <xs:annotation>
+      <xs:documentation>
+        A resource that provides interface information about the service, such as available inputs and outputs, in a machine readable format. An attribute 'xsi:type="dcterms:URI"' is expected
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="itemFormat" type="dcterms:IMT">
+    <xs:annotation>
+      <xs:documentation>
+        The physical or digital characteristics of an item in the Collection. An attribute 'xsi:type="dcterms:IMT"' is expected
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="itemType" type="dc:elementType">
+    <xs:annotation>
+      <xs:documentation>
+        The nature or genre of the content of an item in the Collection. An attribute 'xsi:type="dcterms:DCMIType"' or 'xsi:type="iesr:ItemTypeList"' is expected
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="logo" type="dcterms:URI">
+    <xs:annotation>
+      <xs:documentation>
+        A logo for a collection, service or agent. This is a URL that will yield a graphical logo when displayed on a web page. An attribute 'xsi:type="dcterms:URI"' is expected
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="mediator" type="dcterms:URI">
+    <xs:annotation>
+      <xs:documentation>
+        A body that mediates access to the service. An attribute 'xsi:type="iesr:ShibFed"' is expected
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="output" type="dcterms:IMT">
+    <xs:annotation>
+      <xs:documentation>
+        Output format available from a service. Value generally expected to be dcterms:IMT. An attribute 'xsi:type' is optional
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="owns" type="dcterms:URI">
+    <xs:annotation>
+      <xs:documentation>
+        A collection that the agent legally owns or possesses. An attribute 'xsi:type="dcterms:URI"' is expected 
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="phone" type="dc:elementType">
+    <xs:annotation>
+      <xs:documentation>
+        Telephone number. Global international telephone number begining '+' is preferred
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="postcode" type="dc:elementType">
+    <xs:annotation>
+      <xs:documentation>
+        A coded part of the postal address of an agent. In the UK this will be the postcode
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="serves" type="dcterms:URI">
+    <xs:annotation>
+      <xs:documentation>
+        A collection that the service makes available. An attribute 'xsi:type="dcterms:URI"' is expected 
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="status" type="iesr:StatusList">
+    <xs:annotation>
+      <xs:documentation>
+        Indication of the currency of a record. An attribute 'xsi:type="iesr:StatusList"' is expected
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="supportsStandard" type="iesr:StdsList">
+    <xs:annotation>
+      <xs:documentation>
+        Indication of standards and profiles supported by a service. An attribute 'xsi:type="iesr:StdsList"' is expected
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="useRights" type="dc:elementType">
+    <xs:annotation>
+      <xs:documentation>
+        Either a URI or a statement about allowed usage of data from a collection, for example terms and conditions. An attribute 'xsi:type="dcterms:URI"' is expected if the value is a URI. An attribute 'xml:lang' may be supplied if the value is free text.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="usesControlledList" type="iesr:CtrldVocabsList">
+    <xs:annotation>
+      <xs:documentation>
+        A classification scheme or thesaurus used by a collection. An attribute 'xsi:type="iesr:CtrldVocabsList"' is expected
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+</xs:schema>
+

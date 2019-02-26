@@ -1,0 +1,24 @@
+# Configuration File For Module
+
+# Module Build Environment
+module.name=adore-xmltape-xquery
+module.version=1.1
+module.lib=/lanl/java/lib
+module.src=/lanl/java/src
+
+# Dependent Projects - Use Semi-colon (;) as delimiter
+module.depends.list=module.depends.1;module.depends.2
+module.depends.1=adore-xmltape
+module.depends.1.version=1.1
+module.depends.2=adore-xmltape-registry
+module.depends.2.version=1.1
+
+# Module Specific Properties
+module.OAIRegistry=http\://leopard.lanl.gov:8080/adore-xmltape-registry/OAIHandler
+module.svcDir=/opt/tomcat/webapps/adore-xmltape-xquery/WEB-INF/classes/
+module.tomcat.url=http://leopard.lanl.gov:8080
+module.local.rfr.id=info:sid/library.lanl.gov
+module.admin.email=rchute@lanl.gov
+
+# System Properties
+tomcat.home=/opt/tomcat/

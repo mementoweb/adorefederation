@@ -1,0 +1,4134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xoaih:harvest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xoaih="http://errol.oclc.org/oai:xmlregistry.oclc.org:xoai/xoaiharvester">
+<OAI-PMH xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+  <responseDate>2004-10-14T18:27:42Z</responseDate>
+  <request verb="Identify">http://gita.grainger.uiuc.edu/registry/px/oai.asp</request>
+
+  <Identify>
+    <repositoryName>University of Illinois at Urbana Champaign, Experimental OAI Registry</repositoryName>
+		<baseURL>http://gita.grainger.uiuc.edu/registry/px/oai.asp</baseURL>
+		<protocolVersion>2.0</protocolVersion>
+    <adminEmail>thabing@uiuc.edu</adminEmail>
+    <!-- there may be multiple adminEmails if desired -->
+    <earliestDatestamp>2003-12-04</earliestDatestamp>
+    <deletedRecord>transient</deletedRecord>
+    <granularity>YYYY-MM-DD</granularity>
+    
+    <description>
+      <oai-identifier xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai-identifier           http://www.openarchives.org/OAI/2.0/oai-identifier.xsd" xmlns="http://www.openarchives.org/OAI/2.0/oai-identifier">
+        <scheme>oai</scheme>
+        <repositoryIdentifier>url-registry.uiuc.edu</repositoryIdentifier>
+        <delimiter>:</delimiter>
+        <sampleIdentifier>oai:url-registry.uiuc.edu:http://caltechparadise.library.caltech.edu/perl/oai2</sampleIdentifier>
+      </oai-identifier>
+    </description>
+    
+    <description>
+      <oai-identifier xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai-identifier           http://www.openarchives.org/OAI/2.0/oai-identifier.xsd" xmlns="http://www.openarchives.org/OAI/2.0/oai-identifier">
+        <scheme>oai</scheme>
+        <repositoryIdentifier>id-registry.uiuc.edu</repositoryIdentifier>
+        <delimiter>:</delimiter>
+        <sampleIdentifier>oai:id-registry.uiuc.edu:acervo.iteso.mx</sampleIdentifier>
+      </oai-identifier>
+    </description>
+    
+	</Identify>
+	</OAI-PMH>
+<OAI-PMH xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+<responseDate/>
+<request verb="ListRecords" metadataPrefix="oai_dc">http://gita.grainger.uiuc.edu/registry/px/oai.asp</request>
+<ListRecords>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:acl.sr.language-archives.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/acl.xml</identifier>
+          <title>A Digital Archive of Research Papers in Computational Linguistics (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:acnatsci.org</identifier>
+        <datestamp>2004-09-07</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://imlsdcc.grainger.uiuc.edu/gateway/oai.asp/www.acnatsci.org/library/collections/imls/nlg/AcadNatSciStatic.xml</identifier>
+          <title>American Natural Science in the First Half of the Nineteenth Century (Academy of Natural Sciences) (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:aerialphotos.grainger.uiuc.edu</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://aerialphotos.grainger.uiuc.edu/oai.asp</identifier>
+          <title>University of Illinois Library at Urbana-Champaign, Historic Illinois Aerial Photo Imagebase (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ailla.utexas.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/ailla.xml</identifier>
+          <title>Archive of the Indigenous Languages of Latin America (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:aim25.ac.uk</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.aim25.ac.uk/cgi-bin/oai/OAI2.0</identifier>
+          <title>AIM25 - Archives in London (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:aiwsc03.www.cis.unisa.edu.au</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.cis.unisa.edu.au/aiwsc03/ocs/ocs/oai/</identifier>
+          <title>Australian Information Warfare and IT Security Conference 2003 (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:aktors.org</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.aktors.org/perl/oai2</identifier>
+          <title>AKT EPrints Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ALADIN.OAI2</identifier>
+        <datestamp>2004-06-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://dspace.msh-alpes.prd.fr/oai/</identifier>
+          <title>ALADIN : DSpace de la MSH-Alpes (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:alex</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.infomotions.com/alex/oai/index.pl</identifier>
+          <title>Alex Catalogue of Electronic Texts (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:alsos.wlu.edu</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://alsos.wlu.edu/service_requests.asp</identifier>
+          <title>Alsos Digital Library for Nuclear Issues (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:amsacta.cib.unibo.it</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://amsacta.cib.unibo.it/perl/oai2</identifier>
+          <title>AMS Acta (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:apj.www.assembly-journal.com</identifier>
+        <datestamp>2004-09-21</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.assembly-journal.com/oai/</identifier>
+          <title>APJ - Assembly-Programming-Journal (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:archimede.bibl.ulaval.ca</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://archimede.bibl.ulaval.ca:8080/oaicat/OAIHandler</identifier>
+          <title>Archimede Université Laval (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:archiv.tu-chemnitz.de</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://archiv.tu-chemnitz.de/cgi-bin/interfaces/oai/oai2.pl</identifier>
+          <title>MONARCH - Multimedia Online Archiv Chemnitz (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:archive.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.archive.org/services/oai.php</identifier>
+          <title>Internet Archive OAI Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:archive.ugent.be</identifier>
+        <datestamp>2004-06-28</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://archive.ugent.be/oai/</identifier>
+          <title>DSpace at UGent (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ArchiveEnslsh.OAI2</identifier>
+        <datestamp>2004-04-02</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.ens-lsh.fr/perl/oai2</identifier>
+          <title>Archive ENS LSH (2.0)</title>
+          <identifier>http://celestial.eprints.org/cgi-bin/oaia2/GenericEPrints.OAI2</identifier>
+          <title>Archive ENS LSH (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ArchiveLyon2.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.univ-lyon2.fr:8050/perl/oai2</identifier>
+          <title>Archive Lyon 2 (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:archivesic.ccsd.cnrs.fr</identifier>
+        <datestamp>2004-08-17</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://archivesic.ccsd.cnrs.fr/perl/oai20</identifier>
+          <title>@rchiveSIC : Sciences de l'Information et de la Communication (2.0)</title>
+          <identifier>http://archivesic.ccsd.cnrs.fr/perl/oai</identifier>
+          <title>@rchiveSIC : Sciences de l'Information et de la Communication (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:atilf.inalf.fr</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/atilf.xml</identifier>
+          <title>ATILF Resources (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:authors.library.caltech.edu</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://authors.library.caltech.edu/perl/oai2</identifier>
+          <title>Caltech Authors (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:bieson.ub.uni-bielefeld.de</identifier>
+        <datestamp>2004-07-16</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://bieson.ub.uni-bielefeld.de/phpoai/oai2.php</identifier>
+          <title>BieSOn - Bielefelder Server für Online-Publikationen (University of Bielefeld, GERMANY) (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:biomedcentral.com</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.biomedcentral.com/oai/2.0/</identifier>
+          <title>BioMed Central (2.0)</title>
+          <identifier>http://celestial.eprints.org/cgi-bin/oaia2/biomedcentral.com</identifier>
+          <title>BioMed Central (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:bookmarks.oclc.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://alcme.oclc.org/bookmarks/servlet/OAIHandler</identifier>
+          <title>FRBR Bookmarks (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:brown_cs</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://uther.dlib.vt.edu/~ncstrlh/cgi-bin/OAI_lites/OAI-XMLFile-2.1/XMLFile/brown_cs/oai.pl</identifier>
+          <title>brown_cs OAI Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:bsz-bw.de</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.bsz-bw.de/cgi-bin/oai20_send.pl</identifier>
+          <title>Bibliotheksservice-Zentrum Baden-Württemberg, Germany, Virtueller Medienserver (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:byu.edu:Ancestry</identifier>
+        <datestamp>2004-02-07</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://hbllmedia.lib.byu.edu/test/PhpOai2/oai/oai2.php</identifier>
+          <title>Mormons and their Neighbors (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:cacr.library.caltech.edu</identifier>
+        <datestamp>2004-07-16</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://cacr.library.caltech.edu/perl/oai2</identifier>
+          <title>Caltech Center for Advanced Computing Research (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CaltechBIC001</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://clsdemo.library.caltech.edu/perl/oai2</identifier>
+          <title>Caltech Biological Imaging Center's Frog (Xenopus) Gastrulation Images (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CaltechBOOK.OAI</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://caltechbook.library.caltech.edu/perl/oai2</identifier>
+          <title>Books by Caltech Authors (2.0)</title>
+          <identifier>http://caltechbook.library.caltech.edu/perl/oai</identifier>
+          <title>Books by Caltech Authors (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CaltechCDSTR.OAI</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://caltechcdstr.library.caltech.edu/perl/oai2</identifier>
+          <title>Caltech Control and Dynamical Systems Technical Reports (2.0)</title>
+          <identifier>http://caltechcdstr.library.caltech.edu/perl/oai</identifier>
+          <title>Caltech Control and Dynamical Systems Technical Reports (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CaltechCSTR</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://clsdemo.caltech.edu/perl/oai2</identifier>
+          <title>Engineering and Science Online [DEMO] (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CaltechCSTR.OAI</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://caltechcstr.library.caltech.edu/perl/oai2</identifier>
+          <title>Caltech Computer Science Technical Reports (2.0)</title>
+          <identifier>http://caltechcstr.library.caltech.edu/perl/oai</identifier>
+          <title>Caltech Computer Science Technical Reports (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CaltechEERL.OAI</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://caltecheerl.library.caltech.edu/perl/oai2</identifier>
+          <title>Caltech Earthquake Engineering Research Laboratory Technical Reports (2.0)</title>
+          <identifier>http://caltecheerl.library.caltech.edu/perl/oai</identifier>
+          <title>Caltech Earthquake Engineering Research Laboratory Technical Reports (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CaltechEQL.OAI</identifier>
+        <datestamp>2004-04-02</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://caltecheql.library.caltech.edu/perl/oai2</identifier>
+          <title>Environmental Quality Laboratory Technical Reports (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CaltechKHR.OAI</identifier>
+        <datestamp>2004-04-02</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://caltechkhr.library.caltech.edu/perl/oai2</identifier>
+          <title>W. M. Keck Laboratory of Hydraulics and Water Resources Technical Reports (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CaltechLESSGS.OAI</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://caltechlessgs.library.caltech.edu/perl/oai2</identifier>
+          <title>Caltech Large-Eddy Simulation and Subgrid-Scale Modeling For Turbulent Mixing and Reactive Flows (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CaltechLIB.OAI</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://caltechlib.library.caltech.edu/perl/oai2</identifier>
+          <title>Caltech Library System Papers and Publications (2.0)</title>
+          <identifier>http://caltechlib.library.caltech.edu/perl/oai</identifier>
+          <title>Caltech Library System Papers and Publications (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CaltechOH.OAI</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oralhistories.library.caltech.edu/perl/oai2</identifier>
+          <title>Caltech Archives Oral Histories Online (2.0)</title>
+          <identifier>http://oralhistories.library.caltech.edu/perl/oai</identifier>
+          <title>Caltech Archives Oral Histories Online (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CaltechPARADISE.OAI</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://caltechparadise.library.caltech.edu/perl/oai2</identifier>
+          <title>Caltech Parallel and Distributed Systems Group (2.0)</title>
+          <identifier>http://caltechparadise.library.caltech.edu/perl/oai</identifier>
+          <title>Caltech Parallel and Distributed Systems Group (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CAV2001.OAI</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://cav2001.library.caltech.edu/perl/oai2</identifier>
+          <title>CAV2001: Fourth International Symposium on Cavitation (2.0)</title>
+          <identifier>http://cav2001.library.caltech.edu/perl/oai</identifier>
+          <title>CAV2001: Fourth International Symposium on Cavitation (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:cbj.www.codebreakers-journal.com</identifier>
+        <datestamp>2004-09-21</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.codebreakers-journal.com/oai/index.php</identifier>
+          <title>CodeBreakers-Journal (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:cdlib.org</identifier>
+        <datestamp>2004-08-12</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oai.cdlib.org/</identifier>
+          <title>California Digital Library (CDL) METS Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:cdlib1.org</identifier>
+        <datestamp>2004-09-07</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://repositories.cdlib.org/cgi/oai2.cgi</identifier>
+          <title>University of California eScholarship Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:cdm.multidoc.rediris.es</identifier>
+        <datestamp>2004-09-21</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://multidoc.rediris.es/cdm/oai/</identifier>
+          <title>Cuadernos de Documentacion Multimedia (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:cds.cern.ch</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://cdsweb.cern.ch/oai</identifier>
+          <title>CERN Document Server (2.0)</title>
+          <identifier>http://cdsweb.cern.ch/oai2d.py/</identifier>
+          <title>CERN Document Server (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:celebration</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://digital.library.upenn.edu/webbin/OAI-celebration</identifier>
+          <title>A Celebration of Women Writers (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ci_infibictbr.www.ibict.br</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.ibict.br/cienciadainformacao/oai/index.php</identifier>
+          <title>Ciência da Informação (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:citebase.eprints.org</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://citebase.eprints.org/cgi-bin/oai2</identifier>
+          <title>citebase.eprints.org (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CiteSeerPSU</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://cs1.ist.psu.edu/cgi-bin/oai.cgi</identifier>
+          <title>CiteSeer Computer and Information Science Publications collection (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:clal.cornell.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/metadata-wg.mannlib.cornell.edu/clal.xml</identifier>
+          <title>Cornell Language Acquisition Laboratory, CLAL (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CNRBiblioEprints</identifier>
+        <datestamp>2004-08-18</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://biblio-eprints.bo.cnr.it/perl/oai2</identifier>
+          <title>CNR Bologna Research Library (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:cogprints.soton.ac.uk</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://cogprints.ecs.soton.ac.uk/perl/oai2</identifier>
+          <title>Cogprints (2.0)</title>
+          <identifier>http://cogprints.soton.ac.uk/perl/oai2</identifier>
+          <title>Cogprints (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:conoze.com</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.conoze.com/interfaz/oai/20/</identifier>
+          <title>conoZe.com (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:content.nsdl.org</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://content.nsdl.org/wbr/SPT--OAI.php</identifier>
+          <title>NSDL Whiteboard Report (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:content.wsulibs.wsu.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://content.wsulibs.wsu.edu/cgi-bin/oai.exe</identifier>
+          <title>WSU Libraries CONTENTdm Respository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CRITAOI.OAI2</identifier>
+        <datestamp>2004-08-12</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://critaoi.org/bib/perl/oai2</identifier>
+          <title>CRITAOI (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:cs.uiowa.edu</identifier>
+        <datestamp>2004-08-12</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://idealab.cs.uiowa.edu/yingzhan/oai/oai2.php</identifier>
+          <title>The University of Iowa Computer Science Department Publication Database (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CSC-</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.csc.warwick.ac.uk/perl/oai2</identifier>
+          <title>CSC Eprints (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:CULeuclid</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://ProjectEuclid.org/Dienst</identifier>
+          <title>Project Euclid (Hosted at Cornell University Library) (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:dfki.de</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/dfki.xml</identifier>
+          <title>The Natural Language Software Registry (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:dici.ibict.br</identifier>
+        <datestamp>2004-09-21</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://dici.ibict.br/perl/oai2</identifier>
+          <title>Dialogo Cientifico (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:DICTIONARY.dictionnaires.inalf.fr</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/olac-dicos.xml</identifier>
+          <title>ATILF resources (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:digbib.uio.no</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://wo.uio.no/as/WebObjects/theses.woa/wa/oai</identifier>
+          <title>Library for digital documents at the university of Oslo (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:diglib.auburn.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://diglib.auburn.edu/cgi-bin/OAI-XMLFile/XMLFile/auburn/oai.pl</identifier>
+          <title>Auburn University - Transforming America (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:diglib.lib.utk.edu</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://diglib.lib.utk.edu/cgi/b/broker20/broker20</identifier>
+          <title>The University of Tennessee Libraries (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:dispute</identifier>
+        <datestamp>2004-02-07</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://dispute.library.uu.nl/cgi-bin/oai.pl</identifier>
+          <title>dispute (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:DiVA.se</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://publications.uu.se/portal/OAI</identifier>
+          <title>Academic Archive On-line (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:dlc.dlib.indiana.edu</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://dlc.dlib.indiana.edu/perl/oai2</identifier>
+          <title>Digital Library of the Commons (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:dlese.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.dlese.org/oai/provider</identifier>
+          <title>Digital Library for Earth System Education (DLESE) (2.0)</title>
+          <identifier>http://oai.dlese.org/dc_simple/provider</identifier>
+          <title>Digital Library for Earth System Education (DLESE) (1.1)</title>
+          <identifier>http://oai.dlese.org/news_opps/provider</identifier>
+          <title>Sample Repository (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:DLIST.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://dlist.sir.arizona.edu/perl/oai2</identifier>
+          <title>DLIST (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:dlnet</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.dlnet.vt.edu/oai2/OAIProvider</identifier>
+          <title>Digital Library Network for Engineering and Technology (DLNET) (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:doaj.org</identifier>
+        <datestamp>2004-04-02</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.doaj.org/oai</identifier>
+          <title>DOAJ-Journals (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:docsouth.unc.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.lib.unc.edu/cgi-bin/oai/das/das/das/oai.pl</identifier>
+          <title>Documenting the American South (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:drh2003.www.hcu.ox.ac.uk</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.hcu.ox.ac.uk/ocs/oai/</identifier>
+          <title>DRH 2003 (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:drtc.isibang.ac.in</identifier>
+        <datestamp>2004-08-10</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://drtc.isibang.ac.in/oai/</identifier>
+          <title>Documentation Research and Training Centre (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:dspace.ub.rug.nl</identifier>
+        <datestamp>2004-09-29</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://dspace.ub.rug.nl/dspace-oai/</identifier>
+          <title>DSpace at University Groningen (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:DUETTv2</identifier>
+        <datestamp>2004-02-07</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.ub.uni-duisburg.de:8080/cgi-oai2/2/OAI-XMLFile-2.1/XMLFile/DuetT/oai.pl</identifier>
+          <title>DUETTv2 - Dissertations and other Documents of the University Duisburg (2.0)</title>
+          <identifier>http://ub-www2.uni-duisburg.de:8080/cgi-oai2/2/OAI-XMLFile-2.1/XMLFile/DuetT/oai.pl</identifier>
+          <title>DUETTv2 - Dissertations and other Documents of the University Duisburg (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:EarlyMandarin.sinica.edu.tw</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/EarlyMandarin.xml</identifier>
+          <title>Academia Sinica Tagged Corpus of Early Mandarin Chinese (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ecp.www.math.washington.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.math.washington.edu/~ejpecp/ECP/oai/</identifier>
+          <title>Electronic Communications in Probability (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ecrystals.chem.soton.ac.uk</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://ecrystals.chem.soton.ac.uk/perl/oai2</identifier>
+          <title>Southampton Crystal Reports (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:edoc.ub.uni-muenchen.de</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://edoc.ub.uni-muenchen.de/perl/oai2</identifier>
+          <title>Digitale Hochschulschriften der LMU (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:eerl.org</identifier>
+        <datestamp>2004-04-01</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.eerl.org/SPT--OAI.php</identifier>
+          <title>electronic Environmental Resources Library (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:eiop.or.at</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eiop.or.at/cgi-bin/oaiserv.pl</identifier>
+          <title>ERPA European Research Papers Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ejp.www.math.washington.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.math.washington.edu/~ejpecp/oai/</identifier>
+          <title>Electronic Journal of Probability (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:EKUTuebingen</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://celestial.eprints.org/cgi-bin/oaia2/oai.uni-tuebingen.de.EKUTuebingen</identifier>
+          <title>The Eberhard Karls University of Tuebingen (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:eldorado</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eldorado.uni-dortmund.de:8080/rootcollection/cgi/oai2</identifier>
+          <title>Eldorado - Document Server of the University Dortmund (2.0)</title>
+          <identifier>http://eldorado.uni-dortmund.de:8080/rootcollection/cgi/oai</identifier>
+          <title>Eldorado (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:elib.suub.uni-bremen.de</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://elib.suub.uni-bremen.de/cgi-bin/oai2</identifier>
+          <title>State and University Library Bremen (2.0)</title>
+          <identifier>http://elib.suub.uni-bremen.de/cgi-bin/oai</identifier>
+          <title>State and University Library Bremen (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:elib.uni-stuttgart.de-opus</identifier>
+        <datestamp>2004-08-25</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://elib.uni-stuttgart.de/opus/phpoai/oai2.php</identifier>
+          <title>University of Stuttgart, GERMANY, OPUS (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:elra.icp.inpg.fr</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/elra.xml</identifier>
+          <title>European Language Resources Association (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:enc.org</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.enc.org/oai/2.0/default.pl</identifier>
+          <title>Eisenhower National Clearinghouse (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:engdocs.library.uiuc.edu</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://engdocs.grainger.uiuc.edu/oai.asp</identifier>
+          <title>UIUC Engineering Documents Center Collection (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ep.eur.nl</identifier>
+        <datestamp>2004-09-29</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://ep.eur.nl/oai/</identifier>
+          <title>DSpace at Erasmus (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:eprint.uq.edu.au</identifier>
+        <datestamp>2004-03-11</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprint.uq.edu.au/perl/oai2</identifier>
+          <title>ePrints@UQ (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:eprints.anu.edu.au</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.anu.edu.au/perl/oai2</identifier>
+          <title>Australian National University EPrints2 Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:eprints.dcu.ie</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.dcu.ie/perl/oai2</identifier>
+          <title>DCU Eprints Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:eprints.ecs.soton.ac.uk</identifier>
+        <datestamp>2004-03-11</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.ecs.soton.ac.uk/perl/oai2</identifier>
+          <title>ECS EPrints Service (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:eprints.gla.ac.uk</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.gla.ac.uk/perl/oai2</identifier>
+          <title>Glasgow ePrints Service (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:eprints.nottingham.ac.uk.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.nottingham.ac.uk/perl/oai2</identifier>
+          <title>Nottingham ePrints (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:eprints.rclis.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.rclis.org/perl/oai2</identifier>
+          <title>E-LIS (2.0)</title>
+          <identifier>http://eprints.rclis.org/perl/oai</identifier>
+          <title>E-LIS (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:eprints.soton.ac.uk</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.soton.ac.uk/perl/oai2</identifier>
+          <title>e-Prints Soton (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:eprints.ucl.ac.uk.OAI2</identifier>
+        <datestamp>2004-07-16</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.ucl.ac.uk/perl/oai2</identifier>
+          <title>UCL Eprints (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:EPrintsHUMATH</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.math.sci.hokudai.ac.jp/perl/oai2</identifier>
+          <title>EPrint Series of Department of Mathematics, Hokkaido University (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:epsilondiss.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://diss-epsilon.slu.se/perl/oai2</identifier>
+          <title>EPSILON Publishing System for Doctoral and Licentiate's Theses (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:epsilonex.OAI2</identifier>
+        <datestamp>2004-04-23</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://ex-epsilon.slu.se/perl/oai2</identifier>
+          <title>EPSILON Publishing System for SLU Undergraduate Theses (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:epub.ub.uni-muenchen.de</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://epub.ub.uni-muenchen.de/perl/oai2</identifier>
+          <title>Electronic Publications of Munich University (2.0)</title>
+          <identifier>http://epub.ub.uni-muenchen.de/perl/oai</identifier>
+          <title>Elektronische Publikationen der Universitaet Muenchen (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:epub.wu-wien.ac.at</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://epub.wu-wien.ac.at/dyn/OAI/oaicgi.pl</identifier>
+          <title>ePub-WU OAI Archive (Vienna Univ. of Econ. and B.A.) (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:epubs.cclrc.ac.uk</identifier>
+        <datestamp>2004-08-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://epubs.cclrc.ac.uk/oai</identifier>
+          <title>CCLRC ePublication Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:espace.lis.curtin.edu.au</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://espace.lis.curtin.edu.au/perl/oai2</identifier>
+          <title>espace@Curtin (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:etd.etsu.edu</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://etd-submit.etsu.edu/ETD-db/OAI/oai.pl</identifier>
+          <title>ETSU Electronic Thesis and Dissertation Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:etd.library.lt</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://submit.library.lt/ETD-db/NDLTD-OAI/oai.pl</identifier>
+          <title>Lithuanian Electronic Thesis and Dissertation Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:etd.lsu.edu</identifier>
+        <datestamp>2004-01-29</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://etd02.lnx390.lsu.edu/OAI/oai.pl</identifier>
+          <title>LSU Electronic Thesis and Dissertation Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:etd.ohiolink.edu</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.ohiolink.edu/etd/oai.php</identifier>
+          <title>OhioLINK Electronic Thesis and Dissertation Center (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ETDIndividuals.OAI2</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://etdindividuals.dlib.vt.edu/perl/oai2</identifier>
+          <title>ETD Individuals (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:etext.library.adelaide.edu.au</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://etext.library.adelaide.edu.au/cgi-bin/OAI-lite.pl</identifier>
+          <title>eBooks@Adelaide : The University of Adelaide Library Electronic Text Collection (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:etheses.nottingham.ac.uk.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://etheses.nottingham.ac.uk/perl/oai2</identifier>
+          <title>Nottingham eTheses (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ethnologue.com</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.ethnologue.com/oai2.asp</identifier>
+          <title>Ethnologue: Languages of the World (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ethnomath.org</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oai.prel.org/oai.asp</identifier>
+          <title>Ethnomathematics Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:fhdd.opus.hbz-nrw.de</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://fhdd.opus.hbz-nrw.de/phpoai/oai2.php</identifier>
+          <title>OAI Datenprovider der Fachhochschule Duesseldorf (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:fhdo.opus.hbz-nrw.de</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://fhdo.opus.hbz-nrw.de/phpoai/oai2.php</identifier>
+          <title>OAI-Datenprovider der Fachhochschule Dortmund (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:fhge.opus.hbz-nrw.de</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://fhge.opus.hbz-nrw.de/phpoai/oai2.php</identifier>
+          <title>OAI Datenprovider der Fachhochschule Gelsenkirchen (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:findingaids.grainger.uiuc.edu</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://findingaids.grainger.uiuc.edu/oai.asp</identifier>
+          <title>University of Illinois Library at Urbana-Champaign, Archival Finding Aids (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:forex.uni-bremen.de</identifier>
+        <datestamp>2004-02-07</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.forex.uni-bremen.de/cgi-bin/oai2</identifier>
+          <title>FOREX - Research- and Expertdatabase, University of Bremen (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:Formosan.sinica.edu.tw</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/Formosan.xml</identifier>
+          <title>Academia Sinica Formosan Language Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:Fr-Jp-servdoc.OAI2</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://servdoc.jp.cnrs.fr/perl/oai2</identifier>
+          <title>Serveur de Documents Science et Culture France-Japon (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:FRANTEXT.atilf.inalf.fr</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/OLAC-FRANTEXT.xml</identifier>
+          <title>ATILF resources (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:fred.ccsu.edu.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://fred.ccsu.edu:8000/perl/oai2</identifier>
+          <title>CCSU Digital Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:functions.wolfram.com</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://nsdl.grainger.uiuc.edu/WolframFunctions/oai.asp</identifier>
+          <title>The Wolfram Functions Site, Repository hosted at UIUC (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:grainger.uiuc.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://g118.grainger.uiuc.edu/engroai/provider/oai.asp</identifier>
+          <title>University of Illinois at Urbana Champaign, Grainger Engineering Library Information Center (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:gsafd.oclc.org</identifier>
+        <datestamp>2004-08-25</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://errol.oclc.org/gsafd.oclc.org.srw2oai</identifier>
+          <!-- This is a special ERRoL OAI Gateway to an SRW/U service.  The relation is the URL to SRW/U service itself -->
+          <relation>http://errol.oclc.org/srwRegistry.oclc.org/gsafd.alcme.oclc.org.enrichSru</relation>
+          <title>GSAFD Thesaurus (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:gsi.de</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www-new.gsi.de/~harvest/oai2.php</identifier>
+          <title>GSI OAI Repository (2.0)</title>
+          <identifier>http://www.gsi.de/~harvest/oai2.php</identifier>
+          <title>GSI OAI Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:GTETD</identifier>
+        <datestamp>2004-08-12</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://etd.gatech.edu/ETD-db/OAI2/oai.pl</identifier>
+          <title>Georgia Tech Electronic Thesis and Dissertation Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:hal.ccsd.cnrs.fr</identifier>
+        <datestamp>2004-08-17</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://hal.ccsd.cnrs.fr/oai/oai.php</identifier>
+          <title>CCSd/HAL : e-articles server (based on gBUS) (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:handelsepc.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.handels.gu.se/epc/perl/oai2</identifier>
+          <title>Electronic Publishing Centre (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:harvester.pkp.ubc.ca</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://pkp.ubc.ca/harvester/oai/</identifier>
+          <title>PKP Open Archives Harvester (2.0)</title>
+          <identifier>http://www.pkp.ubc.ca/harvester/oai/</identifier>
+          <title>PKP Open Archives Harvester (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:hkuto</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://sunzi.lib.hku.hk/cgi-bin/OAI/hkuto.pl</identifier>
+          <title>Hong Kong University Theses Online (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:hspics</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.husseinsspace.com/cgi-bin/VTOAI/hspics/hspics/oai.pl</identifier>
+          <title>Hussein's Picture Album (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:HTPPrints.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://htpprints.yorku.ca/perl/oai2</identifier>
+          <title>HTP Prints (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:HUBerlin.de</identifier>
+        <datestamp>2004-10-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://edoc.hu-berlin.de/OAI-2.0</identifier>
+          <title>Humboldt University of Berlin, GERMANY, Document Server (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ibiblio.software</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://ibiblio.org/oaibiblio/data/software/app/oai2.php</identifier>
+          <title>ibiblio Software Collection (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:id-registry.dspacereg.org</identifier>
+        <datestamp>2004-04-02</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://alcme.oclc.org/dspacereg/OAIHandler</identifier>
+          <title>DSpace OAI Repository Registry (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:id-registry.uiuc.edu</identifier>
+        <datestamp>2004-04-02</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://gita.grainger.uiuc.edu/registry/px/oai.asp</identifier>
+          <title>University of Illinois at Urbana Champaign, Experimental OAI Registry (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ifeanet.org</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.ifeanet.org/oai/oai2.php</identifier>
+          <title>Serveur des publications de l'Institut Francais d'Etudes Andines (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:iiscePrints.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.iisc.ernet.in/perl/oai2</identifier>
+          <title>eprints@iisc (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ilalive.grainger.uiuc.edu</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://ilalive.grainger.uiuc.edu/oai.asp</identifier>
+          <title>ASP OAI 2.0 Data Provider for Illinois Alive Repository hosted at UIUC (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:images</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.infomotions.com/gallery/oai/index.pl</identifier>
+          <title>Infomotions' Image Gallery (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:images.indianahistory.org</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://images.indianahistory.org/cgi-bin/oai.exe</identifier>
+          <title>Indiana Historical Society | Digital Image Collections (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:images.library.uiuc.edu</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://images.library.uiuc.edu:8081/cgi-bin/oai.exe</identifier>
+          <title>The Digital Imaging And Media Technology Initiative, University of Illinois Library (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:inf.cs.cmu.edu</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://infsearch.cs.cmu.edu/cgi-bin/oai.pl</identifier>
+          <title>Carnegie Mellon University Informedia Public Domain Video Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:info-uri.info</identifier>
+        <datestamp>2003-12-10</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.info-uri.info/registry/OAIHandler</identifier>
+          <title>'info' URI Registry (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:infomine.ucr.edu</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://infomine.ucr.edu/cgi-bin/OAI-PMH-server</identifier>
+          <title>The INFOMINE Scholarly Internet Resource Collection (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:jeanNicod.ccsd.cnrs.fr</identifier>
+        <datestamp>2004-08-17</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://jeanNicod.ccsd.cnrs.fr/perl/oai20</identifier>
+          <title>Jean Nicod Online Papers (2.0)</title>
+          <identifier>http://jeanNicod.ccsd.cnrs.fr/perl/oai</identifier>
+          <title>Jean Nicod Online Papers (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:jstem.www.auburn.edu</identifier>
+        <datestamp>2004-09-21</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.auburn.edu/research/litee/jstem/oai/</identifier>
+          <title>Journal of STEM Education (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ju.nii.ac.jp</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://ju.nii.ac.jp/cgi-bin/oai/oai2.0</identifier>
+          <title>National Institute of Informatics Metadata Database (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:KennedyEprints.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.presidentekennedy.br:9000/perl/oai2</identifier>
+          <title>Kennedy Eprints (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:lacito.archivage.vjf.cnrs.fr</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://lacito.archivage.vjf.cnrs.fr/servlet/metadata</identifier>
+          <title>LACITO Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:lcoa1.loc.gov</identifier>
+        <datestamp>2004-02-07</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://memory.loc.gov/cgi-bin/oai2_0</identifier>
+          <title>Library of Congress Open Archive Initiative Repository 1 (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:leeds.ac.uk:sherpa</identifier>
+        <datestamp>2004-07-16</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://sherpa.leeds.ac.uk/perl/oai2</identifier>
+          <title>White Rose Consortium ePrints Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:LevyTest.jhu.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://volcano.mse.jhu.edu/cgi-bin/OAI/XMLFile/LevyTest/oai.pl</identifier>
+          <title>Levy Test OAI Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:lib.umich.edu</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.hti.umich.edu/cgi/b/broker20/broker20</identifier>
+          <title>The University of Michigan. University Library.  Digital Library Production Service. (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:library.ucla.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://digital.library.ucla.edu/oai/sheetmusicdp</identifier>
+          <title>UCLA Archive of Popular American Music (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:libserv12.princeton.edu</identifier>
+        <datestamp>2004-08-12</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://libserv12.Princeton.EDU/oai/oai.pl</identifier>
+          <title>Princeton University Library (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:loncapansdlexport</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://nsdl.lon-capa.org/cgi-bin/OAI-XMLFile/XMLFile/nsdlexport/oai.pl</identifier>
+          <title>LON-CAPA Export to NSDL OAI Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:lu-research.lub.lu.se</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://lu-research.lub.lu.se/php/oai.php</identifier>
+          <title>lucep (2.0)</title>
+          <identifier>http://ask.lub.lu.se/perl/oai2</identifier>
+          <title>lucep (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:mathworld.wolfram.com</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://nsdl.grainger.uiuc.edu/WolframMathworld/oai.asp</identifier>
+          <title>Wolfram Research Mathworld, Repository hosted at UIUC (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:memsic.ccsd.cnrs.fr</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://memsic.ccsd.cnrs.fr/perl/oai2</identifier>
+          <title>mémSIC : Mémoires en Sciences de l'Information et de la Communication (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:michiganteacher.net</identifier>
+        <datestamp>2004-08-12</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://michiganteacher.net/oai</identifier>
+          <title>Michigan Teacher Network (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:mitizane.ll.chiba-u.jp</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://mitizane.ll.chiba-u.jp/cgi-bin/oai/oai2.0</identifier>
+          <title>Chiba University Scholarly Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:mlpa.nottingham.ac.uk.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://mlpa.nottingham.ac.uk/perl/oai2</identifier>
+          <title>Modern Languages Publications Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:Monash.OAI</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprint.monash.edu.au/perl/oai2</identifier>
+          <title>Monash University ePrint Repository (2.0)</title>
+          <identifier>http://eprint.monash.edu.au/perl/oai</identifier>
+          <title>Monash University ePrint Repository (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:mpg.edoc</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://edoc.mpg.de/oai.epl</identifier>
+          <title>Max Planck Society - eDocument Server (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:mss</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.lib.unc.edu/cgi-bin/oai/mss/OAI-XMLFile/XMLFile/mss/oai.pl</identifier>
+          <title>University of North Carolina at Chapel Hill Manuscripts Department (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:msu.dmc</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oai.lib.msu.edu/oai/oai.cfm</identifier>
+          <title>Michigan State University - Digital and Multimedia Center (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:mundus.ac.uk</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.mundus.ac.uk/cgi-bin/oai/OAI2.0</identifier>
+          <title>MUNDUS - UK Missionary collections (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:musings</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.infomotions.com/musings/oai/index.pl</identifier>
+          <title>Infomotions' Musings on Information and Librarianship (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:nac</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://lbxml.ust.hk/nac/oai.pl</identifier>
+          <title>XML Name Access Control Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ndad.ulcc.ac.uk</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://ndad.ulcc.ac.uk/cgi-bin/oai/OAI2.0</identifier>
+          <title>NDAD - UK National Digital Archive of Datasets (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ndltd.oclc.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://alcme.oclc.org/ndltd/servlet/OAIHandler</identifier>
+          <title>NDLTD Union Catalog (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:NDLTDPapersEPrints.OAI2</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://ndltdpapers.dlib.vt.edu/perl/oai2</identifier>
+          <title>NDLTD Papers (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:nla.gov.au</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.nla.gov.au/apps/oaicat/servlet/OAIHandler</identifier>
+          <title>National Library of Australia Digital Object Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:nsDisplay.oclc.org</identifier>
+        <datestamp>2004-10-14</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://errol.oclc.org/srwRegistry.oclc.org/nsDisplay.alcme.oclc.org.oaigateway</identifier>
+          <title>OCLC NSDisplay Crosswalk Catalog (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:nsdl.org</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://services.nsdl.org:8080/nsdloai/OAI</identifier>
+          <title>NSDL OAI Repository (initial release) (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ntrs.nasa.gov</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://ntrs.nasa.gov/</identifier>
+          <title>ntrs.nasa.gov (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:numdam.org</identifier>
+        <datestamp>2004-07-21</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.numdam.org/numdam-bin/oai</identifier>
+          <title>numdam (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:oai.bn.pt</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oai.porbase.org/teloai/servlet/OAIHandler</identifier>
+          <title>National Library of Portugal - (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:oai.bnf.fr</identifier>
+        <datestamp>2004-10-11</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oai.bnf.fr/oai2</identifier>
+          <title>Bibliothèque nationale de France (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:oai.columbia.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oai.columbia.edu/oai/app/serve/requesthandler</identifier>
+          <title>Columbia University OAI Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:oai.dlib.indiana.edu</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oai.dlib.indiana.edu/phpoai/oai2.php</identifier>
+          <title>Indiana University Digital Library Program (2.0)</title>
+          <identifier>http://oai.dlib.indiana.edu/oai2/</identifier>
+          <title>Indiana University Digital Library Program (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:oai.lib.uchicago.edu</identifier>
+        <datestamp>2004-10-14</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oai.lib.uchicago.edu/</identifier>
+          <title>The University of Chicago Library
+                    Metadata Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:oai.nap.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://arkham.nap.edu/cgi-bin/OAI-XMLFile/XMLFile/nap/oai.pl</identifier>
+          <title>The National Academies Press OAI MetaData Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:oai.sunsite.utk.edu</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oai.sunsite.utk.edu/cgi-bin/oai2.cgi</identifier>
+          <title>University of Tennessee Sunsite Open Archives Initiative (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:oaigateway.grainger.uiuc.edu</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oaigateway.grainger.uiuc.edu/oai.asp</identifier>
+          <title>University of Illinois Library at Urbana-Champaign, OAI Gateway (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ocs.www.e-derecho.org.ar</identifier>
+        <datestamp>2004-09-21</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.e-derecho.org.ar/ocs/oai/</identifier>
+          <title>Sistema de Conferencia Abierta (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ojs.www.cartapacio.org.ar</identifier>
+        <datestamp>2004-09-21</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.cartapacio.org.ar/oai/index.php</identifier>
+          <title>Open Journal Systems (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:ojs.www.entomotropica.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.entomotropica.org/ojs/oai/</identifier>
+          <title>Entomotropica (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:OLACA.language-archives.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/cgi-bin/olaca3.pl</identifier>
+          <title>OLAC Aggregator (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:orgprints.org</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://orgprints.org/perl/oai2</identifier>
+          <title>Organic Eprints (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:orpubs.oclc.org</identifier>
+        <datestamp>2004-08-25</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://errol.oclc.org/orpubs.oclc.org.srw2oai</identifier>
+          <!-- This is a special ERRoL OAI Gateway to an SRW/U service.  The relation is the URL to SRW/U service itself -->
+          <relation>http://errol.oclc.org/srwRegistry.oclc.org/orpubs.alcme.oclc.org.enrichSru</relation>
+          <title>OCLC Research Publication Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:orxsl.oclc.org</identifier>
+        <datestamp>2004-08-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://errol.oclc.org/orxsl.oclc.org.srw2oai</identifier>
+          <!-- This is a special ERRoL OAI Gateway to an SRW/U service.  The relation is the URL to SRW/U service itself -->
+          <relation>http://alcme.oclc.org/srw/search/ORXSL</relation>
+          <title>OCLC OR XSL Stylesheet Catalog (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:OxfordEPrints.OAI2</identifier>
+        <datestamp>2004-07-16</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.ouls.ox.ac.uk/perl/oai2</identifier>
+          <title>Oxford Eprints (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:patriot.lib.byu.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://patriot.lib.byu.edu/cgi-bin/oai.exe</identifier>
+          <title>CONTENTdm Server Respository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:perseus.tufts.edu</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.perseus.tufts.edu/cgi-bin/pdataprov</identifier>
+          <title>Perseus Digital Library (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:PhysiologieAnimale.INRA.fr</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://phy043.tours.inra.fr:8080/perl/oai2</identifier>
+          <title>PhysiologieAnimale (2.0)</title>
+          <identifier>http://phy043.tours.inra.fr:8080/perl/oai</identifier>
+          <title>PhysiologieAnimale (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:physnet.de</identifier>
+        <datestamp>2004-10-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://physnet.uni-oldenburg.de/oai/oai2.php</identifier>
+          <title>Physnet, Physics Document Server, Germany (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:PITETD</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://etd.library.pitt.edu/ETD-db/NDLTD-OAI2/oai.pl</identifier>
+          <title>University of Pittsburgh Electronic Thesis and Dissertation Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:PITTAEI.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://aei.pitt.edu/perl/oai2</identifier>
+          <title>ARCHIVE OF EUROPEAN INTEGRATION (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:PittPhilSci.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://philsci-archive.pitt.edu/perl/oai2</identifier>
+          <title>PhilSci Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:pocol.pkp.ubc.ca</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://pkp.ubc.ca/pocol/oai/</identifier>
+          <title>Postcolonial Text (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:pocol.www.pkp.ubc.ca</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.pkp.ubc.ca/pocol/oai/</identifier>
+          <title>Postcolonial Text (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:psycprints.ecs.soton.ac.uk</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://psycprints.ecs.soton.ac.uk/perl/oai2</identifier>
+          <title>PsycPrints (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:psydok.sulb.uni-saarland.de</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://psydok.sulb.uni-saarland.de/phpoai/oai2.php</identifier>
+          <title>Virtual Library of Psychology at Saarland University and State Library, GERMANY, PsyDok (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:pubmedcentral.gov</identifier>
+        <datestamp>2004-02-07</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.pubmedcentral.gov/oai/oai.cgi</identifier>
+          <title>PubMed Central (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:rea.rea.uninet.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://rea.uninet.edu/ojs/oai/</identifier>
+          <title>The Electronic Journal of Autopsy (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:regnet.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://csc000.cscaustria.at/oai/OAI.ASP</identifier>
+          <title>REGNET OAI Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:RePEc</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oai.repec.openlib.org</identifier>
+          <title>RePEc (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:resgenchem15.chem.wisc.edu</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://resgenchem15.chem.wisc.edu/spt/SPT--OAI.php</identifier>
+          <title>JCE-DLib (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:resolverdemo.oclc.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://alcme.oclc.org/oai/OAIHandler</identifier>
+          <title>Dummy OAI Repository Registry (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:rib.cs.utk.edu</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://rib.cs.utk.edu/OAI/test/oai.pl</identifier>
+          <title>RIB Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:rlbdok.opus.hbz-nrw.de</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://rlbdok.opus.hbz-nrw.de/phpoai/oai2.php</identifier>
+          <title>OAI Datenprovider der Rheinischen Landesbibliothek (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:rlbweb.opus.hbz-nrw.de</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://rlbweb.opus.hbz-nrw.de/phpoai/oai2.php</identifier>
+          <title>OAI Datenprovider der Rheinischen Landesbibliothek (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:rosettaproject.longnow.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/rosetta.xml</identifier>
+          <title>Rosetta Project 1000 Language Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:RUBochum.de</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oai.ub.rub.de/oai/oai2.php</identifier>
+          <title>Library of Ruhr-Universitaet Bochum, GERMANY, Dissertation Server (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:RUGNL</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://celestial.eprints.org/cgi-bin/oaia2/elib.ub.rug.nl.RUGNL</identifier>
+          <title>Groningen University Library (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:saardok.sulb.uni-saarland.de</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://saardok.sulb.uni-saarland.de/phpoai/oai2.php</identifier>
+          <title>Electronic documents from archive of the Saarland State Library, GERMANY, SaarDok (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:sammelpunkt.philo.at</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://sammelpunkt.philo.at:8080/perl/oai2</identifier>
+          <title>Sammelpunkt. Elektronisch archivierte Theorie (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:schemaTrans.oclc.org</identifier>
+        <datestamp>2004-06-21</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://errol.oclc.org/schemaTrans.oclc.org.srw2oai</identifier>
+          <!-- This is a special ERRoL OAI Gateway to an SRW/U service.  The relation is the URL to SRW/U service itself -->
+          <relation>http://alcme.oclc.org/srw/search/SchemaTrans</relation>
+          <title>OCLC Schema Transformation Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:scidok.sulb.uni-saarland.de</identifier>
+        <datestamp>2004-06-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://scidok.sulb.uni-saarland.de/phpoai/oai2.php</identifier>
+          <title>Scientific documents from the Saarland University, GERMANY, SciDok (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:scoil.linguistics.berkeley.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/scoil.xml</identifier>
+          <title>Survey for California and Other Indian Languages (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:scout.wisc.edu</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://scout.wisc.edu/Archives/SA--OAI.php</identifier>
+          <title>Scout Archives (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:sdeir.uqac.ca</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://sdeir.uqac.ca/metadata/oai.asp</identifier>
+          <title>Université du Québec à Chicoutimi - Documentation régionale (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:sheetmusic.grainger.uiuc.edu</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://sheetmusic.grainger.uiuc.edu/oai.asp</identifier>
+          <title>University of Illinois Library at Urbana-Champaign, Online U.S. Sheet Music Database (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:sil.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.ethnologue.com/sil_archives2.asp</identifier>
+          <title>SIL Language and Culture Archives (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:SinicaCorpus.sinica.edu.tw</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/SinicaCorpus.xml</identifier>
+          <title>Academia Sinica Balanced Corpus of Modern Chinese (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:slv_oai.www.slv.vic.gov.au</identifier>
+        <datestamp>2004-08-12</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://ion.slv.vic.gov.au:8123/oai/slv_oai</identifier>
+          <title>State Library of Victoria OAI repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:smc.library.duke.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://oai.lib.duke.edu:8081/smc/servlet/OAIHandler</identifier>
+          <title>Duke Sheet Music Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:spz.socionet.ru</identifier>
+        <datestamp>2004-04-02</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://spz.socionet.ru/oai/oai.cgi</identifier>
+          <title>OAI Archives at SPZ (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:srwRegistry.oclc.org</identifier>
+        <datestamp>2004-08-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://errol.oclc.org/srwRegistry.oclc.org.srw2oai</identifier>
+          <!-- This is a special ERRoL OAI Gateway to an SRW/U service.  The relation is the URL to SRW/U service itself -->
+          <relation>http://alcme.oclc.org/srw/search/SRWRegistry</relation>
+          <title>SRW Registry (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:surrey.smg.surrey.ac.uk</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/metadata.xml</identifier>
+          <title>Surrey Morphology Group Databases (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:TalkBank.cmu.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/talkbank.xml</identifier>
+          <title>TalkBank (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:TDProject.sr.language-archives.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/tdproject.xml</identifier>
+          <title>The Typological Database Project (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:techreports.cs.uct.ac.za</identifier>
+        <datestamp>2004-03-10</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://pubs.cs.uct.ac.za/perl/oai2</identifier>
+          <title>UCT CS Research Document Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:tel.ccsd.cnrs.fr</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+        <setSpec>ID:1.1</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://tel.ccsd.cnrs.fr/perl/oai20</identifier>
+          <title>CCSD theses-EN-ligne, France (2.0)</title>
+          <identifier>http://tel.ccsd.cnrs.fr/perl/oai</identifier>
+          <title>CCSD theses-EN-ligne, France (1.1)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:test</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://rocky.dlib.vt.edu/~jcdlpix/cgi-bin/OAI2.0/test/oai.pl</identifier>
+          <title>Test Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:THDL.virginia.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/thdl-olac.xml</identifier>
+          <title>Tibetan and Himalayan Digital Library (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:theses.ulaval.ca</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.theses.ulaval.ca:8080/oaicat/servlet/OAIHandler</identifier>
+          <title>Mémoires et thèses de l'Université Laval (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:TKKdoc.fi</identifier>
+        <datestamp>2004-10-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://edoc.tkk.fi/oai/oai2.php</identifier>
+          <title>Helsinki University of Technology, Finland, Document Server (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:tractor.de</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/ota.ahds.ac.uk/olac/tractor.xml</identifier>
+          <title>TRACTOR Test Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:tudelft.nl</identifier>
+        <datestamp>2004-09-29</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://repository.tudelft.nl/oai</identifier>
+          <title>TU Delft digital repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UAB.es</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.tdx.cesca.es/TDX_UAB/NDLTD-OAI/oai.pl</identifier>
+          <title>Universitat Autònoma de Barcelona (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UB.es</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.tdx.cesca.es/TDX_UB/NDLTD-OAI/oai.pl</identifier>
+          <title>Universitat de Barcelona (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UCLEPrints.OAI2</identifier>
+        <datestamp>2004-03-09</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://edoc.bib.ucl.ac.be:82/perl/oai2</identifier>
+          <title>Repertoire Eprints UCL (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UdG.es</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.tdx.cesca.es/TDX_UdG/NDLTD-OAI/oai.pl</identifier>
+          <title>Universitat de Girona (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UdL.es</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.tdx.cesca.es/TDX_UdL/NDLTD-OAI/oai.pl</identifier>
+          <title>Universitat de Lleida (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UIB.es</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.tdx.cesca.es/TDX_UIB/NDLTD-OAI/oai.pl</identifier>
+          <title>Universitat de les Illes Balears (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UJI.es</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.tdx.cesca.es/TDX_UJI/NDLTD-OAI/oai.pl</identifier>
+          <title>Universitat Jaume I (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:uk.ac.angel</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.headline.ac.uk:80/steve/cgi-bin/oai_interface_v0.6.pl</identifier>
+          <title>ANGEL RM OAI Repository SERVER (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:uni-muenster.de</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://miami.uni-muenster.de/servlets/OAIDataProvider</identifier>
+          <title>Münster University, Germany, Document Server (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:unimelb.edu.au</identifier>
+        <datestamp>2004-03-11</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.unimelb.edu.au/perl/oai2</identifier>
+          <title>University of Melbourne ePrints Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UNITN.Eprints</identifier>
+        <datestamp>2004-03-10</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.biblio.unitn.it/perl/oai2</identifier>
+          <title>University of Trento - Italy - UNITN-Eprints (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:universityofsydneyfacultyofarts.conferences.arts.usyd.edu.au</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://conferences.arts.usyd.edu.au/oai/</identifier>
+          <title>Faculty of Arts Conference System (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:Unknown.tkl.indexdata.com</identifier>
+        <datestamp>2004-03-18</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://bibliotheca.indexdata.dk/index.tkl</identifier>
+          <title>Unknown_ (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UOC.es</identifier>
+        <datestamp>2004-02-07</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.tdx.cesca.es/TDX_UOC/NDLTD-OAI/oai.pl</identifier>
+          <title>Universitat Oberta de Catalunya (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UOFS</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://library.usask.ca/etd/OAI/oai.pl</identifier>
+          <title>University of Saskatchewan Library Electronic Thesis and Dissertation Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UPC.es</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.tdx.cesca.es/TDX_UPC/NDLTD-OAI/oai.pl</identifier>
+          <title>Universitat Politécnica de Catalunya (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UPF.es</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.tdx.cesca.es/TDX_UPF/NDLTD-OAI/oai.pl</identifier>
+          <title>Universitat Pompeu Fabra (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:uqflint.uq.edu.au</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.language-archives.org/sr/www.language-archives.org/devel/sr/uqflint.xml</identifier>
+          <title>UQ Flint Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:url-registry.dspacereg.org</identifier>
+        <datestamp>2004-04-02</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://alcme.oclc.org/dspacereg/OAIHandler</identifier>
+          <title>DSpace OAI Repository Registry (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:url-registry.uiuc.edu</identifier>
+        <datestamp>2004-04-02</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://gita.grainger.uiuc.edu/registry/px/oai.asp</identifier>
+          <title>University of Illinois at Urbana Champaign, Experimental OAI Registry (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:URV.es</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.tdx.cesca.es/TDX_URV/NDLTD-OAI/oai.pl</identifier>
+          <title>Universitat Rovira i Virgili (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UTasER.comp.utas.edu.au</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.comp.utas.edu.au:81/perl/oai2</identifier>
+          <title>UTasER (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:utexas_cs</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://uther.dlib.vt.edu/~ncstrlh/cgi-bin/OAI_lites/OAI-XMLFile-2.1/XMLFile/utexas_cs/oai.pl</identifier>
+          <title>utexas_cs OAI Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:UV.es</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.tdx.cesca.es/TDX_UV/NDLTD-OAI/oai.pl</identifier>
+          <title>Universitat de València (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:uwaterloo.ca</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://etheses.uwaterloo.ca/OAI/oai.cfm</identifier>
+          <title>University of Waterloo Electronic Theses Repository (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:VANDERBILTETD</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://etd.library.vanderbilt.edu/ETD-db/NDLTD-OAI/oai.pl</identifier>
+          <title>Vanderbilt Electronic Thesis and Dissertation Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:vifaphys.tib.uni-hannover.de</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://vifaphys.tib.uni-hannover.de/oai/oai2.php</identifier>
+          <title>ViFaPhys.de (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:votest</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://mercury.cacr.caltech.edu/cgi-bin/OAI-XML/nvo/oai.pl</identifier>
+          <title>votest OAI Archive (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:vtcstechreports.OAI2</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://eprints.cs.vt.edu:8000/perl/oai2</identifier>
+          <title>VT CS Technical Reports (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:vtt.fi</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://cgi.vtt.fi/progs/inf/OAI</identifier>
+          <title>VTT Publications Register (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:wolfram.grainger.uiuc.edu</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://wolfram.grainger.uiuc.edu/oai.asp</identifier>
+          <title>University of Illinois Library at Urbana-Champaign, Wolfram Research OAI Gateway (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:worlddmc.ohiolink.edu</identifier>
+        <datestamp>2004-08-26</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://worlddmc.ohiolink.edu/oai/oaiProv</identifier>
+          <title>OhioLINK Digital Media Center (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:www.econport.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.econport.org:8080/econport/oai</identifier>
+          <title>EconPort (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:www.fcla.edu</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://brokert10.fcla.edu/cgi/b/broker20/broker20</identifier>
+          <title>Florida Center for Library Automation (2.0)</title>
+          <identifier>http://broker10.fcla.edu/cgi/b/broker20/broker20</identifier>
+          <title>Florida Center for Library Automation (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:www.mpi.nl</identifier>
+        <datestamp>2004-02-06</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://www.mpi.nl/IMDI/OAI-IMDI/2.0/imdi_oai2.pl</identifier>
+          <title>IMDI to OAI bridge (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:www.openurl.info</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://alcme.oclc.org/openurl/servlet/OAIHandler</identifier>
+          <title>Registry for the OpenURL Framework (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:xmlregistry.oclc.org</identifier>
+        <datestamp>2003-12-04</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://alcme.oclc.org/xmlregistry/OAIHandler</identifier>
+          <title>XML/XSD/XSL Registry (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+<record>
+      <header>
+        <identifier>oai:id-registry.uiuc.edu:xtcat.oclc.org</identifier>
+        <datestamp>2004-02-05</datestamp>
+        <setSpec>ID</setSpec>
+        <setSpec>ID:2.0</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns="http://purl.org/dc/elements/1.1/">
+          <identifier>http://alcme.oclc.org/xtcat/servlet/OAIHandler</identifier>
+          <title>OCLC's Experimental Thesis Catalog (2.0)</title>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+</ListRecords>
+</OAI-PMH>
+</xoaih:harvest>

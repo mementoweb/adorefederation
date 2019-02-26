@@ -1,0 +1,630 @@
+<?xml version="1.0"?>
+
+<!--
+  - Adore Build Enviroment 
+  - 
+  -->
+
+<project default="adore-modules" basedir=".">
+
+    <!-- Import Additional Ant Tasks -->
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+     <classpath>
+      <pathelement location="../java/lib/ant-contrib.jar"/>
+     </classpath>
+    </taskdef>
+    
+    <!-- ===================================================================
+      -  init - initialization common to all modules and submodules
+      -  =================================================================== -->
+    <target name="global-init">
+        
+        <!-- Static property definitions.  These will remain the same for any module or
+             submodule. -->
+        <property name="root.name" value="adore"/>
+
+        <property name="root.base.dir" value="../${root.name}"/>
+
+        <property name="root.lib.dir" value="${root.base.dir}/lib"/>
+        
+        <!-- application-wide config files: (all other config files should be in a respective
+             module or submodule) -->
+        <property name="root.etc.dir"   value="${root.base.dir}/etc"/>
+        <property name="root.build.dir" value="${root.base.dir}/build"/>
+        <property name="root.dist.dir" value="${root.build.dir}/dist"/>
+        <property name="root.doc.dir" value="${root.base.dir}/doc"/>
+        <property name="root.src.dir" value="${root.base.dir}"/>
+        <property name="root.licenses.dir" value="${root.base.dir}/licenses"/>
+        <property name="root.modules.dir" value="${root.base.dir}"/>
+        
+        <!-- Tomcat Properties -->
+        <property name="tomcat.base.dir" value="/opt/tomcat"/>
+        <property name="tomcat.webapp.dir" value="${tomcat.base.dir}/webapps"/>
+        
+        <!-- compile flags, can be overridden on the command line using the -D flag -->
+        <property name="compile.debug" value="true"/>
+        <property name="compile.deprecation" value="false"/>
+        <property name="compile.optimize" value="true"/>
+        
+        <!-- ===============================================================
+          -  Module filesets and paths required for compiling or during runtime.
+          -  (referenced later when creating classpaths)
+          -  =============================================================== -->
+        
+        <!-- adore-archive -->
+        <property name="adore-archive.mod" value="adore-archive"/>
+        <property name="adore-archive.dir" value="${root.src.dir}/${adore-archive.mod}"/>
+        <fileset id="adore-archive.libs" dir="${root.src.dir}/${adore-archive.mod}/dist">
+            <include name="${adore-archive.mod}-*.jar"/>
+        </fileset>
+        <path id="adore-archive.path">
+            <fileset refid="adore-archive.libs"/>
+        </path>        
+
+        <!-- adore-arcfile -->
+        <property name="adore-arcfile.mod" value="adore-arcfile"/>
+        <property name="adore-arcfile.dir" value="${root.src.dir}/${adore-arcfile.mod}"/>
+        <fileset id="adore-arcfile.libs" dir="${root.src.dir}/${adore-arcfile.mod}/dist">
+            <include name="${adore-arcfile.mod}-*.jar"/>
+        </fileset>
+        <path id="adore-arcfile.path">
+            <fileset refid="adore-arcfile.libs"/>
+        </path>
+        
+        <!-- adore-xmltape-indexbdb -->
+        <property name="adore-xmltape-indexbdb.mod" value="adore-xmltape-indexbdb"/>          
+        <property name="adore-xmltape-indexbdb.dir" value="${root.src.dir}/${adore-xmltape-indexbdb.mod}"/>
+        <fileset id="adore-xmltape-indexbdb.libs" dir="${root.src.dir}/${adore-xmltape-indexbdb.mod}/dist">
+            <include name="${adore-xmltape-indexbdb.mod}*.jar"/>
+        </fileset>
+        <path id="adore-xmltape-indexbdb.path">
+            <fileset refid="adore-xmltape-indexbdb.libs"/>
+            <fileset refid="adore-xmltape-indexbdb.libs"/>
+        </path>
+        
+        <!-- adore-arcfile-registry -->
+        <property name="adore-arcfile-registry.mod" value="adore-arcfile-registry"/>          
+        <property name="adore-arcfile-registry.dir" value="${root.src.dir}/${adore-arcfile-registry.mod}"/>
+        <fileset id="adore-arcfile-registry.libs" dir="${root.src.dir}/${adore-arcfile-registry.mod}/dist">
+            <include name="${adore-arcfile-registry.mod}*.jar"/>
+        </fileset>
+        <path id="adore-arcfile-registry.path">
+            <fileset refid="adore-arcfile-registry.libs"/>
+        </path>
+        
+        <!-- adore-arcfile-resolver -->
+        <property name="adore-arcfile-resolver.mod" value="adore-arcfile-resolver"/>          
+        <property name="adore-arcfile-resolver.dir" value="${root.src.dir}/${adore-arcfile-resolver.mod}"/>
+        <fileset id="adore-arcfile-resolver.libs" dir="${root.src.dir}/${adore-arcfile-resolver.mod}/dist">
+            <include name="${adore-arcfile-resolver.mod}*.jar"/>
+        </fileset>
+        <path id="adore-arcfile-resolver.path">
+            <fileset refid="adore-arcfile-resolver.libs"/>
+        </path>
+
+        <!-- adore-didwriter -->
+        <property name="adore-didwriter.mod" value="adore-didwriter"/>          
+        <property name="adore-didwriter.dir" value="${root.src.dir}/${adore-didwriter.mod}"/>
+        <fileset id="adore-didwriter.libs" dir="${root.src.dir}/${adore-didwriter.mod}/dist">
+            <include name="${adore-didwriter.mod}*.jar"/>
+        </fileset>
+        <path id="adore-didwriter.path">
+            <fileset refid="adore-didwriter.libs"/>
+        </path>
+
+        <!-- adore-federator -->
+        <property name="adore-federator.mod" value="adore-federator"/>          
+        <property name="adore-federator.dir" value="${root.src.dir}/${adore-federator.mod}"/>
+        <fileset id="adore-federator.libs" dir="${root.src.dir}/${adore-federator.mod}/dist">
+            <include name="${adore-federator.mod}*.jar"/>
+        </fileset>
+        <path id="adore-federator.path">
+            <fileset refid="adore-federator.libs"/>
+        </path>
+
+        <!-- adore-harvester-oai -->
+        <property name="adore-harvester-oai.mod" value="adore-harvester-oai"/>          
+        <property name="adore-harvester-oai.dir" value="${root.src.dir}/${adore-harvester-oai.mod}"/>
+        <fileset id="adore-harvester-oai.libs" dir="${root.src.dir}/${adore-harvester-oai.mod}/dist">
+            <include name="${adore-harvester-oai.mod}*.jar"/>
+        </fileset>
+        <path id="adore-harvester-oai.path">
+            <fileset refid="adore-harvester-oai.libs"/>
+        </path>
+
+        <!-- adore-deref -->
+        <property name="adore-deref.mod" value="adore-deref"/>          
+        <property name="adore-deref.dir" value="${root.src.dir}/${adore-deref.mod}"/>
+        <fileset id="adore-deref.libs" dir="${root.src.dir}/${adore-deref.mod}/dist">
+            <include name="${adore-deref.mod}*.jar"/>
+        </fileset>
+        <path id="adore-deref.path">
+            <fileset refid="adore-deref.libs"/>
+        </path>
+        
+        <!-- adore-id-locator -->
+        <property name="adore-id-locator.mod" value="adore-id-locator"/>          
+        <property name="adore-id-locator.dir" value="${root.src.dir}/${adore-id-locator.mod}"/>
+        <fileset id="adore-id-locator.libs" dir="${root.src.dir}/${adore-id-locator.mod}/dist">
+            <include name="${adore-id-locator.mod}*.jar"/>
+        </fileset>
+        <path id="adore-id-locator.path">
+            <fileset refid="adore-id-locator.libs"/>
+        </path>
+
+        <!-- adore-xmltape-resolver -->
+        <property name="adore-xmltape-resolver.mod" value="adore-xmltape-resolver"/>          
+        <property name="adore-xmltape-resolver.dir" value="${root.src.dir}/${adore-xmltape-resolver.mod}"/>
+        <fileset id="adore-xmltape-resolver.libs" dir="${root.src.dir}/${adore-xmltape-resolver.mod}/dist">
+            <include name="${adore-xmltape-resolver.mod}*.jar"/>
+        </fileset>
+        <path id="adore-xmltape-resolver.path">
+            <fileset refid="adore-xmltape-resolver.libs"/>
+        </path>
+        
+         <!-- adore-xmltape-xquery -->
+        <property name="adore-xmltape-xquery.mod" value="adore-xmltape-xquery"/>          
+        <property name="adore-xmltape-xquery.dir" value="${root.src.dir}/${adore-xmltape-xquery.mod}"/>
+        <fileset id="adore-xmltape-xquery.libs" dir="${root.src.dir}/${adore-xmltape-xquery.mod}/dist">
+            <include name="${adore-xmltape-xquery.mod}*.jar"/>
+        </fileset>
+        <path id="adore-xmltape-xquery.path">
+            <fileset refid="adore-xmltape-xquery.libs"/>
+        </path>
+
+        <!-- adore-xmltape -->
+        <property name="adore-xmltape.mod" value="adore-xmltape"/>          
+        <property name="adore-xmltape.dir" value="${root.src.dir}/${adore-xmltape.mod}"/>
+        <fileset id="adore-xmltape.libs" dir="${root.src.dir}/${adore-xmltape.mod}/dist">
+            <include name="${adore-xmltape.mod}*.jar"/>
+        </fileset>
+        <path id="adore-xmltape.path">
+            <fileset refid="adore-xmltape.libs"/>
+        </path>
+
+        <!-- adore-xmltape-index -->
+        <property name="adore-xmltape-index.mod" value="adore-xmltape-index"/>          
+        <property name="adore-xmltape-index.dir" value="${root.src.dir}/${adore-xmltape-index.mod}"/>
+        <fileset id="adore-xmltape-index.libs" dir="${root.src.dir}/${adore-xmltape-index.mod}/dist">
+            <include name="${adore-xmltape-index.mod}*.jar"/>
+        </fileset>
+        <path id="adore-xmltape-index.path">
+            <fileset refid="adore-xmltape-index.libs"/>
+        </path>
+
+        <!-- adore-xmltape-registry -->
+        <property name="adore-xmltape-registry.mod" value="adore-xmltape-registry"/>          
+        <property name="adore-xmltape-registry.dir" value="${root.src.dir}/${adore-xmltape-registry.mod}"/>
+        <fileset id="adore-xmltape-registry.libs" dir="${root.src.dir}/${adore-xmltape-registry.mod}/dist">
+            <include name="${adore-xmltape-registry.mod}*.jar"/>
+        </fileset>
+        <path id="adore-xmltape-registry.path">
+            <fileset refid="adore-xmltape-registry.libs"/>
+        </path>
+        
+        <!-- adore-repo-oaidb -->
+        <property name="adore-repo-oaidb.mod" value="adore-repo-oaidb"/>          
+        <property name="adore-repo-oaidb.dir" value="${root.src.dir}/${adore-repo-oaidb.mod}"/>
+        <fileset id="adore-repo-oaidb.libs" dir="${root.src.dir}/${adore-repo-oaidb.mod}/dist">
+            <include name="${adore-repo-oaidb.mod}*.jar"/>
+        </fileset>
+        <path id="adore-repo-oaidb.path">
+            <fileset refid="adore-repo-oaidb.libs"/>
+        </path>
+
+        <!-- adore-format-registry -->
+        <property name="adore-format-registry.mod" value="adore-format-registry"/>          
+        <property name="adore-format-registry.dir" value="${root.src.dir}/${adore-format-registry.mod}"/>
+        <fileset id="adore-format-registry.libs" dir="${root.src.dir}/${adore-format-registry.mod}/dist">
+            <include name="${adore-format-registry.mod}*.jar"/>
+        </fileset>
+        <path id="adore-format-registry.path">
+            <fileset refid="adore-format-registry.libs"/>
+        </path>
+        
+        <!-- adore-semantic-registry -->
+        <property name="adore-semantic-registry.mod" value="adore-semantic-registry"/>          
+        <property name="adore-semantic-registry.dir" value="${root.src.dir}/${adore-semantic-registry.mod}"/>
+        <fileset id="adore-semantic-registry.libs" dir="${root.src.dir}/${adore-semantic-registry.mod}/dist">
+            <include name="${adore-semantic-registry.mod}*.jar"/>
+        </fileset>
+        <path id="adore-semantic-registry.path">
+            <fileset refid="adore-semantic-registry.libs"/>
+        </path>
+        
+        <!-- oai-resource -->
+        <property name="oai-resource.mod" value="oai-resource"/>          
+        <property name="oai-resource.dir" value="${root.src.dir}/${oai-resource.mod}"/>
+        <fileset id="oai-resource.libs" dir="${root.src.dir}/${oai-resource.mod}/dist">
+            <include name="${oai-resource.mod}*.jar"/>
+        </fileset>
+        <path id="oai-resource.path">
+            <fileset refid="oai-resource.libs"/>
+        </path>
+        
+        <!-- adore-archive-accessor -->
+        <property name="adore-archive-accessor.mod" value="adore-archive-accessor"/>          
+        <property name="adore-archive-accessor.dir" value="${root.src.dir}/${adore-archive-accessor.mod}"/>
+        <fileset id="adore-archive-accessor.libs" dir="${root.src.dir}/${adore-archive-accessor.mod}/dist">
+            <include name="${adore-archive-accessor.mod}*.jar"/>
+        </fileset>
+        <path id="adore-archive-accessor.path">
+            <fileset refid="adore-archive-accessor.libs"/>
+        </path>
+        
+        <!-- adore-xmlsig -->
+        <property name="adore-xmlsig.mod" value="adore-xmlsig"/>          
+        <property name="adore-xmlsig.dir" value="${root.src.dir}/${adore-xmlsig.mod}"/>
+        <fileset id="adore-xmlsig.libs" dir="${root.src.dir}/${adore-xmlsig.mod}/dist">
+            <include name="${adore-xmlsig.mod}*.jar"/>
+        </fileset>
+        <path id="adore-xmlsig.path">
+            <fileset refid="adore-xmlsig.libs"/>
+        </path>
+       
+        <!-- adore-service-registry -->
+        <property name="adore-service-registry.mod" value="adore-service-registry"/>          
+        <property name="adore-service-registry.dir" value="${root.src.dir}/${adore-service-registry.mod}"/>
+        <fileset id="adore-service-registry.libs" dir="${root.src.dir}/${adore-service-registry.mod}/dist">
+            <include name="${adore-service-registry.mod}*.jar"/>
+        </fileset>
+        <path id="adore-service-registry.path">
+            <fileset refid="adore-service-registry.libs"/>
+        </path>
+ 
+         <!-- adore-federation -->
+        <property name="adore-federation.mod" value="adore-federation"/>          
+        <property name="adore-federation.dir" value="${root.src.dir}/${adore-federation.mod}"/>
+        <fileset id="adore-federation.libs" dir="${root.src.dir}/${adore-federation.mod}/dist">
+            <include name="${adore-federation.mod}*.jar"/>
+        </fileset>
+        <path id="adore-federation.path">
+            <fileset refid="adore-federation.libs"/>
+        </path>
+        
+        <!-- adore-federation -->
+        <property name="adore-disseminator.mod" value="adore-disseminator"/>          
+        <property name="adore-disseminator.dir" value="${root.src.dir}/${adore-disseminator.mod}"/>
+        <fileset id="adore-disseminator.libs" dir="${root.src.dir}/${adore-disseminator.mod}/dist">
+            <include name="${adore-disseminator.mod}*.jar"/>
+        </fileset>
+        <path id="adore-disseminator.path">
+            <fileset refid="adore-disseminator.libs"/>
+        </path>
+ 
+         <!-- adore-objectdb-resolver -->
+        <property name="adore-objectdb-resolver.mod" value="adore-objectdb-resolver"/>          
+        <property name="adore-objectdb-resolver.dir" value="${root.src.dir}/${adore-objectdb-resolver.mod}"/>
+        <fileset id="adore-objectdb-resolver.libs" dir="${root.src.dir}/${adore-objectdb-resolver.mod}/dist">
+            <include name="${adore-objectdb-resolver.mod}*.jar"/>
+        </fileset>
+        <path id="adore-objectdb-resolver.path">
+            <fileset refid="adore-objectdb-resolver.libs"/>
+        </path>
+
+        <!-- adore-objectdb-accessor -->
+        <property name="adore-objectdb-accessor.mod" value="adore-objectdb-accessor"/>          
+        <property name="adore-objectdb-accessor.dir" value="${root.src.dir}/${adore-objectdb-accessor.mod}"/>
+        <fileset id="adore-objectdb-accessor.libs" dir="${root.src.dir}/${adore-objectdb-accessor.mod}/dist">
+            <include name="${adore-objectdb-accessor.mod}*.jar"/>
+        </fileset>
+        <path id="adore-objectdb-accessor.path">
+            <fileset refid="adore-objectdb-accessor.libs"/>
+        </path>
+ 
+          <!-- adore-resource-resolver -->
+        <property name="adore-resource-resolver.mod" value="adore-resource-resolver"/>          
+        <property name="adore-resource-resolver.dir" value="${root.src.dir}/${adore-resource-resolver.mod}"/>
+        <fileset id="adore-resource-resolver.libs" dir="${root.src.dir}/${adore-resource-resolver.mod}/dist">
+            <include name="${adore-resource-resolver.mod}*.jar"/>
+        </fileset>
+        <path id="adore-resource-resolver.path">
+            <fileset refid="adore-resource-resolver.libs"/>
+        </path>
+ 
+    </target>
+
+    <target name="init" depends="global-init">
+      <!-- Create the time stamp -->
+      <tstamp/>
+    </target>
+
+    <target name="build" depends="init">
+      <echo message="Build Adore Components"/>
+      <ant target="adore-xmlsig"/>
+      <ant target="adore-repo-oaidb"/>
+      <ant target="adore-arcfile"/>
+      <ant target="adore-xmltape-indexbdb"/>
+      <ant target="adore-arcfile-registry"/>
+      <ant target="adore-arcfile-resolver"/>
+      <ant target="adore-didwriter"/>
+      <ant target="adore-xmltape"/>
+      <ant target="adore-xmltape-registry"/>
+      <ant target="adore-objectdb-accessor"/>
+      <ant target="adore-objectdb-resolver"/>
+      <ant target="adore-harvester-oai"/>
+      <ant target="adore-id-locator"/>
+      <ant target="adore-xmltape-resolver"/>
+      <ant target="adore-xmltape-xquery"/>
+      <ant target="adore-deref"/>
+      <ant target="adore-format-registry"/>
+      <ant target="adore-semantic-registry"/>
+      <ant target="adore-federator"/>
+      <ant target="oai-resource"/>
+      <ant target="adore-archive-accessor"/>
+      <ant target="adore-archive"/>
+      <ant target="adore-service-registry"/>
+      <ant target="adore-federation"/>
+      <ant target="adore-disseminator"/>
+    </target>
+
+    <target name="deploy" depends="init">
+      <echo message="Deploy Adore Components"/>
+      <ant antfile="${adore-arcfile-registry.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-arcfile-resolver.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-xmltape-registry.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-format-registry.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-semantic-registry.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-id-locator.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-xmltape-resolver.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-xmltape-xquery.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-objectdb-accessor.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-objectdb-resolver.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-resource-resolver.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-federator.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-archive-accessor.dir}/build.xml" target="deploy"/>
+      <ant antfile="${adore-disseminator.dir}/build.xml" target="deploy"/>
+    </target>
+
+    <target name="clean" depends="init">
+      <echo message="Clean Adore Components"/>
+      <ant antfile="${adore-arcfile.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-xmlsig.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-xmltape-indexbdb.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-arcfile-registry.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-arcfile-resolver.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-didwriter.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-xmltape.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-xmltape-registry.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-harvester-oai.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-deref.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-id-locator.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-xmltape-resolver.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-xmltape-xquery.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-repo-oaidb.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-format-registry.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-semantic-registry.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-objectdb-accessor.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-objectdb-resolver.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-resource-resolver.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-federator.dir}/build.xml" target="clean"/>
+      <ant antfile="${oai-resource.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-archive-accessor.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-archive.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-service-registry.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-federation.dir}/build.xml" target="clean"/>
+      <ant antfile="${adore-disseminator.dir}/build.xml" target="clean"/>
+    </target>
+    
+    <target name="javadoc" depends="init">
+      <echo message="JavaDoc Adore Components"/>
+      <ant antfile="${adore-arcfile.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-xmlsig.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-xmltape-indexbdb.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-arcfile-registry.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-arcfile-resolver.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-didwriter.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-xmltape.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-xmltape-registry.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-harvester-oai.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-deref.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-id-locator.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-xmltape-resolver.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-xmltape-xquery.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-repo-oaidb.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-format-registry.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-semantic-registry.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-federator.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-objectdb-accessor.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-objectdb-resolver.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-resource-resolver.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${oai-resource.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-archive-accessor.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-archive.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-service-registry.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-federation.dir}/build.xml" target="javadoc"/>
+      <ant antfile="${adore-disseminator.dir}/build.xml" target="javadoc"/>
+    </target>
+
+    <target name="adore-archive" depends="init">
+      <echo message="Building adore-archive"/>
+      <ant antfile="${adore-archive.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-arcfile" depends="init">
+      <echo message="Building adore-arcfile"/>
+      <ant antfile="${adore-arcfile.dir}/build.xml" target="build"/>
+    </target>
+    
+    <target name="adore-xmltape-indexbdb" depends="init">
+      <echo message="Building adore-xmltape-indexbdb"/>
+      <ant antfile="${adore-xmltape-indexbdb.dir}/build.xml" target="build"/>
+    </target>
+    
+    <target name="adore-xmlsig" depends="init">
+      <echo message="Building adore-xmlsig"/>
+      <ant antfile="${adore-xmlsig.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-arcfile-registry" depends="init">
+      <echo message="Building adore-arcfile-registry"/>
+      <ant antfile="${adore-arcfile-registry.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-arcfile-resolver" depends="init">
+      <echo message="Building adore-arcfile-resolver"/>
+      <ant antfile="${adore-arcfile-resolver.dir}/build.xml" target="build"/>
+    </target>
+    
+    <target name="adore-didwriter" depends="init">
+      <echo message="Building adore-didwriter"/>
+      <ant antfile="${adore-didwriter.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-oaiviewer" depends="init">
+      <echo message="Building adore-oaiviewer"/>
+      <ant antfile="${adore-oaiviewer.dir}/build.xml" target="build"/>
+    </target>
+    
+    <target name="adore-xmltape" depends="init">
+      <echo message="Building adore-xmltape"/>
+      <ant antfile="${adore-xmltape.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-xmltape-registry" depends="init">
+      <echo message="Building adore-xmltape-registry"/>
+      <ant antfile="${adore-xmltape-registry.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-harvester-oai" depends="init">
+      <echo message="Building adore-harvester-oai"/>
+      <ant antfile="${adore-harvester-oai.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-id-locator" depends="init">
+      <echo message="Building adore-id-locator"/>
+      <ant antfile="${adore-id-locator.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-xmltape-resolver" depends="init">
+      <echo message="Building adore-xmltape-resolver"/>
+      <ant antfile="${adore-xmltape-resolver.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-xmltape-xquery" depends="init">
+      <echo message="Building adore-xmltape-xquery"/>
+      <ant antfile="${adore-xmltape-xquery.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-deref" depends="init">
+      <echo message="Building adore-deref"/>
+      <ant antfile="${adore-deref.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-repo-oaidb" depends="init">
+      <echo message="Building adore-repo-oaidb"/>
+      <ant antfile="${adore-repo-oaidb.dir}/build.xml" target="build"/>
+    </target>
+    
+    <target name="adore-format-registry" depends="init">
+      <echo message="Building adore-format-registry"/>
+      <ant antfile="${adore-format-registry.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-semantic-registry" depends="init">
+      <echo message="Building adore-semantic-registry"/>
+      <ant antfile="${adore-semantic-registry.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="adore-federator" depends="init">
+      <echo message="Building adore-federator"/>
+      <ant antfile="${adore-federator.dir}/build.xml" target="build"/>
+    </target>
+    
+    <target name="oai-resource" depends="init">
+      <echo message="Building oai-resource"/>
+      <ant antfile="${oai-resource.dir}/build.xml" target="build"/>
+    </target>
+    
+    <target name="adore-archive-accessor" depends="init">
+      <echo message="Building adore-archive-accessor"/>
+      <ant antfile="${adore-archive-accessor.dir}/build.xml" target="build"/>
+    </target>
+        
+   <target name="adore-service-registry" depends="init">
+      <echo message="Building adore-service-registry"/>
+      <ant antfile="${adore-service-registry.dir}/build.xml" target="build"/>
+    </target>
+
+   <target name="adore-federation" depends="init">
+      <echo message="Building adore-federation"/>
+      <ant antfile="${adore-federation.dir}/build.xml" target="build"/>
+    </target>
+    
+   <target name="adore-disseminator" depends="init">
+      <echo message="Building adore-disseminator"/>
+      <ant antfile="${adore-disseminator.dir}/build.xml" target="build"/>
+    </target>
+    
+   <target name="adore-objectdb-accessor" depends="init">
+      <echo message="Building adore-objectdb-accessor"/>
+      <ant antfile="${adore-objectdb-accessor.dir}/build.xml" target="build"/>
+    </target>
+    
+   <target name="adore-objectdb-resolver" depends="init">
+      <echo message="Building adore-objectdb-resolver"/>
+      <ant antfile="${adore-objectdb-resolver.dir}/build.xml" target="build"/>
+    </target>
+
+   <target name="adore-resource-resolver" depends="init">
+      <echo message="Building adore-resource-resolver"/>
+      <ant antfile="${adore-resource-resolver.dir}/build.xml" target="build"/>
+    </target>
+
+    <target name="createdb" depends="init">
+      <echo message="Creating Database Tables"/>
+      <ant antfile="${adore-arcfile-registry.dir}/build.xml" target="createdb"/>
+      <ant antfile="${adore-xmltape-registry.dir}/build.xml" target="createdb"/>
+      <ant antfile="${adore-format-registry.dir}/build.xml" target="createdb"/>
+      <ant antfile="${adore-semantic-registry.dir}/build.xml" target="createdb"/>
+      <ant antfile="${adore-id-locator.dir}/build.xml" target="createdb"/>
+      <ant antfile="${adore-objectdb-accessor.dir}/build.xml" target="createdb"/>
+    </target>
+
+    <target name="cleandb" depends="init">
+      <echo message="Cleaning Database Tables"/>
+      <ant antfile="${adore-arcfile-registry.dir}/build.xml" target="cleandb"/>
+      <ant antfile="${adore-xmltape-registry.dir}/build.xml" target="cleandb"/>
+      <ant antfile="${adore-format-registry.dir}/build.xml" target="cleandb"/>
+      <ant antfile="${adore-semantic-registry.dir}/build.xml" target="cleandb"/>
+      <ant antfile="${adore-service-registry.dir}/build.xml" target="cleandb"/>
+      <ant antfile="${adore-id-locator.dir}/build.xml" target="cleandb"/>
+      <ant antfile="${adore-objectdb-accessor.dir}/build.xml" target="cleandb"/>
+    </target>
+
+   <target name="dist" depends="init">
+      <!--<ant target="build"/>-->
+      <!--<ant target="createdb"/>-->
+      <!--<ant target="deploy"/>-->
+      <untar dest="${root.modules.dir}/tmp" compression="gzip">
+        <fileset dir="${adore-archive.dir}/dist">
+          <include name="*.gz"/>
+          <exclude name="tmp*.gz"/>
+        </fileset>
+        <fileset dir="${adore-xmltape.dir}/dist">
+          <include name="*.gz"/>
+          <exclude name="tmp*.gz"/>
+        </fileset>
+      </untar>
+      <copy todir="${root.base.dir}/bin">
+        <fileset dir="./tmp/${adore-archive.mod}/bin"/>
+      </copy>
+      <copy todir="${root.base.dir}/lib">
+        <fileset dir="./tmp/${adore-archive.mod}/lib"/>
+      </copy>
+      <copy todir="${root.base.dir}/etc">
+        <fileset dir="./tmp/${adore-archive.mod}/etc"/>
+      </copy>
+      <delete dir="${root.modules.dir}/tmp"/>
+   </target>
+
+   <target name="cleandist" depends="init">
+    <delete includeemptydirs="true">
+     <fileset dir="${root.base.dir}/bin" includes="**/*"/>
+     <fileset dir="${root.base.dir}/lib" includes="**/*"/>
+     <fileset dir="${root.base.dir}/etc" includes="**/*"/>
+    </delete>
+   </target>
+
+</project>
+

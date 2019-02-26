@@ -1,0 +1,20 @@
+DIDAdore package README
+
+$Id: README,v 1.1.1.1 2006/10/13 03:03:36 liu_x Exp $
+
+A package providing implementations for the functionality necessary within the aDORe framework.
+
+The DIDAdore web site is at:
+  http://african.lanl.gov/aDORe/projects/DIDLTools
+
+
+FILES
+
+DIDAdore-XX.jar
+  The compiled DIDAdore library.
+
+src/java
+  The java source code 
+
+src/test
+  junit test

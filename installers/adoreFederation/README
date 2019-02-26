@@ -1,0 +1,61 @@
+/**
+*Adore Federation Installer
+*/
+
+----------------------
+Requirements
+----------------------
+- Java 1.5+
+- MySQL 4.1+
+- Apache Tomcat 5.5+
+- Apache Ant 1.6.5
+- Ant-Contrib 0.3
+
+----------------------
+Pre-Installation
+----------------------
+1. Change DB Passwords Defined in createdb.sql
+- Open the createdb.sql file located in the installation directory
+- Replace each instance of 'password' with a password of your preference.
+- Save file.
+
+2. Log-in to mysql command line utility
+- Use command 'mysql -u root -p' to log-in as root
+- Enter root password when prompted
+
+3. Run source command to create arc_registry, tape_registry, id_locator, format_registry, service_registry, and semantic_registry databases and associated database users.
+- Use command 'source <adoreFederationInstaller>/createdb.sql'
+
+# You'll also need to create the Service Registry Database in this fashion.
+- Use command 'source <adoreFederationInstaller>/sql/Metadata.sql';
+- Use command 'source <adoreFederationInstaller>/sql/Metadata-defaults.sql';
+
+
+----------------------
+Installation
+----------------------
+For Linux / Mac OS-X, make the installer executable:
+
+chmod 755 install.sh
+
+To launch the installer, run the following:
+
+For Linux / Mac OS-X:
+Console Install:
+./install.sh text
+
+GUI Installer:
+./install.sh
+
+For Windows:
+- Double-click install.cmd to launch installer
+
+IMPORTANT: Windows File Path References should use forward slashes (/) instead of back slashes (\) i.e. c:/apps/adoreFederation.
+
+---------------------
+NOTE
+---------------------
+Warning: "tar: A lone zero block" message when extracting aDORe Installer
+
+When extracting the adoreFederationInstaller-X.X.tar.gz file on some Linux / Unix distributions, the message "tar: A lone zero block at <number>" may appear. This message is caused by a defect in Ant, which was used to tar the installer. It is informational only, all aDORe files extracted properly, and can be used without error.
+

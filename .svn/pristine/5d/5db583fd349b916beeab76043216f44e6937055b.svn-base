@@ -1,0 +1,101 @@
+package gov.lanl.disseminator.matchmaker
+import gov.lanl.disseminator.DmtConstants
+import gov.lanl.disseminator.model.ContextObjectContainer
+import gov.lanl.disseminator.model.Entity
+import gov.lanl.disseminator.model.EntityIterator
+import java.util.ArrayList
+import java.util.Collections
+import java.util.List
+import java.util.HashMap
+import gov.lanl.disseminator.DisseminatorException
+
+
+
+      rule "common_machine"
+      when
+       obj:ContextObjectContainer()
+       eval(!obj.getRequester().hasProperty("req_id"))
+	then
+         (obj.getReferent()).addService(DmtConstants.getdidl);	
+       end
+
+      rule "common_human"
+      when
+        obj:ContextObjectContainer()
+	eval(obj.getRequester().hasProperty("req_id"))
+        eval((obj.getRequester().getProperty("req_id")).equals("human"))
+	
+        then
+         (obj.getReferent()).addService(DmtConstants.getdidl);
+         (obj.getReferent()).addParamToService(DmtConstants.getdidl,"display");
+      end
+    
+	    
+rule "marc_machine"
+       when
+          obj:ContextObjectContainer()
+          eval(!obj.getRequester().hasProperty("req_id"))
+          eval(obj.getReferent().hasProperty("format"))
+          eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+          
+       then
+	  (obj.getReferent()).addService(DmtConstants.marc2mods);
+          (obj.getReferent()).addService(DmtConstants.marc2dc);
+          (obj.getReferent()).addService(DmtConstants.getbibliographic);
+          (obj.getReferent()).addService(DmtConstants.ori);
+        
+      end    
+       
+  rule "marc_human"
+       when
+        obj:ContextObjectContainer()
+	   eval(obj.getReferent().hasProperty("format"))
+         eval((obj.getReferent().getProperty("format")).equals(DmtConstants.MARC))
+         eval(obj.getRequester().hasProperty("req_id"))
+            eval((obj.getRequester().getProperty("req_id")).equals("human"))
+        
+       then
+
+
+          (obj.getReferent()).addService(DmtConstants.marc2mods);
+          (obj.getReferent()).addService(DmtConstants.marc2dc);
+          (obj.getReferent()).addService(DmtConstants.getbibliographic);
+          (obj.getReferent()).addService(DmtConstants.ori);
+          (obj.getReferent()).addParamToService(DmtConstants.marc2dc,"tohtml");
+          (obj.getReferent()).addParamToService(DmtConstants.marc2mods,"tohtml");
+          (obj.getReferent()).addParamToService(DmtConstants.getbibliographic,"tohtml");
+        
+      end    
+
+	 rule "publication_human"
+         when
+         obj:ContextObjectContainer()
+           eval(obj.getReferent().hasProperty("format"))
+           eval((obj.getReferent().getProperty("format")).equals(DmtConstants.PUBLICATION))
+           eval(obj.getRequester().hasProperty("req_id"))
+           eval((obj.getRequester().getProperty("req_id")).equals("human"))
+
+       then
+
+
+          (obj.getReferent()).addService(DmtConstants.marc2mods);
+          (obj.getReferent()).addService(DmtConstants.marc2dc);
+          (obj.getReferent()).addService(DmtConstants.getbibliographic);
+          (obj.getReferent()).addService(DmtConstants.tocatom);
+          (obj.getReferent()).addService(DmtConstants.ori);
+          (obj.getReferent()).addParamToService(DmtConstants.marc2dc,"tohtml");
+          (obj.getReferent()).addParamToService(DmtConstants.marc2mods,"tohtml");
+          (obj.getReferent()).addParamToService(DmtConstants.getbibliographic,"tohtml");
+		  (obj.getReferent()).addParamToService(DmtConstants.tocatom,"tohtml");
+      end
+
+    rule "getdatastream"
+      when
+         obj:ContextObjectContainer()
+	 eval(obj.getReferent().hasProperty("isDataStream"))
+         eval((obj.getReferent().getProperty("isDataStream")).equals("true")) 
+      then
+       (obj.getReferent()).addService(DmtConstants.getdatastream);
+        
+      end
+

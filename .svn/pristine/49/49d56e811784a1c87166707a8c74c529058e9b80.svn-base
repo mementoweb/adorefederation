@@ -1,0 +1,13 @@
+# Installation Modules
+
+adore.xmltape.indexbdb=adore-xmltape-indexbdb
+adore.federation=adore-federation
+adore.archive=adore-archive
+adore.archive.accessor=adore-archive-accessor
+adore.xmltape=adore-xmltape
+adore.xmltape.resolver=adore-xmltape-resolver
+
+tapeIndex.bdb=gov.lanl.xmltape.index.berkeleydbImpl.BDBIndex
+tapeIndex.std=gov.lanl.xmltape.index.BasicTapeIndex
+tapeIdIndex.bdb=gov.lanl.xmltape.identifier.index.bdbImpl.BDBIndex
+tapeIdIndex.std=gov.lanl.xmltape.identifier.index.jdbImpl.IdentifierIndex

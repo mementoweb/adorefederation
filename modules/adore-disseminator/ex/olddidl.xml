@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?><didl:DIDL xmlns:didl="urn:mpeg:mpeg21:2002:02-DIDL-NS" xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diext="http://library.lanl.gov/2004-04/STB-RL/DIEXT" DIDLDocumentId="info:lanl-repo/i/cd7b17ea-bddf-11d9-9de5-c11b6cd85594" diext:DIDcreated="2005-08-05T16:15:04Z" xsi:schemaLocation="urn:mpeg:mpeg21:2002:02-DIDL-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/did/didl.xsd http://library.lanl.gov/2004-04/STB-RL/DIEXT http://purl.lanl.gov/STB-RL/schemas/2004-04/DIEXT.xsd">
+  <didl:Item id="uuid-f59636b5-1976-4f0a-81b1-4f14546ebc7d">
+    <didl:Descriptor>
+      <didl:Statement mimeType="application/xml; charset=utf-8">
+        <dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:doi/10.1016/j.dyepig.2004.06.023</dii:Identifier>
+      </didl:Statement>
+    </didl:Descriptor>
+    <didl:Descriptor>
+      <didl:Statement mimeType="application/xml; charset=utf-8">
+        <diadm:Admin xmlns:diadm="http://library.lanl.gov/2004-01/STB-RL/DIADM" xsi:schemaLocation="http://library.lanl.gov/2004-01/STB-RL/DIADM http://purl.lanl.gov/STB-RL/schemas/2004-01/DIADM.xsd">
+          <dcterms:isPartOf xmlns:dcterms="http://purl.org/dc/terms/" xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd">info:sid/library.lanl.gov:sciserver</dcterms:isPartOf>
+          <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd">info:lanl-repo/pro/publication</dc:format>
+          <dc:rights xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd">copyright SCISERVER</dc:rights>
+        </diadm:Admin>
+      </didl:Statement>
+    </didl:Descriptor>
+    <didl:Item id="uuid-14ff6f03-294d-47ad-ad07-d3b959a56248">
+      <didl:Descriptor>
+        <didl:Statement mimeType="application/xml; charset=utf-8">
+          <dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:lanl-repo/ssm/doi-10.1016/j.dyepig.2004.06.023</dii:Identifier>
+        </didl:Statement>
+      </didl:Descriptor>
+      <didl:Descriptor>
+        <didl:Statement mimeType="application/xml; charset=utf-8">
+          <diadm:Admin xmlns:diadm="http://library.lanl.gov/2004-01/STB-RL/DIADM" xsi:schemaLocation="http://library.lanl.gov/2004-01/STB-RL/DIADM http://purl.lanl.gov/STB-RL/schemas/2004-01/DIADM.xsd">
+            <dc:type xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd">http://purl.org/dc/terms/bibliographicCitation</dc:type>
+            <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd">info:lanl-repo/pro/metadata</dc:format>
+          </diadm:Admin>
+        </didl:Statement>
+      </didl:Descriptor>
+      <didl:Component id="uuid-2ffe19b6-8357-4310-a72d-f9be5184e9c3">
+        <didl:Descriptor>
+          <didl:Statement mimeType="application/xml; charset=utf-8">
+            <dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:lanl-repo/ds/06b1bdcd-a0b2-4b56-abeb-826e09330248</dii:Identifier>
+          </didl:Statement>
+        </didl:Descriptor>
+        <didl:Descriptor>
+          <didl:Statement mimeType="application/xml; charset=utf-8">
+            <pre:object xmlns:pre="http://www.loc.gov/standards/premis" xsi:schemaLocation="http://www.loc.gov/standards/premis http://www.loc.gov/standards/premis/Object-v1-0.xsd">
+              <pre:objectIdentifier>
+                <pre:objectIdentifierType>URI</pre:objectIdentifierType>
+                <pre:objectIdentifierValue>info:lanl-repo/ds/06b1bdcd-a0b2-4b56-abeb-826e09330248</pre:objectIdentifierValue>
+              </pre:objectIdentifier>
+              <pre:objectCategory>File</pre:objectCategory>
+              <pre:objectCharacteristics>
+                <pre:format>
+                  <pre:formatRegistry>
+                    <pre:formatRegistryName>http://cox.lanl.gov:9080/format-registry</pre:formatRegistryName>
+                    <pre:formatRegistryKey>info:lanl-repo/fmt/3</pre:formatRegistryKey>
+                  </pre:formatRegistry>
+                </pre:format>
+              </pre:objectCharacteristics>
+              <pre:creatingApplication>
+                <pre:dateCreatedByApplication>2005-05-06T03:34:50Z</pre:dateCreatedByApplication>
+              </pre:creatingApplication>
+            </pre:object>
+          </didl:Statement>
+        </didl:Descriptor>
+        <didl:Resource mimeType="application/xml" ref="http://cox.lanl.gov:9090/arc/resolver?res_id=info:lanl-repo/arc/singlescitape&amp;rfr_id=info:sid/library.lanl.gov&amp;url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/06b1bdcd-a0b2-4b56-abeb-826e09330248"/>
+        <didl:Resource mimeType="">
+          <record xmlns="http://www.loc.gov/MARC21/slim" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+            <leader>00000nab  2200000za 4500</leader>
+            <controlfield tag="001">doi-10.1016/j.dyepig.2004.06.023</controlfield>
+            <controlfield tag="005">2005-4-7-T23:29:40Z</controlfield>
+            <datafield ind1=" " ind2=" " tag="022">
+              <subfield code="a">0143-7208</subfield>
+            </datafield>
+            <datafield ind1="7" ind2=" " tag="024">
+              <subfield code="a">S0143-7208(04)00146-9</subfield>
+              <subfield code="2">SRV : ID : article[1]/artid[1] type=pii</subfield>
+            </datafield>
+            <datafield ind1="7" ind2=" " tag="024">
+              <subfield code="a">10.1016/j.dyepig.2004.06.023</subfield>
+              <subfield code="2">SRV : ID : article[1]/artid[2] type=doi</subfield>
+            </datafield>
+            <datafield ind1="7" ind2=" " tag="024">
+              <subfield code="a">1869</subfield>
+              <subfield code="2">SRV : ID : article[1]/artid[3] type=aid</subfield>
+            </datafield>
+            <datafield ind1="7" ind2=" " tag="024">
+              <subfield code="a">01437208</subfield>
+              <subfield code="2">SRV : ID : journal[1]/jid[1]/@id</subfield>
+            </datafield>
+            <datafield ind1=" " ind2=" " tag="035">
+              <subfield code="a">doi-10.1016/j.dyepig.2004.06.023</subfield>
+            </datafield>
+            <datafield ind1=" " ind2=" " tag="037">
+              <subfield code="a">OXM02230</subfield>
+              <subfield code="b">sdos</subfield>
+            </datafield>
+            <datafield ind1=" " ind2=" " tag="040">
+              <subfield code="a">SCISERVER</subfield>
+            </datafield>
+            <datafield ind1="0" ind2="7" tag="041">
+              <subfield code="a">eng</subfield>
+              <subfield code="2">ISO639-2</subfield>
+            </datafield>
+            <datafield ind1="1" ind2="0" tag="245">
+              <subfield code="a">New long-wavelength ethanolamino-substituted hypocrellin: photodynamic activity and toxicity to MGC803 cancer cell</subfield>
+            </datafield>
+            <datafield ind1=" " ind2=" " tag="260">
+              <subfield code="b">Elsevier Science</subfield>
+              <subfield code="c">January, 2006</subfield>
+            </datafield>
+            <datafield ind1=" " ind2=" " tag="300">
+              <subfield code="a">1-10</subfield>
+            </datafield>
+            <datafield ind1=" " ind2=" " tag="363">
+              <subfield code="a">68</subfield>
+              <subfield code="b">1</subfield>
+              <subfield code="p">1-10</subfield>
+            </datafield>
+            <datafield ind1="3" ind2=" " tag="520">
+              <subfield code="a"><![CDATA[<p>To improve hydrophilicity and photoactivity of the new type of therapeutic agent, hypocrellin, a novel long-wavelength ethanolamino-substituted hypocrellin B (EAHB) was synthesized and its molecular structure was characterized by IR, NMR, MS, and UV–vis spectrometers, and EAHB had strong absorption at the phototherapeutic window (600–900nm). Illumination of deoxygenated DMSO solution containing EAHB generated a strong electron paramagnetic resonance (EPR) signal, which was assigned to the semiquinone anion radical of EAHB (EAHB<sup>−</sup>). Absorption measurements displayed that the absorptive bands at 632 and 565nm (shoulder) arose from the semiquinone anion radical (EAHB<sup>−</sup>) and the absorptive bands at 519 and 450nm (shoulder) belonged to hydroquinone (EAHBH<sub>2</sub>), which were formed via the decay of EAHB<sup>−</sup> in water-contained solution. Superoxide anion radical (O<sub>2</sub>
+<sup>−</sup>) was produced via electron transfer from EAHB<sup>−</sup> (the precursor) to ground state oxygen. The presence of NADH, a bio-electron donor, significantly enhanced production of EAHB<sup>−</sup> and O<sub>2</sub>
+<sup>−</sup>. Singlet oxygen O<sub>2</sub> (<sup>1</sup>Δ<sub>g</sub>) could be produced via energy transfer from triplet EAHB to ground state oxygen molecules. The quantum yield of O<sub>2</sub> (<sup>1</sup>Δ<sub>g</sub>) and the relative quantum yield of O<sub>2</sub>
+<sup>−</sup> of EAHB were 0.15 and 0.76, respectively, with the parent compound hypocrellin B (HB) as the standard. It was inferred that Type I pathway was possibly a major photodynamic mechanism of EAHB. The study on photobiological action of EAHB on MGC803 cancer cells revealed that EAHB kept the same good phototoxic ability as HB but reduced 4 times cytotoxicity than HB, and also its photopotentiation factor increased 4-folds.</p>]]></subfield>
+              <subfield code="b">en</subfield>
+            </datafield>
+            <datafield ind1=" " ind2=" " tag="546">
+              <subfield code="a">en</subfield>
+            </datafield>
+            <datafield ind1=" " ind2="7" tag="650">
+              <subfield code="a">Ethanolamino-substituted hypocrellin B</subfield>
+              <subfield code="2">SRV : KEYWORD : article[1]/keyword-group[1]/keyword[1]</subfield>
+            </datafield>
+            <datafield ind1=" " ind2="7" tag="650">
+              <subfield code="a">EPR spectra</subfield>
+              <subfield code="2">SRV : KEYWORD : article[1]/keyword-group[1]/keyword[2]</subfield>
+            </datafield>
+            <datafield ind1=" " ind2="7" tag="650">
+              <subfield code="a">Phototoxicity</subfield>
+              <subfield code="2">SRV : KEYWORD : article[1]/keyword-group[1]/keyword[3]</subfield>
+            </datafield>
+            <datafield ind1=" " ind2="7" tag="650">
+              <subfield code="a">Singlet oxygen</subfield>
+              <subfield code="2">SRV : KEYWORD : article[1]/keyword-group[1]/keyword[4]</subfield>
+            </datafield>
+            <datafield ind1=" " ind2="7" tag="650">
+              <subfield code="a">Superoxide anion radical</subfield>
+              <subfield code="2">SRV : KEYWORD : article[1]/keyword-group[1]/keyword[5]</subfield>
+            </datafield>
+            <datafield ind1=" " ind2="7" tag="655">
+              <subfield code="a">fla</subfield>
+              <subfield code="2">SRV : DOCUMENTTYPE : article[1]/@artty</subfield>
+            </datafield>
+            <datafield ind1=" " ind2="7" tag="655">
+              <subfield code="a">journals</subfield>
+              <subfield code="2">SRV : LOAD : load[1]/data-info[1]/@data-type</subfield>
+            </datafield>
+            <datafield ind1="1" ind2=" " tag="700">
+              <subfield code="a">Lee, Hua-Yang</subfield>
+              <subfield code="u">Key Laboratory of Photochemistry, Center for Molecular Science, Institute of Chemistry, Chinese Academy of Sciences, Beijing 100080, PR China</subfield>
+              <subfield code="e">author</subfield>
+            </datafield>
+            <datafield ind1="1" ind2=" " tag="700">
+              <subfield code="a">Zhou, Zhi-Xiang</subfield>
+              <subfield code="u">Institute of Biophysics, Chinese Academy of Sciences, Beijing 100101, PR China</subfield>
+              <subfield code="e">author</subfield>
+            </datafield>
+            <datafield ind1="1" ind2=" " tag="700">
+              <subfield code="a">Chen, Shen</subfield>
+              <subfield code="u">Key Laboratory of Photochemistry, Center for Molecular Science, Institute of Chemistry, Chinese Academy of Sciences, Beijing 100080, PR China</subfield>
+              <subfield code="e">author</subfield>
+            </datafield>
+            <datafield ind1="1" ind2=" " tag="700">
+              <subfield code="a">Zhang, Man-Hua</subfield>
+              <subfield code="u">Key Laboratory of Photochemistry, Center for Molecular Science, Institute of Chemistry, Chinese Academy of Sciences, Beijing 100080, PR China</subfield>
+              <subfield code="g">tshen@infoc3.icas.ac.cn</subfield>
+              <subfield code="e">author</subfield>
+            </datafield>
+            <datafield ind1="1" ind2=" " tag="700">
+              <subfield code="a">Shen, Tao</subfield>
+              <subfield code="u">Key Laboratory of Photochemistry, Center for Molecular Science, Institute of Chemistry, Chinese Academy of Sciences, Beijing 100080, PR China</subfield>
+              <subfield code="e">author</subfield>
+            </datafield>
+            <datafield ind1="0" ind2=" " tag="773">
+              <subfield code="g">vol. 68, no. 1</subfield>
+              <subfield code="d">January, 2006</subfield>
+              <subfield code="n">Journal</subfield>
+              <subfield code="q">68:1&lt;1</subfield>
+              <subfield code="t">Dyes and Pigments</subfield>
+              <subfield code="x">0143-7208</subfield>
+            </datafield>
+            <datafield ind1="7" ind2="2" tag="856">
+              <subfield code="d"><![CDATA[url_ver=Z39.88-2004&rfr_id=info%3Asid%2Flibrary%2Elanl%2Egov%3Asciserver&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&rft_id=info%3Alanl%2Drepo%2Fssm%2Fdoi%2D10%2E1016%2Fj%2Edyepig%2E2004%2E06%2E023&rft_id=info%3Adoi%2F10%2E1016%2Fj%2Edyepig%2E2004%2E06%2E023&rft.issn=0143%2D7208&rft.aulast=Lee&rft.auinit1=H&rft.date=2006&rft.atitle=New%20long%2Dwavelength%20ethanolamino%2Dsubstituted%20hypocrellin%3A%20photodynamic%20activity%20and%20toxicity%20to%20MGC803%20cancer%20cell&rft.title=Dyes%20and%20Pigments&rft.volume=68&rft.issue=1&rft.pages=1%2D10&rft.genre=article&rft.spage=1&rft.epage=10]]></subfield>
+              <subfield code="2">OpenURL</subfield>
+            </datafield>
+          </record>
+        </didl:Resource>
+      </didl:Component>
+      <didl:Component id="uuid-28a39728-6120-4579-80d1-1044b3dd6be2">
+        <didl:Descriptor>
+          <didl:Statement mimeType="application/xml; charset=utf-8">
+            <dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:lanl-repo/ds/667b0f8b-3174-4ba9-9e88-acded2260a21</dii:Identifier>
+          </didl:Statement>
+        </didl:Descriptor>
+        <didl:Descriptor>
+          <didl:Statement mimeType="application/xml; charset=utf-8">
+            <pre:object xmlns:pre="http://www.loc.gov/standards/premis" xsi:schemaLocation="http://www.loc.gov/standards/premis http://www.loc.gov/standards/premis/Object-v1-0.xsd">
+              <pre:objectIdentifier>
+                <pre:objectIdentifierType>URI</pre:objectIdentifierType>
+                <pre:objectIdentifierValue>info:lanl-repo/ds/667b0f8b-3174-4ba9-9e88-acded2260a21</pre:objectIdentifierValue>
+              </pre:objectIdentifier>
+              <pre:objectCategory>File</pre:objectCategory>
+              <pre:objectCharacteristics>
+                <pre:format>
+                  <pre:formatRegistry>
+                    <pre:formatRegistryName>http://cox.lanl.gov:9080/format-registry</pre:formatRegistryName>
+                    <pre:formatRegistryKey>info:lanl-repo/fmt/521</pre:formatRegistryKey>
+                  </pre:formatRegistry>
+                </pre:format>
+              </pre:objectCharacteristics>
+              <pre:creatingApplication>
+                <pre:dateCreatedByApplication>2005-4-7-T23:29:40Z</pre:dateCreatedByApplication>
+              </pre:creatingApplication>
+            </pre:object>
+          </didl:Statement>
+        </didl:Descriptor>
+        <didl:Descriptor>
+          <didl:Statement mimeType="application/xml; charset=utf-8">
+            <diadm:Admin xmlns:diadm="http://library.lanl.gov/2004-01/STB-RL/DIADM" xsi:schemaLocation="http://library.lanl.gov/2004-01/STB-RL/DIADM http://purl.lanl.gov/STB-RL/schemas/2004-01/DIADM.xsd">
+              <dcterms:isFormatOf xmlns:dcterms="http://purl.org/dc/terms/" xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd">http://sciserver.lanl.gov/cgi-bin/sciserv.pl?collection=journals&amp;journal=01437208&amp;issue=v68i0001&amp;article=1_nlehpaattmcc&amp;form=xml</dcterms:isFormatOf>
+            </diadm:Admin>
+          </didl:Statement>
+        </didl:Descriptor>
+        <didl:Resource mimeType="application/xml" ref="http://cox.lanl.gov:9090/arc/resolver?res_id=info:lanl-repo/arc/singlescitape&amp;rfr_id=info:sid/library.lanl.gov&amp;url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/667b0f8b-3174-4ba9-9e88-acded2260a21"/>
+      </didl:Component>
+    </didl:Item>
+    <didl:Component id="uuid-f38cb0ee-09e5-4120-9ed5-232327ab61e0">
+      <didl:Descriptor>
+        <didl:Statement mimeType="application/xml; charset=utf-8">
+          <dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:lanl-repo/ds/2c2605d5-0ffe-43be-a305-f7b377211dd8</dii:Identifier>
+        </didl:Statement>
+      </didl:Descriptor>
+      <didl:Descriptor>
+        <didl:Statement mimeType="application/xml; charset=utf-8">
+          <diadm:Admin xmlns:diadm="http://library.lanl.gov/2004-01/STB-RL/DIADM" xsi:schemaLocation="http://library.lanl.gov/2004-01/STB-RL/DIADM http://purl.lanl.gov/STB-RL/schemas/2004-01/DIADM.xsd">
+            <dcterms:isFormatOf xmlns:dcterms="http://purl.org/dc/terms/" xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd">http://sciserver.lanl.gov/cgi-bin/sciserv.pl?collection=journals&amp;journal=01437208&amp;issue=v68i0001&amp;article=1_nlehpaattmcc&amp;form=pdf</dcterms:isFormatOf>
+          </diadm:Admin>
+        </didl:Statement>
+      </didl:Descriptor>
+      <didl:Descriptor>
+        <didl:Statement mimeType="application/xml; charset=utf-8">
+          <pre:object xmlns:pre="http://www.loc.gov/standards/premis" xsi:schemaLocation="http://www.loc.gov/standards/premis http://www.loc.gov/standards/premis/Object-v1-0.xsd">
+            <pre:objectIdentifier>
+              <pre:objectIdentifierType>URI</pre:objectIdentifierType>
+              <pre:objectIdentifierValue>info:lanl-repo/ds/2c2605d5-0ffe-43be-a305-f7b377211dd8</pre:objectIdentifierValue>
+            </pre:objectIdentifier>
+            <pre:objectCategory>File</pre:objectCategory>
+            <pre:objectCharacteristics>
+              <pre:size>415025</pre:size>
+              <pre:format>
+                <pre:formatRegistry>
+                  <pre:formatRegistryName>http://cox.lanl.gov:9080/format-registry</pre:formatRegistryName>
+                  <pre:formatRegistryKey>info:lanl-repo/fmt/5</pre:formatRegistryKey>
+                </pre:formatRegistry>
+              </pre:format>
+            </pre:objectCharacteristics>
+          </pre:object>
+        </didl:Statement>
+      </didl:Descriptor>
+      <didl:Resource mimeType="application/pdf" ref="http://cox.lanl.gov:9090/arc/resolver?res_id=info:lanl-repo/arc/singlescitape&amp;rfr_id=info:sid/library.lanl.gov&amp;url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/2c2605d5-0ffe-43be-a305-f7b377211dd8"/>
+    </didl:Component>
+    <didl:Component id="uuid-bfc00c07-7fc7-4186-8476-4bad3f6e7b67">
+      <didl:Descriptor>
+        <didl:Statement mimeType="application/xml; charset=utf-8">
+          <dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:lanl-repo/ds/de3af317-85a7-481d-9955-ff40a89955c3</dii:Identifier>
+        </didl:Statement>
+      </didl:Descriptor>
+      <didl:Descriptor>
+        <didl:Statement mimeType="application/xml; charset=utf-8">
+          <diadm:Admin xmlns:diadm="http://library.lanl.gov/2004-01/STB-RL/DIADM" xsi:schemaLocation="http://library.lanl.gov/2004-01/STB-RL/DIADM http://purl.lanl.gov/STB-RL/schemas/2004-01/DIADM.xsd">
+            <dcterms:isFormatOf xmlns:dcterms="http://purl.org/dc/terms/" xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd">http://sciserver.lanl.gov/cgi-bin/sciserv.pl?collection=journals&amp;journal=01437208&amp;issue=v68i0001&amp;article=1_nlehpaattmcc&amp;form=fulltext</dcterms:isFormatOf>
+          </diadm:Admin>
+        </didl:Statement>
+      </didl:Descriptor>
+      <didl:Descriptor>
+        <didl:Statement mimeType="application/xml; charset=utf-8">
+          <pre:object xmlns:pre="http://www.loc.gov/standards/premis" xsi:schemaLocation="http://www.loc.gov/standards/premis http://www.loc.gov/standards/premis/Object-v1-0.xsd">
+            <pre:objectIdentifier>
+              <pre:objectIdentifierType>URI</pre:objectIdentifierType>
+              <pre:objectIdentifierValue>info:lanl-repo/ds/de3af317-85a7-481d-9955-ff40a89955c3</pre:objectIdentifierValue>
+            </pre:objectIdentifier>
+            <pre:objectCategory>File</pre:objectCategory>
+            <pre:objectCharacteristics>
+              <pre:size>415025</pre:size>
+              <pre:format>
+                <pre:formatRegistry>
+                  <pre:formatRegistryName>http://cox.lanl.gov:9080/format-registry</pre:formatRegistryName>
+                  <pre:formatRegistryKey>info:lanl-repo/fmt/464</pre:formatRegistryKey>
+                </pre:formatRegistry>
+              </pre:format>
+            </pre:objectCharacteristics>
+          </pre:object>
+        </didl:Statement>
+      </didl:Descriptor>
+      <didl:Resource mimeType="text/html" ref="http://cox.lanl.gov:9090/arc/resolver?res_id=info:lanl-repo/arc/singlescitape&amp;rfr_id=info:sid/library.lanl.gov&amp;url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/de3af317-85a7-481d-9955-ff40a89955c3"/>
+    </didl:Component>
+  </didl:Item>
+</didl:DIDL>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<project name="Installation Build"  default=""  basedir="${basedir}">
+
+	    <!-- this is required to pick up the properties generated during the install pages -->
+	    <property file="${basedir}/ant.install.properties"/>
+        <property file="${basedir}/modules.properties"/>
+
+        <target name="install-didwriter" depends="">
+          <untar dest="${installDir}" compression="gzip">
+            <fileset dir="${basedir}/packages">
+              <include name="**/adore-didwriter*.gz"/>
+              <exclude name="**/tmp*.gz"/>
+            </fileset>
+          </untar>
+          <copy file="${installDir}/${adore.didwriter}/module-dist.conf" 
+                tofile="${installDir}/${adore.didwriter}/module.conf" overwrite="true"/>
+          <replace file="${installDir}/${adore.didwriter}/module.conf">
+            <replacefilter token="@module.lib@" value="${installDir}/${adore.didwriter}/lib"/>
+            <replacefilter token="@module.src@" value="${installDir}/${adore.didwriter}/src"/>
+            <replacefilter token="@install.home@" value="${installDir}"/>
+	      </replace>
+          <ant antfile="${installDir}/${adore.didwriter}/build-standalone.xml" dir="${installDir}/${adore.didwriter}" target="build"/>
+          <ant antfile="${installDir}/${adore.didwriter}/build-standalone.xml" dir="${installDir}/${adore.didwriter}" target="install"/>
+          <ant antfile="${installDir}/${adore.didwriter}/build-standalone.xml" dir="${installDir}/${adore.didwriter}" target="javadoc"/>
+        </target>
+
+        <target name="install-didlutils" depends="">
+          <ant target="install-didwriter"/>
+        </target>
+
+	<target name="cleanuptarget" depends="">
+		<delete dir="${basedir}/temp">
+		</delete>
+	</target>
+</project>

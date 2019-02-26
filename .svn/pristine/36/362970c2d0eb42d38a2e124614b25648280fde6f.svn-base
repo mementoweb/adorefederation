@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE installer PUBLIC "-//tp23 //DTD Ant Installer Config//EN" "http://antinstaller.sf.net/dtd/antinstall-config-0.7.dtd">
+<installer ui="swing,text" verbose="false"
+    lookAndFeel="org.tp23.jgoodies.plaf.plastic.PlasticXPLookAndFeel" 
+    name="aDORe Archive Solution Installer" windowIcon="/resources/gkmain_inv.png"
+    defaultImageResource="/resources/greens.png" minJavaVersion="1.5" antialiased="true" debug="false">
+    
+    <!--  Welcome -->
+    <page type="input" name="intro" displayText="Welcome to the aDORe Archive Solution Installer" 
+        imageResource="/resources/greens.png">
+        <comment displayText="aDORe Archive Solution" title="true"/>
+        <comment displayText=""/>
+        <comment displayText="The aDORe Archive Solution provides:"/>
+        <comment displayText="* Storage of compound objects (independent of complex object format)"/>
+        <comment displayText="* Two interconnected file-based storage mechanisms: XMLTape / ARCFile"/>
+        <comment displayText="* Protocol-based access mechanisms: OAI-PMH / OpenURL"/>
+        <comment displayText="* Long-term stability"/>
+    </page>
+    
+    <!--  License -->
+    <page type="license" name="license" displayText="License conditions"
+        resource="/resources/LGPL.txt" imageResource="/resources/rockstiles.png"> 
+    </page>
+    
+    <!--  Installation Directory-->
+    <page type="input" name="properties" displayText="Installation Location">
+        <directory property="installDir" defaultValue="/usr/local/adore"
+            defaultValueWin="C:/Applications/adore" displayText="Select Installation Directory:" create="true"/>
+        <directory property="archive.module.tmp" defaultValue="/usr/local/adore/tmp" 
+            defaultValueWin="C:/Applications/adore/tmp" displayText="Select aDORe Temp Directory:" create="true"/>
+    </page>
+    
+    <!--  Component Selection -->
+    <page type="input" name="selector" displayText="Components to install">
+        <comment displayText="Select the components you wish to install:" bold="true"/>
+        <target displayText="Core Components:" target="install-core" defaultValue="true" />
+    </page>
+    
+    <!--  Tomcat Properties Selection -->
+    <page type="input" name="tomcatProps" displayText="Components to install">
+        <text property="module.admin.email" defaultValue="admin@foo.bar" displayText="Admin E-mail Address:"/>
+        <directory property="tomcat.home" defaultValue="/usr/local/tomcat" defaultValueWin="C:/Applications/Jakarta Tomcat 5.5.9" displayText="Select Tomcat Home:" checkExists="false"/>
+        <text property="tomcat.baseurl" defaultValue="http://localhost:8080" displayText="Tomcat BaseURL:" />
+    </page>
+    
+    <!--  ARCFile Registry Properties -->
+    <page type="input" name="arcRegProps" displayText="ARCFile Registry Properties">
+        <text property="arcfile.module.db.host" defaultValue="localhost" displayText="MySQL DB Host:"/>
+        <text property="arcfile.module.db.port" defaultValue="3306" displayText="MySQL DB Port:"/>
+        <text property="arcfile.module.db.login" defaultValue="arc_registry" displayText="MySQL DB Login:"/>
+        <text property="arcfile.module.db.passwd" defaultValue="password" displayText="MySQL Database Password:" />
+    </page>
+    
+    <!--  XMLTape Registry Properties -->
+    <page type="input" name="tapeRegProps" displayText="XMLTape Registry Properties">
+        <text property="xmltape.module.db.host" defaultValue="localhost" displayText="MySQL DB Host:"/>
+        <text property="xmltape.module.db.port" defaultValue="3306" displayText="MySQL DB Port:"/>
+        <text property="xmltape.module.db.login" defaultValue="tape_registry" displayText="MySQL DB Login:"/>
+        <text property="xmltape.module.db.passwd" defaultValue="password" displayText="MySQL Database Password:" />
+    </page>
+    
+    <!--  Archive Properties -->
+    <page type="input" name="archiveProps" displayText="Archive Properties">
+        <text property="archive.module.org.infoUri" defaultValue="info:sid/library.lanl.gov" displayText="Org Info URI:"/>
+        <text property="archive.module.arc.prefix" defaultValue="info:lanl-repo/arc/" displayText="Org ARC Prefix:"/>
+        <text property="archive.module.tape.prefix" defaultValue="info:lanl-repo/xmltape/" displayText="Org XMLtape Prefix:"/>
+        <text property="archive.module.ds.prefix" defaultValue="info:lanl-repo/ds/" displayText="Org Datastream Prefix:"/>
+    </page>
+
+    <!--  Progress-->
+    <page type="progress" name="progress" displayText="Installation progress" target="cleanuptarget"> 
+    </page>
+</installer>

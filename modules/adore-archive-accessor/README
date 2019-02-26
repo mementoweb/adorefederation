@@ -1,0 +1,28 @@
+/**
+*Adore Archive Accessor
+*/
+
+----------------------
+Requirements
+----------------------
+- Java 1.5
+- Tomcat 5.5+
+
+----------------------
+Installation
+----------------------
+1. Copy adore-archive-accessor to a location of your choosing
+
+2. Configure the following in module.conf:
+
+* module.lib - Define path to lib directory containing project jars (i.e. lib)
+* module.src - Define path to src directory containing project source files (i.e. src)
+* module.moai.OAIRegistry - Define base url for xmltape registry webapp (i.e. http://library.lanl.gov:8080/adore-xmltape-registry/OAIHandler)
+* module.baseurl - Define the base url the Repo Accessor (i.e. http://library.lanl.gov:8080/adore-archive-accessor/Handler)
+* module.admin.email - Define admin e-mail contact (i.e. mailto:rchute@lanl.gov)
+* tomcat.home - Define path to tomcat home directory (i.e. /opt/jakarta-tomcat-5.5.9)
+
+3. Run "ant -f build-standalone.xml build" to build project
+
+4. Run "ant -f build-standalone.xml deploy" to copy war to Tomcat WEB-APPS directory.
+

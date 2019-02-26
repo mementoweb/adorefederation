@@ -1,0 +1,8 @@
+xmlsig.keystore.dir=/usr/local/adore-xmlsig/etc/test
+xmlsig.keystore.type=JKS
+xmlsig.keystore.file=/usr/local/adore-xmlsig/etc/test/keystore.jks
+xmlsig.keystore.pass=xmlsecurity
+xmlsig.privatekey.alias=aDORe
+xmlsig.privatekey.pass=xmlsecurity
+xmlsig.cert.alias=aDORe
+xmlsig.cert.url=/usr/local/adore-xmlsig/etc/test/aDORe.crt

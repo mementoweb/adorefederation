@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://iesr.ac.uk/terms/#"
+  elementFormDefault="qualified" attributeFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:rslpcd="http://purl.org/rslp/terms#"
+  xmlns:iesr="http://iesr.ac.uk/terms/#"
+  xmlns="http://iesr.ac.uk/terms/#">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      IESR Administrative Metadata Composition XML Schema
+      Part of: IESR Terms XML Schema, Version 2007-02-19. 
+      XML schema definition of Administrative Metadata term components within the iesr namespace for the JISC Information Environment Service Registry (IESR).
+      These terms are described at http://iesr.ac.uk/terms/. 
+      This part of the XML schema is available at http://iesr.ac.uk/schemas/2007/02/19/iesrAdmeta.xsd .
+      Note that DCMI schemas are held locally and differ from the DCMI versions to avoid schema validation problems with some software.
+    </xs:documentation>
+<!--
+    <xs:appinfo>
+      <dc:title>IESR Administrative Metadata Composition XML Schema</dc:title>
+      <dc:creator>Ann Apps (ann.apps@manchester.ac.uk)</dc:creator>
+      <dc:contributor>Pete Johnston</dc:creator>
+      <dc:description>
+        This schema defines Administrative Metadata term components within the iesr namespace for the JISC Information Environment Service Registry (IESR).
+      </dc:description>
+      <dc:identifier>http://iesr.ac.uk/terms/#</dc:identifier>
+      <dc:relation>http://iesr.ac.uk/terms/</dc:relation>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-sa/2.0/uk/</dc:rights>
+      <dcterms:created>2005-02-08</dcterms:created>
+      <dcterms:modified>2005-09-06</dcterms:modified>
+      <dcterms:modified>2007-02-20</dcterms:modified>
+    </xs:appinfo>
+-->
+  </xs:annotation>
+
+  <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="dc.xsd"/>
+
+  <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd"/>
+
+  <xs:group name="admetaGroup">
+    <xs:annotation>
+      <xs:documentation>
+          This is the admeta group. Allows sub-elements in any order and repeatable
+      </xs:documentation>
+    </xs:annotation>
+
+    <xs:sequence>
+
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+
+	<xs:element ref="dc:creator">
+          <xs:annotation>
+            <xs:documentation>
+              The organisation that supplied the metadata record
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dc:publisher">
+          <xs:annotation>
+            <xs:documentation>
+              The organisation responsible for making the metadata record available
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dcterms:modified">
+          <xs:annotation>
+            <xs:documentation>
+              Date when metadata record was updated within IESR. Not required for initial data entry. Will be added/updated by IESR on registration of the record. An attribute 'xsi:type="dcterms:W3CDTF"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element ref="iesr:status">
+          <xs:annotation>
+            <xs:documentation>
+              An indication of the currency of a record. An attribute 'xsi:type="iesr:StatusList"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dc:source">
+          <xs:annotation>
+            <xs:documentation>
+              Provenance information for harvested metadata. An attribute 'xsi:type="dcterms:URI"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dc:rights">
+          <xs:annotation>
+            <xs:documentation>
+              Rights or restrictions on the use of the metadata record. Fixed value: http://creativecommons.org/licenses/by-nc-sa/2.0/uk/ . A second rights statement requires that the IESR administrative metadata must always be retained with its associated entity description. An attribute 'xsi:type="dcterms:URI"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+      </xs:choice>
+
+    </xs:sequence>
+
+  </xs:group>	
+
+
+  <xs:complexType name="admetaContainer">
+    <xs:annotation>
+      <xs:documentation>
+        This admetaContainer type is a container for the admetaGroup. Allows all sub-lements to be optional, repeatable and in any order
+      </xs:documentation>
+    </xs:annotation>
+
+    <xs:choice>
+
+      <xs:group ref="admetaGroup"/>
+
+    </xs:choice>
+
+    <xs:attribute name="about" type="xs:IDREF"/>
+
+  </xs:complexType>
+
+  <xs:element name="admeta" type="admetaContainer">
+    <xs:annotation>
+      <xs:documentation>
+        A set of administrative metadata associated with an IESR entity
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+</xs:schema>

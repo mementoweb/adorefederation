@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://purl.org/dc/elements/1.1/"
+           targetNamespace="http://purl.org/dc/elements/1.1/"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      DCMES 1.1 XML Schema
+      XML Schema for http://purl.org/dc/elements/1.1/ namespace
+
+      Created 2005-01-17
+
+      Created by 
+      Pete Johnston (p.johnston@ukoln.ac.uk),
+
+      This schema declares XML elements for the 15 DC elements from the
+      http://purl.org/dc/elements/1.1/ namespace.
+      
+      
+    </xs:documentation>
+
+  </xs:annotation>
+
+
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+             schemaLocation="http://www.w3.org/2001/03/xml.xsd">
+  </xs:import>
+
+  <xs:complexType name="elementType">
+        <xs:annotation>
+        <xs:documentation xml:lang="en">
+            This is the default type for all of the DC elements.
+            It permits text content only with optional
+            xml:lang attribute.
+    	</xs:documentation>
+  	</xs:annotation>
+
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+	<xs:attributeGroup ref="elementAttributes"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:attributeGroup name="elementAttributes">
+    <xs:attribute ref="xml:lang" use="optional"/>
+  </xs:attributeGroup>
+
+  <xs:element name="any" type="elementType" abstract="true"/>
+
+  <xs:element name="title" substitutionGroup="any"/>
+  <xs:element name="creator" substitutionGroup="any"/>
+  <xs:element name="subject" substitutionGroup="any"/>
+  <xs:element name="description" substitutionGroup="any"/>
+  <xs:element name="publisher" substitutionGroup="any"/>
+  <xs:element name="contributor" substitutionGroup="any"/>
+  <xs:element name="date" substitutionGroup="any"/>
+  <xs:element name="type" substitutionGroup="any"/>
+  <xs:element name="format" substitutionGroup="any"/>
+  <xs:element name="identifier" substitutionGroup="any"/>
+  <xs:element name="source" substitutionGroup="any"/>
+  <xs:element name="language" substitutionGroup="any"/>
+  <xs:element name="relation" substitutionGroup="any"/>
+  <xs:element name="coverage" substitutionGroup="any"/>
+  <xs:element name="rights" substitutionGroup="any"/>
+
+  <xs:group name="elementsGroup">
+  	<xs:annotation>
+    	<xs:documentation xml:lang="en">
+    	    This group is included as a convenience for schema authors
+            who need to refer to all the elements in the 
+            http://purl.org/dc/elements/1.1/ namespace.
+    	</xs:documentation>
+  	</xs:annotation>
+
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="any"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:complexType name="elementContainer">
+  	<xs:annotation>
+    	<xs:documentation xml:lang="en">
+    		This complexType is included as a convenience for schema authors who need to define a root
+    		or container element for all of the DC elements.
+    	</xs:documentation>
+  	</xs:annotation>
+
+    <xs:choice>
+      <xs:group ref="elementsGroup"/>
+    </xs:choice>
+  </xs:complexType>
+
+</xs:schema>

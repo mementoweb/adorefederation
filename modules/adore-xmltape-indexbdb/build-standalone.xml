@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+
+<project name="adore-xmltape-indexbdb-standalone" default="build" basedir=".">
+
+    <!-- Import Additional Ant Tasks -->
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+     <classpath>
+      <pathelement location="./lib/ant-contrib.jar"/>
+     </classpath>
+    </taskdef>
+
+    <!-- ===================================================================
+      -  init - initialization common to the framework module
+      -  =================================================================== -->
+    <target name="module-init">
+        <!-- Import Configuration File -->
+        <property file="module.conf"/>
+        <property name="module.name" value="${module.name}"/>
+        <property name="module.root.dir"  value="."/>
+        <!-- Extended module-specific properties -->
+        <property name="module.version"  value="${module.version}"/>
+        <property name="module.dist"  value="${module.root.dir}/dist"/>
+        <property name="module.build" value="${module.root.dir}/tmp"/>
+        <property name="module.doc" value="${module.root.dir}/doc"/>
+        <property name="module.local.lib" value="${module.root.dir}/lib"/>
+        <property name="module.lib" value="${module.root.dir}/${module.lib}"/>
+        <property name="module.src" value="${module.root.dir}/${module.src}"/>
+
+        <!-- Set global properties for this build -->
+        <property name="final.name" value="${module.name}-${module.version}"/>
+        
+        <!-- Build - Classpath Information -->
+        <fileset id="module.jars" dir="${module.lib}">
+            <include name="*.jar"/>
+        </fileset>
+        <path id="module.classpath">
+            <pathelement location="${module.build}" />
+            <fileset refid="module.jars"/>
+        </path>
+        
+        <fileset id="local.jars" dir="${module.local.lib}">
+            <include name="*.jar"/>
+        </fileset>
+        <path id="local.classpath">
+            <pathelement location="${module.local.lib}" />
+            <fileset refid="local.jars"/>
+        </path>
+        
+    </target>
+
+    <!-- Overrides parent definition of init -->
+    <target name="init" depends="module-init"/>
+
+    <target name="checkDependency" depends="init">
+      <if>
+        <not>
+          <equals arg1="${module.depends.list}" arg2="" trim="true"/>
+        </not>
+      <then>
+        <echo message="Compiling Modules"/>
+        <foreach list="${module.depends.list}" delimiter=";" param="temp" target="compileDependency" inheritall="true"/>
+      </then>
+      </if>
+    </target>
+
+    <!-- Build Dependent Libraries - Called By build.xml -->
+    <target name="compileDependency">
+    <propertycopy name="target" from="${temp}" silent="true"/>
+    <property name="d.module" value="${target}"/>
+    <propertycopy name="target.version" from="${temp}.version" silent="true"/>
+    <property name="d.module.version" value="${target.version}"/>
+    <echo message="${d.module}"/>
+    <echo message="${d.module.version}"/>
+    <property name="d.module.dir" value="./dist"/>
+     <if>
+      <available file="${module.local.lib}/${d.module}-${d.module.version}.jar" type="file" property="local.file.present"/>
+      <then>
+       <echo message="${d.module}-${d.module.version}.jar is available"/>
+      </then>
+      <else>
+       <echo message="${d.module}-${d.module.version}.jar was not found"/>
+       <fail message="  '${module.local.lib}/${d.module}-${d.module.version}.jar' was not found"/>
+      </else>
+     </if> 
+    </target>
+
+    <!-- Compile This Module -->
+    <target name="compile" depends="checkDependency">
+      <mkdir dir="${module.build}"/>
+      <!-- Compilation Units -->  
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/xmltape">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <include name="index/berkeleydbImpl/*.java"/>
+        <exclude name="**/*Test.java"/>
+      </javac>
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/xmltape/identifier/index">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <include name="bdbImpl/*.java"/>
+      </javac>
+    </target>
+
+    <!-- Build This Project - Generate JAR / TAR / WAR Archives -->
+    <target name="build" depends="compile">
+      <mkdir dir="${module.dist}"/>
+      <jar jarfile="${module.dist}/${final.name}.jar" basedir="${module.build}"/>
+      <tar destfile="${module.dist}/${final.name}.tar.gz" compression="gzip">
+        <!-- Copy project components into archive -->
+        <tarfileset prefix="${module.name}" dir="${module.root.dir}">
+          <include name="README"/>
+          <include name="build-standalone.xml"/>
+          <include name="module.conf"/>
+          <include name="module-dist.conf"/>
+          <include name="etc/**"/>
+          <include name="bin/**"/>
+          <include name="lib/*.jar"/>
+          <include name="src/**"/>
+        </tarfileset>
+        <!-- Copy Generated jar file into archive -->
+        <tarfileset prefix="${module.name}/lib" dir="${module.dist}" includes="${final.name}.jar"/>
+        <!-- Copy required library files into archive -->
+        <tarfileset prefix="${module.name}/lib" dir="${module.lib}">
+        <!-- Define includes here -->
+        <include name="ant-contrib.jar"/>
+        <include name="ANT-CONTRIB.LICENSE"/>        
+        <include name="commons-cli-1.0.jar"/>
+        <include name="COMMONS-CLI.LICENSE"/>
+        <include name="je.jar"/>
+        <include name="JE.LICENSE"/>
+        <include name="dom4j-1.6.1.jar"/>
+        <include name="DOM4J.LICENSE"/>
+        <include name="log4j-1.2.8.jar"/>
+        <include name="LOG4J.LICENSE"/>
+        <include name="servlet.jar" />
+        <include name="xpp3-1.1.3.4.C.jar"/>
+        <include name="XPP3.LICENSE"/>
+        <include name="jdom.jar"/>
+        <include name="JDOM.LICENSE"/>
+        </tarfileset>
+        <!-- Copy source files into archive -->
+        <tarfileset prefix="${module.name}/src/gov/lanl/xmltape" dir="${module.src}/gov/lanl/xmltape" excludes="CVS">
+          <include name="index/berkeleydbImpl/*.java"/>
+          <exclude name="**/*Test.java"/>
+        </tarfileset>
+        <tarfileset prefix="${module.name}/src/gov/lanl/xmltape/identifier/index" dir="${module.src}/gov/lanl/xmltape/identifier/index" excludes="CVS">
+          <include name="bdbImpl/*.java"/>
+        </tarfileset>
+      </tar>
+    </target>
+
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <target name="clean" depends="init" description="Destroys all generated files and dirs." >
+        <delete dir="${module.build}"/>
+        <delete dir="${module.dist}"/>
+        <delete dir="${module.doc}"/>
+    </target>
+    
+    <!-- create javadoc -->
+    <target name="javadoc" depends="init">
+        <javadoc
+             destdir="${module.doc}"
+             author="true"
+             version="true"
+             use="true"
+             windowtitle="XMLTape Index - BDB Implementation">
+        <classpath refid="local.classpath" />
+        <classpath refid="module.classpath" />
+        <fileset dir="${module.src}/gov/lanl/xmltape">
+          <include name="index/berkeleydbImpl/*.java"/>
+          <exclude name="**/*Test.java"/>
+        </fileset>
+        <fileset dir="${module.src}/gov/lanl/xmltape/identifier/index">
+          <include name="bdbImpl/*.java"/>
+        </fileset>
+       
+        <doctitle><![CDATA[<h1>XMLTape Index - BDB Implementation</h1>]]></doctitle>
+        <bottom><![CDATA[<i>Copyright &#169; 2006 LANL All Rights Reserved.</i>]]></bottom>
+      </javadoc>
+    </target>
+    
+    <!-- Check to delete Dependent Libraries -->
+    <target name="checkRemoveDependentLib" depends="init">
+      <if>
+        <not>
+          <equals arg1="${module.depends.list}" arg2="" trim="true"/>
+        </not>
+      <then>
+        <foreach list="${module.depends.list}" delimiter=";" param="temp" target="removeDependentLib" inheritall="true"/>
+      </then>
+      </if>
+    </target>
+
+</project>

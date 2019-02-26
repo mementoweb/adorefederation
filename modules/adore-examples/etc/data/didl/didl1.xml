@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<didl:DIDL xmlns:didl="urn:mpeg:mpeg21:2002:02-DIDL-NS" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           DIDLDocumentId="info:lanl-repo/i/dd7b17ea-bddf-11d9-9de5-c11b6cd8559"  
+           xsi:schemaLocation="urn:mpeg:mpeg21:2002:02-DIDL-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/did/didl.xsd">
+ <didl:Item id="uuid-92cf3937-846b-4687-9705-a78f5ba4b4d6">
+  <didl:Descriptor>
+   <didl:Statement mimeType="application/xml; charset=utf-8">
+     <dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:arxiv/0502028</dii:Identifier>
+   </didl:Statement>
+  </didl:Descriptor>
+  <didl:Component id="uuid-e929363f-372b-4794-aed0-35374efcd053">
+    <didl:Descriptor>
+    <didl:Statement mimeType="application/xml; charset=utf-8">
+     <dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:lanl-repo/ds/99569f9a-23db-4eb2-a0d4-ec1ff34dae5f</dii:Identifier>
+   </didl:Statement>
+   </didl:Descriptor>
+   <didl:Resource mimeType="application/xml">
+   <mods:mods xmlns:xlink="http://www.w3.org/TR/xlink"
+              xmlns:mods="http://www.loc.gov/mods/v3"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xmlns="http://www.loc.gov/mods/" 
+              xsi:schemaLocation="http://www.loc.gov/mods/ http://www.loc.gov/standards/mods/mods.xsd">
+     <mods:name><mods:namePart>Liu, Xiaoming</mods:namePart></mods:name>
+     <mods:name><mods:namePart>Balakireva, Lyudmila</mods:namePart></mods:name>
+     <mods:name><mods:namePart>Hochstenbach, Patrick</mods:namePart></mods:name>
+     <mods:name><mods:namePart>Van de Sompel, Herbert</mods:namePart></mods:name>
+     <mods:extension><mods:dateAccessioned encoding="iso8601">2005-03-07T03:38:52Z</mods:dateAccessioned></mods:extension>
+     <mods:extension><mods:dateAvailable encoding="iso8601">2005-06-03T03:38:52Z</mods:dateAvailable></mods:extension>
+     <mods:originInfo><mods:dateIssued encoding="iso8601">2005</mods:dateIssued></mods:originInfo>
+     <mods:identifier type="uri">http://arxiv.org/abs/cs.DL/0503016</mods:identifier>
+     <mods:physicalDescription><mods:extent>12 leaves</mods:extent></mods:physicalDescription>
+     <mods:physicalDescription><mods:internetMediaType>application/pdf</mods:internetMediaType></mods:physicalDescription>
+     <mods:language><mods:languageTerm authority="rfc3066">eng</mods:languageTerm></mods:language>
+     <mods:originInfo><mods:publisher>arXiv</mods:publisher></mods:originInfo>
+     <mods:titleInfo>File-based storage of Digital Objects and constituent datastreams: XMLtapes and Internet Archive ARC files</mods:titleInfo>
+   </mods:mods>
+   </didl:Resource>
+  </didl:Component>
+  <didl:Component id="uuid-6e9f1d67-d424-4f9a-8f85-c821bcb9fab8">
+   <didl:Descriptor>
+   <didl:Statement mimeType="application/xml; charset=utf-8">
+     <dii:Identifier xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd">info:lanl-repo/ds/99569f9a-23db-4eb2-a0d4-ec1ff34dae5f</dii:Identifier>
+     </didl:Statement>
+     </didl:Descriptor>
+    <didl:Resource mimeType="application/pdf" ref="http://african.lanl.gov/aDORe/projects/adoreArchive/docs/0503016.pdf"></didl:Resource>
+  </didl:Component>
+ </didl:Item>
+</didl:DIDL>

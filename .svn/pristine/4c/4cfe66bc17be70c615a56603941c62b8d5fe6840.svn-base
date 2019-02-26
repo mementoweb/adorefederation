@@ -1,0 +1,18 @@
+# Configuration File For Module
+
+# Module Build Environment
+module.name=adore-didwriter
+module.version=1.1
+module.lib=@module.lib@
+module.src=@module.src@
+
+# Dependent Projects - Use Semi-colon (;) as delimiter
+module.depends.list=module.depends.1;module.depends.2;module.depends.3
+module.depends.1=adore-arcfile
+module.depends.1.version=1.1
+module.depends.2=adore-xmltape
+module.depends.2.version=1.1
+module.depends.3=adore-archive
+module.depends.3.version=1.1
+
+install.home=@install.home@

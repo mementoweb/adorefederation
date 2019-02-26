@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<!--
+$Id: build.xml,v 1.2 2006/10/13 06:19:37 liu_x Exp $
+-->
+<project name="DIDAPI" default="usage" basedir=".">
+  
+  <!-- set global properties for this build -->
+  <property name="name" value="DIDAPI"/>
+  <property name="src"  value="src"/>
+  <property name="lib"  value="lib"/>
+  <property name="dist"  value="dist"/>
+  <property name="build" value="build"/>
+  <property name="version" value="2.0"/>
+  <property name="final.name" value="${name}-${version}"/>
+  <property name="javadoc.link" value="http://java.sun.com/j2se/1.5.0/docs/api/"/>
+
+  <property name="impl.name" value="${name}-impl-${version}"/>
+  <property name="demo.name" value="${name}-demo-${version}"/>
+  
+  <property name="junit.output.dir" location="${build}/test"/>
+  <property name="junit.reports" location="${build}/test/reports"/>
+
+  <path id="classpath">
+    <pathelement location="${build}/classes/api" />
+    <pathelement location="${build}/classes/impl" />
+    <pathelement location="${build}/classes/test" />
+    <pathelement location="${build}/classes/demo" />
+    <fileset dir="${lib}">
+        <include name="**/*.jar"/>
+      </fileset>
+  </path>
+
+  <path id="junit.classpath">
+    <pathelement location="${build}/classes/test"/> 
+    <path refid="classpath"/>
+  </path>
+
+ <!-- =================================================================== -->
+  <!-- Help on usage                                                       -->
+  <!-- =================================================================== -->
+  <target name="usage">
+    <echo message=""/>
+    <echo message=""/>
+    <echo message="${final.name} Build instructions"/>
+    <echo message="-------------------------------------------------------------"/>
+    <echo message=""/>
+    <echo message=" available targets are:"/>
+    <echo message=""/>
+    
+    <echo message=" jar      --> generates DIDAPI.jar &amp; DIDAPI-impl &amp; DIDAPI-demo file"/>
+    <echo message=" jar-api  --> generates the DIDAPI.jar file"/>
+    <echo message=" jar-impl  --> generates the DIDAPI-impl.jar file"/>
+    <echo message=" jar-demo  --> generates the DIDAPI-demo.jar file"/>
+    <echo message=" javadocs --> generates the API docs (needs Java 1.5 or higher)"/>
+    <echo message=" compile  --> compiles the source code"/>
+    <echo message=" compile-api  --> compiles DIDAPI"/>
+    <echo message=" compile-impl  --> compiles DIDAPI-impl"/>
+    <echo message=" compile-demo  --> compiles DIDAPI-demo"/> 
+    <echo message=" compile-test  --> compiles test files"/>
+
+    <echo message=" test  --> compiles Junit test"/>
+    <echo message=" dist   --> generates the binary and source distributions (tar.gz)"/>
+
+    <echo message=" clean    --> cleans up all generated files and directories"/>
+    <echo message=" usage    --> provides help on using the build tool (default)"/>
+    <echo message=" local.jar.duplicate      -->local usage to update jar files in depending pacakges (DIDAdore)"/>
+    <echo message=""/>
+    <echo message=" See comments inside the build.xml file for more details."/>
+    <echo message="-------------------------------------------------------------"/>
+    <echo message=""/>
+    <echo message=""/>
+  </target>
+
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp>
+      <format property="current.year" pattern="yyyy"/>
+      <format property="DSTAMP" pattern="yyyy-MM-dd"/>
+      <format property="TSTAMP" pattern="HH:mm:ss"/>
+    </tstamp>
+
+ 
+    <available
+	property="junit.present"
+	classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask"
+	/>
+
+  </target>
+
+    
+  <!-- ================================================================== -->
+  <!-- C O M P I L E                                                              -->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+
+  <target name="compile" depends="compile-api,compile-impl,compile-demo,compile-test">
+  </target>
+
+
+  <target name="compile-api" depends="init">
+    <mkdir dir="${build}/classes/api"/>	
+    <javac srcdir="${src}/api" includes="**/*.java" destdir="${build}/classes/api" debug="true" debuglevel="lines,vars,source">
+      <classpath refid="classpath"/>
+    </javac>
+  </target>
+
+  <target name="compile-impl" depends="compile-api">
+    <mkdir dir="${build}/classes/impl"/>	
+    <javac srcdir="${src}/impl" includes="**/*.java" destdir="${build}/classes/impl" debug="true" debuglevel="lines,vars,source">
+      <classpath refid="classpath"/>
+    </javac>
+  </target>
+
+  <target name="compile-demo" depends="compile-impl">
+    <mkdir dir="${build}/classes/demo"/>	
+    <javac srcdir="${src}/demo" includes="**/*.java" destdir="${build}/classes/demo" debug="true" debuglevel="lines,vars,source">
+      <classpath refid="classpath"/>
+    </javac>
+  </target>
+  
+  <target name="compile-test" depends="compile-demo">
+    <mkdir dir="${build}/classes/test"/>	
+    <javac srcdir="${src}/test" includes="**/*.java" destdir="${build}/classes/test" debug="true" debuglevel="lines,vars,source">
+      <classpath refid="classpath"/>
+    </javac>
+  </target>
+  
+
+
+  <!-- ================================================================== -->
+  <!-- R U N  T E S T S                                                   -->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+  <target name="test" depends="compile-test" description="Runs unit tests">
+    <fail unless="junit.present">
+      ##################################################################
+      JUnit not found.
+      Please make sure junit.jar is in ANT_HOME/lib, or made available
+      to Ant using other mechanisms like -lib or CLASSPATH.
+      ##################################################################
+    </fail> 
+    <mkdir dir="${junit.output.dir}"/>
+    <junit printsummary="off" haltonfailure="no"
+	   errorProperty="tests.failed" failureProperty="tests.failed">
+      <classpath refid="junit.classpath"/>    
+      <formatter type="xml"/>
+      <formatter type="brief" usefile="false"/>
+      <batchtest fork="yes" todir="${junit.output.dir}" >
+	<fileset dir="${src}/test" includes="**/*Test.java"/>
+      </batchtest>
+    </junit>
+    
+    <fail if="tests.failed">Tests failed!</fail>
+  </target>
+
+
+
+  <!-- ================================================================== -->
+  <!-- J A R                                                     -->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+
+  <target name="jar" depends="jar-api, jar-impl, jar-demo">
+  </target>
+
+  <target name="jar-api" depends="compile">
+    <jar jarfile="${build}/${final.name}.jar" basedir="${build}/classes/api">
+      <manifest>
+	<attribute name="Created-By" value="LANL and Ghent Univ"/>
+	<section name="info/didl">
+	  <attribute name="Specification-Title" value="${final.name}"/>
+	  <attribute name="Specification-Version" value="${version}"/>
+	  <attribute name="Specification-Vendor" value=""/>
+	  <attribute name="Implementation-Title" value="${final.name}"/>
+	  <attribute name="Implementation-Version" value="build ${DSTAMP} ${TSTAMP}"/>    
+	</section>
+      </manifest>
+    </jar>
+  </target>
+
+
+ <target name="jar-impl" depends="compile">
+    <jar jarfile="${build}/${impl.name}.jar" basedir="${build}/classes/impl">
+      <manifest>
+	<attribute name="Created-By" value="LANL and Ghent Univ"/>
+	<section name="info/didl">
+	  <attribute name="Specification-Title" value="${impl.name}"/>
+	  <attribute name="Specification-Version" value="${version}"/>
+	  <attribute name="Specification-Vendor" value=""/>
+	  <attribute name="Implementation-Title" value="${impl.name}"/>
+	  <attribute name="Implementation-Version" value="build ${DSTAMP} ${TSTAMP}"/>    
+	</section>
+      </manifest>
+    </jar>
+  </target>
+
+  
+  <target name="jar-demo" depends="compile">
+    <jar jarfile="${build}/${demo.name}.jar" basedir="${build}/classes/demo">   
+    </jar>
+  </target>
+
+ 
+
+  <!-- ================================================================== -->
+  <!-- J A V A D O C                                                      -->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+
+  <target name="javadocs" depends="compile">
+    <mkdir dir="${build}/docs/api"/>
+    <javadoc      
+      destdir="${build}/docs/api"        
+      author="false"
+      version="true"
+      use="true"    
+      windowtitle="${name} ${version} API"
+      > 
+      <classpath refid="classpath" />
+      <fileset dir="${src}/api" defaultexcludes="yes">
+	<include name="**/*"/>
+      </fileset>
+      <fileset dir="${src}/impl" defaultexcludes="yes">
+	<include name="**/*"/>
+      </fileset>
+      <fileset dir="${src}/demo" defaultexcludes="yes">
+	<include name="**/*"/>
+	</fileset>
+      <doctitle>${name} ${version} API</doctitle>
+      <link href="${javadoc.link}"/>
+    </javadoc>
+    
+  </target>
+  
+  <!-- ================================================================== -->
+  <!-- D I S T                                                             -->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+
+  <target name="dist" depends="jar,javadocs">
+    <mkdir dir="${dist}"/>
+    <tar destfile="${dist}/${final.name}.tar.gz" compression="gzip">
+      <tarfileset prefix="${final.name}" dir="." includes="README,CHANGES,build.xml,INSTALL,LICENSE,AUTHORS"/>
+      <tarfileset prefix="${final.name}" dir="${build}" includes="${final.name}.jar,${impl.name}.jar,${demo.name}.jar"/>
+      <tarfileset prefix="${final.name}/src/" dir="${src}" includes="**/*.java"/>
+      <tarfileset prefix="${final.name}/docs/" dir="${build}/docs" includes="**/*"/>
+      <tarfileset prefix="${final.name}/lib/" dir="${lib}" includes="**/*.jar"/>
+    </tar>
+  </target>
+
+  <!-- ================================================================== -->
+  <!-- C L E A N                                                          -->
+  <!-- ================================================================== -->
+  <!--                                                                    -->
+  <!-- ================================================================== -->
+  <target name="clean">
+    <!-- Delete the ${build} and ${dist} directory trees -->
+	<delete dir="${build}"/>
+	<delete dir="${dist}"/>
+  </target>
+
+  
+  <!-- ================================================================== -->
+  <!-- L O C A L . J A R . D U P L I C A T E                                                           -->
+  <!-- ================================================================== -->
+  <!-- local usage to update jar files in depending pacakges                                                                   -->
+  <!-- ================================================================== -->
+
+  <target name="local.jar.duplicate" depends="jar">
+    <copy file="${build}/${final.name}.jar" todir="../DIDAdore/lib"/>
+    <copy file="${build}/${impl.name}.jar" todir="../DIDAdore/lib"/> 
+    <copy file="${build}/${demo.name}.jar" todir="../DIDAdore/lib"/>
+  </target>
+
+</project>
+

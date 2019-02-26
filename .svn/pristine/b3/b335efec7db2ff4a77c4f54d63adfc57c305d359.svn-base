@@ -1,0 +1,7 @@
+# Profile to be added to aDORe Archive Configuration File
+
+# METS Processing Profile
+mets.FullName=info:sid/library.lanl.gov:metsCollection
+mets.ProcessorClass=gov.lanl.adore.demo.TutorialProcessor
+mets.ConverterClass=gov.lanl.adore.demo.mets.MetsProcessor
+mets.identifierIdxRecordPlugin=gov.lanl.adore.demo.mets.identifier.index.MetsRecordDOM

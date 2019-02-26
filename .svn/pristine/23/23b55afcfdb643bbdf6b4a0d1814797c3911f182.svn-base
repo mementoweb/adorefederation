@@ -1,0 +1,24 @@
+# Configuration File For Module
+
+# Module Build Environment
+module.name=adore-searcher
+module.version=1.1
+module.lib=@module.lib@
+module.src=@module.src@
+
+# Dependent Projects - Use Semi-colon (;) as delimiter
+module.depends.list=module.depends.1
+module.depends.1=adore-xmltape
+module.depends.1.version=1.1
+
+#ÊModule Properties
+module.admin.email=@module.admin.email@
+module.debug=true
+
+# System Properties
+adore-id-locator.ResolverURL=@adore-id-locator.ResolverURL=@
+adore-service-registry.OAIURL=@adore-service-registry.OAIURL@
+
+
+# System Properties
+tomcat.home=@tomcat.home@

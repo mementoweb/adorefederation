@@ -1,0 +1,113 @@
+a:link { color: orange; }
+a:visited  {  color: #49407B; text-decoration: none; }
+a:hover {color: #D9541A; text-decoration: none; }
+
+BODY{
+	background-color: white;
+	font-family: sans-serif;
+}
+
+INPUT {
+background-color: white;
+color: black;
+font-family: arial, verdana, ms sans serif;
+font-weight: normal;
+font-size: 8pt
+}
+
+TEXTAREA {
+background-color: white;
+border-width: 1px 1px 2px 2px;
+color: black;
+font-family: arial, verdana, ms sans serif;
+font-size: 8pt;
+font-weight: normal
+}
+
+#plink{
+
+		color: #485B81;
+        background-color: #5C81A7;
+        border: 1px #4B5ECE solid;
+        border-right: 1px #4B5ECE solid;
+        border-left: 1px #4B5ECE solid;
+        margin:0;
+        width: auto;
+        padding: 12px
+
+}
+
+#bib{
+		color: #485B81;
+        background-color: #5C81C7;
+        border: 1px #4B5ECE solid;
+        border-right: 1px #4B5ECE solid;
+        border-left: 1px #4B5ECE solid;
+        margin:0;
+        width: auto;
+        padding: 12px
+}
+
+#allsrv{
+		color: #485B81;
+        background-color: #5C81D7;
+        border: 1px #4B5ECE solid;
+        border-right: 1px #4B5ECE solid;
+        border-left: 1px #4B5ECE solid;
+        margin:0;
+        width: auto;
+        padding: 12px
+}
+
+#srvtitle{
+	color: red;
+    font-family: arial, helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+.services{
+	color: orange;
+    font-family: arial, helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+.obj-id {
+	color: red;
+    font-family: arial, helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+
+}
+
+.contributor {
+	color: white;
+    font-family: arial, helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 10pt;
+   
+}
+
+.pub {
+	color: black;
+    font-family: arial, helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 10pt;
+   
+
+}
+
+.title {
+	color: black;
+    font-family: arial, helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 10pt;
+
+}
+
+.footer{
+    color: gray;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 8pt;
+}

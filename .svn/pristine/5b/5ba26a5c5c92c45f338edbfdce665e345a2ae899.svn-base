@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+
+<project name="adore-xmltape-xquery-standalone" default="build" basedir=".">
+
+    <!-- Import Additional Ant Tasks -->
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+     <classpath>
+      <pathelement location="./lib/ant-contrib.jar"/>
+     </classpath>
+    </taskdef>
+
+    <!-- ===================================================================
+      -  init - initialization common to the framework module
+      -  =================================================================== -->
+    <target name="module-init">
+        <!-- Import Configuration File -->
+        <property file="module.conf"/>
+        <property name="module.name" value="${module.name}"/>
+        <property name="module.root.dir"  value="."/>
+        
+        <!-- Extended module-specific properties -->
+        <property name="module.version"  value="${module.version}"/>
+        <property name="module.dist"  value="${module.root.dir}/dist"/>
+        <property name="module.build" value="${module.root.dir}/tmp"/>
+        <property name="module.doc" value="${module.root.dir}/doc"/>
+        <property name="module.local.lib" value="${module.root.dir}/lib"/>
+        <property name="module.lib" value="${module.root.dir}/${module.lib}"/>
+        <property name="module.src" value="${module.root.dir}/${module.src}"/>
+
+        <!-- Tomcat Properties -->
+        <property name="tomcat.base.dir" value="${tomcat.home}"/>
+        <property name="tomcat.webapp.dir" value="${tomcat.base.dir}/webapps"/>
+
+        <!-- Set global properties for this build -->
+        <property name="final.name" value="${module.name}-${module.version}"/>
+        
+        <!-- Build - Classpath Information -->
+        <fileset id="module.jars" dir="${module.lib}">
+            <include name="*.jar"/>            
+        </fileset>
+        <path id="module.classpath">
+            <pathelement location="${module.build}" />
+            <fileset refid="module.jars"/>
+        </path>
+        
+        <fileset id="local.jars" dir="${module.local.lib}">
+            <include name="*.jar"/>
+        </fileset>
+        <path id="local.classpath">
+            <pathelement location="${module.local.lib}" />
+            <fileset refid="local.jars"/>
+        </path>
+        
+    </target>
+
+    <!-- Overrides parent definition of init -->
+    <target name="init" depends="module-init"/>
+
+    <target name="checkDependency" depends="init">
+      <if>
+        <not>
+          <equals arg1="${module.depends.list}" arg2="" trim="true"/>
+        </not>
+      <then>
+        <echo message="Compiling Modules"/>
+        <foreach list="${module.depends.list}" delimiter=";" param="temp" target="compileDependency" inheritall="true"/>
+      </then>
+      </if>
+    </target>
+
+    <!-- Build Dependent Libraries - Called By build.xml -->
+    <target name="compileDependency">
+    <propertycopy name="target" from="${temp}" silent="true"/>
+    <property name="d.module" value="${target}"/>
+    <propertycopy name="target.version" from="${temp}.version" silent="true"/>
+    <property name="d.module.version" value="${target.version}"/>
+    <echo message="${d.module}"/>
+    <echo message="${d.module.version}"/>
+    <property name="d.module.dir" value="./dist"/>
+     <if>
+      <available file="${module.local.lib}/${d.module}-${d.module.version}.jar" type="file" property="local.file.present"/>
+      <then>
+       <echo message="${d.module}-${d.module.version}.jar is available"/>
+      </then>
+      <else>
+       <echo message="${d.module}-${d.module.version}.jar was not found"/>
+       <fail message="  '${module.local.lib}/${d.module}-${d.module.version}.jar' was not found"/>
+      </else>
+     </if> 
+    </target>
+
+    <!-- Compile This Module -->
+    <target name="compile" depends="checkDependency">
+      <mkdir dir="${module.build}"/>
+      <!-- Compilation Units -->  
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/util">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <include name="sru/**/*.java"/>
+        <include name="xquery/*.java"/>
+        <include name="xml/*.java"/>
+      </javac>
+      <javac destdir="${module.build}"
+             debug="${compile.debug}"
+             deprecation="${compile.deprecation}"
+             optimize="${compile.optimize}"
+             srcdir="${module.src}/gov/lanl/xmltape/resolver/xquery">
+        <classpath refid="module.classpath" />
+        <classpath refid="local.classpath" />
+        <include name="**/*.java"/>
+      </javac>
+    </target>
+    
+    <!-- Build This Project - Generate JAR / TAR / WAR Archives -->
+    <target name="build" depends="compile">
+      <mkdir dir="${module.dist}"/>
+      <jar jarfile="${module.dist}/${final.name}.jar" basedir="${module.build}"/>
+      <tar destfile="${module.dist}/${final.name}.tar.gz" compression="gzip">
+        <!-- Copy project components into archive -->
+        <tarfileset prefix="${module.name}" dir="${module.root.dir}">
+          <include name="README"/>
+          <include name="build-standalone.xml"/>
+          <include name="module.conf"/>
+          <include name="module-dist.conf"/>
+          <include name="etc/**"/>
+          <include name="bin/**"/>
+          <include name="lib/*.jar"/>
+          <include name="src/web/**"/>
+        </tarfileset>
+        <!-- Copy Generated jar file into archive -->
+        <tarfileset prefix="${module.name}/lib" dir="${module.dist}" includes="${final.name}.jar"/>
+        <!-- Copy required library files into archive -->
+        <tarfileset prefix="${module.name}/lib" dir="${module.lib}">
+        <!-- Define includes here -->
+          <include name="ant-contrib.jar"/>
+          <include name="ANT-CONTRIB.LICENSE"/>        
+          <include name="oaiharvester-2.9.jar"/>
+          <include name="OAIHARVESTER.LICENSE"/>
+          <include name="log4j-1.2.8.jar"/>
+          <include name="LOG4J.LICENSE"/>
+          <include name="openurl.jar"/>
+          <include name="OPENURL.LICENSE"/>
+          <include name="saxon8.jar"/>
+          <include name="SAXON.LICENSE"/>
+          <include name="nux.jar"/>
+          <include name="NUX.LICENSE"/>
+          <include name="xom.jar"/>
+          <include name="XOM.LICENSE"/>
+          <include name="xercesImpl.jar"/>
+          <include name="XERCESIMPL.LICENSE"/>
+          <include name="servlet.jar"/>
+        </tarfileset>
+        <!-- Copy source files into archive -->
+        <tarfileset prefix="${module.name}/src/gov/lanl/util" dir="${module.src}/gov/lanl/util" excludes="CVS">
+          <include name="sru/**/*.java"/>
+          <include name="xquery/*.java"/>
+          <include name="xml/*.java"/>
+        </tarfileset>
+        <tarfileset prefix="${module.name}/src/gov/lanl/xmltape/resolver/xquery" dir="${module.src}/gov/lanl/xmltape/resolver/xquery" excludes="CVS">
+          <include name="**/*.java"/>
+        </tarfileset>
+      </tar>
+       
+      <!-- RegEx on Properties File -->
+      
+      <copy file="${module.root.dir}/src/web/WEB-INF/classes/tape.properties" todir="${module.build}/web/WEB-INF/classes"/>
+      <replace file="${module.build}/web/WEB-INF/classes/tape.properties" propertyFile="${module.root.dir}/module.conf">
+        <replacefilter token="$MODULE.OAIREG" property="module.OAIRegistry"/>
+        <replacefilter token="$MODULE.SVCDIR" property="module.svcDir"/>
+      </replace>
+      
+      <copy file="${module.root.dir}/src/web/WEB-INF/web.xml" todir="${module.build}/web/WEB-INF"/>
+      <replace file="${module.build}/web/WEB-INF/web.xml">
+        <replacefilter token="$MODULE.OPENURLPROPS" value="${tomcat.webapp.dir}/${module.name}/WEB-INF/classes/tape.properties"/>
+      </replace>
+      
+      <copy todir="${module.build}/web">
+        <fileset dir="${module.root.dir}/src/web"/>
+      </copy>
+      <replace dir="${module.build}/web">
+        <replacefilter token="$MODULE_NAME" value="${module.name}"/>
+        <replacefilter token="$MODULE_VERSION" value="${module.version}"/>
+        <replacefilter token="$ADMIN_EMAIL" value="${module.admin.email}"/>
+        <replacefilter token="$TOMCAT_URL" value="${module.tomcat.url}"/>
+        <replacefilter token="$LOCAL_RFR_ID" value="${module.local.rfr.id}"/>
+      </replace>      
+
+      <war destfile="${module.dist}/${module.name}.war" webxml="${module.build}/web/WEB-INF/web.xml">
+        <classes dir="${module.root.dir}/etc/" includes="*.axq"/>
+        <fileset dir="${module.build}/web" excludes="WEB-INF/web.xml"/>
+        <!-- Define Required Modules -->
+        <lib dir="${module.dist}">
+          <include name="${final.name}.jar"/>
+        </lib>
+        <lib dir="${module.local.lib}">
+          <include name="*.jar"/>
+          <exclude name="servlet.jar"/>
+        </lib>
+        <!-- Define Required Libaries -->
+        <lib dir="${module.lib}">
+          <include name="oaiharvester-2.9.jar"/>
+          <include name="OAIHARVESTER.LICENSE"/>
+          <include name="log4j-1.2.8.jar"/>
+          <include name="LOG4J.LICENSE"/>
+          <include name="openurl.jar"/>
+          <include name="OPENURL.LICENSE"/>
+          <include name="saxon8.jar"/>
+          <include name="SAXON.LICENSE"/>
+          <include name="nux.jar"/>
+          <include name="NUX.LICENSE"/>
+          <include name="xom.jar"/>
+          <include name="XOM.LICENSE"/>
+          <include name="xercesImpl.jar"/>
+          <include name="XERCESIMPL.LICENSE"/>
+        </lib>
+      </war>
+    </target>
+
+    <target name="deploy" depends="init">
+      <copy file="${module.dist}/${module.name}.war" todir="${tomcat.webapp.dir}"/>
+    </target>
+
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <target name="clean" depends="init" description="Destroys all generated files and dirs." >
+        <delete dir="${module.build}"/>
+        <delete dir="${module.dist}"/>
+        <delete dir="${module.doc}"/>
+    </target>
+    
+    <!-- create javadoc -->
+    <target name="javadoc" depends="init">
+        <javadoc
+             destdir="${module.doc}"
+             author="true"
+             version="true"
+             use="true"
+             windowtitle="XMLTape OpenURL XQuery API">
+        <classpath refid="local.classpath" />
+        <classpath refid="module.classpath" />
+        <fileset dir="${module.src}/gov/lanl/util">
+          <include name="sru/**/*.java"/>
+          <include name="xquery/*.java"/>
+          <include name="xml/*.java"/>
+        </fileset>
+        <fileset dir="${module.src}/gov/lanl/xmltape/resolver/xquery">
+          <include name="**/*.java"/>
+        </fileset>
+       
+        <doctitle><![CDATA[<h1>XMLTape OpenURL XQuery Resolver</h1>]]></doctitle>
+        <bottom><![CDATA[<i>Copyright &#169; 2007 LANL All Rights Reserved.</i>]]></bottom>
+      </javadoc>
+    </target>
+
+</project>

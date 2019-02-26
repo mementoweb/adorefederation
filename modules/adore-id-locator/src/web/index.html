@@ -1,0 +1,276 @@
+<html>
+ <head><title>Identifier Locator</title></head>
+<style>
+  H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} 
+  H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} 
+  H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} 
+  BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} 
+  B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} 
+  P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:9px;}
+  A {color : black;}
+  A.name {color : black;}
+  HR {color : #525D76;}  
+  table {width: 100%;}
+  td.page-title {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: white;
+    color: black;
+  }
+  td.title {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-style:italic;
+    font-weight: bold;
+    background: #D2A41C;
+  }
+  td.title-sub-openurl {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #6699FF;
+  }
+  td.title-sub-oai {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FF0000;
+  }
+  td.header-left {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  td.header-center {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  td.row-left {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-left-middle {
+    text-align: left;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-center {
+    text-align: center;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-right {
+    text-align: right;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  TH {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  div.inside_div {
+    text-align: left;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  a.h3:link {color: #FFFFFF}
+  a.h3:visited {color: #FFFFFF}
+</style>
+ <body>
+ <script type="text/javascript">
+    
+    function $() {
+      var elements = new Array();
+
+      for (var i = 0; i < arguments.length; i++) {
+          var element = arguments[i];
+   
+          if (typeof element == 'string')
+              element = document.getElementById(element);
+
+          if (arguments.length == 1)
+              return element;
+
+          elements.push(element);
+      }
+
+      return elements;
+    }
+    
+    function stripUri(uri) {
+        return uri.substring(uri.lastIndexOf('/') + 1);
+    }
+
+    function getOpenURLServiceId(profile) {
+      var adore1 = "info:lanl-repo/svc/getDIDL";
+      var adore2 = "info:lanl-repo/svc/locate.sru";
+      var adore3 = "info:lanl-repo/svc/identifiers.list";
+      var adore4 = "info:lanl-repo/svc/getDatastream";
+      var adore5 = "info:lanl-repo/svc/toc";
+      var adore6 = "info:lanl-repo/svc/ockham";
+      if (profile == "info:lanl-repo/int/openurl-aDORe1")
+         return adore1;
+      if (profile == "info:lanl-repo/int/openurl-aDORe2")
+         return adore2;
+      if (profile == "info:lanl-repo/int/openurl-aDORe3")
+         return adore3;
+      if (profile == "info:lanl-repo/int/openurl-aDORe4")
+         return adore4;
+      if (profile == "info:lanl-repo/int/openurl-aDORe5")
+         return adore5;
+      if (profile == "info:lanl-repo/int/openurl-aDORe6")
+         return adore6;
+    }
+
+    function getRftId(repoUri, profile, rft_id) {
+      if (profile == "info:lanl-repo/int/openurl-aDORe3" || profile == "info:lanl-repo/int/openurl-aDORe7")
+           return repoUri;
+      else
+           return rft_id;
+    }
+
+    function makeOpenURLArgs(rft_id, svc_id, rft_version, svc_args) {
+      var args = "url_ver=Z39.88-2004";
+      if (!rft_id) {
+          alert('Referent Identifier Missing');
+          return false;
+      } else if (!svc_id) {
+          alert('Referent Identifier Missing');
+          return false;
+      } else {
+          args += "&rft_id=" + encode(rft_id);
+          args += "&svc_id=" + svc_id;
+          if (rft_version) {
+             args += "&rft_val_fmt=info:ofi/fmt:kev:mtx:adore";
+             args += "&rft.version=" + rft_version;
+          }
+          if (svc_args) {
+             args += "&svc_val_fmt=info:ofi/fmt:kev:mtx:adore";
+             args += "&svc_args=" + svc_args;
+          }
+      }
+      return args;
+    }
+
+    function encode( uri ) {
+        if (encodeURIComponent) {
+            return encodeURIComponent(uri);
+        }
+        if (escape) {
+            return escape(uri);
+        }
+    }
+    
+    function hideDiv( element ) {
+      var e = $(element);
+
+      if (e) {
+          e.style.display = 'none';
+      }
+    }
+    
+    function launch(baseUrl, args) {
+      url = baseUrl + '?' + args;
+      xml = window.open(url, 'xml', 'left=20,top=20,width=800,height=500,toolbar=0,resizable=1,location=1,scrollbars=1');
+      if (window.focus) {xml.focus()}
+    }
+    
+// ID Locator ////////////////////////////////////////////////////////////////////////////
+
+var idLocatorOpenUrl = "$TOMCAT_URL/adore-id-locator/resolver";
+var idLocatorSvcId = "info:lanl-repo/svc/locate.sru";
+
+// OpenURL Accessor
+function getIdLocatorOpenUrlXMLText(rft_id) {
+    launch(idLocatorOpenUrl,makeOpenURLArgs(rft_id, idLocatorSvcId, null, null));
+}
+
+// OpenURL Request Div
+function getIdLocatorOpenUrlRequest(rft_id) {
+    var div = "";
+    var args = '?' + makeOpenURLArgs(rft_id, idLocatorSvcId, null, null);
+    
+    if (args == '?false')
+        return false;
+    
+    div += "<table width=600>";
+    div += "<tr><td class=\"row-right\"><a href=\"#\" onclick=\"hideDiv('idLocatorOpenUrl_div');return false;\"><small>[hide]</small></a></td></tr>";
+    div += "<tr><td  class=\"row-left\"><small>ID Locator OpenUrl Request URL:</small></td></tr>";
+    div += "<tr><td  class=\"row-left\"><a href=\"" + idLocatorOpenUrl + args + "\" target=\"xml\"><small>" + idLocatorOpenUrl + args + "</small></a></td></tr>";
+    div += "</table>";
+    var idLocatorOpenUrl_div = document.getElementById("idLocatorOpenUrl_div");
+
+    if (idLocatorOpenUrl_div) {
+      idLocatorOpenUrl_div.innerHTML = div;
+      idLocatorOpenUrl_div.style.display = 'block';
+    }
+}
+
+function clearIDLocatorXML() {
+    alert("Please enter an identifier...");
+}
+
+  </script>
+<center>
+<p>
+<table border="1">
+<tr>
+ <td colspan="3" class="title-sub-openurl">ID Locator (OpenURL)<a name="idlocator">&nbsp;</a></td>
+
+</tr>
+<tr>
+ <td colspan="3">
+        <table>
+                 <div class = "inside_div" id = "div_idLoc">
+                 <tr>
+                    <td width="200" class="row-left-middle"><small>Enter Referent Identifier:</small></td>
+                    <td class="row-left-middle" width="425"><input id = "val_idLoc_rft_id" type = "text" name = "idLoc_rft_id" size = 50 maxlength = 150></td>
+                    <td class="row-left-middle">
+
+                         <a href="#" onclick="getIdLocatorOpenUrlXMLText(document.getElementById('val_idLoc_rft_id').value);return false;"><small>Get Response</small></a>
+                         &nbsp;
+                         <a href="#" onclick="getIdLocatorOpenUrlRequest(document.getElementById('val_idLoc_rft_id').value);return false;"><small>View Request</small></a>
+                    </td>
+                 </tr>
+                 <tr>
+                     <td width="200" class="row-left-middle"><small>Select a Service Profile:</small></td>
+                     <td class="row-left-middle" colspan="2">
+                         <select id="val_idLoc_svc_id">
+                         <option value="info:lanl-repo/svc/identifiers.list">info:lanl-repo/int/openurl-aDORe2</option>
+
+                         </select>
+                    </td>
+                 </tr>
+                     <div style = "display:none;position:absolute;WIDTH:700px;overflow:auto;border-style:solid;background-color:white;padding:5px;" id = "idLocatorOpenUrl_div"></div></div>
+                 </div>
+        </table>
+ </td>
+</tr>
+</table>
+</center>
+<table>
+<tr>
+<td align="left"><small>Contact: $ADMIN_EMAIL</small></td> 
+<td align="right"><small>$MODULE_NAME: $MODULE_VERSION</small></td>
+</tr> 
+ </body>
+</html>

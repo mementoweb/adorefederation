@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<didl:DIDL DIDLDocumentId="info:lanl-repo/i/7ac69d14-21ab-11da-9de5-c11b6cd85594" diext:DIDLDocumentCreated="2005-09-12T22:29:19Z" xsi:schemaLocation="urn:mpeg:mpeg21:2002:02-DIDL-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/did/didl.xsd http://library.lanl.gov/2005-08/aDORe/DIDLextension/ http://purl.lanl.gov/aDORe/schemas/2005-08/DIDLextension.xsd" xmlns:didl="urn:mpeg:mpeg21:2002:02-DIDL-NS" xmlns:diext="http://library.lanl.gov/2005-08/aDORe/DIDLextension/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<didl:Item id="uuid-552309cc-46a4-4e41-96d6-a82294321b42">
+<didl:Descriptor>
+<didl:Statement mimeType="application/xml; charset=utf-8">
+<dii:Identifier xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS">info:doi/10.1016/S0140-6736(04)16640-3</dii:Identifier>
+</didl:Statement>
+</didl:Descriptor>
+<didl:Descriptor>
+<didl:Statement mimeType="application/xml; charset=utf-8">
+<diadm:Admin xsi:schemaLocation="http://library.lanl.gov/2004-01/STB-RL/DIADM http://purl.lanl.gov/STB-RL/schemas/2004-01/DIADM.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diadm="http://library.lanl.gov/2004-01/STB-RL/DIADM">
+<dcterms:isPartOf xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcterms="http://purl.org/dc/terms/">info:sid/library.lanl.gov:sciserver</dcterms:isPartOf>
+<dc:format xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/">info:lanl-repo/pro/publication</dc:format>
+<dc:rights xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/">copyright SCISERVER</dc:rights>
+</diadm:Admin>
+</didl:Statement>
+</didl:Descriptor>
+<didl:Item id="uuid-ad5f6d47-d14f-434d-84b5-2838bcfa6e4f">
+<didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8">
+<dii:Identifier xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS">info:lanl-repo/ssm/doi-10.1016/S0140-6736(04)16640-3</dii:Identifier>
+</didl:Statement>
+</didl:Descriptor>
+<didl:Descriptor>
+<didl:Statement mimeType="application/xml; charset=utf-8"><diadm:Admin xsi:schemaLocation="http://library.lanl.gov/2004-01/STB-RL/DIADM http://purl.lanl.gov/STB-RL/schemas/2004-01/DIADM.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diadm="http://library.lanl.gov/2004-01/STB-RL/DIADM"><dc:type xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/">http://purl.org/dc/terms/bibliographicCitation</dc:type><dc:format xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/">info:lanl-repo/pro/metadata</dc:format></diadm:Admin></didl:Statement></didl:Descriptor><didl:Component id="uuid-e685c724-a0a4-413d-b617-51a7177382ae"><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><dii:Identifier xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS">info:lanl-repo/ds/8ccef322-5a0b-4907-9de3-9147fd283a6c</dii:Identifier></didl:Statement></didl:Descriptor><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><pre:object xsi:schemaLocation="http://www.loc.gov/standards/premis http://www.loc.gov/standards/premis/Object-v1-0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pre="http://www.loc.gov/standards/premis"><pre:objectIdentifier><pre:objectIdentifierType>URI</pre:objectIdentifierType><pre:objectIdentifierValue>info:lanl-repo/ds/8ccef322-5a0b-4907-9de3-9147fd283a6c</pre:objectIdentifierValue></pre:objectIdentifier><pre:objectCategory>File</pre:objectCategory><pre:objectCharacteristics><pre:compositionLevel>0</pre:compositionLevel><pre:format><pre:formatRegistry><pre:formatRegistryName>http://purl.lanl.gov/aDORe/demo/adore-format-registry/OAIHandler</pre:formatRegistryName><pre:formatRegistryKey>info:lanl-repo/fmt/3</pre:formatRegistryKey></pre:formatRegistry></pre:format></pre:objectCharacteristics><pre:creatingApplication><pre:dateCreatedByApplication>2005-09-10T03:32:14Z</pre:dateCreatedByApplication></pre:creatingApplication><pre:storage><pre:storageMedium>Hard disk</pre:storageMedium></pre:storage></pre:object></didl:Statement></didl:Descriptor><didl:Resource ref="http://purl.lanl.gov/aDORe/demo/adore-arcfile-resolver/resolver?res_id=info:lanl-repo/arc/2004_09e1f27a-239e-11da-9e1e-d8ccd1d6c8f2&amp;rfr_id=info:sid/library.lanl.gov&amp;url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/8ccef322-5a0b-4907-9de3-9147fd283a6c" mimeType="application/xml"></didl:Resource><didl:Resource mimeType="application/xml; charset=utf-8"><record xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd" xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<leader>00000nab  2200000za 4500</leader>
+<controlfield tag="001">doi-10.1016/S0140-6736(04)16640-3</controlfield>
+<controlfield tag="005">2005-09-09-T18:25:21Z</controlfield>
+<datafield tag="022" ind1=" " ind2=" ">
+   <subfield code="a">0140-6736</subfield>
+</datafield>
+<datafield tag="024" ind1="7" ind2=" ">
+   <subfield code="a">S0140-6736(04)16640-3</subfield>
+   <subfield code="2">SRV : ID : article[1]/artid[1] type=pii</subfield>
+</datafield>
+<datafield tag="024" ind1="7" ind2=" ">
+   <subfield code="a">10.1016/S0140-6736(04)16640-3</subfield>
+   <subfield code="2">SRV : ID : article[1]/artid[2] type=doi</subfield>
+</datafield>
+<datafield tag="024" ind1="7" ind2=" ">
+   <subfield code="a">16640</subfield>
+   <subfield code="2">SRV : ID : article[1]/artid[3] type=aid</subfield>
+</datafield>
+<datafield tag="024" ind1="7" ind2=" ">
+   <subfield code="a">01406736</subfield>
+   <subfield code="2">SRV : ID : journal[1]/jid[1]/@id</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+   <subfield code="a">doi-10.1016/S0140-6736(04)16640-3</subfield>
+</datafield>
+<datafield tag="037" ind1=" " ind2=" ">
+   <subfield code="a">OXM03830</subfield>
+   <subfield code="b">sdos</subfield>
+</datafield>
+<datafield tag="040" ind1=" " ind2=" ">
+   <subfield code="a">SCISERVER</subfield>
+</datafield>
+<datafield tag="041" ind1="0" ind2="7">
+   <subfield code="a">eng</subfield>
+   <subfield code="2">ISO639-2</subfield>
+</datafield>
+<datafield tag="245" ind1="1" ind2="0">
+   <subfield code="a">Granulomatous amoebic encephalitis</subfield>
+</datafield>
+<datafield tag="260" ind1=" " ind2=" ">
+   <subfield code="b">Elsevier Science</subfield>
+   <subfield code="c">July 10 - 16 2004</subfield>
+</datafield>
+<datafield tag="300" ind1=" " ind2=" ">
+   <subfield code="a">220</subfield>
+</datafield>
+<datafield tag="363" ind1=" " ind2=" ">
+   <subfield code="a">364</subfield>
+   <subfield code="b">9429</subfield>
+   <subfield code="p">220</subfield>
+</datafield>
+<datafield tag="546" ind1=" " ind2=" ">
+   <subfield code="a">en</subfield>
+</datafield>
+<datafield tag="655" ind1=" " ind2="7">
+   <subfield code="a">sco</subfield>
+   <subfield code="2">SRV : DOCUMENTTYPE : article[1]/@artty</subfield>
+</datafield>
+<datafield tag="655" ind1=" " ind2="7">
+   <subfield code="a">journals</subfield>
+   <subfield code="2">SRV : LOAD : load[1]/data-info[1]/@data-type</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+   <subfield code="a">White, JML</subfield>
+   <subfield code="c">Dr</subfield>
+   <subfield code="c">MRCP</subfield>
+   <subfield code="u"> Department of Dermatology King&amp;apos;s College Hospital, Denmark Hill, London, UK </subfield>
+   <subfield code="g">Jonathan.White@kingsch.nhs.uk</subfield>
+   <subfield code="e">author</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+   <subfield code="a">Barker, RD</subfield>
+   <subfield code="c">MD</subfield>
+   <subfield code="u"> Department of Medicine King&amp;apos;s College Hospital, Denmark Hill, London, UK </subfield>
+   <subfield code="e">author</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+   <subfield code="a">Salisbury, JR</subfield>
+   <subfield code="c">FRCPath</subfield>
+   <subfield code="u"> Department of Histopathology King&amp;apos;s College Hospital, Denmark Hill, London, UK </subfield>
+   <subfield code="e">author</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+   <subfield code="a">Fife, AJ</subfield>
+   <subfield code="c">MRCPath</subfield>
+   <subfield code="u"> Department of Microbiology King&amp;apos;s College Hospital, Denmark Hill, London, UK </subfield>
+   <subfield code="e">author</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+   <subfield code="a">Lucas, SB</subfield>
+   <subfield code="c">FRCP</subfield>
+   <subfield code="u"> Department of Histopathology, St Thomas&amp;apos;s Hospital, Lambeth Palace Road, London, UK </subfield>
+   <subfield code="e">author</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+   <subfield code="a">Warhurst, DC</subfield>
+   <subfield code="c">PhD</subfield>
+   <subfield code="u">LSHTM Diagnostic Parasitology Laboratory London School of Hygiene and Tropical Medicine, Keppel Street, London WC1E 7HT, UK</subfield>
+   <subfield code="e">author</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+   <subfield code="a">Higgins, EM</subfield>
+   <subfield code="c">FRCP</subfield>
+   <subfield code="u"> Department of Dermatology King&amp;apos;s College Hospital, Denmark Hill, London, UK </subfield>
+   <subfield code="e">author</subfield>
+</datafield>
+<datafield tag="773" ind1="0" ind2=" ">
+   <subfield code="g">vol. 364, no. 9429</subfield>
+   <subfield code="d">July 10 - 16 2004</subfield>
+   <subfield code="n">Journal</subfield>
+   <subfield code="q">364:9429&lt;220</subfield>
+   <subfield code="t">The Lancet</subfield>
+   <subfield code="x">0140-6736</subfield>
+</datafield>
+<datafield tag="856" ind1="7" ind2="2">
+   <subfield code="d">url_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Flibrary%2Elanl%2Egov%3Asciserver&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft_id=info%3Alanl%2Drepo%2Fssm%2Fdoi%2D10%2E1016%2FS0140%2D6736%2804%2916640%2D3&amp;rft_id=info%3Adoi%2F10%2E1016%2FS0140%2D6736%2804%2916640%2D3&amp;rft.issn=0140%2D6736&amp;rft.aulast=White&amp;rft.auinit1=J&amp;rft.date=2004&amp;rft.atitle=Granulomatous%20amoebic%20encephalitis&amp;rft.title=The%20Lancet&amp;rft.volume=364&amp;rft.issue=9429&amp;rft.pages=220&amp;rft.genre=article&amp;rft.spage=220&amp;rft.epage=220</subfield>
+   <subfield code="2">OpenURL</subfield>
+</datafield>
+</record></didl:Resource></didl:Component><didl:Component id="uuid-126f792b-caac-4ab3-b599-11f8ddb653e1"><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><dii:Identifier xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS">info:lanl-repo/ds/1ca4e76d-4909-426b-a1eb-9f445e25bd08</dii:Identifier></didl:Statement></didl:Descriptor><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><pre:object xsi:schemaLocation="http://www.loc.gov/standards/premis http://www.loc.gov/standards/premis/Object-v1-0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pre="http://www.loc.gov/standards/premis"><pre:objectIdentifier><pre:objectIdentifierType>URI</pre:objectIdentifierType><pre:objectIdentifierValue>info:lanl-repo/ds/1ca4e76d-4909-426b-a1eb-9f445e25bd08</pre:objectIdentifierValue></pre:objectIdentifier><pre:objectCategory>File</pre:objectCategory><pre:objectCharacteristics><pre:compositionLevel>0</pre:compositionLevel><pre:format><pre:formatRegistry><pre:formatRegistryName>http://purl.lanl.gov/aDORe/demo/adore-format-registry/OAIHandler</pre:formatRegistryName><pre:formatRegistryKey>info:lanl-repo/fmt/521</pre:formatRegistryKey></pre:formatRegistry></pre:format></pre:objectCharacteristics><pre:creatingApplication><pre:dateCreatedByApplication>2005-09-09-T18:25:21Z</pre:dateCreatedByApplication></pre:creatingApplication><pre:storage><pre:storageMedium>Hard disk</pre:storageMedium></pre:storage></pre:object></didl:Statement></didl:Descriptor><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><diadm:Admin xsi:schemaLocation="http://library.lanl.gov/2004-01/STB-RL/DIADM http://purl.lanl.gov/STB-RL/schemas/2004-01/DIADM.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diadm="http://library.lanl.gov/2004-01/STB-RL/DIADM"><dcterms:isFormatOf xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcterms="http://purl.org/dc/terms/">http://sciserver.lanl.gov/cgi-bin/sciserv.pl?collection=journals&amp;journal=01406736&amp;issue=v364i9429&amp;article=220_gae&amp;form=xml</dcterms:isFormatOf></diadm:Admin></didl:Statement></didl:Descriptor><didl:Resource ref="http://purl.lanl.gov/aDORe/demo/adore-arcfile-resolver/resolver?res_id=info:lanl-repo/arc/2004_09e1f27a-239e-11da-9e1e-d8ccd1d6c8f2&amp;rfr_id=info:sid/library.lanl.gov&amp;url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/1ca4e76d-4909-426b-a1eb-9f445e25bd08" mimeType="application/xml"></didl:Resource></didl:Component></didl:Item><didl:Component id="uuid-23a817f4-1409-4d6e-b1b1-b7726cf6521e"><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><dii:Identifier xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS">info:lanl-repo/ds/afde66b3-f6c8-4765-a6c3-8a040e717897</dii:Identifier></didl:Statement></didl:Descriptor><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><diadm:Admin xsi:schemaLocation="http://library.lanl.gov/2004-01/STB-RL/DIADM http://purl.lanl.gov/STB-RL/schemas/2004-01/DIADM.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diadm="http://library.lanl.gov/2004-01/STB-RL/DIADM"><dcterms:isFormatOf xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcterms="http://purl.org/dc/terms/">http://sciserver.lanl.gov/cgi-bin/sciserv.pl?collection=journals&amp;journal=01406736&amp;issue=v364i9429&amp;article=220_gae&amp;form=pdf</dcterms:isFormatOf></diadm:Admin></didl:Statement></didl:Descriptor><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><pre:object xsi:schemaLocation="http://www.loc.gov/standards/premis http://www.loc.gov/standards/premis/Object-v1-0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pre="http://www.loc.gov/standards/premis"><pre:objectIdentifier><pre:objectIdentifierType>URI</pre:objectIdentifierType><pre:objectIdentifierValue>info:lanl-repo/ds/afde66b3-f6c8-4765-a6c3-8a040e717897</pre:objectIdentifierValue></pre:objectIdentifier><pre:objectCategory>File</pre:objectCategory><pre:objectCharacteristics><pre:compositionLevel>0</pre:compositionLevel><pre:size>140091</pre:size><pre:format><pre:formatRegistry><pre:formatRegistryName>http://purl.lanl.gov/aDORe/demo/adore-format-registry/OAIHandler</pre:formatRegistryName><pre:formatRegistryKey>info:lanl-repo/fmt/5</pre:formatRegistryKey></pre:formatRegistry></pre:format></pre:objectCharacteristics><pre:storage><pre:storageMedium>Hard disk</pre:storageMedium></pre:storage></pre:object></didl:Statement></didl:Descriptor><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><dsig:Signature xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+<dsig:SignedInfo>
+<dsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></dsig:CanonicalizationMethod>
+<dsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></dsig:SignatureMethod>
+<dsig:Reference URI="http://purl.lanl.gov/aDORe/demo/adore-arcfile-resolver/resolver?res_id=info:lanl-repo/arc/2004_09e1f27a-239e-11da-9e1e-d8ccd1d6c8f2&amp;rfr_id=info:sid/library.lanl.gov&amp;url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/afde66b3-f6c8-4765-a6c3-8a040e717897">
+<dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></dsig:DigestMethod>
+<dsig:DigestValue>m8YULWmRHlkB1isFM7L/UKynsAc=</dsig:DigestValue>
+</dsig:Reference>
+</dsig:SignedInfo>
+<dsig:SignatureValue>
+BN5idwxEm0/Y+TZ8xjcvl5uZPYTVnW67K+mJUKK7nw9sjgM5sS8/vBRkG62/tmR1C29uCrCliRwJ
+3dMl9DirqbsMG6hp8ilaXQZ4oXkfyNWN2BtGsrdrKEND/WFUi98hQrmS7OgjswAlw3azq+CretZd
+Ns2eea9M3fwbcdP4c3Q=
+</dsig:SignatureValue>
+<dsig:KeyInfo>
+<dsig:RetrievalMethod Type="http://www.w3.org/2000/09/xmldsig#X509Data" URI="http://purl.lanl.gov/aDORe/demo/adore-xmltape-registry/exported.crt"></dsig:RetrievalMethod>
+</dsig:KeyInfo>
+</dsig:Signature></didl:Statement></didl:Descriptor><didl:Resource ref="http://purl.lanl.gov/aDORe/demo/adore-arcfile-resolver/resolver?res_id=info:lanl-repo/arc/2004_09e1f27a-239e-11da-9e1e-d8ccd1d6c8f2&amp;rfr_id=info:sid/library.lanl.gov&amp;url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/afde66b3-f6c8-4765-a6c3-8a040e717897" mimeType="application/pdf"></didl:Resource></didl:Component><didl:Component id="uuid-aa9b113f-144f-449c-a66b-bfa0172b8758"><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><dii:Identifier xsi:schemaLocation="urn:mpeg:mpeg21:2002:01-DII-NS http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS">info:lanl-repo/ds/1b1c7ffc-8d34-4476-a00d-a0602100c23f</dii:Identifier></didl:Statement></didl:Descriptor><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><diadm:Admin xsi:schemaLocation="http://library.lanl.gov/2004-01/STB-RL/DIADM http://purl.lanl.gov/STB-RL/schemas/2004-01/DIADM.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diadm="http://library.lanl.gov/2004-01/STB-RL/DIADM"><dcterms:isFormatOf xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcterms="http://purl.org/dc/terms/">http://sciserver.lanl.gov/cgi-bin/sciserv.pl?collection=journals&amp;journal=01406736&amp;issue=v364i9429&amp;article=220_gae&amp;form=fulltext</dcterms:isFormatOf></diadm:Admin></didl:Statement></didl:Descriptor><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><pre:object xsi:schemaLocation="http://www.loc.gov/standards/premis http://www.loc.gov/standards/premis/Object-v1-0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pre="http://www.loc.gov/standards/premis"><pre:objectIdentifier><pre:objectIdentifierType>URI</pre:objectIdentifierType><pre:objectIdentifierValue>info:lanl-repo/ds/1b1c7ffc-8d34-4476-a00d-a0602100c23f</pre:objectIdentifierValue></pre:objectIdentifier><pre:objectCategory>File</pre:objectCategory><pre:objectCharacteristics><pre:compositionLevel>0</pre:compositionLevel><pre:size>140091</pre:size><pre:format><pre:formatRegistry><pre:formatRegistryName>http://purl.lanl.gov/aDORe/demo/adore-format-registry/OAIHandler</pre:formatRegistryName><pre:formatRegistryKey>info:lanl-repo/fmt/464</pre:formatRegistryKey></pre:formatRegistry></pre:format></pre:objectCharacteristics><pre:storage><pre:storageMedium>Hard disk</pre:storageMedium></pre:storage></pre:object></didl:Statement></didl:Descriptor><didl:Descriptor><didl:Statement mimeType="application/xml; charset=utf-8"><dsig:Signature xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+<dsig:SignedInfo>
+<dsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></dsig:CanonicalizationMethod>
+<dsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></dsig:SignatureMethod>
+<dsig:Reference URI="http://purl.lanl.gov/aDORe/demo/adore-arcfile-resolver/resolver?res_id=info:lanl-repo/arc/2004_09e1f27a-239e-11da-9e1e-d8ccd1d6c8f2&amp;rfr_id=info:sid/library.lanl.gov&amp;url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/1b1c7ffc-8d34-4476-a00d-a0602100c23f">
+<dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></dsig:DigestMethod>
+<dsig:DigestValue>JSD4eZdjprxD/O1On/1BGegPWX4=</dsig:DigestValue>
+</dsig:Reference>
+</dsig:SignedInfo>
+<dsig:SignatureValue>
+SEm4bYOVJgdNHBd0GT39aihPSBbtRJG9SwPDLObVZFdSMa0Zia1cBTjCK+/H/gYgtiVIWpXq8U99
+X56RhVD99gFNC7bnHmGC+SKQVfVoYTDqTEN29KAegDu3bHf1oOgK5GQQfhai/gJAvPRrYpe03ci9
+qULYDc03muv6cvhx9Bc=
+</dsig:SignatureValue>
+<dsig:KeyInfo>
+<dsig:RetrievalMethod Type="http://www.w3.org/2000/09/xmldsig#X509Data" URI="http://purl.lanl.gov/aDORe/demo/adore-xmltape-registry/exported.crt"></dsig:RetrievalMethod>
+</dsig:KeyInfo>
+</dsig:Signature></didl:Statement></didl:Descriptor><didl:Resource ref="http://purl.lanl.gov/aDORe/demo/adore-arcfile-resolver/resolver?res_id=info:lanl-repo/arc/2004_09e1f27a-239e-11da-9e1e-d8ccd1d6c8f2&amp;rfr_id=info:sid/library.lanl.gov&amp;url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/1b1c7ffc-8d34-4476-a00d-a0602100c23f" mimeType="text/html"></didl:Resource></didl:Component></didl:Item></didl:DIDL>

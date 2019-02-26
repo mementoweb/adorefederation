@@ -1,0 +1,31 @@
+/**
+*Adore XMLTape Resolver
+*/
+
+----------------------
+Requirements
+----------------------
+- Java 1.5
+- Tomcat 5.5+
+
+----------------------
+Installation
+----------------------
+1. Copy adore-xmltape-resolver to a location of your choosing
+
+2. Configure the following in module.conf:
+
+* module.lib - Define path to lib directory containing project jars (i.e. lib)
+* module.src - Define path to src directory containing project source files (i.e. src)
+* module.OAIRegistry - Define base url for arcfile registry webapp (i.e. http://library.lanl.gov/aDORe/demo/adore-arcfile-registry/OAIHandler)
+* module.TapeIdxPlugin - Define the XMLtape Index implementation (i.e. gov.lanl.xmltape.index.BasicTapeIndex)
+* module.IdIdxPlugin - Define the XMLtape Identifier Index implementation (i.e. gov.lanl.xmltape.identifier.index.jdbImpl.IdentifierIndex)
+* module.tomcat.url - Define the base url of the resolver Tomcat instance (i.e. http://library.lanl.gov:8080)
+* module.local.rfr.id - Define your local OpenURL Referrer (i.e. id info:sid/library.lanl.gov)
+* module.admin.email - Define admin e-mail contact (i.e. mailto:rchute@lanl.gov)
+* tomcat.home - Define path to tomcat home directory (i.e. /opt/jakarta-tomcat-5.5.9)
+
+3. Run "ant -f build-standalone.xml build" to build project
+
+4. Run "ant -f build-standalone.xml deploy" to copy war to Tomcat WEB-APPS directory.
+

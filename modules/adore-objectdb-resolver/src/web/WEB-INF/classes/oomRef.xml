@@ -1,0 +1,34 @@
+<config xmlns="info:collections/oomImpls/oomRef">
+	<processor>
+		<className>org.oclc.oomRef.OpenURLRequestProcessorImpl</className>
+	</processor>
+	<profiles>
+		<!-- Registry Framework Architecture -->
+		<registry-identifier>info:ofi/pro:sap1-2004</registry-identifier>
+	</profiles>
+	<transportMap>
+		<transport>
+			<className>org.oclc.oomRef.transports.HttpOpenURLInlineTransport</className>
+		</transport>
+	</transportMap>
+	<serviceMap>
+		<service ID="info:lanl-repo/svc/getDIDL">
+			<className>gov.lanl.objectdb.openurl.OpenURLaDORe1Service</className>
+			<args>
+				<props>objectdb.properties</props>
+			</args>
+		</service>
+		<service ID="info:lanl-repo/svc/locate.sru">
+			<className>gov.lanl.objectdb.openurl.OpenURLaDORe2Service</className>
+			<args>
+				<props>objectdb.properties</props>
+			</args>
+		</service>
+		<service ID="info:lanl-repo/svc/identifiers.list">
+			<className>gov.lanl.objectdb.openurl.OpenURLaDORe3Service</className>
+			<args>
+				<props>objectdb.properties</props>
+			</args>
+		</service>
+	</serviceMap>
+</config>

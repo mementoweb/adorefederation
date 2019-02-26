@@ -1,0 +1,22 @@
+<config xmlns="info:collections/oomImpls/oomRef">
+	<processor>
+		<className>org.oclc.oomRef.OpenURLRequestProcessorImpl</className>
+	</processor>
+	<profiles>
+		<!-- Registry Framework Architecture -->
+		<registry-identifier>info:ofi/pro:sap1-2004</registry-identifier>
+	</profiles>
+	<transportMap>
+		<transport>
+			<className>org.oclc.oomRef.transports.HttpOpenURLInlineTransport</className>
+		</transport>
+	</transportMap>
+	<serviceMap>
+	    <service ID="info:lanl-repo/svc/ockham">
+			<className>gov.lanl.ockham.service.RegistryOpenURLService</className>
+			<args>
+				<props>ockham.properties</props>
+			</args>
+		</service>
+	</serviceMap>
+</config>

@@ -1,0 +1,10 @@
+# XQuery Processing Profile
+profile.id=info:lanl-repo/svc/mimetypes
+profile.format.1.suffix=list
+profile.format.1.class=gov.lanl.xmltape.resolver.xquery.OpenURLaDORe7ListService
+profile.format.2.suffix=sru
+profile.format.2.class=gov.lanl.xmltape.resolver.xquery.OpenURLaDORe7SRUService
+
+# XQuery Definitions
+profile.xquery=./*:DIDL/*:Item/*:Component/*:Resource/string(@mimeType)
+profile.filter.path=/ta:tape/ta:tapeRecord/ta:record

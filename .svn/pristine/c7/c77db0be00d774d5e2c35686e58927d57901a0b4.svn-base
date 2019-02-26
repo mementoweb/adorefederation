@@ -1,0 +1,37 @@
+# Configuration File For Module
+
+# Module Build Environment
+module.name=adore-service-registry
+module.version=1.1
+module.lib=/lanl/java/lib
+module.src=/lanl/java/src
+
+# Dependent Projects - Use Semi-colon (;) as delimiter
+module.depends.list=module.depends.1
+module.depends.1=adore-repo-oaidb
+module.depends.1.version=1.1
+
+# Database Specific Properties
+module.db.jdbcdriver=com.mysql.jdbc.Driver
+module.db.jdbcurl=jdbc:mysql://127.0.0.1:3306/service_registry?autoReconnect=true
+module.db.login=svc_registry
+module.db.passwd=password
+
+# Module Properties
+module.tomcat.url=http://localhost:8080
+module.local.rfr.id=info:sid/library.lanl.gov
+module.admin.email=mailto:rchute@lanl.gov
+module.prefix=oai_iesr
+module.nspace=http://iesr.ac.uk/terms/#
+module.schema=http://purl.lanl.gov/adore/schemas/2007-09/iesr.xsd
+
+# Environment Properties
+adore-xmltape.ResolverURL=http://localhost:8080/adore-xmltape-resolver/resolver
+adore-xmltape.AccessorURL=http://localhost:8080/adore-archive-accessor/Handler/
+adore-arcfile.ResolverURL=http://localhost:8080/adore-arcfile-resolver/resolver
+adore-xmltape-xquery.ResolverURL=http://localhost:8080/adore-xmltape-xquery/resolver
+adore-service-registry.RegistryRecordHandlerURL=http://localhost:8080/adore-service-registry/RegistryRecordHandler
+adore-service-registry.OAIURL=http://localhost:8080/adore-service-registry/OAIHandler
+
+# System Properties
+tomcat.home=/opt/apache-tomcat-5.5.23

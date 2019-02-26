@@ -1,0 +1,10 @@
+DIDAPI Change Log
+
+$Id: CHANGES,v 1.1.1.1 2006/10/13 03:04:16 liu_x Exp $
+1.1.0 2006-10-04
+- allow property config in DIDLSerializerType, primarily used for schemaLocation customization
+- generate self-complete xml fragment while parsing (namespace)
+
+
+1.0.1 2006-04-xx
+First opensource release

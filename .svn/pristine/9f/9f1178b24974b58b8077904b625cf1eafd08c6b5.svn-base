@@ -1,0 +1,11 @@
+Files
+=====
+env.sh 
+	all environment variable setup should occur in this file.
+
+simple.sh 
+	Simple harvester which dumps output to stdout.
+
+write2tape.sh
+	Write harvested results to xmltape, harvest parameters 
+	are defined by a harvest project.

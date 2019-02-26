@@ -1,0 +1,27 @@
+# Configuration File For Module
+
+# Module Build Environment
+module.name=adore-objectdb-accessor
+module.version=1.1
+module.lib=@module.lib@
+module.src=@module.src@
+
+# Dependent Projects - Use Semi-colon (;) as delimiter
+module.depends.list=module.depends.1
+module.depends.1=adore-repo-oaidb
+module.depends.1.version=1.1
+
+# Module Specific Properties
+module.nspace=urn:mpeg:mpeg21:2002:02-DIDL-NS
+module.schema=http://purl.lanl.gov/aDORe/schemas/2006-09/DIDL.xsd
+module.baseurl=@module.baseurl@
+module.db.jdbcdriver=com.mysql.jdbc.Driver
+module.db.jdbcurl=@module.db.jdbcurl@
+module.db.login=@module.db.login@
+module.db.passwd=@module.db.passwd@
+module.admin.email=@module.admin.email@
+module.prefix=object
+module.ididxplugin=gov.lanl.identifier.record.didl.DidlRecordDOM
+
+# System Properties
+tomcat.home=@tomcat.home@

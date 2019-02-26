@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- fk 20070820  created key list based to map document types for datasets-->
+
+<!-- keyfile - map document types for EIX -->
+<DB xmlns:fo="http://www.w3.org/1999/XSL/Format">
+	<DocumentTypes db="EIX">
+		<DocType code="JA">Journal article</DocType>
+		<DocType code="CA">Conference article</DocType>
+		<DocType code="CP">Conference proceeding</DocType>
+		<DocType code="PA">Patent</DocType>
+		<DocType code="MR">Monograph review</DocType>
+		<DocType code="MC">Monograph chapter</DocType>
+		<DocType code="PP">Preprint</DocType>
+		<DocType code="RR">Research report</DocType>
+		<DocType code="UP">Unpublished paper</DocType>
+		<DocType code="DS">Dissertation</DocType>
+		<DocType code="RC">Report chapter</DocType>
+		<DocType code="ST">Standard</DocType>
+	</DocumentTypes>
+
+</DB>

@@ -1,0 +1,29 @@
+Open Issues
+======
+
+
+- allow customization (prolog, etc) in DIDL XML serialization.
+
+- allow (de)serialization any DIDL element.
+
+- validation of DIDL.
+
+- ability to create didl elements from any DIDLBaseType not just DIDL's
+
+- get access to the DIDLRegistry and change its behaviour
+
+- addItem(didl.newItem()) can be directly supported by addItem() 
+
+- Should the InnerClass info.repo.didl.impl.AbstractAttributes.Entry still be there, or can we remove it?
+
+- I also notice an issue with AttributeType, this is demonstrated by running:
+ Counter ex/didl03.xml
+ In didl03.xml we have an unknown namespace "http://foo.org", in
+  this case I think we need a fallback class (simialr to ByteArray) to
+ process attributes from unknown namespaces instead of throwing an
+ exception.
+
+- Did you see this section from the JAR specification?
+http://java.sun.com/j2se/1.5.0/docs/guide/jar/jar.html#Service%20Provider
+
+This could become handy when shipping registries of DIDL(de)serializes.

@@ -1,0 +1,73 @@
+# OAICat Configuration
+
+# This paramter is optional. Comment it out if you want the code to get the baseURL
+# from the request instead. Setting it here is only necessary if your firewall messes
+# with the request in a way that alters the baseURL from your expectations.
+OAIHandler.baseURL=$MODULE.BASEURL
+
+AbstractCatalog.secondsToLive=3600
+
+# Choose one (The "Limited" version understands JDBC's Limited SQL processing)
+AbstractCatalog.oaiCatalogClassName=gov.lanl.repo.oaidb.RepoOAICatalog
+AbstractCatalog.recordFactoryClassName=gov.lanl.repo.oaidb.ResolverRecordFactory
+
+# Choose one of the following two
+#AbstractCatalog.granularity=YYYY-MM-DD
+AbstractCatalog.granularity=YYYY-MM-DDThh:mm:ssZ
+
+# Put Record Section
+Logger.Level=INFO
+OAIPMHidclass=gov.lanl.repo.oaidb.formatreg.FormatId
+OAIPMHsetsclass=gov.lanl.repo.oaidb.formatreg.FormatSets
+metadatanamespace=$MODULE.NSPACE
+schema=$MODULE.SCHEMA
+validation=on
+prefix=$MODULE.PREFIX
+
+# Here are the settings for JDBCLimitedOAICatalog
+JDBCLimitedOAICatalog.maxListSize=50
+JDBCLimitedOAICatalog.jdbcDriverName=$MODULE.DB.JDBCDRIVER
+JDBCLimitedOAICatalog.jdbcURL=$MODULE.DB.JDBCURL
+JDBCLimitedOAICatalog.jdbcLogin=$MODULE.DB.LOGIN
+JDBCLimitedOAICatalog.jdbcPasswd=$MODULE.DB.PASSWD
+JDBCLimitedOAICatalog.isPersistentConnection=true
+JDBCLimitedOAICatalog.tables=1
+JDBCLimitedOAICatalog.ns=$MODULE.NSPACE
+JDBCLimitedOAICatalog.location=$MODULE.SCHEMA
+LoggerLevel=SEVERE
+
+# SQL query tokens: \\f = from, \\u = until, \\s = set, \\i = localIdentifier, \\o = oaiIdentifier
+# \\a = row cursor, \\b = maxListSize, \\t=suffix, \\d and digest_id < 'digest'
+ 
+JDBCLimitedOAICatalog.identifierQuery=SELECT * FROM  metadata_record  WHERE   digest_id=MD5('\\o')
+JDBCLimitedOAICatalog.rangeQuery=SELECT * FROM metadata_record use index (PRIMARY)  WHERE  (oai_date >= '\\f' AND oai_date <= '\\u') and digest_id > '\\d'  order by digest_id  LIMIT \\a,\\b
+JDBCLimitedOAICatalog.rangeSetQuery=SELECT *  FROM metadata_record a, record_sets b , sets c WHERE a.digest_id=b.digest_id AND  oai_date >= '\\f' AND oai_date  <= '\\u' AND a.digest_id >'\\d'  AND b.set_id = c.set_id AND c.set_specs='\\s'  order by a.digest_id LIMIT \\a,\\b
+JDBCLimitedOAICatalog.setQuery=SELECT  *   FROM sets
+JDBCLimitedOAICatalog.setSpecQuery=select set_specs from record_sets a, sets b  where  digest_id=MD5('\\o') and a.set_id=b.set_id
+JDBCLimitedOAICatalog.aboutQuery=SELECT " " as about_value FROM metadata_format limit 1,1
+
+# JDBCLimitedOAICatalog (Set) table map
+JDBCLimitedOAICatalog.setSpecItemLabel=set_specs
+JDBCLimitedOAICatalog.aboutValueLabel=about_value
+JDBCLimitedOAICatalog.setSpecListLabel=set_specs
+JDBCLimitedOAICatalog.setNameLabel=set_name
+JDBCLimitedOAICatalog.setDescriptionLabel=set_desc
+
+# ResolverRecordFactory settings
+
+RecordFactory.identifierLabel = oai_id
+RecordFactory.datestampLabel  = oai_date
+
+
+# om Identify response values
+Identify.repositoryName=Format Registry 
+Identify.adminEmail=$MODULE.ADMIN.EMAIL
+Identify.earliestDatestamp=2000-01-01T00:00:00Z
+Identify.deletedRecord=no
+
+
+
+# Crosswalks for JDBC
+#Crosswalks.oai_dc=ORG.oclc.oai.server.crosswalk.JDBC2oai_dc
+Crosswalks.$MODULE.PREFIX=gov.lanl.repo.oaidb.blob2metadata
+Crosswalks.native=gov.lanl.repo.oaidb.blob2metadata

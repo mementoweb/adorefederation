@@ -1,0 +1,321 @@
+package gov.lanl.disseminator.matchmaker
+import gov.lanl.disseminator.DmtConstants
+import gov.lanl.disseminator.model.ContextObjectContainer
+import gov.lanl.disseminator.model.Entity
+import gov.lanl.disseminator.model.EntityIterator
+import java.util.ArrayList
+import java.util.Collections
+import java.util.List
+import java.util.HashMap
+import java.util.Date
+import  gov.lanl.util.DateUtil
+import org.apache.commons.collections.MultiMap
+import gov.lanl.disseminator.DisseminatorException
+global java.util.List l
+global org.apache.commons.collections.MultiMap mhm
+
+
+//this rule extracting marc xml executed  for all services now to support access rules
+
+        rule "meta_fragment_match"
+        salience  0
+        when
+          obj:ContextObjectContainer(referent : referent, s:serviceType)
+          eval(s.hasProperty("type"))
+          eval(s.getProperty("type").equals("meta"))
+          eval(referent.hasProperty("semantic"))
+          eval((referent.getProperty("semantic")).equals(DmtConstants.BIB))
+          eval(referent.hasProperty("format"))
+          eval((referent.getProperty("format")).equals(DmtConstants.MARC))
+        then
+          //l.add(0,(Entity)referent);
+          mhm.put("bib",(Entity)referent);
+        end
+
+        rule "cite(marcxml)_match"
+        salience  0
+        when
+          obj:ContextObjectContainer(referent : referent, s:serviceType)
+       
+          eval(s.getProperty("svc_id").startsWith(DmtConstants.getcitation))
+          eval(referent.hasProperty("semantic"))
+          eval((referent.getProperty("semantic")).equals(DmtConstants.CITATION))
+          eval(referent.hasProperty("format"))
+          eval((referent.getProperty("format")).equals(DmtConstants.MARC))
+        then
+            l.add(0,(Entity)referent);
+        end
+           rule "cite(marcxml)_match2"
+        salience  0
+        when
+          obj:ContextObjectContainer(referent : referent, s:serviceType)
+
+          eval(s.getProperty("svc_id").startsWith("info:lanl-repo/svc/cite"))
+          eval(referent.hasProperty("semantic"))
+          eval((referent.getProperty("semantic")).equals(DmtConstants.CITATION))
+          eval(referent.hasProperty("format"))
+          eval((referent.getProperty("format")).equals(DmtConstants.MARC))
+        then
+            l.add(0,(Entity)referent);
+        end
+     
+       rule "rem_service_item_match_to_get_item_identifiers"
+        salience  99         
+        when         
+          obj:ContextObjectContainer(referent : referent, s:serviceType)
+          eval(s.hasProperty("rem"))
+          eval(referent.hasProperty("item"))
+          eval((referent.getProperty("item")).equals("true"))
+        then
+         mhm.put("item",referent);
+        end
+
+
+     rule "matching_technical_report_stream_for_TR_service"
+        salience  100
+        when   
+         obj:ContextObjectContainer(referent : referent, s:serviceType)
+         eval(s.getProperty("svc_id").startsWith("info:lanl-repo/svc/getTR"))
+         eval(referent.hasProperty("semantic"))
+         eval((referent.getProperty("semantic")).equals("info:lanl-repo/sem/4"))
+         eval(referent.hasProperty("format"))
+         eval((referent.getProperty("format")).equals("info:lanl-repo/fmt/5"))
+         then
+          l.add(0,(Entity) referent);
+        end
+
+      rule "matching_technical_report_stream_for_tr_service"
+        salience  100
+        when
+         obj:ContextObjectContainer(referent : referent, s:serviceType)
+         eval(s.getProperty("svc_id").startsWith("info:lanl-repo/svc/tr"))
+         eval(referent.hasProperty("semantic"))
+         eval((referent.getProperty("semantic")).equals("info:lanl-repo/sem/4"))
+         eval(referent.hasProperty("format"))
+         eval((referent.getProperty("format")).equals("info:lanl-repo/fmt/5"))
+         then
+          l.add(0,(Entity) referent);
+        end
+
+ //  all rem rules for services  where list of services needed - permalink and resource maps     
+    rule "default_services_for_rem"
+      when
+       
+       obj:ContextObjectContainer(referent : referent, s:serviceType)
+       eval(s.hasProperty("rem"))
+       eval(s.hasProperty("recommendation"))
+        eval(s.getProperty("recommendation").equals("INTERNAL"))
+       then
+         
+         String didlv ="info:lanl-repo/svc/co.didl.view";
+         referent.addService(didlv);
+         referent.addParamToService(didlv,"title","Digital Item Declaration - Display");
+         referent.addParamToService(didlv,"present","html");
+         referent.addParamToService(didlv,"mimetype","text/html");
+         referent.addParamToService(didlv,"format",obj.getReferent().getProperty("format"));
+         referent.addParamToService(didlv,"semantic",obj.getReferent().getProperty("semantic"));
+         referent.addParamToService(didlv,"dateCreated","2007-03-26T00:00:00Z");
+        
+       
+         String didl ="info:lanl-repo/svc/co.didl";
+         referent.addService(didl);
+         referent.addParamToService(didl,"title","Digital Item Declaration - XML");
+         referent.addParamToService(didl,"mimetype","application/xml");
+         referent.addParamToService(didl,"format",obj.getReferent().getProperty("format"));
+         referent.addParamToService(didl,"semantic",obj.getReferent().getProperty("semantic"));
+         referent.addParamToService(didl,"dateCreated","2007-03-26T00:00:00Z");
+          
+         String sru= "info:lanl-repo/svc/locate.sru";
+     
+         referent.addService(sru);
+         referent.addParamToService(sru,"title","SRU - XML");
+         referent.addParamToService(sru,"mimetype","application/xml");
+         referent.addParamToService(sru,"format",obj.getReferent().getProperty("format"));
+         referent.addParamToService(sru,"semantic",obj.getReferent().getProperty("semantic"));
+         referent.addParamToService(sru,"dateCreated","2007-03-26T00:00:00Z");
+
+         String  ids="info:lanl-repo/svc/co.ids";
+
+	 referent.addService(ids);
+         referent.addParamToService(ids,"title","Digital Item Identifiers - XML");
+         referent.addParamToService(ids,"mimetype","application/xml");
+         referent.addParamToService(ids,"format",obj.getReferent().getProperty("format"));
+         referent.addParamToService(ids,"semantic",obj.getReferent().getProperty("semantic"));
+         referent.addParamToService(ids,"dateCreated","2007-03-26T00:00:00Z");
+
+      end
+
+   rule "bib_marc_rem_public"
+         salience  10
+       when
+
+         obj:ContextObjectContainer(referent : referent, s:serviceType)
+         eval(s.hasProperty("rem"))
+         eval(s.hasProperty("recommendation"))
+         eval(s.getProperty("recommendation").equals("PUBLIC"))
+         eval(referent.hasProperty("semantic"))
+         eval((referent.getProperty("semantic")).equals(DmtConstants.BIB))
+         eval(referent.hasProperty("format"))
+         eval((referent.getProperty("format")).equals(DmtConstants.MARC))
+
+       then
+               String bibtex ="info:lanl-repo/svc/bibtex";
+               referent.addService(bibtex);
+               referent.addParamToService(bibtex,"title","Bibliographic record - BibTeX");
+               referent.addParamToService(bibtex,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+               referent.addParamToService(bibtex,"dateCreated","2007-03-26T00:00:00Z");
+               referent.addParamToService(bibtex,"mimetype","text/plain");
+
+               String ris ="info:lanl-repo/svc/ris";
+               referent.addService(ris);
+               referent.addParamToService(ris,"title","Bibliographic record - RIS");
+               referent.addParamToService(ris,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+               referent.addParamToService(ris,"dateCreated","2007-03-26T00:00:00Z");
+               referent.addParamToService(ris,"mimetype","text/plain");
+
+               String didlv2 ="info:lanl-repo/svc/meta.text";
+               referent.addService(didlv2);
+               referent.addParamToService(didlv2,"title","Bibliographic record - TEXT");
+               referent.addParamToService(didlv2,"dateCreated","2007-03-26T00:00:00Z");
+               referent.addParamToService(didlv2,"mimetype","text/plain");
+               referent.addParamToService(didlv2,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+            end
+
+
+  rule "bib_marc_rem"
+         salience  10
+       when
+       
+         obj:ContextObjectContainer(referent : referent, s:serviceType)
+         eval(s.hasProperty("rem"))
+         eval(s.hasProperty("recommendation"))
+         eval(s.getProperty("recommendation").equals("INTERNAL")) 
+         eval(referent.hasProperty("semantic"))
+         eval((referent.getProperty("semantic")).equals(DmtConstants.BIB))
+         eval(referent.hasProperty("format"))
+         eval((referent.getProperty("format")).equals(DmtConstants.MARC))
+        
+       then
+          String marc2mods ="info:lanl-repo/svc/meta.mods"; 
+          referent.addService(marc2mods);
+          referent.addParamToService(marc2mods,"title","Bibliographic record - MODS");
+          referent.addParamToService(marc2mods,"mimetype","application/xml");
+          referent.addParamToService(marc2mods,"format",obj.getReferent().getProperty("format"));
+          referent.addParamToService(marc2mods,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+          referent.addParamToService(marc2mods,"dateCreated","2007-03-26T00:00:00Z");
+
+
+	  String marc2dc ="info:lanl-repo/svc/meta.dc";
+          referent.addService(marc2dc);
+          referent.addParamToService(marc2dc,"title","Bibliographic record - Dublin Core");
+          referent.addParamToService(marc2dc,"mimetype","application/xml");
+          referent.addParamToService(marc2dc,"format",obj.getReferent().getProperty("format"));
+          referent.addParamToService(marc2dc,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+          referent.addParamToService(marc2dc,"dateCreated","2007-03-26T00:00:00Z");
+
+          String marc ="info:lanl-repo/svc/meta.marcxml";
+          referent.addService(marc);
+          referent.addParamToService(marc,"title","Bibliographic record - MARC21");
+          referent.addParamToService(marc,"format",referent.getProperty("format"));
+          referent.addParamToService(marc,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+          referent.addParamToService(marc,"dateCreated","2007-03-26T00:00:00Z");
+          referent.addParamToService(marc,"mimetype","application/xml");
+              
+          String bibtex ="info:lanl-repo/svc/bibtex";
+          referent.addService(bibtex);
+          referent.addParamToService(bibtex,"title","Bibliographic record - BibTeX");
+          referent.addParamToService(bibtex,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+          referent.addParamToService(bibtex,"dateCreated","2007-03-26T00:00:00Z");
+          referent.addParamToService(bibtex,"mimetype","text/plain");
+
+          String ris ="info:lanl-repo/svc/ris";
+          referent.addService(ris);
+          referent.addParamToService(ris,"title","Bibliographic record - RIS");
+          referent.addParamToService(ris,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+          referent.addParamToService(ris,"dateCreated","2007-03-26T00:00:00Z");
+          referent.addParamToService(ris,"mimetype","text/plain");
+
+	  String metrics ="info:lanl-repo/svc/metrics";
+          referent.addService(metrics);
+          referent.addParamToService(metrics,"title","Bibliographic record - Metrics CSV");
+          referent.addParamToService(metrics,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+          referent.addParamToService(metrics,"dateCreated","2008-11-10T00:00:00Z");
+ 
+          String osti ="info:lanl-repo/svc/osti";
+          referent.addService(osti);
+          referent.addParamToService(osti,"title","Bibliographic record - OSTI XML");
+          referent.addParamToService(osti,"semantic","info:eu-repo/semantics/DescriptiveMetadata");
+          referent.addParamToService(osti,"dateCreated","2008-11-25T00:00:00Z");
+
+          String didlv2 ="info:lanl-repo/svc/meta.text";
+          referent.addService(didlv2);
+          referent.addParamToService(didlv2,"title","Bibliographic record - TEXT");
+          referent.addParamToService(didlv2,"dateCreated","2007-03-26T00:00:00Z");
+          referent.addParamToService(didlv2,"mimetype","text/plain");
+
+          String ori ="info:lanl-repo/svc/meta.ori";
+          referent.addService(ori);
+          referent.addParamToService(ori,"title","Bibliographic Record - Publisher");
+          referent.addParamToService(ori,"dateCreated","2007-03-26T00:00:00Z");
+
+      end
+
+
+         rule "rem_citation_marc"
+         salience  10
+         when
+        
+         obj:ContextObjectContainer(referent : referent, s:serviceType)
+         eval(s.hasProperty("rem"))
+         eval(s.hasProperty("recommendation"))
+         eval(s.getProperty("recommendation").equals("INTERNAL"))
+        
+         eval(referent.hasProperty("semantic"))
+         eval((referent.getProperty("semantic")).equals(DmtConstants.CITATION))
+         eval(referent.hasProperty("format"))
+         eval((referent.getProperty("format")).equals(DmtConstants.MARC))
+       then
+             String marcxml ="info:lanl-repo/svc/cite.marcxml"; 
+             referent.addService(marcxml);
+             referent.addParamToService(marcxml,"title","Citations in MARC 21");
+             referent.addParamToService(marcxml,"mimetype","application/xml");
+             referent.addParamToService(marcxml,"format",obj.getReferent().getProperty("format"));
+             referent.addParamToService(marcxml,"semantic",obj.getReferent().getProperty("semantic"));
+             referent.addParamToService(marcxml,"dateCreated","2007-03-26T00:00:00Z");
+
+             String mods ="info:lanl-repo/svc/cite.mods";
+             referent.addService(mods);
+             referent.addParamToService(mods,"title","Citations in MODS");
+             referent.addParamToService(mods,"mimetype","application/xml");
+             referent.addParamToService(mods,"format",obj.getReferent().getProperty("format"));
+             referent.addParamToService(mods,"semantic",obj.getReferent().getProperty("semantic"));
+             referent.addParamToService(mods,"dateCreated","2007-03-26T00:00:00Z");
+
+             String dc ="info:lanl-repo/svc/cite.dc";
+             referent.addService(dc);
+             referent.addParamToService(dc,"title","Citations in Dublin Core");
+             referent.addParamToService(dc,"mimetype","application/xml");
+             referent.addParamToService(dc,"format",obj.getReferent().getProperty("format"));
+             referent.addParamToService(dc,"semantic",obj.getReferent().getProperty("semantic"));
+             referent.addParamToService(dc,"dateCreated","2007-03-26T00:00:00Z");
+      end
+
+    
+	 rule "toc_service_add_techreport"
+         when
+          obj:ContextObjectContainer(referent : referent, s:serviceType)
+          eval(s.hasProperty("rem"))
+          eval(referent.hasProperty("semantic"))
+          eval((referent.getProperty("semantic")).equals("info:lanl-repo/sem/4"))
+          eval(referent.hasProperty("format"))
+          eval((referent.getProperty("format")).equals("info:lanl-repo/fmt/5")) 
+          then
+          String tr = "info:lanl-repo/svc/tr";
+              referent.addService(tr);
+              referent.addParamToService(tr,"title","LANL Technical Report");
+              referent.addParamToService(tr,"mimetype","application/pdf");
+              referent.addParamToService(tr,"format",referent.getProperty("format"));
+              referent.addParamToService(tr,"semantic",referent.getProperty("semantic"));
+              referent.addParamToService(tr,"dateCreated","2007-09-26T00:00:00Z");
+      end
+

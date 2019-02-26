@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://library.lanl.gov/2005-08/aDORe/PMPrequest/" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pr="http://library.lanl.gov/2005-08/aDORe/PMPrequest/" xmlns:oai="http://www.openarchives.org/OAI/2.0/">
+	<annotation>
+		<documentation>This XML Schema defines the structure of  XML documents that convey information to allow:
+		 (1) Putting an Item/Record into an OAI-PMH repository used in the aDORe environment
+		 (2) Deleting an Item/Record from an OAI-PMH repository used in the aDORe environment (not yet implemented in aDORe)
+		 (3) Updating an Item/Record from an OAI-PMH repository used in the aDORe environment (not yet specified in this Schema, not yet implemented in aDORe)
+		 The simplifying assumtions in the design is that only one metadata format is supported by the OAI-PMH repository to which the Record is Put or from which the Record is deleted.  This means that a successful PutRecord always results in the creation of an OAI-PMH Item with a single underlying OAI-PMH Record.  It also means that a successfull DeleteRecord always results in the deletion of both the Item and the Record.  Both assumtpions are met in the administrative OAI-PMH repositories used in aDORe.
+		 Herbert Van de Sompel, August 8th 2005.  Based on work by Lyudmila Balakirev, Jeroen Bekaert, Xiaoming Liu, and herbert Van de Sompel.
+		 This Schema is available at http://purl.lanl.gov/aDORe/schemas/2006-09/PMPRequest.xsd .
+		</documentation>
+	</annotation>
+	<import namespace="http://www.openarchives.org/OAI/2.0/" schemaLocation="http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"/>
+	<element name="PMPrequest" type="pr:PMPrequestType"/>
+	<complexType name="PMPrequestType">
+		<choice>
+			<element name="PutRecord" type="pr:PutRecordType"/>
+			<element name="DeleteRecord" type="pr:DeleteRecordType"/>
+		</choice>
+	</complexType>
+	<!-- 
+	
+		PutRecord 
+
+	-->
+	<complexType name="PutRecordType">
+		<sequence>
+			<element ref="pr:record"/>
+		</sequence>
+		<!-- Define the PutRecord XML document that is used to Put a new Record/Item in a repository -->
+		<!-- A PutRecord XML document contains the following child elements with semantics that are parallel to the like-named elements from the OAI-PMH namespace:
+	(*) header: optional, not repeatable
+	(*) metadata: mandatory, not repeatable
+	(*) about: optional, repeatable .  
+
+The behavior of a PMPrequest-enabled repository receiving receiving a PutRecord XML document is as follows:
+	(*) The repository to which the Record is being Put checks whether the metadata that is being provided as part of the Record corresponds with the metadata format that the OAI-PMH repository supports.  If not, a PMPresponse with an "cannotPutFormat" error is returned.  If so the process proceeds as described hereafter.
+	(*) The repository to which the Record is being Put checks whether the identifier with which the Record should be Put (see below re where the identifier is derived from) already exists in the repository.   Three cases can occur:
+	- If the identifier exists, and if the associated Record is not deleted, a PMPresponse with an "idExists" error results.  
+	- If the identifier exists, and if the associated Record is deleted, the process proceeds as described hereafter.
+	- If the identifier does not exist, the process proceeds as described hereafter.
+	(*) If a header element is provided, the contained information is imposed upon the repository.  
+		The header may contain:
+		- an identifier to be used as the OAI-PMH identifier in the OAI-PMH repository to which the Record is Put.
+		- setSpec to be used as OAI-PMH setSpec in the OAI-PMH repository to which the Record is Put
+		The header must not contain:
+		- datestamp information, as the value for datestamp must always be determined by the OAI-PMH repository to which the Record is Put
+	(*) If no header is provided, rules defined by the repository will result in selecting values to be used as the OAI-PMH identifier and OAI-PMH setSpec for the Record that is being Put.  This information is typcially derived from metadata that is contained in the Record.
+ 	(*) If a header is provided with only one of the possible child elements, rules defined by the repository will result in selecting value(s) for the missing element. This information is typcially derived from metadata that is contained in the Record.
+	(*) The Record is being put into the repositories with values for OAI-PMH identifier and OAI-PMH setSpec as derived using the aforementioned process.  The OAI-PMH datestamp is set to the datetime at which the Record was Put.
+	(*) The repository returns a PMPresponse indicating successfull completion of the PutRecord operation.  The following information is provided in the PMPresponse:
+	- responseDate: datetime of the response to the PMPrequest
+	- request: summary of the PMPrequest to which the response is being sent.  This contains (1) the baseURL of the repository (2) the PMPrequest verb (3) the identifier of the record that was the subject of the PMPrequest
+-->
+	</complexType>
+	<!-- 
+	
+		DeleteRecord 
+
+	-->
+	<complexType name="DeleteRecordType">
+		<sequence>
+			<element ref="pr:header"/>
+		</sequence>
+		<!-- Define the DeleteRecord XML document that is used to Delete an existing Record/Item from a repository -->
+		<!-- A DeleteRecord XML document contains the following child element with semantics that are parallel to the like-named elements from the OAI-PMH namespace:
+	(*) header: mandatory, not repeatable 
+
+The behavior of a PMPrequest-enabled repository receiving receiving a DeleteRecord XML document is as follows:
+	(*) The optional setSpec information that may be contained in the header is being ignored. 
+	(*) The repository checks whether an identifier is being provided in the header.  If not, a PMPresponse with an "idDoesNotExist" error results.  If so, the process proceeds as described hereafter.
+	(*) The repository checks whehter the provided identifier is indeed an identifier of an Item in the repository.  If not, a PMPresponse with an "idDoesNotExist" error results.  If so, the process proceeds as indicated below.
+	(*) The repository copies all information associated with the Record to an audit trail which will not be visible via the OAI-PMH.
+	(*) The repository flags the Record as deleted and updates the datestamp of the Record.  This information will be visible as a deleted Record through the OAI-PMH.
+	(*) The repository writes the deleted Record  to an audit trail.
+	(*) The repository returns a PMPresponse indicating successfull completion of the DeleteRecord operation.  The following information is provided in the PMPresponse:
+	- responseDate: datetime of the response to the PMPrequest
+	- request: summary of the PMPrequest to which the response is being sent.  This contains (1) the baseURL of the repository (2) the PMPrequest verb (3) the identifier of the record that was the subject of the PMPrequest
+
+-->
+	</complexType>
+	<!-- 
+	
+		record 
+
+	-->
+	<element name="record">
+		<complexType>
+			<sequence>
+				<element ref="pr:header" minOccurs="0"/>
+				<element name="metadata" type="oai:metadataType"/>
+				<element name="about" type="oai:aboutType" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- 
+	
+		header 
+
+	-->
+	<element name="header">
+		<complexType>
+			<sequence>
+				<element name="identifier" type="oai:identifierType" minOccurs="0"/>
+				<element name="setSpec" type="oai:setSpecType" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

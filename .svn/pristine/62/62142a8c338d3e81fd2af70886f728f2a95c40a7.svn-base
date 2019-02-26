@@ -1,0 +1,24 @@
+# Configuration File For Module
+
+# Module Build Environment
+module.name=adore-objectdb-resolver
+module.version=1.1
+module.lib=@module.lib@
+module.src=@module.src@
+
+# Dependent Projects - Use Semi-colon (;) as delimiter
+module.depends.list=
+module.depends.1=
+module.depends.1.version=
+
+# Module Specific Properties
+module.db.jdbcdriver=com.mysql.jdbc.Driver
+module.db.jdbcurl=@module.db.jdbcurl@
+module.db.login=@module.db.login@
+module.db.passwd=@module.db.passwd@
+
+# Optional Props
+module.tomcat.url=@module.tomcat.url@
+module.local.rfr.id=@module.local.rfr.id@
+module.admin.email=@module.admin.email@
+tomcat.home=@tomcat.home@

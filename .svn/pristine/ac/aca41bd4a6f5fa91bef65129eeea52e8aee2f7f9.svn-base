@@ -1,0 +1,28 @@
+# Configuration File For Module
+
+# Module Build Environment
+module.name=adore-arcfile-registry
+module.version=1.1
+module.lib=@module.lib@
+module.src=@module.src@
+
+# Dependent Projects - Use Semi-colon (;) as delimiter
+module.depends.list=module.depends.1;module.depends.2
+module.depends.1=adore-arcfile
+module.depends.1.version=1.1
+module.depends.2=adore-repo-oaidb
+module.depends.2.version=1.1
+
+# Module Specific Properties
+module.nspace=http://library.lanl.gov/2005-08/aDORe/ARCfileRegistry/
+module.schema=http://purl.lanl.gov/aDORe/schemas/2006-09/ARCfileRegistry.xsd
+module.baseurl=@module.baseurl@
+module.db.jdbcdriver=com.mysql.jdbc.Driver
+module.db.jdbcurl=@module.db.jdbcurl@
+module.db.login=@module.db.login@
+module.db.passwd=@module.db.passwd@
+module.admin.email=@module.admin.email@
+module.prefix=arc
+
+# System Properties
+tomcat.home=@tomcat.home@

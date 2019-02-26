@@ -1,0 +1,29 @@
+<entity id="info:lanl-repo/i/7ac69d14-21ab-11da-9de5-c11b6cd85594">
+<format id="info:lanl-repo/fmt/1000"><locations>
+<location svc="info:lanl-repo/svc/getdatastream">?url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/i/7ac69d14-21ab-11da-9de5-c11b6cd85594&amp;svc_id=info:lanl-repo/svc/getdatastream</location></locations>
+</format>
+<entity id="info:doi/10.1016/S0140-6736(04)16640-3">
+<format id="info:lanl-repo/pro/publication"><locations>
+<location svc="info:lanl-repo/svc/getdatastream">?url_ver=Z39.88-2004&amp;rft_id=info:doi/10.1016/S0140-6736(04)16640-3&amp;svc_id=info:lanl-repo/svc/getdatastream</location></locations>
+</format>
+<entity id="info:lanl-repo/ssm/doi-10.1016/S0140-6736(04)16640-3">
+<format id="info:lanl-repo/pro/metadata"><locations>
+<location svc="info:lanl-repo/svc/getdatastream">?url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ssm/doi-10.1016/S0140-6736(04)16640-3&amp;svc_id=info:lanl-repo/svc/getdatastream</location></locations>
+</format>
+<entity id="info:lanl-repo/ds/8ccef322-5a0b-4907-9de3-9147fd283a6c">
+<format id="info:lanl-repo/fmt/3"><locations>
+<location svc="info:lanl-repo/svc/marc2dc">?url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/8ccef322-5a0b-4907-9de3-9147fd283a6c&amp;svc_id=info:lanl-repo/svc/marc2dc</location><location svc="info:lanl-repo/svc/marc2mods">?url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/8ccef322-5a0b-4907-9de3-9147fd283a6c&amp;svc_id=info:lanl-repo/svc/marc2mods</location><location svc="info:lanl-repo/svc/getdatastream">?url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/8ccef322-5a0b-4907-9de3-9147fd283a6c&amp;svc_id=info:lanl-repo/svc/getdatastream</location></locations>
+</format>
+</entity><entity id="info:lanl-repo/ds/1ca4e76d-4909-426b-a1eb-9f445e25bd08">
+<format id="info:lanl-repo/fmt/521"><locations>
+<location svc="info:lanl-repo/svc/getdatastream">?url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/1ca4e76d-4909-426b-a1eb-9f445e25bd08&amp;svc_id=info:lanl-repo/svc/getdatastream</location></locations>
+</format>
+</entity></entity><entity id="info:lanl-repo/ds/afde66b3-f6c8-4765-a6c3-8a040e717897">
+<format id="info:lanl-repo/fmt/5"><locations>
+<location svc="info:lanl-repo/svc/brandpdf">?url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/afde66b3-f6c8-4765-a6c3-8a040e717897&amp;svc_id=info:lanl-repo/svc/brandpdf</location><location svc="info:lanl-repo/svc/watermarkpdf">?url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/afde66b3-f6c8-4765-a6c3-8a040e717897&amp;svc_id=info:lanl-repo/svc/watermarkpdf</location><location svc="info:lanl-repo/svc/getdatastream">?url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/afde66b3-f6c8-4765-a6c3-8a040e717897&amp;svc_id=info:lanl-repo/svc/getdatastream</location></locations>
+</format>
+</entity><entity id="info:lanl-repo/ds/1b1c7ffc-8d34-4476-a00d-a0602100c23f">
+<format id="info:lanl-repo/fmt/464"><locations>
+<location svc="info:lanl-repo/svc/getdatastream">?url_ver=Z39.88-2004&amp;rft_id=info:lanl-repo/ds/1b1c7ffc-8d34-4476-a00d-a0602100c23f&amp;svc_id=info:lanl-repo/svc/getdatastream</location></locations>
+</format>
+</entity></entity></entity>

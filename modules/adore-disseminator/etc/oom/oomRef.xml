@@ -1,0 +1,399 @@
+<config xmlns="info:collections/oomImpls/oomRef">
+  <processor>
+    <className>org.oclc.oomRef.OpenURLRequestProcessorImpl</className>
+  </processor>
+  <profiles>
+    <!-- Registry Framework Architecture -->
+    <registry-identifier>info:ofi/pro:sap1-2004</registry-identifier>
+  </profiles>
+  <transportMap>
+    <transport>
+      <className>org.oclc.oomRef.transports.HttpOpenURLInlineTransport</className>
+    </transport>
+  </transportMap>
+  <serviceMap>
+                <service ID="info:lanl-repo/svc/rem.atom">
+                        <className>gov.lanl.disseminator.service.toc.REMService</className>
+                         <args>
+                          <generatoruri>http://library.lanl.gov</generatoruri>
+                        </args>
+                         <args>
+                         <generator>LANL Research Library</generator>
+                        </args>
+                         <args>
+                         <baseurl>http://library.lanl.gov/objects</baseurl>
+                        </args>
+                         <args>
+                         <openurl>true</openurl>
+                         </args>
+                          <args>
+                            <expose>public</expose>
+                          </args>
+                </service>
+                <service ID="info:lanl-repo/svc/aggregation">
+                        <className>gov.lanl.disseminator.service.toc.REMService</className>
+                         <args>
+                         <generatoruri>http://library.lanl.gov</generatoruri>
+                        </args>
+                         <args>
+                         <generator>LANL Research Library</generator>
+                        </args>
+                         <args>
+                         <baseurl>http://library.lanl.gov/objects</baseurl>
+                        </args>
+                         <args>
+                         <openurl>true</openurl>
+                         </args>
+                          <args>
+                                <expose>public</expose>
+                          </args>
+                </service>
+
+                <service ID="info:lanl-repo/svc/permalink">
+                        <className>gov.lanl.disseminator.service.toc.SplashService</className>
+                         <args>
+                                <xsltpath>/etc/xslt/disseminator/plink.xsl</xsltpath>
+                        </args>
+			  <args>
+                         <baseurl>http://audrey2.lanl.gov:8080/adore-permalink/object</baseurl>
+                          </args>
+                          <args>
+                          <openurl>false</openurl>
+                          </args>
+                </service>
+                 <service ID="info:lanl-repo/svc/view">
+                        <className>gov.lanl.disseminator.service.toc.SplashService</className>
+                         <args>
+                                <xsltpath>/etc/xslt/disseminator/plink.xsl</xsltpath>
+                        </args>
+                          <args>
+                                <expose>public</expose>
+                          </args>
+                </service>
+	        <service ID="info:lanl-repo/svc/linkseeker">
+                        <className>gov.lanl.disseminator.service.toc.LinkWrapperService</className>
+                          <args>
+                                <expose>public</expose>
+                          </args>
+                </service>
+
+                  <service ID="info:lanl-repo/svc/getTR">
+                        <className>gov.lanl.disseminator.service.GetSpecifiedStream</className>
+                            <args>
+                                <expose>public</expose>
+                          </args>
+                </service>
+                <service ID="info:lanl-repo/svc/tr">
+                        <className>gov.lanl.disseminator.service.GetSpecifiedStream</className>
+                            <args>
+                                <expose>public</expose>
+                          </args>
+                </service>
+                <service ID="info:lanl-repo/svc/brandpdf">
+                        <className>gov.lanl.disseminator.service.pdf.BrandpdfService</className>
+                </service>
+                 <service ID="info:lanl-repo/svc/getBibliographic.ori">
+                        <className>gov.lanl.disseminator.service.GetOriStream</className>
+                </service>
+                <service ID="info:lanl-repo/svc/meta.ori">
+                        <className>gov.lanl.disseminator.service.GetOriStream</className>
+                           <args>
+                                <type>meta</type>
+                           </args>
+                </service>
+		<service ID="info:lanl-repo/svc/didl2identifiers">
+			<className>gov.lanl.disseminator.service.didl.DIDL2IdentifiersService</className>
+			<args>
+				<xsltpath>/etc/xslt/didl/identifiers.xsl</xsltpath>
+			</args>
+		</service>
+		<service ID="info:lanl-repo/svc/didl2display">
+			<className>gov.lanl.disseminator.service.didl.DIDL2DisplayService</className>
+			<args>
+				<xsltpath>/etc/xslt/didl/didl2display.xsl</xsltpath>
+			</args>
+		</service>
+                        <service ID="info:lanl-repo/svc/co.didl.view">
+                        <className>gov.lanl.disseminator.service.didl.GetDIDLV</className>
+                        <args>
+                                <xsltpath>/etc/xslt/didl/didl2display.xsl</xsltpath>
+                        </args>
+                          <args>
+                               <mimetype>text/html</mimetype>
+                        </args>
+                </service>
+		
+                     <service ID="info:lanl-repo/svc/co.view">
+                        <className>gov.lanl.disseminator.service.didl.GetDIDLV</className>
+                        <args>
+                                <xsltpath>/etc/xslt/didl/didl2display.xsl</xsltpath>
+                        </args>
+                          <args>
+                                <mimetype>text/html</mimetype>
+                        </args>
+                </service>
+               <service ID="info:lanl-repo/svc/co.ids">
+                        <className>gov.lanl.disseminator.service.didl.GetDIDLV</className>
+                        <args>
+                                <xsltpath>/etc/xslt/didl/identifiers.xsl</xsltpath>
+                        </args>
+                          <args>
+                                <mimetype>application/xml</mimetype>
+                        </args>
+                </service>
+
+		<service ID="info:lanl-repo/svc/getBibliographic.dc">
+			<className>gov.lanl.disseminator.service.DefaultXSLTService</className>
+			<args>
+				<xsltpath>/etc/xslt/marc/MARC21slim2OAIDC.xsl</xsltpath>
+			</args>
+                        <args>
+                                <type>meta</type>
+                        </args>
+                         <args>
+                                <mimetype>application/xml</mimetype>
+                         </args>
+
+		</service>
+                   <service ID="info:lanl-repo/svc/getCitation.dc">
+                        <className>gov.lanl.disseminator.service.DefaultXSLTService</className>
+                        <args>
+                                <xsltpath>/etc/xslt/marc/MARC21slim2OAIDC.xsl</xsltpath>
+                        </args>
+                         <args>
+                                <mimetype>application/xml</mimetype>
+                        </args>
+
+                  </service>
+
+                        <service ID="info:lanl-repo/svc/cite.dc">
+                        <className>gov.lanl.disseminator.service.DefaultXSLTService</className>
+                        <args>
+                                <xsltpath>/etc/xslt/marc/MARC21slim2OAIDC.xsl</xsltpath>
+                        </args>
+                         <args>
+                                <mimetype>application/xml</mimetype>
+                        </args>
+                </service>
+		<service ID="info:lanl-repo/svc/getBibliographic.mods">
+			<className>gov.lanl.disseminator.service.DefaultXSLTService</className>
+			<args>
+				<xsltpath>/etc/xslt/marc/MARC21slim2MODS.xsl</xsltpath>
+			</args>
+			 <args>
+                                <mimetype>application/xml</mimetype>
+                        </args>
+                         <args>
+                                <type>meta</type>
+                        </args>
+		</service>
+                       
+                 <service ID="info:lanl-repo/svc/getCitation.mods">
+                        <className>gov.lanl.disseminator.service.DefaultXSLTService</className>
+                        <args>
+                                <xsltpath>/etc/xslt/marc/MARC21slim2MODS.xsl</xsltpath>
+                        </args>
+                         <args>
+                                <mimetype>application/xml</mimetype>
+                        </args>
+                </service>
+
+		  <service ID="info:lanl-repo/svc/cite.mods">
+                        <className>gov.lanl.disseminator.service.DefaultXSLTService</className>
+                        <args>
+                                <xsltpath>/etc/xslt/marc/MARC21slim2MODS.xsl</xsltpath>
+                        </args>
+                         <args>
+                                <mimetype>application/xml</mimetype>
+                        </args>
+                </service>
+                 
+                        <service ID="info:lanl-repo/svc/meta.dc">
+                        <className>gov.lanl.disseminator.service.DefaultXSLTService</className>
+                        <args>
+                                <xsltpath>/etc/xslt/marc/MARC21slim2OAIDC.xsl</xsltpath>
+                        </args>
+			  <args>
+                                <mimetype>application/xml</mimetype>
+                        </args>
+                         <args>
+                                <type>meta</type>
+                        </args>
+                </service>
+                  <service ID="info:lanl-repo/svc/meta.mods">
+                        <className>gov.lanl.disseminator.service.DefaultXSLTService</className>
+                        <args>
+                                <xsltpath>/etc/xslt/marc/MARC21slim2MODS.xsl</xsltpath>
+                        </args>
+                          <args>
+                                <mimetype>application/xml</mimetype>
+                        </args>
+                         <args>
+                                <type>meta</type>
+                        </args>
+                </service>
+		    <service ID="info:lanl-repo/svc/meta.marcxml">
+                        <className>gov.lanl.disseminator.service.marc.GetCitation</className>
+                         <args>
+                                <mimetype>application/xml</mimetype>
+                        </args>
+                         <args>
+                                <type>meta</type>
+                        </args>
+                   </service>
+		  <service ID="info:lanl-repo/svc/meta">
+                        <className>gov.lanl.disseminator.service.marc.GetCitation</className>
+                         <args>
+                                <type>meta</type>
+                        </args>
+                </service>
+		<service ID="info:lanl-repo/svc/getDatastream">
+			<className>gov.lanl.disseminator.service.GetDataStream</className>
+		</service>
+		<service ID="info:lanl-repo/svc/getBibliographic">
+			<className>gov.lanl.disseminator.service.marc.GetCitation</className>
+                            <args>
+                                <type>meta</type>
+                             </args> 
+		</service>
+                <service ID="info:lanl-repo/svc/getBibliographic.marc">
+                        <className>gov.lanl.disseminator.service.marc.GetCitation</className>
+			    <args>
+                                <type>meta</type>
+                             </args> 
+                </service>
+                  <service ID="info:lanl-repo/svc/getBibliographic.xml">
+                        <className>gov.lanl.disseminator.service.marc.GetCitation</className>
+                        <args>
+                                <type>meta</type>
+                        </args>
+                </service>
+                   <service ID="info:lanl-repo/svc/getCitation">
+                        <className>gov.lanl.disseminator.service.marc.GetCitation</className>
+                </service>
+                <service ID="info:lanl-repo/svc/cite">
+                        <className>gov.lanl.disseminator.service.marc.GetCitation</className>
+                </service>
+                   <service ID="info:lanl-repo/svc/cite.xml">
+                        <className>gov.lanl.disseminator.service.marc.GetCitation</className>
+                </service>
+                <service ID="info:lanl-repo/svc/cite.size">
+                        <className>gov.lanl.disseminator.service.marc.GetCitation</className>
+                </service>
+		 <service ID="info:lanl-repo/svc/getCitation.size">
+                        <className>gov.lanl.disseminator.service.marc.GetCitation</className>
+                </service>
+		<service ID="info:lanl-repo/svc/getDIDL">
+			<className>gov.lanl.disseminator.service.didl.GetDIDLV</className>
+                         <args>
+                                <xsltpath>none</xsltpath>
+                         </args>
+                          <args>
+                                <mimetype>application/xml</mimetype>
+                        </args>
+		</service>
+                 <service ID="info:lanl-repo/svc/co.didl">
+                        <className>gov.lanl.disseminator.service.didl.GetDIDLV</className>
+                          <args>
+                                <xsltpath>none</xsltpath>
+                         </args>
+                          <args>
+                                <mimetype>application/xml</mimetype>
+                        </args>
+                </service>
+                <service ID="info:lanl-repo/svc/bibtex">
+                        <className>gov.lanl.disseminator.service.didl.GetDIDLVparam</className>
+                          <args>
+                                <xsltpath>/etc/xslt/fk/styleBibTex-DIDL.xsl</xsltpath>
+                         </args>
+                          <args>
+                                <mimetype>text/plain</mimetype>
+                        </args>
+                         <args>
+                                <expose>public</expose>
+                         </args>
+                </service>
+                  <service ID="info:lanl-repo/svc/ris">
+                        <className>gov.lanl.disseminator.service.didl.GetDIDLVparam</className>
+                          <args>
+                                <xsltpath>/etc/xslt/fk/styleRIS-DIDL.xsl</xsltpath>
+                         </args>
+                          <args>
+                                <mimetype>text/plain</mimetype>
+                        </args>
+                        <args>
+                                <expose>public</expose>
+                        </args>
+                </service>
+		   <service ID="info:lanl-repo/svc/meta.text">
+                        <className>gov.lanl.disseminator.service.didl.GetDIDLVparam</className>
+                          <args>
+                                <xsltpath>/etc/xslt/fk/styleFullRecord-DIDL.xsl</xsltpath>
+                         </args>
+                          <args>
+                                <mimetype>text/html</mimetype>
+                        </args>
+                        <args>
+                                <expose>public</expose>
+                        </args>
+                </service>
+		<service ID="info:lanl-repo/svc/metrics">
+                        <className>gov.lanl.disseminator.service.didl.GetDIDLV</className>
+                          <args>
+                                <xsltpath>/etc/xslt/metrics/metrics_master.xsl</xsltpath>
+                         </args>
+                          <args>
+                                <mimetype>text/plain</mimetype>
+                        </args>
+                </service>
+                <service ID="info:lanl-repo/svc/osti">
+                        <className>gov.lanl.disseminator.service.didl.GetDIDLV</className>
+                          <args>
+                                <xsltpath>/etc/xslt/osti/OSTI-LAauthors-main.xsl</xsltpath>
+                         </args>
+                          <args>
+                                <mimetype>text/plain</mimetype>
+                        </args>
+                </service>
+ 
+                <service ID="info:lanl-repo/svc/doccall">
+                        <className>gov.lanl.disseminator.service.didl.GetDIDLV</className>
+                          <args>
+                                <xsltpath>/etc/xslt/metrics/metrics_doccall.xsl</xsltpath>
+                         </args>
+                          <args>
+                                <mimetype>text/plain</mimetype>
+                        </args>
+                </service>
+
+                <service ID="info:lanl-repo/svc/getDIDL.xml">
+                        <className>gov.lanl.disseminator.service.didl.GetDIDLV</className>
+                           <args>
+                                <xsltpath>none</xsltpath>
+                          </args>
+                </service>
+		<service ID="info:lanl-repo/svc/locate.sru">
+			<className>gov.lanl.disseminator.service.GetLocations</className>
+		</service>
+                <!-- 20081205-RC Added ORE Services -->
+		   <service ID="info:lanl-repo/svc/rem.rdf">
+                        <className>gov.lanl.disseminator.service.toc.REMRDFService</className>
+                        
+                         <args>
+                         <baseurl>http://library.lanl.gov/objects</baseurl>
+                        </args>
+                         <args>
+
+                         <openurl>true</openurl>
+                         </args>
+                        <args>
+                                <xsltpath>/etc/xslt/disseminator/atomentry.xsl</xsltpath>
+                        </args>
+                          <args>
+                            <expose>public</expose>
+
+                          </args>
+                </service>
+
+	</serviceMap>
+</config>

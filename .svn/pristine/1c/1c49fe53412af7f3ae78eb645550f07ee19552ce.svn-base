@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://iesr.ac.uk/terms/#"
+  elementFormDefault="qualified" attributeFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:rslpcd="http://purl.org/rslp/terms#"
+  xmlns:iesr="http://iesr.ac.uk/terms/#"
+  xmlns="http://iesr.ac.uk/terms/#">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      IESR Service Composition XML Schema
+      Part of: IESR Terms XML Schema, Version 2007-02-19. 
+      XML schema definition of Service term components within the iesr namespace for the JISC Information Environment Service Registry (IESR).
+      These terms are described at http://iesr.ac.uk/terms/. 
+      This part of the XML schema is available at http://iesr.ac.uk/schemas/2007/02/19/iesrService.xsd .
+      Note that DCMI schemas are held locally and differ from the DCMI versions to avoid schema validation problems with some software.
+    </xs:documentation>
+<!--
+    <xs:appinfo>
+      <dc:title>IESR Service Composition XML Schema</dc:title>
+      <dc:creator>Ann Apps (ann.apps@manchester.ac.uk)</dc:creator>
+      <dc:contributor>Pete Johnston</dc:creator>
+      <dc:description>
+        This schema defines Service term components within the iesr namespace for the JISC Information Environment Service Registry (IESR).
+      </dc:description>
+      <dc:identifier>http://iesr.ac.uk/terms/#</dc:identifier>
+      <dc:relation>http://iesr.ac.uk/terms/</dc:relation>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-sa/2.0/uk/</dc:rights>
+      <dcterms:created>2005-02-08</dcterms:created>
+      <dcterms:modified>2005-09-06</dcterms:modified>
+      <dcterms:modified>2007-02-19</dcterms:modified>
+    </xs:appinfo>
+-->
+  </xs:annotation>
+
+  <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="dc.xsd"/>
+
+  <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd"/>
+
+  <xs:import namespace="http://purl.org/rslp/terms#" schemaLocation="rslpcd.xsd"/>
+
+  <xs:group name="serviceGroup">
+    <xs:annotation>
+      <xs:documentation>
+          This is the Service group. Allows sub-elements in any order and repeatable
+      </xs:documentation>
+    </xs:annotation>
+
+    <xs:sequence>
+
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+
+	<xs:element ref="dc:title">
+          <xs:annotation>
+            <xs:documentation>
+              The name of the service. An attribute 'xml:lang' may be supplied
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+<!-- alternative included in dc:title above -->
+
+<!--	<xs:element ref="dcterms:alternative">
+          <xs:annotation>
+            <xs:documentation>
+              Preferred link text to be used when displaying an OpenURL link to a resolver. An attribute 'xml:lang' may be supplied
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element> -->
+
+	<xs:element ref="dc:identifier">
+          <xs:annotation>
+            <xs:documentation>
+              An identifier for the Service. The formal global IESR identifier is assigned by the IESR on registration. An attribute 'xsi:type="dcterms:URI"' or 'xsi:type="iesr:AthensResource"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dcterms:abstract">
+          <xs:annotation>
+            <xs:documentation>
+              A free text summary description of the service. An attribute 'xml:lang' may be supplied
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="rslpcd:locator">
+          <xs:annotation>
+            <xs:documentation>
+              The URI of the access point for the service
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="iesr:interface">
+          <xs:annotation>
+            <xs:documentation>
+              A resource that provides interface information about the service, such as available inputs and outputs, in a machine readable format
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dc:type">
+          <xs:annotation>
+            <xs:documentation>
+              Technical type of interface providing access to service, or the service type. An attribute 'xsi:type' indicating the encoding scheme is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dc:language">
+          <xs:annotation>
+            <xs:documentation>
+              The language that a transactional service presents to its users. An attribute 'xsi:type="dcterms:RFC3066"' is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="iesr:output">
+          <xs:annotation>
+            <xs:documentation>
+              Output format available from the service
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="dcterms:accessRights">
+          <xs:annotation>
+            <xs:documentation>
+              Indication of security of the service, or who can access it. An attribute 'xsi:type' indicating the encoding scheme is expected
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="iesr:useRights">
+          <xs:annotation>
+            <xs:documentation>
+              A statement about allowed usage of a service, for example terms and conditions. An attribute 'xsi:type="dcterms:URI"' is expected if the value is a URI. An attribute 'xml:lang' may be supplied if the value is free text 
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="iesr:mediator">
+          <xs:annotation>
+            <xs:documentation>
+              A body that mediates access to the service. An attribute 'xsi:type="iesr:ShibFed"' is expected.  
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="iesr:supportsStandard">
+          <xs:annotation>
+            <xs:documentation>
+              Indication of standards and profiles supported by the service. An attribute 'xsi:type="iesr:StdsList"' is expected.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="rslpcd:seeAlso">
+          <xs:annotation>
+            <xs:documentation>
+              More information about the service. An attribute may be 'xsi:type="iesr:SvcHelp"', 'xsi:type="iesr:SvcShib"' or 'xsi:type="iesr:SvcSLA"'. The value should be a URI.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="iesr:logo">
+          <xs:annotation>
+            <xs:documentation>
+              A logo for the service.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="rslpcd:administrator">
+          <xs:annotation>
+            <xs:documentation>
+              An agent that has responsibility for the electronic environment in which the collection is held
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element ref="iesr:serves">
+          <xs:annotation>
+            <xs:documentation>
+              A collection that the service makes available
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+      </xs:choice>
+
+    </xs:sequence>
+
+  </xs:group>	
+
+
+  <xs:complexType name="serviceContainer">
+    <xs:annotation>
+      <xs:documentation>
+        This serviceContainer type is a container for the serviceGroup. Allows all sub-elements to be optional, repeatable and in any order
+      </xs:documentation>
+    </xs:annotation>
+
+    <xs:choice>
+
+      <xs:group ref="serviceGroup"/>
+
+    </xs:choice>
+
+    <xs:attribute name="id" type="xs:ID"/>
+
+  </xs:complexType>
+
+  <xs:element name="Service" type="serviceContainer">
+    <xs:annotation>
+      <xs:documentation>
+        A set of metadata that describes a Service entity
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+</xs:schema>

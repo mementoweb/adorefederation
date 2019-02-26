@@ -1,0 +1,295 @@
+<html>
+ <head><title>Resource Resolver</title></head>
+<style>
+  H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} 
+  H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} 
+  H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} 
+  BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} 
+  B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} 
+  P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:9px;}
+  A {color : black;}
+  A.name {color : black;}
+  HR {color : #525D76;}  
+  table {width: 100%;}
+  td.page-title {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: white;
+    color: black;
+  }
+  td.title {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-style:italic;
+    font-weight: bold;
+    background: #D2A41C;
+  }
+  td.title-sub-openurl {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #6699FF;
+  }
+  td.title-sub-oai {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FF0000;
+  }
+  td.header-left {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  td.header-center {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  td.row-left {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-left-middle {
+    text-align: left;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-center {
+    text-align: center;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-right {
+    text-align: right;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  TH {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  div.inside_div {
+    text-align: left;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  a.h3:link {color: #FFFFFF}
+  a.h3:visited {color: #FFFFFF}
+</style>
+ <body>
+ <script type="text/javascript">
+    
+    function $() {
+      var elements = new Array();
+
+      for (var i = 0; i < arguments.length; i++) {
+          var element = arguments[i];
+   
+          if (typeof element == 'string')
+              element = document.getElementById(element);
+
+          if (arguments.length == 1)
+              return element;
+
+          elements.push(element);
+      }
+
+      return elements;
+    }
+    
+    function stripUri(uri) {
+        return uri.substring(uri.lastIndexOf('/') + 1);
+    }
+
+    function getOpenURLServiceId(profile) {
+      var adore1 = "info:lanl-repo/svc/getDIDL";
+      var adore2 = "info:lanl-repo/svc/locate.sru";
+      var adore3 = "info:lanl-repo/svc/identifiers.list";
+      var adore4 = "info:lanl-repo/svc/getDatastream";
+      var adore5 = "info:lanl-repo/svc/toc";
+      var adore6 = "info:lanl-repo/svc/ockham";
+      if (profile == "info:lanl-repo/int/openurl-aDORe1")
+         return adore1;
+      if (profile == "info:lanl-repo/int/openurl-aDORe2")
+         return adore2;
+      if (profile == "info:lanl-repo/int/openurl-aDORe3")
+         return adore3;
+      if (profile == "info:lanl-repo/int/openurl-aDORe4")
+         return adore4;
+      if (profile == "info:lanl-repo/int/openurl-aDORe5")
+         return adore5;
+      if (profile == "info:lanl-repo/int/openurl-aDORe6")
+         return adore6;
+    }
+
+    function getRftId(repoUri, profile, rft_id) {
+      if (profile == "info:lanl-repo/int/openurl-aDORe3" || profile == "info:lanl-repo/int/openurl-aDORe7")
+           return repoUri;
+      else
+           return rft_id;
+    }
+
+    function makeOpenURLArgs(rft_id, svc_id, rft_version, svc_args) {
+      var args = "url_ver=Z39.88-2004";
+      if (!rft_id) {
+          alert('Referent Identifier Missing');
+          return false;
+      } else if (!svc_id) {
+          alert('Referent Identifier Missing');
+          return false;
+      } else {
+          args += "&rft_id=" + encode(rft_id);
+          args += "&svc_id=" + svc_id;
+          if (rft_version) {
+             args += "&rft_val_fmt=info:ofi/fmt:kev:mtx:adore";
+             args += "&rft.version=" + rft_version;
+          }
+          if (svc_args) {
+             args += "&svc_val_fmt=info:ofi/fmt:kev:mtx:adore";
+             args += "&svc_args=" + svc_args;
+          }
+      }
+      return args;
+    }
+
+    function encode( uri ) {
+        if (encodeURIComponent) {
+            return encodeURIComponent(uri);
+        }
+        if (escape) {
+            return escape(uri);
+        }
+    }
+    
+    function hideDiv( element ) {
+      var e = $(element);
+
+      if (e) {
+          e.style.display = 'none';
+      }
+    }
+    
+    function launch(baseUrl, args) {
+      url = baseUrl + '?' + args;
+      xml = window.open(url, 'xml', 'left=20,top=20,width=800,height=500,toolbar=0,resizable=1,location=1,scrollbars=1');
+      if (window.focus) {xml.focus()}
+    }
+    
+// Resource Resolver ///////////////////////////////////////////////////////////////////////
+
+var resourceResolverUrl = "$TOMCAT_URL/adore-resource-resolver";
+
+function getResourceResolverResource(repoUri, svcProfile, rft_id) {
+    if (!repoUri || !svcProfile ) {
+        clearResourceResolverResource();
+    } else {
+        var url = resourceResolverUrl + '/' + stripUri(repoUri) + '/' + stripUri(svcProfile);
+        rft_id = getRftId(repoUri, svcProfile, rft_id);
+        var svc_id = getOpenURLServiceId(svcProfile);
+        var args = makeOpenURLArgs(rft_id, svc_id, null, null);
+        
+        if (!args)
+          return false;
+        
+        launch(url,args);
+    }
+}
+
+// OpenURL Request Div
+function getResourceResolverRequest(repoUri, svcProfile, rft_id) {
+    var div = "";
+    var url = resourceResolverUrl + '/' + stripUri(repoUri) + '/' + stripUri(svcProfile);
+    var svc_id = getOpenURLServiceId(svcProfile);
+    rft_id = getRftId(repoUri, svcProfile, rft_id);
+    var args = '?' + makeOpenURLArgs(rft_id, svc_id, null, null);
+
+    if (args == '?false')
+        return false;
+    
+    div += "<table width=600>";
+    div += "<tr><td class=\"row-right\"><a href=\"#\" onclick=\"hideDiv('resourceResolver_div');return false;\"><small>[hide]</small></a></td></tr>";
+    div += "<tr><td  class=\"row-left\"><small>XMLtape Resolver Request URL:</small></td></tr>";
+    div += "<tr><td  class=\"row-left\"><a href=\"" + url + args + "\" target=\"xml\"><small>" + url + args + "</small></a></td></tr>";
+    div += "</table>";
+    var resourceResolver_div = document.getElementById("resourceResolver_div");
+
+    if (resourceResolver_div) {
+      resourceResolver_div.innerHTML = div;
+      resourceResolver_div.style.display = 'block';
+    }
+}
+
+function clearResourceResolverResource() {
+    alert("Please define XMLtape Resolver fields...");
+}
+  </script>
+<center>
+<p>
+  <table border="1">
+   <div class = "inside_div" id = "div_resourceResolverOpenURL">
+
+   <tr>
+      <td colspan="3" class="title-sub-openurl">Resource Resolver (OpenURL)<a name="resourceResolver">&nbsp;</a></td>
+   </tr>
+    <tr><td colspan="3" class="row-center">            
+            <div class = "inside_div" id = "div_resourceResolver">
+                 <table>
+                  <tr>
+                     <td width="200" class="row-left-middle"><small>Select a Service Profile:</small></td>
+
+                     <td class="row-left-middle" colspan="2">
+                         <select id="val_resourceResolver_svc_id" onChange="javascript:if(this.options[this.selectedIndex].value != 'info:lanl-repo/int/openurl-aDORe3') {enableField('val_resourceResolver_rft_id')} else {disableField('val_resourceResolver_rft_id')};">
+                           <option value="info:lanl-repo/int/openurl-aDORe3">info:lanl-repo/int/openurl-aDORe3</option>
+                           <option value="info:lanl-repo/int/openurl-aDORe4">info:lanl-repo/int/openurl-aDORe4</option>
+                         </select>
+                    </td>
+
+                    <td class="row-left-middle">
+                    <a href="#" onclick="getResourceResolverResource(document.getElementById('val_resourceResolverUri').value, document.getElementById('val_resourceResolver_svc_id').value, document.getElementById('val_resourceResolver_rft_id').value);return false;"><small>Get Response</small></a>
+                    &nbsp;
+                    <a href="#" onclick="getResourceResolverRequest(document.getElementById('val_resourceResolverUri').value, document.getElementById('val_resourceResolver_svc_id').value, document.getElementById('val_resourceResolver_rft_id').value);return false;"><small>View Request</small></a>
+                    </td>
+                 </tr>
+                 <tr>
+                    <td width="200" class="row-left-middle"><small>Enter a Collection identifer:</small></td>
+                    <td class="row-left-middle" width="425"><input id = "val_resourceResolverUri" type = "text" name = "resourceResolverUri" size = 50 maxlength = 250></td>
+                 </tr>
+                 <tr>
+                     <td width="200" class="row-left-middle"><small>Enter an identifier:</small></td>
+
+                     <td class="row-left-middle"><input id = "val_resourceResolver_rft_id" type = "text" name = "resourceResolver_rft_id" size = 50 maxlength = 150></td>
+                 </tr>
+                  </table>
+                 <div style = "display:none;position:absolute;WIDTH:700px;overflow:auto;border-style:solid;background-color:white;padding:5px;" id = "resourceResolver_div">
+                 </div>
+            </div>
+         </td>
+      </tr>
+  </table>
+</center>
+<table>
+<tr>
+<td align="left"><small>Contact: $ADMIN_EMAIL</small></td> 
+<td align="right"><small>$MODULE_NAME: $MODULE_VERSION</small></td>
+</tr> 
+ </body>
+</html>

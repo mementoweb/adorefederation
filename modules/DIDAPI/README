@@ -1,0 +1,28 @@
+DIDAPI README file
+
+$Id: README,v 1.1.1.1 2006/10/13 03:04:16 liu_x Exp $
+
+INTRODUCTION
+
+DIDLTools is a Java toolkit for the construction, validation, serialization and de-serialization for MPEG-21 DIDL data model. The DID API allows for the construction of customized DID models, as well as provides flexible and extensible serialization methods.
+
+The DIDAPI web site is at:
+  http://african.lanl.gov/aDORe/projects/DIDLTools
+
+
+FILES
+
+DIDAPI-XX.jar
+  The compiled DIDAPI library.
+
+src/api
+  The abstract DIDAPI
+
+src/impl
+  an XML implementation of DIDAPI
+
+src/demo
+  several demo applications
+
+src/test
+  junit test

@@ -1,0 +1,31 @@
+/**
+* aDORe XMLSig
+* 
+*/
+
+----------------------
+Installation
+----------------------
+1. Copy oai-resource to a location of your choosing.
+
+2. Configure the following in module.conf:
+
+* module.lib - Define path to lib directory containing project jars (i.e. lib)
+* module.src - Define path to src directory containing project source files (i.e. src)
+
+3. Run "ant -f build-standalone.xml build" to build project
+
+4. Generate a certificate & JKS (Java KeyStore):
+
+keytool -genkey -alias aDORe -keyalg RSA -keystore keystore.jks -storepass xmlsecurity
+  
+Set the -keystore parameter to wherever you want the generated 
+keys to be stored. Set the -storepass to whatever password you 
+want. When prompted, provide the other requested info (name, 
+company, location, etc.).
+
+5. Export the generated certificate from the keystore
+
+keytool -export -rfc -keystore keystore.jks -alias aDORe -file aDORe.crt
+
+6. Update sig.properties to reflect the configurations of your enviroment.
